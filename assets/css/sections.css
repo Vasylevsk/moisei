@@ -650,6 +650,12 @@
   line-height: var(--lineHeight-3);
 }
 
+.reservation .form-right .body-4[data-i18n-html="true"] {
+  white-space: normal;
+  text-align: center;
+  display: block;
+}
+
 .form-right .body-4:not(:last-child) {
   margin-block-end: 25px;
 }

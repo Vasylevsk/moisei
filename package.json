@@ -1,0 +1,16 @@
+{
+  "name": "moisei-website",
+  "version": "1.0.0",
+  "description": "Moisei Restaurant Website",
+  "scripts": {
+    "optimize-images": "node optimize-images.js",
+    "combine-css": "node combine-css.js",
+    "minify-css": "node advanced-minify-css.js",
+    "remove-unused": "node remove-unused-css.js",
+    "build-css": "npm run combine-css && npm run minify-css && npm run remove-unused"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0"
+  }
+}
+

@@ -152,7 +152,8 @@ body {
 }
 
 body.loaded {
-  overflow: overlay;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 body.nav-active {

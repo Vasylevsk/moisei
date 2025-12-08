@@ -49,22 +49,26 @@
     margin-block-end: 20px;
   }
 
+  .service-card .card-banner {
+    -webkit-order: 2;
+    order: 2;
+    max-width: 260px;
+    margin-inline: auto;
+  }
+
   .service-card .menu-view-link {
     -webkit-order: 3;
     order: 3;
     margin-top: 20px;
     margin-block-start: 20px;
+    margin-bottom: 20px;
+    margin-block-end: 20px;
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: center;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-inline: auto;
-  }
-
-  .service-card .card-banner {
-    max-width: 260px;
     margin-inline: auto;
   }
 
@@ -185,33 +189,40 @@
     order: 0;
   }
 
-  .special-dish .abs-img {
+  .special-dish-content .container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .special-dish-content .abs-img {
     -webkit-order: 1;
     order: 1;
   }
 
-  .special-dish .section-subtitle {
+  .special-dish-content .section-subtitle {
     -webkit-order: 2;
     order: 2;
   }
 
-  .special-dish .section-title {
+  .special-dish-content .section-title {
     -webkit-order: 3;
     order: 3;
   }
 
-  .special-dish .section-text {
+  .special-dish-content .section-text {
     -webkit-order: 4;
     order: 4;
     margin-bottom: 25px;
     margin-block-end: 25px;
   }
 
-  .special-dish-banner {
+  .special-dish-content .special-dish-banner {
     -webkit-order: 5;
     order: 5;
-    margin-bottom: 25px;
-    margin-block-end: 25px;
+    margin-bottom: 20px;
+    margin-block-end: 20px;
   }
 
   .special-dish-content .wrapper {
@@ -219,6 +230,13 @@
     order: 6;
     margin-bottom: 20px;
     margin-block-end: 20px;
+  }
+
+  .special-dish-content .btn {
+    -webkit-order: 7;
+    order: 7;
+    margin-top: 10px;
+    margin-block-start: 10px;
   }
 
   .special-dish .btn {
@@ -1400,6 +1418,12 @@
 
 @media (min-width: 576px) {
   .header-language-toggle.mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header .btn {
     display: none !important;
   }
 }

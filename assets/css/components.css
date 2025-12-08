@@ -99,23 +99,6 @@
   cursor: pointer;
   width: 100%;
   pointer-events: auto;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.icon-wrapper select.input-field {
-  cursor: pointer !important;
-  pointer-events: auto !important;
-  background-image: none;
-}
-
-.icon-wrapper select.input-field:disabled {
-  opacity: 0.6;
-  cursor: not-allowed !important;
-}
-
-.icon-wrapper select.input-field:not(:disabled) {
-  cursor: pointer !important;
 }
 
 .icon-wrapper:has(input[type="date"]) {

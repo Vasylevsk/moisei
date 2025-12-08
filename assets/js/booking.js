@@ -295,9 +295,7 @@ const reservationFormHandler = () => {
     }
 
     enableBooking();
-    if (timeSelect) {
-      timeSelect.disabled = false;
-      timeSelect.innerHTML = "";
+    timeSelect.innerHTML = "";
     const placeholder = document.createElement("option");
     placeholder.value = "";
     placeholder.textContent = getTranslation("reservation2.time.placeholder");
@@ -330,10 +328,6 @@ const reservationFormHandler = () => {
       option.textContent = slot;
       timeSelect.appendChild(option);
     });
-
-    if (timeSelect) {
-      timeSelect.disabled = false;
-    }
 
     const firstEnabledOption = Array.from(timeSelect.options).find(
       (opt) => !opt.disabled && opt.value

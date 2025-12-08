@@ -554,6 +554,23 @@ body.nav-active {
   cursor: pointer;
   width: 100%;
   pointer-events: auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.icon-wrapper select.input-field {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  background-image: none;
+}
+
+.icon-wrapper select.input-field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}
+
+.icon-wrapper select.input-field:not(:disabled) {
+  cursor: pointer !important;
 }
 
 .icon-wrapper:has(input[type="date"]) {
@@ -1139,8 +1156,18 @@ body.nav-active {
   object-fit: cover;
 }
 
+.hero .slider-bg img[src*="hero-slider-3"],
+.hero .slider-bg img[src*="hero-slider-3.webp"],
 .hero .slider-bg img[src*="hero-slider-3.jpg"] {
-  object-position: 65% center !important;
+  object-position: 70% center !important;
+}
+
+@media (min-width: 992px) {
+  .hero .slider-bg img[src*="hero-slider-3"],
+  .hero .slider-bg img[src*="hero-slider-3.webp"],
+  .hero .slider-bg img[src*="hero-slider-3.jpg"] {
+    object-position: 80% center !important;
+  }
 }
 
 .hero .slider-item.active .slider-bg {
@@ -1468,6 +1495,7 @@ body.nav-active {
   align-items: center;
   gap: 20px;
   margin-block-end: 40px;
+  padding-block: 35px;
 }
 
 .special-dish-content .del {
@@ -1865,11 +1893,13 @@ textarea.input-field {
   border-radius: var(--radius-24);
 }
 
+.event-single-image .card-banner picture img,
+.event-single-image .card-banner img,
 .event-single-image .card-banner .img-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 90% center;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 100% center !important;
 }
 
 .event-card {
@@ -3106,24 +3136,19 @@ textarea.input-field {
   }
 
   .service-card .card-content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-order: 0;
-    order: 0;
+    display: contents;
   }
 
   .service-card .card-content .card-title {
-    -webkit-order: 1;
-    order: 1;
+    -webkit-order: 0;
+    order: 0;
     margin-bottom: 20px;
     margin-block-end: 20px;
   }
 
   .service-card .has-before {
-    -webkit-order: 2;
-    order: 2;
+    -webkit-order: 1;
+    order: 1;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-block: 15px;
@@ -3132,15 +3157,15 @@ textarea.input-field {
   }
 
   .service-card .card-banner {
-    -webkit-order: 2;
-    order: 2;
+    -webkit-order: 1;
+    order: 1;
     max-width: 260px;
     margin-inline: auto;
   }
 
-  .service-card .menu-view-link {
-    -webkit-order: 3;
-    order: 3;
+  .service-card .card-content .menu-view-link {
+    -webkit-order: 2;
+    order: 2;
     margin-top: 20px;
     margin-block-start: 20px;
     margin-bottom: 20px;
@@ -3258,17 +3283,6 @@ textarea.input-field {
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
-    -webkit-order: 0;
-    order: 0;
-  }
-
-  .special-dish-content .container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-order: 0;
-    order: 0;
   }
 
   .special-dish-content .container {
@@ -3296,11 +3310,16 @@ textarea.input-field {
   .special-dish-content .section-text {
     -webkit-order: 4;
     order: 4;
-    margin-bottom: 25px;
-    margin-block-end: 25px;
+    margin-bottom: 20px;
+    margin-block-end: 20px;
   }
 
-  .special-dish-content .special-dish-banner {
+  .special-dish-banner {
+    display: none;
+  }
+
+  .special-dish-banner-mobile {
+    display: block !important;
     -webkit-order: 5;
     order: 5;
     margin-bottom: 20px;
@@ -3510,6 +3529,8 @@ textarea.input-field {
     opacity: 1;
     visibility: visible;
     position: relative;
+    height: 500px !important;
+    min-height: 500px;
   }
 
   .shisha-slider-dots {
@@ -3729,6 +3750,119 @@ textarea.input-field {
     white-space: pre-line;
     text-align: center;
     display: block;
+  }
+
+  input.input-field[type="date"],
+  input.input-field[type="date"]::-webkit-datetime-edit,
+  input.input-field[type="date"]::-webkit-datetime-edit-fields-wrapper,
+  input.input-field[type="date"]::-webkit-datetime-edit-text,
+  input.input-field[type="date"]::-webkit-datetime-edit-month-field,
+  input.input-field[type="date"]::-webkit-datetime-edit-day-field,
+  input.input-field[type="date"]::-webkit-datetime-edit-year-field {
+    font-family: var(--fontFamily-dm_sans) !important;
+    font-size: var(--fontSize-body-2) !important;
+    color: var(--white) !important;
+    text-transform: none !important;
+    padding: 0 !important;
+    line-height: 1.5 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  input.input-field[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: var(--fontFamily-dm_sans) !important;
+    font-size: var(--fontSize-body-2) !important;
+    color: var(--white) !important;
+    text-transform: none !important;
+    padding: 10px 20px !important;
+    padding-inline-start: 40px !important;
+    padding-inline-end: 40px !important;
+    min-height: 56px;
+    box-sizing: border-box;
+  }
+
+  input.input-field[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  select.input-field {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    font-family: var(--fontFamily-dm_sans) !important;
+    font-size: var(--fontSize-body-2) !important;
+    color: var(--white) !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    min-height: 56px;
+    box-sizing: border-box;
+    background-image: none !important;
+    z-index: 1;
+  }
+
+  select.input-field:disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+  }
+
+  select.input-field:not(:disabled) {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
+  .icon-wrapper:has(select.input-field) {
+    cursor: pointer !important;
+  }
+
+  .icon-wrapper:has(select.input-field:not(:disabled)) {
+    cursor: pointer !important;
+  }
+
+  .icon-wrapper:has(select.input-field:disabled) {
+    cursor: not-allowed !important;
+  }
+
+  .icon-wrapper:has(select.input-field) select.input-field {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .icon-wrapper:has(select.input-field:disabled) select.input-field {
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    z-index: 0;
+  }
+
+  .icon-wrapper:has(select.input-field:not(:disabled)) {
+    z-index: 2;
+  }
+
+  .icon-wrapper:has(select.input-field:not(:disabled)) select.input-field {
+    z-index: 2;
+    pointer-events: auto !important;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  input.input-field[type="date"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   .hero-btn {
@@ -3974,6 +4108,9 @@ textarea.input-field {
 }
 
 @media (min-width: 992px) {
+  .shisha-images-container .shisha-image-item {
+    padding: 10px 35px !important;
+  }
 
   :root {
 
@@ -4052,6 +4189,32 @@ textarea.input-field {
     position: relative;
   }
 
+  .special-dish-banner {
+    display: block;
+    -webkit-order: initial;
+    order: initial;
+    margin-bottom: initial;
+    margin-block-end: initial;
+  }
+
+  .special-dish-banner-mobile {
+    display: none !important;
+  }
+
+  .special-dish-content .abs-img,
+  .special-dish-content .section-subtitle,
+  .special-dish-content .section-title,
+  .special-dish-content .section-text,
+  .special-dish-content .wrapper,
+  .special-dish-content .btn {
+    -webkit-order: initial;
+    order: initial;
+    margin-bottom: initial;
+    margin-block-end: initial;
+    margin-top: initial;
+    margin-block-start: initial;
+  }
+
   .special-dish .section-subtitle::after,
   .special-dish .btn {
     margin-inline: 0;
@@ -4061,7 +4224,7 @@ textarea.input-field {
     justify-content: flex-start;
   }
 
-  .special-dish .abs-img {
+  .special-dish-content .abs-img {
     position: absolute;
     top: 10px;
     left: -40px;

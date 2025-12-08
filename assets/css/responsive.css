@@ -726,12 +726,31 @@
     cursor: pointer !important;
     pointer-events: auto !important;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   .icon-wrapper:has(select.input-field:disabled) select.input-field {
     cursor: not-allowed !important;
     pointer-events: none !important;
+    z-index: 0;
+  }
+
+  .icon-wrapper:has(select.input-field:not(:disabled)) {
+    z-index: 2;
+  }
+
+  .icon-wrapper:has(select.input-field:not(:disabled)) select.input-field {
+    z-index: 2;
+    pointer-events: auto !important;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  input.input-field[type="date"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   .hero-btn {

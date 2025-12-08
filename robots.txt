@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moisei.uk/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Disallow: /server/
+Disallow: /email-templates/
+

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Book a Table - Online Reservations | Moisei London</title>
+    <meta name="title" content="Book a Table - Online Reservations | Moisei London" />
+    <meta name="description" content="Reserve your table at Moisei restaurant in Brentford, London. Book online for authentic Eastern European cuisine, premium hookah, and fine drinks. Easy online reservation system." />
+    <meta name="keywords" content="restaurant booking, table reservation, book restaurant London, Brentford restaurant booking, online reservation, Moisei booking" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://moisei.uk/reservation.html" />
+    <link rel="alternate" hreflang="en" href="https://moisei.uk/reservation.html" />
+    <link rel="alternate" hreflang="uk" href="https://moisei.uk/reservation.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Book a Table - Online Reservations | Moisei" />
+    <meta property="og:description" content="Reserve your table at Moisei restaurant in Brentford, London. Book online for authentic Eastern European cuisine." />
+    <meta property="og:url" content="https://moisei.uk/reservation.html" />
+    <meta property="og:image" content="https://moisei.uk/assets/images/hero-slider-1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Book a Table - Moisei" />
+    <meta name="twitter:description" content="Reserve your table at Moisei restaurant in Brentford, London." />
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=2" />
+    <link rel="shortcut icon" type="image/svg+xml" href="./favicon.svg?v=2" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <style>
+      .reservation-page {
+        background-color: var(--eerie-black-1);
+        padding-block: 140px 80px;
+      }
+
+      .reservation-page .reservation-form {
+        margin-block-start: 0;
+      }
+
+      @media (max-width: 767px) {
+        .reservation-page {
+          padding-block: 120px 60px;
+        }
+      }
+
+      .reservation-step {
+        display: none;
+        animation: fadeIn 300ms ease;
+      }
+
+      .reservation-step.active {
+        display: block;
+      }
+
+      .step-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      @media (min-width: 576px) {
+        .step-controls {
+          flex-direction: row;
+        }
+
+        .step-controls button {
+          flex: 1;
+        }
+      }
+
+      .reservation-summary {
+        background: var(--eerie-black-2);
+        border: 1px solid var(--white-alpha-10);
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 25px;
+      }
+
+      .reservation-summary ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .reservation-summary li {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 6px;
+        font-size: 1.6rem;
+      }
+
+      .reservation-summary li span:first-child {
+        color: var(--quick-silver);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body id="top">
+
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">Moisei</p>
+    </div>
+
+    <div class="topbar">
+      <div class="container">
+        <address class="topbar-item">
+          <div class="icon">
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <a
+            href="https://www.google.com/maps/place/Moisei+at+Makai/@51.4850816,-0.3145728,14z/data=!4m6!3m5!1s0x48760d4e55bf2d53:0xaa343169020509af!8m2!3d51.4847492!4d-0.3018951!16s%2Fg%2F11gsc9580z?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="span topbar-item link"
+          >
+            55 High St, Brentford, London, TW8 0AH
+          </a>
+        </address>
+
+        <div class="separator"></div>
+
+        <div class="topbar-item item-2">
+          <div class="icon">
+            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <a href="#footer" class="span topbar-item link"><span data-i18n="topbar.opening-hours">Opening hours</span></a>
+        </div>
+
+        <a href="tel:+447932393730" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">+447932393730</span>
+        </a>
+
+        <a href="tel:+447706090321" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">+447706090321</span>
+        </a>
+
+        <div class="separator"></div>
+
+        <div class="language-toggle">
+          <span class="lang-label" data-lang-label="uk">🇺🇦 UA</span>
+          <div class="toggle-switch" data-lang-toggle>
+            <div class="toggle-thumb"></div>
+          </div>
+          <span class="lang-label" data-lang-label="en">🇬🇧 EN</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img
+            src="./assets/images/logo.svg"
+            width="160"
+            height="50"
+            alt="Moisei - Home"
+          />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <button class="close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+          <a href="index.html" class="logo">
+            <img
+              src="./assets/images/logo.svg"
+              width="160"
+              height="50"
+              alt="Moisei - Home"
+            />
+          </a>
+
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="index.html#home" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span" data-i18n="nav.home">Home</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="index.html#menu" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span" data-i18n="nav.menu">Menu</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="index.html#events" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span" data-i18n="nav.events">Events</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="index.html#about" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span" data-i18n="nav.about">About Us</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="index.html#footer" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span" data-i18n="nav.contact">Contact</span>
+              </a>
+            </li>
+
+            <li class="navbar-item navbar-reservation">
+              <a href="reservation.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span" data-i18n="btn.book-table"
+                  >Book A Table</span
+                >
+              </a>
+            </li>
+          </ul>
+
+          <div class="text-center">
+            <p class="headline-1 navbar-title" data-i18n="nav.visit-us">
+              Visit Us
+            </p>
+
+            <address class="body-4">
+              55 High St, Brentford<br />
+              London, TW8 0AH
+            </address>
+            <div class="separator"></div>
+            <p class="headline-1 navbar-title" data-i18n="nav.opening-hours">
+              Opening hours:
+            </p>
+
+            <p class="body-4 navbar-text" data-i18n="nav.mon">Mon: Closed</p>
+            <p class="body-4 navbar-text" data-i18n="nav.tue">Tue: Closed</p>
+            <p class="body-4 navbar-text" data-i18n="nav.wed">
+              Wed: 15:00-21:00
+            </p>
+            <p class="body-4 navbar-text" data-i18n="nav.thu">
+              Thu: 15:00-21:00
+            </p>
+            <p class="body-4 navbar-text" data-i18n="nav.fri">
+              Fri: 15:00-23:00
+            </p>
+            <p class="body-4 navbar-text" data-i18n="nav.sat">
+              Sat: 12:00-00:00
+            </p>
+            <p class="body-4 navbar-text" data-i18n="nav.sun">
+              Sun: 12:00-23:00
+            </p>
+
+            <div class="separator"></div>
+
+            <p class="headline-1 navbar-title" data-i18n="nav.booking-request">
+              Booking Request :
+            </p>
+
+            <a
+              href="tel:+447932393730"
+              class="body-1 contact-number hover-underline"
+            >
+              +447932393730
+            </a>
+            <a
+              href="tel:+447706090321"
+              class="body-1 contact-number hover-underline"
+            >
+              +447706090321
+            </a>
+
+            <div class="separator"></div>
+
+            <div class="language-toggle navbar-language-toggle">
+              <span class="lang-label" data-lang-label="uk">🇺🇦 UA</span>
+              <div class="toggle-switch" data-lang-toggle>
+                <div class="toggle-thumb"></div>
+              </div>
+              <span class="lang-label" data-lang-label="en">🇬🇧 EN</span>
+            </div>
+          </div>
+        </nav>
+
+        <a href="reservation.html" class="btn btn-secondary">
+          <span class="text text-1" data-i18n="btn.book-table"
+            >Book A Table</span
+          >
+
+          <span
+            class="text text-2"
+            data-i18n="btn.book-table"
+            aria-hidden="true"
+            >Book A Table</span
+          >
+        </a>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="reservation reservation-page">
+        <div class="container">
+          <div class="form reservation-form bg-black-10">
+            <form id="reservation-form" class="form-left">
+              <input type="hidden" name="action" value="create" />
+              <h1 class="headline-1 text-center" data-i18n="reservation2.title">
+                Online Reservation
+              </h1>
+
+              <p
+                class="form-text text-center"
+                data-i18n="reservation2.subtitle"
+              >
+                Please fill out the form below to book a table.
+              </p>
+
+              <div class="reservation-step active" data-step="1">
+                <div class="input-wrapper step1-row1">
+                  <div class="icon-wrapper">
+                    <ion-icon
+                      name="person-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+
+                    <select name="partySize" class="input-field" required>
+                      <option
+                        value=""
+                        data-i18n="reservation2.partySize.placeholder"
+                      >
+                        Party Size
+                      </option>
+                      <option value="1" data-i18n="reservation2.partySize.1">1 Person</option>
+                      <option value="2" data-i18n="reservation2.partySize.2">2 People</option>
+                      <option value="3" data-i18n="reservation2.partySize.3">3 People</option>
+                      <option value="4" data-i18n="reservation2.partySize.4">4 People</option>
+                      <option value="5" data-i18n="reservation2.partySize.5">5 People</option>
+                      <option value="6" data-i18n="reservation2.partySize.6">6 People</option>
+                      <option value="7" data-i18n="reservation2.partySize.7">7 People</option>
+                      <option value="8-plus" data-i18n="reservation2.partySize.8plus">8+ Guests</option>
+                    </select>
+
+                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                  </div>
+
+                  <div class="icon-wrapper">
+                    <ion-icon
+                      name="calendar-clear-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+
+                    <input
+                      type="date"
+                      name="date"
+                      class="input-field"
+                      id="booking-date-input"
+                      required
+                    />
+
+                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="input-wrapper step1-row2">
+                  <div class="icon-wrapper">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                    <select name="time" class="input-field" required disabled>
+                      <option
+                        value=""
+                        data-i18n="reservation2.time.placeholder"
+                      >
+                        Select Time
+                      </option>
+                    </select>
+
+                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                  </div>
+
+                  <div class="icon-wrapper">
+                    <ion-icon
+                      name="business-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+
+                    <select name="location" class="input-field" required>
+                      <option
+                        value=""
+                        data-i18n="reservation2.location.placeholder"
+                      >
+                        Space Location
+                      </option>
+                      <option value="Lounge" data-i18n="spaces.card.lounge">
+                        Lounge
+                      </option>
+                      <option value="Main Restaurant" data-i18n="spaces.card.main-restaurant">
+                        Main Restaurant
+                      </option>
+                    </select>
+
+                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                  </div>
+                </div>
+
+                <p
+                  class="body-4 text-center"
+                  style="margin-block: 10px 20px"
+                  data-i18n="reservation2.monday-note"
+                >
+                  Monday & Tuesday closed.
+                </p>
+
+                <div class="step-controls">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="next-step-btn"
+                  >
+                    <span class="text text-1" data-i18n="reservation2.btn.next">
+                      Next
+                    </span>
+                    <span
+                      class="text text-2"
+                      aria-hidden="true"
+                      data-i18n="reservation2.btn.next"
+                    >
+                      Next
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="reservation-step" data-step="2">
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    data-i18n-placeholder="reservation2.form.name"
+                    autocomplete="off"
+                    class="input-field"
+                    required
+                  />
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    data-i18n-placeholder="reservation2.form.email"
+                    autocomplete="off"
+                    class="input-field"
+                    required
+                  />
+                </div>
+
+                <div class="input-wrapper">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Mobile Number"
+                    data-i18n-placeholder="reservation2.form.phone"
+                    autocomplete="off"
+                    class="input-field"
+                    required
+                  />
+                </div>
+
+                <textarea
+                  name="message"
+                  placeholder="Comments / Special Requests"
+                  data-i18n-placeholder="reservation2.form.message"
+                  autocomplete="off"
+                  class="input-field"
+                ></textarea>
+
+                <div class="step-controls">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="prev-step-btn"
+                  >
+                    <span class="text text-1" data-i18n="reservation2.btn.back">
+                      Back
+                    </span>
+                    <span
+                      class="text text-2"
+                      aria-hidden="true"
+                      data-i18n="reservation2.btn.back"
+                    >
+                      Back
+                    </span>
+                  </button>
+
+                  <button
+                    type="submit"
+                    class="btn btn-secondary reservation-submit"
+                  >
+                    <span
+                      class="text text-1"
+                      data-i18n="reservation2.btn.submit"
+                    >
+                      Send Request
+                    </span>
+                    <span
+                      class="text text-2"
+                      aria-hidden="true"
+                      data-i18n="reservation2.btn.submit"
+                      >Send Request</span
+                    >
+                  </button>
+                </div>
+
+                <p
+                  id="reservation-status"
+                  class="body-4 text-center"
+                  style="margin-top: 18px"
+                ></p>
+              </div>
+            </form>
+
+            <div
+              class="form-right text-center"
+              style="background-image: url('./assets/images/form-pattern.png')"
+            >
+              <h2
+                class="headline-1 text-center"
+                data-i18n="reservation2.contact.title"
+              >
+                Contact Us
+              </h2>
+
+              <p class="contact-label" data-i18n="reservation2.contact.booking">
+                Booking Request
+              </p>
+
+              <a
+                href="tel:+447932393730"
+                class="body-1 contact-number hover-underline"
+              >
+                +447932393730
+              </a>
+
+              <a
+                href="tel:+447706090321"
+                class="body-1 contact-number hover-underline"
+              >
+                +447706090321
+              </a>
+
+              <div class="separator"></div>
+
+              <p
+                class="contact-label"
+                data-i18n="reservation2.contact.location"
+              >
+                Location
+              </p>
+
+              <address class="body-4">
+                55 High St, Brentford<br />
+                London, TW8 0AH
+              </address>
+
+              <p
+                class="contact-label"
+                data-i18n="reservation2.contact.hours.title"
+              >
+                Opening hours:
+              </p>
+
+              <p
+                class="body-4"
+                data-i18n="reservation2.contact.hours.lines"
+                data-i18n-html="true"
+              >
+                Mon: Closed
+                <br />
+                Tue: Closed
+                <br />
+                Wed: 15:00-21:00
+                <br />
+                Thu: 15:00-21:00
+                <br />
+                Fri: 15:00-23:00
+                <br />
+                Sat: 12:00-00:00
+                <br />
+                Sun: 12:00-23:00
+              </p>
+
+              <p class="contact-label" data-i18n="reservation2.contact.social">
+                Our social media:
+              </p>
+
+              <div class="social-row">
+                <a
+                  href="https://www.facebook.com/moiseirestaurant/?ref=_xav_ig_profile_page_web#"
+                  class="body-4 contact-link"
+                >
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a
+                  href="https://www.instagram.com/moiseirestaurant/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="body-4 contact-link"
+                >
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@moiseirestaurant"
+                  class="body-4 contact-link"
+                >
+                  <ion-icon name="logo-tiktok"></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      id="footer"
+      class="footer section has-bg-image text-center"
+      style="background-image: url('./assets/images/footer-bg.jpg')"
+    >
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="copyright" data-i18n="footer.copyright">
+            &copy; 2022 Moisei. All Rights Reserved
+          </p>
+
+          <p class="footer-credit">
+            Made with <span class="footer-heart"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="white"/></svg></span> by <a href="https://ttmms.uk" target="_blank" rel="noopener noreferrer" class="footer-credit-link">TTMMs.</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#top"
+      class="back-top-btn active"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <script src="./assets/js/translations.js"></script>
+    <script src="./assets/js/booking.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ReservationAction",
+      "target": {
+        "@type": "ReservationPackage",
+        "name": "Table Reservation at Moisei"
+      },
+      "object": {
+        "@type": "Restaurant",
+        "name": "Moisei",
+        "url": "https://moisei.uk"
+      }
+    }
+    </script>
+  </body>
+</html>
+

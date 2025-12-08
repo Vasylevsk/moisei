@@ -640,52 +640,28 @@
     display: block;
   }
 
-  input.input-field[type="date"] {
-    font-family: var(--fontFamily-dm_sans) !important;
-    font-size: var(--fontSize-body-2) !important;
-    color: var(--white) !important;
-    text-transform: uppercase;
-  }
-
+  /* Минимальные стили только для мобильных - без !important */
   input.input-field[type="date"]::-webkit-datetime-edit,
   input.input-field[type="date"]::-webkit-datetime-edit-fields-wrapper,
   input.input-field[type="date"]::-webkit-datetime-edit-text,
   input.input-field[type="date"]::-webkit-datetime-edit-month-field,
   input.input-field[type="date"]::-webkit-datetime-edit-day-field,
   input.input-field[type="date"]::-webkit-datetime-edit-year-field {
-    font-family: var(--fontFamily-dm_sans) !important;
-    font-size: var(--fontSize-body-2) !important;
-    color: var(--white) !important;
-    padding: 0;
-  }
-
-  select.input-field {
-    font-family: var(--fontFamily-dm_sans) !important;
-    font-size: var(--fontSize-body-2) !important;
-    color: var(--white) !important;
-    cursor: pointer !important;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: none !important;
-  }
-
-  select.input-field:disabled {
-    opacity: 0.6;
-    cursor: not-allowed !important;
+    font-family: var(--fontFamily-dm_sans);
+    color: var(--white);
   }
 
   select.input-field:not(:disabled) {
-    cursor: pointer !important;
-    pointer-events: auto !important;
+    cursor: pointer;
+    pointer-events: auto;
   }
 
   .icon-wrapper:has(select.input-field:not(:disabled)) {
-    cursor: pointer !important;
+    cursor: pointer;
   }
 
   .icon-wrapper:has(select.input-field:not(:disabled)) select.input-field {
-    pointer-events: auto !important;
+    pointer-events: auto;
     z-index: 2;
     position: relative;
   }

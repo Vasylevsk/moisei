@@ -1,5 +1,4 @@
-const APPS_SCRIPT_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbz6L6MDSiuXMIEPuPuv5MDXJwp7LiuORP8a49xc-yyr74Pv_0-S9Z56gd_G1OLdP6FF/exec";
+const APPS_SCRIPT_ENDPOINT = "https://script.google.com/macros/s/AKfycbz6L6MDSiuXMIEPuPuv5MDXJwp7LiuORP8a49xc-yyr74Pv_0-S9Z56gd_G1OLdP6FF/exec";
 
 const generateSlots = (startHour, endHour, stepMinutes = 15) => {
   const slots = [];
@@ -23,13 +22,13 @@ const generateSlots = (startHour, endHour, stepMinutes = 15) => {
 const EXTRA_SATURDAY_SLOTS = ["23:15", "23:30", "23:45", "00:00"];
 
 const TIME_SLOTS = {
-  0: generateSlots(12, 23),
-  1: [],
-  2: [],
-  3: generateSlots(15, 21),
-  4: generateSlots(15, 21),
-  5: generateSlots(15, 23),
-  6: [...generateSlots(12, 23), ...EXTRA_SATURDAY_SLOTS],
+  0: generateSlots(12, 23), 
+  1: [], 
+  2: [], 
+  3: generateSlots(15, 21), 
+  4: generateSlots(15, 21), 
+  5: generateSlots(15, 23), 
+  6: [...generateSlots(12, 23), ...EXTRA_SATURDAY_SLOTS], 
 };
 
 const parseDateValue = (value) => {
@@ -55,7 +54,7 @@ const getTranslation = (key) => {
     ) {
       return translations[lang][key];
     }
-
+    
     if (
       typeof translations !== "undefined" &&
       translations.en &&
@@ -188,18 +187,18 @@ const reservationFormHandler = () => {
 
   const isMonday = (dateStr) => {
     const d = new Date(dateStr);
-    return d.getDay() === 1;
+    return d.getDay() === 1; 
   };
 
   const isTuesday = (dateStr) => {
     const d = new Date(dateStr);
-    return d.getDay() === 2;
+    return d.getDay() === 2; 
   };
 
   const isClosedDay = (dateStr) => {
     const d = new Date(dateStr);
     const day = d.getDay();
-    return day === 1 || day === 2;
+    return day === 1 || day === 2; 
   };
 
   const isValidPhone = (val) =>
@@ -292,46 +291,46 @@ const reservationFormHandler = () => {
     enableBooking();
     if (timeSelect) {
       timeSelect.disabled = false;
-      timeSelect.innerHTML = "";
-      const placeholder = document.createElement("option");
-      placeholder.value = "";
-      placeholder.textContent = getTranslation("reservation2.time.placeholder");
-      placeholder.disabled = true;
-      placeholder.hidden = true;
-      placeholder.selected = true;
-      timeSelect.appendChild(placeholder);
+    timeSelect.innerHTML = "";
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = getTranslation("reservation2.time.placeholder");
+    placeholder.disabled = true;
+    placeholder.hidden = true;
+    placeholder.selected = true;
+    timeSelect.appendChild(placeholder);
 
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      const isToday = parsedDate.getTime() === today.getTime();
-      const currentTime = new Date();
-      const currentHours = currentTime.getHours();
-      const currentMinutes = currentTime.getMinutes();
-      const currentTimeInMinutes = currentHours * 60 + currentMinutes;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const isToday = parsedDate.getTime() === today.getTime();
+    const currentTime = new Date();
+    const currentHours = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
+    const currentTimeInMinutes = currentHours * 60 + currentMinutes;
 
-      slots.forEach((slot) => {
-        if (isToday) {
-          const [slotHours, slotMinutes] = slot.split(":").map(Number);
-          const slotTimeInMinutes = slotHours * 60 + slotMinutes;
+    slots.forEach((slot) => {
+      if (isToday) {
+        const [slotHours, slotMinutes] = slot.split(":").map(Number);
+        const slotTimeInMinutes = slotHours * 60 + slotMinutes;
 
-          if (slotTimeInMinutes <= currentTimeInMinutes + 15) {
-            return;
-          }
+        if (slotTimeInMinutes <= currentTimeInMinutes + 15) {
+          return; 
         }
+      }
 
-        const option = document.createElement("option");
-        option.value = slot;
-        option.textContent = slot;
-        timeSelect.appendChild(option);
-      });
+      const option = document.createElement("option");
+      option.value = slot;
+      option.textContent = slot;
+      timeSelect.appendChild(option);
+    });
 
-      const firstEnabledOption = Array.from(timeSelect.options).find(
-        (opt) => !opt.disabled && opt.value
-      );
-      if (firstEnabledOption) {
-        firstEnabledOption.selected = true;
-      } else if (slots.length) {
-        timeSelect.selectedIndex = 1;
+    const firstEnabledOption = Array.from(timeSelect.options).find(
+      (opt) => !opt.disabled && opt.value
+    );
+    if (firstEnabledOption) {
+      firstEnabledOption.selected = true;
+    } else if (slots.length) {
+      timeSelect.selectedIndex = 1;
       }
     }
   };
@@ -385,7 +384,7 @@ const reservationFormHandler = () => {
       phone: (formData.get("phone") || "").trim(),
       message: (formData.get("message") || "").trim(),
       action: "create",
-      language: getCurrentLanguage(),
+      language: getCurrentLanguage(), 
     };
 
     if (!payload.date || isClosedDay(payload.date)) {
@@ -414,7 +413,7 @@ const reservationFormHandler = () => {
       if (nameInput) nameInput.focus();
       return;
     }
-
+    
     const nameRegex = /^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s\-']+$/u;
     if (!nameRegex.test(payload.name)) {
       setStatus(
@@ -512,7 +511,7 @@ const reservationFormHandler = () => {
             : payload[key];
         hiddenForm.appendChild(input);
       });
-
+      
       document.body.appendChild(hiddenForm);
 
       let formSubmitted = false;

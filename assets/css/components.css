@@ -95,10 +95,19 @@
 .icon-wrapper .input-field {
   margin-block-end: 0;
   padding-inline-start: 40px;
+  padding-inline-end: 40px;
   appearance: none;
   cursor: pointer;
   width: 100%;
   pointer-events: auto;
+}
+
+.icon-wrapper select.input-field {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none;
+  padding-inline-end: 40px;
 }
 
 .icon-wrapper:has(input[type="date"]) {
@@ -147,10 +156,24 @@
   z-index: 1;
   opacity: 1;
   color: var(--white);
+  font-size: 1.4rem;
+  --ionicon-stroke-width: 50px;
 }
 
 .icon-wrapper:has(select.input-field:disabled) ion-icon:last-child {
   opacity: 0.6;
+}
+
+/* Hide default browser dropdown arrow for select */
+select.input-field {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none !important;
+}
+
+select.input-field::-ms-expand {
+  display: none;
 }
 
 .icon-wrapper:not(:has(input[type="date"])) .input-field {

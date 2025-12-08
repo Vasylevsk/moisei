@@ -1,4 +1,5 @@
-const APPS_SCRIPT_ENDPOINT = "https://script.google.com/macros/s/AKfycbz6L6MDSiuXMIEPuPuv5MDXJwp7LiuORP8a49xc-yyr74Pv_0-S9Z56gd_G1OLdP6FF/exec";
+const APPS_SCRIPT_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbz6L6MDSiuXMIEPuPuv5MDXJwp7LiuORP8a49xc-yyr74Pv_0-S9Z56gd_G1OLdP6FF/exec";
 
 const generateSlots = (startHour, endHour, stepMinutes = 15) => {
   const slots = [];

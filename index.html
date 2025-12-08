@@ -64,8 +64,8 @@
     <link rel="stylesheet" href="./assets/css/combined.min.css" />
 
     <link rel="preload" as="image" href="./assets/images/hero-slider-1.webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="./assets/images/hero-slider-2.webp" />
-    <link rel="preload" as="image" href="./assets/images/hero-slider-3.webp" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2-1280.webp" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3-1280.webp" />
 </head>
 
 <body id="top">
@@ -310,12 +310,14 @@
                   srcset="./assets/images/hero-slider-2.webp 1920w, ./assets/images/hero-slider-2-1280.webp 1280w, ./assets/images/hero-slider-2-960.webp 960w, ./assets/images/hero-slider-2-640.webp 640w"
                   sizes="100vw">
                 <img 
-                  src="./assets/images/hero-slider-2.jpg" 
+                  src="./assets/images/hero-slider-2-1280.webp" 
                   width="1880" 
                   height="950" 
                   alt="Moisei restaurant dining area - Traditional Ukrainian cuisine in London" 
                   class="img-cover" 
-                  decoding="async">
+                  decoding="async"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='./assets/images/hero-slider-2-960.webp';">
               </picture>
             </div>
 
@@ -346,12 +348,14 @@
                   srcset="./assets/images/hero-slider-3.webp 1920w, ./assets/images/hero-slider-3-1280.webp 1280w, ./assets/images/hero-slider-3-960.webp 960w, ./assets/images/hero-slider-3-640.webp 640w"
                   sizes="100vw">
                 <img 
-                  src="./assets/images/hero-slider-3.jpg" 
+                  src="./assets/images/hero-slider-3-1280.webp" 
                   width="1880" 
                   height="950" 
                   alt="Moisei restaurant atmosphere - Premium Eastern European dining experience in Brentford" 
                   class="img-cover" 
-                  decoding="async">
+                  decoding="async"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='./assets/images/hero-slider-3-960.webp';">
               </picture>
             </div>
 
@@ -648,7 +652,21 @@
 
           <figure class="about-banner">
 
-            <img src="./assets/images/about-us/about-abs-image.jpg" width="570" height="570" loading="lazy" alt="about banner"
+            <picture>
+              <source 
+                type="image/webp" 
+                srcset="./assets/images/about-us/about-abs-image.webp 1140w, ./assets/images/about-us/about-abs-image-570.webp 570w, ./assets/images/about-us/about-abs-image-285.webp 285w"
+                sizes="(max-width: 768px) 285px, 570px">
+              <img 
+                src="./assets/images/about-us/about-abs-image.jpg" 
+                width="570" 
+                height="570" 
+                loading="lazy" 
+                alt="about banner"
+                class="img-cover"
+                decoding="async"
+                onerror="this.onerror=null; this.src='./assets/images/about-us/about-abs-image-570.webp';">
+            </picture>
               class="w-100" data-parallax-item data-parallax-speed="1">
 
             <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
@@ -685,8 +703,21 @@
 
                 <a href="#" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
-                    <img src="./assets/images/sevice-1.jpg" width="285" height="336" loading="lazy" alt="Grond floor"
-                      class="img-cover">
+                    <picture>
+                      <source 
+                        type="image/webp" 
+                        srcset="./assets/images/sevice-1.webp 570w, ./assets/images/sevice-1-285.webp 285w"
+                        sizes="(max-width: 768px) 285px, 570px">
+                      <img 
+                        src="./assets/images/sevice-1.jpg" 
+                        width="285" 
+                        height="336" 
+                        loading="lazy" 
+                        alt="Grond floor"
+                        class="img-cover"
+                        decoding="async"
+                        onerror="this.onerror=null; this.src='./assets/images/sevice-1-285.webp';">
+                    </picture>
                   </figure>
                 </a>
 
@@ -698,8 +729,21 @@
 
                 <a href="#" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
-                    <img src="./assets/images/sevice-2.jpg" width="285" height="336" loading="lazy" alt="Lounge"
-                      class="img-cover">
+                    <picture>
+                      <source 
+                        type="image/webp" 
+                        srcset="./assets/images/sevice-2.webp 570w, ./assets/images/sevice-2-285.webp 285w"
+                        sizes="(max-width: 768px) 285px, 570px">
+                      <img 
+                        src="./assets/images/sevice-2.jpg" 
+                        width="285" 
+                        height="336" 
+                        loading="lazy" 
+                        alt="Lounge"
+                        class="img-cover"
+                        decoding="async"
+                        onerror="this.onerror=null; this.src='./assets/images/sevice-2-285.webp';">
+                    </picture>
                   </figure>
                 </a>
 
@@ -711,8 +755,21 @@
 
                 <a href="#" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
-                    <img src="./assets/images/sevice-3.jpg" width="285" height="336" loading="lazy" alt="Lounge"
-                      class="img-cover">
+                    <picture>
+                      <source 
+                        type="image/webp" 
+                        srcset="./assets/images/sevice-3.webp 570w, ./assets/images/sevice-3-285.webp 285w"
+                        sizes="(max-width: 768px) 285px, 570px">
+                      <img 
+                        src="./assets/images/sevice-3.jpg" 
+                        width="285" 
+                        height="336" 
+                        loading="lazy" 
+                        alt="Lounge"
+                        class="img-cover"
+                        decoding="async"
+                        onerror="this.onerror=null; this.src='./assets/images/sevice-3-285.webp';">
+                    </picture>
                   </figure>
                 </a>
 
@@ -724,7 +781,21 @@
 
                 <a href="#" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
-                    <img src="./assets/images/sevice-4.jpg" width="285" height="336" loading="lazy" alt="First floor"
+                    <picture>
+                      <source 
+                        type="image/webp" 
+                        srcset="./assets/images/sevice-4.webp 570w, ./assets/images/sevice-4-285.webp 285w"
+                        sizes="(max-width: 768px) 285px, 570px">
+                      <img 
+                        src="./assets/images/sevice-4.jpg" 
+                        width="285" 
+                        height="336" 
+                        loading="lazy" 
+                        alt="First floor"
+                        class="img-cover"
+                        decoding="async"
+                        onerror="this.onerror=null; this.src='./assets/images/sevice-4-285.webp';">
+                    </picture>
                       class="img-cover">
                   </figure>
                 </a>

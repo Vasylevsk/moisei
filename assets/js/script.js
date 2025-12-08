@@ -1,5 +1,29 @@
 "use strict";
 
+// Image error handling - fallback to smaller WebP or original
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll("img[onerror]");
+  images.forEach(function(img) {
+    const originalOnError = img.onerror;
+    img.onerror = function() {
+      if (originalOnError) {
+        originalOnError.call(this);
+      }
+      // If WebP fails, try to load a smaller version or original JPG
+      const src = this.src;
+      if (src.includes(".webp")) {
+        if (src.includes("-1280")) {
+          this.src = src.replace("-1280.webp", "-960.webp");
+        } else if (src.includes("-960")) {
+          this.src = src.replace("-960.webp", "-640.webp");
+        } else if (src.includes(".webp")) {
+          this.src = src.replace(".webp", ".jpg").replace(/-(\d+)\.jpg/, ".jpg");
+        }
+      }
+    };
+  });
+});
+
 const preloader = document.querySelector("[data-preaload]");
 
 if (preloader) {

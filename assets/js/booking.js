@@ -1,4 +1,4 @@
-const APPS_SCRIPT_ENDPOINT = "";
+const APPS_SCRIPT_ENDPOINT = "https://script.google.com/macros/s/AKfycbz6L6MDSiuXMIEPuPuv5MDXJwp7LiuORP8a49xc-yyr74Pv_0-S9Z56gd_G1OLdP6FF/exec";
 
 const generateSlots = (startHour, endHour, stepMinutes = 15) => {
   const slots = [];
@@ -22,13 +22,13 @@ const generateSlots = (startHour, endHour, stepMinutes = 15) => {
 const EXTRA_SATURDAY_SLOTS = ["23:15", "23:30", "23:45", "00:00"];
 
 const TIME_SLOTS = {
-  0: generateSlots(12, 23), 
-  1: [], 
-  2: [], 
-  3: generateSlots(15, 21), 
-  4: generateSlots(15, 21), 
-  5: generateSlots(15, 23), 
-  6: [...generateSlots(12, 23), ...EXTRA_SATURDAY_SLOTS], 
+  0: generateSlots(12, 23),
+  1: [],
+  2: [],
+  3: generateSlots(15, 21),
+  4: generateSlots(15, 21),
+  5: generateSlots(15, 23),
+  6: [...generateSlots(12, 23), ...EXTRA_SATURDAY_SLOTS],
 };
 
 const parseDateValue = (value) => {
@@ -47,11 +47,19 @@ const getCurrentLanguage = () => {
 const getTranslation = (key) => {
   const lang = getCurrentLanguage();
   try {
-    if (typeof translations !== "undefined" && translations[lang] && translations[lang][key]) {
+    if (
+      typeof translations !== "undefined" &&
+      translations[lang] &&
+      translations[lang][key]
+    ) {
       return translations[lang][key];
     }
-    
-    if (typeof translations !== "undefined" && translations.en && translations.en[key]) {
+
+    if (
+      typeof translations !== "undefined" &&
+      translations.en &&
+      translations.en[key]
+    ) {
       return translations.en[key];
     }
   } catch (e) {
@@ -93,7 +101,6 @@ const reservationFormHandler = () => {
         dateIconWrapper.style.cursor = "pointer";
 
         const openDatePicker = () => {
-          
           if (dateInput.type !== "date") return;
 
           dateInput.focus();
@@ -106,12 +113,10 @@ const reservationFormHandler = () => {
               try {
                 dateInput.showPicker();
               } catch (err) {
-                
                 dateInput.click();
               }
             }, 10);
           } else {
-            
             setTimeout(() => {
               dateInput.click();
             }, 10);
@@ -119,11 +124,9 @@ const reservationFormHandler = () => {
         };
 
         dateIconWrapper.addEventListener("click", (e) => {
-          
           if (!dateInput || dateInput.type !== "date") return;
 
           if (e.target === dateInput) {
-            
             setTimeout(openDatePicker, 10);
             return;
           }
@@ -141,7 +144,6 @@ const reservationFormHandler = () => {
         });
 
         dateInput.addEventListener("click", function (e) {
-          
           if (this.type !== "date") return;
 
           e.stopPropagation();
@@ -151,12 +153,9 @@ const reservationFormHandler = () => {
               if (this.showPicker && typeof this.showPicker === "function") {
                 try {
                   this.showPicker();
-                } catch (err) {
-                  
-                }
+                } catch (err) {}
               }
             } else if (this.type === "date") {
-              
               openDatePicker();
             }
           }, 20);
@@ -188,18 +187,18 @@ const reservationFormHandler = () => {
 
   const isMonday = (dateStr) => {
     const d = new Date(dateStr);
-    return d.getDay() === 1; 
+    return d.getDay() === 1;
   };
 
   const isTuesday = (dateStr) => {
     const d = new Date(dateStr);
-    return d.getDay() === 2; 
+    return d.getDay() === 2;
   };
 
   const isClosedDay = (dateStr) => {
     const d = new Date(dateStr);
     const day = d.getDay();
-    return day === 1 || day === 2; 
+    return day === 1 || day === 2;
   };
 
   const isValidPhone = (val) =>
@@ -266,9 +265,7 @@ const reservationFormHandler = () => {
     if (isClosedDay(dateValue)) {
       const closedText = getTranslation("reservation2.monday-note");
       timeSelect.innerHTML = `<option value="">${closedText}</option>`;
-      disableBooking(
-        closedText
-      );
+      disableBooking(closedText);
       return;
     }
 
@@ -287,56 +284,53 @@ const reservationFormHandler = () => {
     if (!slots.length) {
       const closedText = getTranslation("reservation2.monday-note");
       timeSelect.innerHTML = `<option value="">${closedText}</option>`;
-      disableBooking(
-        closedText
-      );
+      disableBooking(closedText);
       return;
     }
 
     enableBooking();
     if (timeSelect) {
       timeSelect.disabled = false;
-    timeSelect.innerHTML = "";
-    const placeholder = document.createElement("option");
-    placeholder.value = "";
-    placeholder.textContent = getTranslation("reservation2.time.placeholder");
-    placeholder.disabled = true;
-    placeholder.hidden = true;
-    placeholder.selected = true;
-    timeSelect.appendChild(placeholder);
+      timeSelect.innerHTML = "";
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = getTranslation("reservation2.time.placeholder");
+      placeholder.disabled = true;
+      placeholder.hidden = true;
+      placeholder.selected = true;
+      timeSelect.appendChild(placeholder);
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const isToday = parsedDate.getTime() === today.getTime();
-    const currentTime = new Date();
-    const currentHours = currentTime.getHours();
-    const currentMinutes = currentTime.getMinutes();
-    const currentTimeInMinutes = currentHours * 60 + currentMinutes;
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const isToday = parsedDate.getTime() === today.getTime();
+      const currentTime = new Date();
+      const currentHours = currentTime.getHours();
+      const currentMinutes = currentTime.getMinutes();
+      const currentTimeInMinutes = currentHours * 60 + currentMinutes;
 
-    slots.forEach((slot) => {
-      
-      if (isToday) {
-        const [slotHours, slotMinutes] = slot.split(":").map(Number);
-        const slotTimeInMinutes = slotHours * 60 + slotMinutes;
+      slots.forEach((slot) => {
+        if (isToday) {
+          const [slotHours, slotMinutes] = slot.split(":").map(Number);
+          const slotTimeInMinutes = slotHours * 60 + slotMinutes;
 
-        if (slotTimeInMinutes <= currentTimeInMinutes + 15) {
-          return; 
+          if (slotTimeInMinutes <= currentTimeInMinutes + 15) {
+            return;
+          }
         }
-      }
 
-      const option = document.createElement("option");
-      option.value = slot;
-      option.textContent = slot;
-      timeSelect.appendChild(option);
-    });
+        const option = document.createElement("option");
+        option.value = slot;
+        option.textContent = slot;
+        timeSelect.appendChild(option);
+      });
 
-    const firstEnabledOption = Array.from(timeSelect.options).find(
-      (opt) => !opt.disabled && opt.value
-    );
-    if (firstEnabledOption) {
-      firstEnabledOption.selected = true;
-    } else if (slots.length) {
-      timeSelect.selectedIndex = 1;
+      const firstEnabledOption = Array.from(timeSelect.options).find(
+        (opt) => !opt.disabled && opt.value
+      );
+      if (firstEnabledOption) {
+        firstEnabledOption.selected = true;
+      } else if (slots.length) {
+        timeSelect.selectedIndex = 1;
       }
     }
   };
@@ -390,7 +384,7 @@ const reservationFormHandler = () => {
       phone: (formData.get("phone") || "").trim(),
       message: (formData.get("message") || "").trim(),
       action: "create",
-      language: getCurrentLanguage(), 
+      language: getCurrentLanguage(),
     };
 
     if (!payload.date || isClosedDay(payload.date)) {
@@ -419,10 +413,13 @@ const reservationFormHandler = () => {
       if (nameInput) nameInput.focus();
       return;
     }
-    
+
     const nameRegex = /^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s\-']+$/u;
     if (!nameRegex.test(payload.name)) {
-      setStatus("Name contains invalid characters. Please use only letters, spaces, hyphens, and apostrophes.", true);
+      setStatus(
+        "Name contains invalid characters. Please use only letters, spaces, hyphens, and apostrophes.",
+        true
+      );
       const nameInput = form.querySelector('input[name="name"]');
       if (nameInput) nameInput.focus();
       return;
@@ -436,8 +433,12 @@ const reservationFormHandler = () => {
       return;
     }
 
-    const phoneDigits = payload.phone.replace(/\D/g, '');
-    if (phoneDigits.length < 7 || phoneDigits.length > 15 || payload.phone.length > 50) {
+    const phoneDigits = payload.phone.replace(/\D/g, "");
+    if (
+      phoneDigits.length < 7 ||
+      phoneDigits.length > 15 ||
+      payload.phone.length > 50
+    ) {
       setStatus("Please enter a valid phone number (7-15 digits).", true);
       const phoneInput = form.querySelector('input[name="phone"]');
       if (phoneInput) phoneInput.focus();
@@ -489,34 +490,35 @@ const reservationFormHandler = () => {
     setStatus("Submitting your booking request...");
 
     try {
-
-      const iframe = document.createElement('iframe');
-      iframe.name = 'hidden-iframe-' + Date.now();
-      iframe.style.display = 'none';
+      const iframe = document.createElement("iframe");
+      iframe.name = "hidden-iframe-" + Date.now();
+      iframe.style.display = "none";
       document.body.appendChild(iframe);
 
-      const hiddenForm = document.createElement('form');
-      hiddenForm.method = 'POST';
+      const hiddenForm = document.createElement("form");
+      hiddenForm.method = "POST";
       hiddenForm.action = APPS_SCRIPT_ENDPOINT;
       hiddenForm.target = iframe.name;
-      hiddenForm.style.display = 'none';
+      hiddenForm.style.display = "none";
 
-      Object.keys(payload).forEach(key => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
+      Object.keys(payload).forEach((key) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
         input.name = key;
-        input.value = typeof payload[key] === 'object' ? JSON.stringify(payload[key]) : payload[key];
+        input.value =
+          typeof payload[key] === "object"
+            ? JSON.stringify(payload[key])
+            : payload[key];
         hiddenForm.appendChild(input);
       });
-      
+
       document.body.appendChild(hiddenForm);
 
       let formSubmitted = false;
-      iframe.onload = function() {
+      iframe.onload = function () {
         if (!formSubmitted) {
           formSubmitted = true;
           setTimeout(() => {
-            
             setStatus(
               "Thank you! Your booking request has been received. We'll confirm shortly."
             );
@@ -539,7 +541,7 @@ const reservationFormHandler = () => {
         }
       };
 
-      iframe.onerror = function() {
+      iframe.onerror = function () {
         if (!formSubmitted) {
           formSubmitted = true;
           setStatus(
@@ -585,7 +587,8 @@ const reservationFormHandler = () => {
     } catch (e) {
       // Booking error handled silently
       setStatus(
-        "There was a problem sending your booking. Please try again or call us. Error: " + e.message,
+        "There was a problem sending your booking. Please try again or call us. Error: " +
+          e.message,
         true
       );
     }
@@ -593,4 +596,3 @@ const reservationFormHandler = () => {
 };
 
 document.addEventListener("DOMContentLoaded", reservationFormHandler);
-

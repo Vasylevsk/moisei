@@ -595,6 +595,19 @@ body.nav-active {
   position: relative;
 }
 
+/* Ensure chevron-down icon is visible and styled for all select elements */
+.icon-wrapper:has(select.input-field) ion-icon:last-child {
+  display: block !important;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 1;
+  color: var(--white);
+}
+
+.icon-wrapper:has(select.input-field:disabled) ion-icon:last-child {
+  opacity: 0.6;
+}
+
 .icon-wrapper:not(:has(input[type="date"])) .input-field {
   cursor: text !important;
   pointer-events: auto;
@@ -606,6 +619,13 @@ body.nav-active {
 
 .icon-wrapper ion-icon:last-child {
   right: 10px;
+}
+
+/* Ensure chevron-down icon is visible for all select elements */
+.icon-wrapper:has(select.input-field) ion-icon:last-child {
+  display: block;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .preload {

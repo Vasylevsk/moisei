@@ -39,6 +39,16 @@
   gap: 8px;
 }
 
+.header-language-toggle.mobile-only {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .header-language-toggle.mobile-only {
+    display: none !important;
+  }
+}
+
 .nav-open-btn {
   padding: 12px;
   padding-inline-end: 0;

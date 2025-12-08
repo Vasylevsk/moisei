@@ -46,14 +46,23 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&family=Montserrat:wght@100..900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&family=Montserrat:wght@100..900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <link rel="stylesheet" href="./assets/css/main.css" />
 
-    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg" fetchpriority="high" />
     <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg" />
     <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg" />
 </head>
@@ -215,15 +224,6 @@
             +447706090321
           </a>
 
-          <div class="separator"></div>
-
-          <div class="language-toggle navbar-language-toggle">
-            <span class="lang-label" data-lang-label="uk">🇺🇦 UA</span>
-            <div class="toggle-switch" data-lang-toggle>
-              <div class="toggle-thumb"></div>
-            </div>
-            <span class="lang-label" data-lang-label="en">🇬🇧 EN</span>
-          </div>
         </div>
 
       </nav>
@@ -233,6 +233,16 @@
 
         <span class="text text-2" data-i18n="btn.book-table" aria-hidden="true">Book A Table</span>
       </a>
+
+      <div class="header-language-toggle mobile-only">
+        <div class="language-toggle">
+          <span class="lang-label" data-lang-label="uk">🇺🇦 UA</span>
+          <div class="toggle-switch" data-lang-toggle>
+            <div class="toggle-thumb"></div>
+          </div>
+          <span class="lang-label" data-lang-label="en">🇬🇧 EN</span>
+        </div>
+      </div>
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <span class="line line-1"></span>
@@ -255,7 +265,7 @@
           <li class="slider-item active" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt="Moisei restaurant interior - Authentic Eastern European cuisine in Brentford, London" class="img-cover">
+              <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt="Moisei restaurant interior - Authentic Eastern European cuisine in Brentford, London" class="img-cover" fetchpriority="high" decoding="async">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal hero-subtitle-small" data-i18n="hero.slide1.subtitle">Eastern European Cuisine</p>
@@ -280,7 +290,7 @@
           <li class="slider-item" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt="Moisei restaurant dining area - Traditional Ukrainian cuisine in London" class="img-cover">
+              <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt="Moisei restaurant dining area - Traditional Ukrainian cuisine in London" class="img-cover" decoding="async">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal hero-subtitle-small" data-i18n="hero.slide2.subtitle">Hookahs</p>
@@ -304,7 +314,7 @@
           <li class="slider-item" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt="Moisei restaurant atmosphere - Premium Eastern European dining experience in Brentford" class="img-cover">
+              <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt="Moisei restaurant atmosphere - Premium Eastern European dining experience in Brentford" class="img-cover" decoding="async">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal hero-subtitle-small" data-i18n="hero.slide3.subtitle">Events</p>
@@ -336,7 +346,7 @@
         </button>
 
         <a href="reservation.html" class="hero-btn has-after">
-          <img src="./assets/images/hero-icon.png" width="48" height="48" alt="Book a table at Moisei restaurant">
+          <img src="./assets/images/hero-icon.png" width="48" height="48" alt="Book a table at Moisei restaurant" decoding="async">
 
           <span class="label-2 text-center span" data-i18n="btn.book-table">Book A Table</span>
         </a>
@@ -362,7 +372,7 @@
                 <a href="food-menu.html" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
                     <img src="./assets/images/menu/1.png" width="285" height="336" loading="lazy" alt="Food Menu - Authentic Eastern European cuisine at Moisei"
-                      class="img-cover">
+                      class="img-cover" decoding="async">
                   </figure>
                 </a>
 
@@ -372,8 +382,9 @@
                     <a href="food-menu.html">Food</a>
                   </h3>
 
-                  <a href="food-menu.html" class="navbar-link hover-underline menu-view-link" style="margin-inline: auto; margin-block-start: 20px; max-width: max-content;">
-                    <span class="span" data-i18n="btn.view-short">View Menu</span>
+                  <a href="food-menu.html" class="btn menu-view-link">
+                    <span class="text text-1" data-i18n="btn.view-short">View Menu</span>
+                    <span class="text text-2" data-i18n="btn.view-short" aria-hidden="true">View Menu</span>
                   </a>
 
                 </div>
@@ -387,7 +398,7 @@
                 <a href="drink-menu.html" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
                     <img src="./assets/images/menu/2.png" width="285" height="336" loading="lazy" alt="Drink Menu - Premium beverages, cocktails, and wines at Moisei"
-                      class="img-cover">
+                      class="img-cover" decoding="async">
                   </figure>
                 </a>
 
@@ -397,8 +408,9 @@
                     <a href="drink-menu.html">Drink</a>
                   </h3>
 
-                  <a href="drink-menu.html" class="navbar-link hover-underline menu-view-link" style="margin-inline: auto; margin-block-start: 20px; max-width: max-content;">
-                    <span class="span" data-i18n="btn.view-short">View Menu</span>
+                  <a href="drink-menu.html" class="btn menu-view-link">
+                    <span class="text text-1" data-i18n="btn.view-short">View Menu</span>
+                    <span class="text text-2" data-i18n="btn.view-short" aria-hidden="true">View Menu</span>
                   </a>
 
                 </div>
@@ -412,7 +424,7 @@
                 <a href="hookah-menu.html" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
                     <img src="./assets/images/menu/3.png" width="285" height="336" loading="lazy" alt="Hookah Menu - Premium shisha and flavors at Moisei"
-                      class="img-cover">
+                      class="img-cover" decoding="async">
                   </figure>
                 </a>
 
@@ -422,8 +434,9 @@
                     <a href="hookah-menu.html">Hookah</a>
                   </h3>
 
-                  <a href="hookah-menu.html" class="navbar-link hover-underline menu-view-link" style="margin-inline: auto; margin-block-start: 20px; max-width: max-content;">
-                    <span class="span" data-i18n="btn.view-short">View Menu</span>
+                  <a href="hookah-menu.html" class="btn menu-view-link">
+                    <span class="text text-1" data-i18n="btn.view-short">View Menu</span>
+                    <span class="text text-2" data-i18n="btn.view-short" aria-hidden="true">View Menu</span>
                   </a>
 
                 </div>
@@ -504,40 +517,18 @@
             class="section-subtitle label-2 text-center"
             data-i18n="events.subtitle"
           >
-            Recent Updates
-          </p>
-
-          <h2
-            class="section-title headline-1 text-center"
-            data-i18n="events.title"
-          >
             Events
-          </h2>
+          </p>
 
           <div class="event-single-image">
                   <div class="event-card has-before hover:shine" data-event-modal data-ticket-url="https://www.eventbrite.com/e/alena-omargalieva-tickets-1784470201409?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=wsa&aff=ebdsshwebmobile">
               <div class="card-banner img-holder" style="--width: 500; --height: 600;">
-                <img src="./assets/images/event-2.jpg" width="500" height="600" loading="lazy"
-                        alt="Flavour so good you'll try to eat with your eyes." class="img-cover">
+                <img src="./assets/images/event-2.PNG" width="500" height="600" loading="lazy"
+                        alt="Flavour so good you'll try to eat with your eyes." class="img-cover" decoding="async">
                   </div>
                 </div>
                   </div>
 
-          <a
-            href="https://www.instagram.com/moiseirestaurant/related_profiles/"
-            class="btn btn-primary"
-          >
-            <span class="text text-1" data-i18n="btn.view-blog"
-              >View Our Blog</span
-            >
-
-            <span
-              class="text text-2"
-              data-i18n="btn.view-blog"
-              aria-hidden="true"
-              >View Our Blog</span
-            >
-          </a>
 
               </div>
       </section>
@@ -549,23 +540,12 @@
 
             <p class="label-2 section-subtitle" id="about-label" data-i18n="about2.subtitle">Our Story</p>
 
-            <h2 class="headline-1 section-title" data-i18n="about2.title">Why Moisei?</h2>
+            <h2 class="headline-1 section-title" data-i18n="about2.title">A name with meaning</h2>
 
             <p class="section-text" data-i18n="about2.text">
               We spent a long time searching for the perfect name. Naming our restaurant after a Ukrainian city felt too commonplace. Instead, we chose to honor one of the greatest works of Ukraine's preeminent poet, Ivan Franko.
               Our name is inspired by his powerful philosophical poem, which centers on the destiny of the Ukrainian nation and its struggle for freedom. The work explores the complex relationship between a leader and the people, touching upon themes of betrayal, doubt, faith in the spirit's strength, and the inevitability of national revival despite all trials. This deep connection to the Ukrainian soul is the foundation of our identity.
                   </p>
-
-            <div class="contact-label" data-i18n="about2.call-label">Book Through Call</div>
-
-            <a href="tel:+447932393730" class="body-1 contact-number hover-underline">+447932393730</a>
-            <a href="tel:+447706090321" class="body-1 contact-number hover-underline">+447706090321</a>
-
-            <a href="reservation.html" class="btn btn-primary">
-              <span class="text text-1" data-i18n="btn.book-table">Book A Table</span>
-
-              <span class="text text-2" aria-hidden="true" data-i18n="btn.book-table">Book A Table</span>
-            </a>
 
                 </div>
 
@@ -613,14 +593,6 @@
                   </figure>
                 </a>
 
-                <div class="card-content">
-
-                  <h3 class="title-4 card-title" data-i18n="spaces.card.ground">
-                    <a href="#">Ground floor</a>
-                  </h3>
-
-                </div>
-
               </div>
             </li>
 
@@ -633,14 +605,6 @@
                       class="img-cover">
                   </figure>
                 </a>
-
-                <div class="card-content">
-
-                  <h3 class="title-4 card-title" data-i18n="spaces.card.lounge">
-                    <a href="#">Lounge</a>
-                  </h3>
-
-                </div>
 
               </div>
             </li>
@@ -655,14 +619,6 @@
                   </figure>
                 </a>
 
-                <div class="card-content">
-
-                  <h3 class="title-4 card-title" data-i18n="spaces.card.first">
-                    <a href="#">First floor</a>
-                  </h3>
-
-                </div>
-
               </div>
             </li>
 
@@ -676,15 +632,7 @@
                   </figure>
                 </a>
 
-                <div class="card-content">
-
-                  <h3 class="title-4 card-title" data-i18n="spaces.card.second">
-                    <a href="#">Second floor</a>
-                  </h3>
-
               </div>
-
-            </div>
             </li>
 
           </ul>
@@ -693,6 +641,17 @@
             class="shape shape-1 move-anim">
           <img src="./assets/images/shape-2.png" width="343" height="345" loading="lazy" alt="shape"
             class="shape shape-2 move-anim">
+
+          <div class="contact-label" data-i18n="about2.call-label">Book Through Call</div>
+
+          <a href="tel:+447932393730" class="body-1 contact-number hover-underline">+447932393730</a>
+          <a href="tel:+447706090321" class="body-1 contact-number hover-underline">+447706090321</a>
+
+          <a href="reservation.html" class="btn btn-primary">
+            <span class="text text-1" data-i18n="btn.book-table">Book A Table</span>
+
+            <span class="text text-2" aria-hidden="true" data-i18n="btn.book-table">Book A Table</span>
+          </a>
 
         </div>
       </section>
@@ -975,16 +934,18 @@
     </div>
   </div>
 
-  <script src="./assets/js/translations.js"></script>
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/translations.js" defer></script>
+  <script src="./assets/js/script.js" defer></script>
 
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer
     ></script>
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer
     ></script>
 
     <script type="application/ld+json">

@@ -655,14 +655,17 @@ const translations = {
       "Discover your perfect setting. From intimate corners for deep conversation to vibrant floors for lively events, each level offers a unique, unforgettable atmosphere.",
     "spaces.card.lounge": "Lounge",
     "spaces.card.main-restaurant": "Main Restaurant",
+    "spaces.card.ground": "Ground floor",
+    "spaces.card.first": "First floor",
+    "spaces.card.second": "Second floor",
 
     "about2.subtitle": "Our Story",
-    "about2.title": "Why Moisei?",
+    "about2.title": "A name with meaning",
     "about2.text":
       "We spent a long time searching for the perfect name. Naming our restaurant after a Ukrainian city felt too commonplace. Instead, we chose to honor one of the greatest works of Ukraine's preeminent poet, Ivan Franko. Our name is inspired by his powerful philosophical poem, which centers on the destiny of the Ukrainian nation and its struggle for freedom. The work explores the complex relationship between a leader and the people, touching upon themes of betrayal, doubt, faith in the spirit's strength, and the inevitability of national revival despite all trials. This deep connection to the Ukrainian soul is the foundation of our identity.",
     "about2.call-label": "Book Through Call",
 
-    "events.subtitle": "Recent Updates",
+    "events.subtitle": "Events",
     "events.title": "Events",
 
     "events.card1.date": "15\nDec",
@@ -1358,14 +1361,17 @@ const translations = {
       "Знайдіть ідеальне місце для себе. Від затишних куточків для довгих розмов до яскравих просторів для гучних вечірок — кожен рівень має свою атмосферу.",
     "spaces.card.lounge": "Лаундж",
     "spaces.card.main-restaurant": "Ресторан",
+    "spaces.card.ground": "Перший поверх",
+    "spaces.card.first": "Другий поверх",
+    "spaces.card.second": "Третій поверх",
 
     "about2.subtitle": "Наша історія",
-    "about2.title": "Чому саме Moisei?",
+    "about2.title": "Ім'я, що має сенс",
     "about2.text":
       "Ми довго шукали ідеальну назву. Назвати ресторан на честь українського міста здавалося надто буденно. Натомість ми вирішили вшанувати одну з найвидатніших робіт головного поета України — Івана Франка. Назва натхненна його філософською поемою, що розповідає про долю українського народу та його боротьбу за свободу. Вона досліджує складні відносини між провідником і народом, торкається тем зради, сумніву, віри у силу духу та неминучого відродження нації попри всі випробування. Саме цей глибокий звʼязок з українською душею є основою нашої ідентичності.",
     "about2.call-label": "Бронювання по телефону",
 
-    "events.subtitle": "Останні новини",
+    "events.subtitle": "Події",
     "events.title": "Події",
 
     "events.card1.date": "15\nГру",
@@ -1417,53 +1423,35 @@ const translations = {
 class LanguageSwitcher {
   constructor() {
     this.currentLang = localStorage.getItem("language") || "en";
-    console.log(
-      "🌍 Language Switcher initialized. Current language:",
-      this.currentLang
-    );
     this.init();
   }
 
   init() {
-    
     this.setLanguage(this.currentLang);
 
-    const toggleBtn = document.querySelector("[data-lang-toggle]");
+    const toggleSwitches = document.querySelectorAll("[data-lang-toggle]");
     const langLabels = document.querySelectorAll("[data-lang-label]");
 
-    console.log("🔍 Found toggle button:", toggleBtn ? "YES" : "NO");
-    console.log("🔍 Found language labels:", langLabels.length);
-
-    if (toggleBtn) {
+    toggleSwitches.forEach((toggleBtn) => {
       toggleBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const newLang = this.currentLang === "en" ? "uk" : "en";
-        console.log(
-          "🔄 Toggle clicked! Switching from",
-          this.currentLang,
-          "to",
-          newLang
-        );
         this.setLanguage(newLang);
       });
-    } else {
-      console.error(
-        "❌ Toggle button not found! Make sure element with [data-lang-toggle] exists"
-      );
-    }
+    });
 
     langLabels.forEach((label) => {
       label.addEventListener("click", (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const lang = label.getAttribute("data-lang-label");
-        console.log("🔄 Label clicked! Switching to", lang);
         this.setLanguage(lang);
       });
     });
   }
 
   setLanguage(lang) {
-    console.log("✅ Setting language to:", lang);
     this.currentLang = lang;
     localStorage.setItem("language", lang);
 
@@ -1471,21 +1459,19 @@ class LanguageSwitcher {
     this.translatePage();
 
     document.dispatchEvent(new CustomEvent("languageChanged", { detail: { lang } }));
-
-    console.log("✨ Language switched successfully to:", lang);
   }
 
   updateToggleUI() {
-    const toggleSwitch = document.querySelector("[data-lang-toggle]");
+    const toggleSwitches = document.querySelectorAll("[data-lang-toggle]");
     const langLabels = document.querySelectorAll("[data-lang-label]");
 
-    if (toggleSwitch) {
+    toggleSwitches.forEach((toggleSwitch) => {
       if (this.currentLang === "en") {
         toggleSwitch.classList.add("active");
       } else {
         toggleSwitch.classList.remove("active");
       }
-    }
+    });
 
     langLabels.forEach((label) => {
       const labelLang = label.getAttribute("data-lang-label");
@@ -1499,38 +1485,21 @@ class LanguageSwitcher {
 
   translatePage() {
     const elements = document.querySelectorAll("[data-i18n]");
-    console.log("📝 Found", elements.length, "elements to translate");
 
-    let translatedCount = 0;
     elements.forEach((element) => {
       const key = element.getAttribute("data-i18n");
+      if (!key || !translations[this.currentLang]) return;
+      
       const translation = translations[this.currentLang][key];
 
       if (translation) {
-        
         if (element.hasAttribute("data-i18n-html")) {
           element.innerHTML = translation;
         } else {
           element.textContent = translation;
         }
-        translatedCount++;
-      } else {
-        console.warn(
-          "⚠️ Translation missing for key:",
-          key,
-          "in language:",
-          this.currentLang
-        );
       }
     });
-
-    console.log(
-      "✅ Translated",
-      translatedCount,
-      "out of",
-      elements.length,
-      "elements"
-    );
 
     const placeholderElements = document.querySelectorAll(
       "[data-i18n-placeholder]"
@@ -1588,11 +1557,8 @@ class LanguageSwitcher {
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
-    console.log("🚀 DOM loaded, initializing language switcher...");
     window.languageSwitcher = new LanguageSwitcher();
   });
 } else {
-  
-  console.log("🚀 DOM already loaded, initializing language switcher...");
   window.languageSwitcher = new LanguageSwitcher();
 }

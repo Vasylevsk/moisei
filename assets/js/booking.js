@@ -56,7 +56,7 @@ const getTranslation = (key) => {
       return translations.en[key];
     }
   } catch (e) {
-    console.warn("Translation error:", e);
+    // Translation error handled silently
   }
   return key;
 };
@@ -531,7 +531,7 @@ const reservationFormHandler = () => {
                 document.body.removeChild(iframe);
               }
             } catch (e) {
-              console.log("Error removing elements:", e);
+              // Error removing elements handled silently
             }
           }, 1000);
         }
@@ -552,7 +552,7 @@ const reservationFormHandler = () => {
               document.body.removeChild(iframe);
             }
           } catch (e) {
-            console.log("Error removing elements:", e);
+            // Error removing elements handled silently
           }
         }
       };
@@ -574,19 +574,14 @@ const reservationFormHandler = () => {
               document.body.removeChild(iframe);
             }
           } catch (e) {
-            console.log("Error removing elements:", e);
+            // Error removing elements handled silently
           }
         }
       }, 5000);
 
       hiddenForm.submit();
     } catch (e) {
-      console.error("Booking error:", e);
-      console.error("Error details:", {
-        message: e.message,
-        stack: e.stack,
-        endpoint: APPS_SCRIPT_ENDPOINT
-      });
+      // Booking error handled silently
       setStatus(
         "There was a problem sending your booking. Please try again or call us. Error: " + e.message,
         true

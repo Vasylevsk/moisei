@@ -175,13 +175,25 @@
     object-position: 65% center !important;
   }
 
+  .hero .slider-item {
+    padding-inline: 20px;
+    box-sizing: border-box;
+  }
+
   .hero .section-subtitle,
   .hero-subtitle-small {
     word-wrap: break-word;
     overflow-wrap: break-word;
+    word-break: break-word;
     max-width: 100%;
-    padding-inline: 20px;
+    width: 100%;
+    padding-inline: 0;
     box-sizing: border-box;
+    white-space: normal;
+    font-size: 1.8rem !important;
+    line-height: 1.3;
+    margin-inline: auto;
+    text-align: center;
   }
 
   @keyframes smoothScale {
@@ -200,6 +212,21 @@
 
 .service .section-text {
   margin-block-end: 40px;
+}
+
+.service .btn {
+  margin-inline: auto;
+  margin-block-start: 20px;
+}
+
+.service .contact-label {
+  margin-block-start: 30px;
+  margin-block-end: 10px;
+}
+
+.service .contact-number {
+  display: block;
+  margin-block-end: 10px;
 }
 
 .service-card {
@@ -247,6 +274,13 @@
 
 .service#menu .menu-view-link .separator {
   display: none !important;
+}
+
+.service-card .menu-view-link {
+  margin-inline: auto;
+  margin-block-start: 20px;
+  font-size: 1.2rem;
+  padding: 5px 40px;
 }
 
 .about .section-text {

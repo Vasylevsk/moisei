@@ -2,10 +2,12 @@
 
 const preloader = document.querySelector("[data-preaload]");
 
-window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
-});
+if (preloader) {
+  window.addEventListener("load", function () {
+    preloader.classList.add("loaded");
+    document.body.classList.add("loaded");
+  });
+}
 
 const addEventOnElements = function (elements, eventType, callback) {
   for (let i = 0, len = elements.length; i < len; i++) {
@@ -17,53 +19,67 @@ const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
 
-const toggleNavbar = function () {
-  navbar.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("nav-active");
-};
+if (navbar && overlay) {
+  const toggleNavbar = function () {
+    navbar.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("nav-active");
+  };
 
-const closeNavbar = function () {
-  navbar.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.classList.remove("nav-active");
-};
+  const closeNavbar = function () {
+    navbar.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.classList.remove("nav-active");
+  };
 
-addEventOnElements(navTogglers, "click", toggleNavbar);
+  if (navTogglers.length > 0) {
+    addEventOnElements(navTogglers, "click", toggleNavbar);
+  }
+}
 
 const navbarLinks = document.querySelectorAll(".navbar-link");
-navbarLinks.forEach(function (link) {
-  link.addEventListener("click", function () {
-    closeNavbar();
+if (navbarLinks.length > 0 && navbar && overlay) {
+  const closeNavbar = function () {
+    navbar.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.classList.remove("nav-active");
+  };
+  navbarLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      closeNavbar();
+    });
   });
-});
+}
 
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
-let lastScrollPos = 0;
+if (header || backTopBtn) {
+  let lastScrollPos = 0;
 
-const hideHeader = function () {
-  const isScrollBottom = lastScrollPos < window.scrollY;
-  if (isScrollBottom) {
-    header.classList.add("hide");
-  } else {
-    header.classList.remove("hide");
-  }
+  const hideHeader = function () {
+    if (!header) return;
+    const isScrollBottom = lastScrollPos < window.scrollY;
+    if (isScrollBottom) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
 
-  lastScrollPos = window.scrollY;
-};
+    lastScrollPos = window.scrollY;
+  };
 
-window.addEventListener("scroll", function () {
-  if (window.scrollY >= 50) {
-    header.classList.add("active");
-    backTopBtn.classList.add("active");
-    hideHeader();
-  } else {
-    header.classList.remove("active");
-    backTopBtn.classList.remove("active");
-  }
-});
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= 50) {
+      if (header) header.classList.add("active");
+      if (backTopBtn) backTopBtn.classList.add("active");
+      hideHeader();
+    } else {
+      if (header) header.classList.remove("active");
+      if (backTopBtn) backTopBtn.classList.remove("active");
+    }
+  });
+}
 
 const heroSlider = document.querySelector("[data-hero-slider]");
 const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
@@ -244,7 +260,7 @@ if (shishaContainer && shishaItems.length > 0) {
 }
 
 const eventSliderWrapper = document.querySelector("[data-event-slider]");
-const eventSliderList = eventSliderWrapper?.querySelector(".event-slider");
+const eventSliderList = eventSliderWrapper ? eventSliderWrapper.querySelector(".event-slider") : null;
 const eventSliderPrevBtn = document.querySelector("[data-event-prev-btn]");
 const eventSliderNextBtn = document.querySelector("[data-event-next-btn]");
 
@@ -403,9 +419,8 @@ if (eventModal && eventModalClose) {
   const modalBookingsTitle = eventModal.querySelector("[data-event-modal-bookings-title]");
 
   function getCurrentLanguage() {
-    
-    if (typeof i18n !== "undefined" && i18n.currentLang) {
-      return i18n.currentLang;
+    if (typeof window !== "undefined" && window.languageSwitcher) {
+      return window.languageSwitcher.getCurrentLanguage();
     }
     
     const storedLang = localStorage.getItem("language");
@@ -417,12 +432,14 @@ if (eventModal && eventModalClose) {
   }
 
   function getTranslation(key) {
+    if (!key || typeof translations === "undefined") return key || "";
+    
     const lang = getCurrentLanguage();
-    if (typeof translations !== "undefined" && translations[lang] && translations[lang][key]) {
+    if (translations[lang] && translations[lang][key]) {
       return translations[lang][key];
     }
     
-    if (lang !== "en" && typeof translations !== "undefined" && translations.en && translations.en[key]) {
+    if (lang !== "en" && translations.en && translations.en[key]) {
       return translations.en[key];
     }
     return key;
@@ -440,10 +457,12 @@ if (eventModal && eventModalClose) {
   document.addEventListener("languageChanged", updateModalContent);
 
   function openEventModal(card) {
+    if (!card) return;
+    
     const img = card.querySelector(".img-cover");
 
     if (img && modalImage) {
-      modalImage.src = img.src;
+      modalImage.src = img.src || "";
       modalImage.alt = img.alt || "";
     }
 
@@ -515,68 +534,24 @@ if (eventModal && eventModalClose) {
 
 const parallaxItems = document.querySelectorAll("[data-parallax-item]");
 
-let x, y;
+if (parallaxItems.length > 0) {
+  let x, y;
 
-window.addEventListener("mousemove", function (event) {
-  x = (event.clientX / window.innerWidth) * 10 - 5;
-  y = (event.clientY / window.innerHeight) * 10 - 5;
+  window.addEventListener("mousemove", function (event) {
+    x = (event.clientX / window.innerWidth) * 10 - 5;
+    y = (event.clientY / window.innerHeight) * 10 - 5;
 
-  x = x - x * 2;
-  y = y - y * 2;
+    x = x - x * 2;
+    y = y - y * 2;
 
-  for (let i = 0, len = parallaxItems.length; i < len; i++) {
-    x = x * Number(parallaxItems[i].dataset.parallaxSpeed);
-    y = y * Number(parallaxItems[i].dataset.parallaxSpeed);
-    parallaxItems[i].style.transform = `translate3d(${x}px, ${y}px, 0px)`;
-  }
-});
-
-const toggleSwitches = document.querySelectorAll("[data-lang-toggle]");
-const langLabels = document.querySelectorAll("[data-lang-label]");
-
-let currentLang = localStorage.getItem("language") || "en";
-
-const updateToggleState = function (lang) {
-  
-  if (langLabels && langLabels.length > 0) {
-    langLabels.forEach((label) => label.classList.remove("active"));
-  }
-
-  const activeLabels = document.querySelectorAll(`[data-lang-label="${lang}"]`);
-  activeLabels.forEach((label) => label.classList.add("active"));
-
-  if (toggleSwitches && toggleSwitches.length > 0) {
-    toggleSwitches.forEach((toggleSwitch) => {
-      if (lang === "en") {
-        toggleSwitch.classList.add("active");
-      } else {
-        toggleSwitch.classList.remove("active");
-      }
-    });
-  }
-
-  localStorage.setItem("language", lang);
-  currentLang = lang;
-
-  console.log("Language switched to:", lang);
-};
-
-if (toggleSwitches.length > 0 || langLabels.length > 0) {
-  updateToggleState(currentLang);
-}
-
-if (toggleSwitches && toggleSwitches.length > 0) {
-  toggleSwitches.forEach((toggleSwitch) => {
-    toggleSwitch.addEventListener("click", function () {
-      const newLang = currentLang === "uk" ? "en" : "uk";
-      updateToggleState(newLang);
-    });
+    for (let i = 0, len = parallaxItems.length; i < len; i++) {
+      const item = parallaxItems[i];
+      if (!item || !item.dataset) continue;
+      const speed = Number(item.dataset.parallaxSpeed) || 1;
+      const offsetX = x * speed;
+      const offsetY = y * speed;
+      item.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0px)`;
+    }
   });
 }
 
-langLabels.forEach((label) => {
-  label.addEventListener("click", function () {
-    const lang = this.dataset.langLabel;
-    updateToggleState(lang);
-  });
-});

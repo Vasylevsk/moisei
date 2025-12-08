@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
 const preloader = document.querySelector("[data-preaload]");
 
 if (preloader) {
-  window.addEventListener("load", function () {
-    preloader.classList.add("loaded");
-    document.body.classList.add("loaded");
-  });
+window.addEventListener("load", function () {
+  preloader.classList.add("loaded");
+  document.body.classList.add("loaded");
+});
 }
 
 const addEventOnElements = function (elements, eventType, callback) {
@@ -44,20 +44,20 @@ const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
 
 if (navbar && overlay) {
-  const toggleNavbar = function () {
-    navbar.classList.toggle("active");
-    overlay.classList.toggle("active");
-    document.body.classList.toggle("nav-active");
-  };
+const toggleNavbar = function () {
+  navbar.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("nav-active");
+};
 
-  const closeNavbar = function () {
-    navbar.classList.remove("active");
-    overlay.classList.remove("active");
-    document.body.classList.remove("nav-active");
-  };
+const closeNavbar = function () {
+  navbar.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.classList.remove("nav-active");
+};
 
   if (navTogglers.length > 0) {
-    addEventOnElements(navTogglers, "click", toggleNavbar);
+addEventOnElements(navTogglers, "click", toggleNavbar);
   }
 }
 
@@ -68,41 +68,41 @@ if (navbarLinks.length > 0 && navbar && overlay) {
     overlay.classList.remove("active");
     document.body.classList.remove("nav-active");
   };
-  navbarLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      closeNavbar();
-    });
+navbarLinks.forEach(function (link) {
+  link.addEventListener("click", function () {
+    closeNavbar();
   });
+});
 }
 
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
 if (header || backTopBtn) {
-  let lastScrollPos = 0;
+let lastScrollPos = 0;
 
-  const hideHeader = function () {
+const hideHeader = function () {
     if (!header) return;
-    const isScrollBottom = lastScrollPos < window.scrollY;
-    if (isScrollBottom) {
-      header.classList.add("hide");
-    } else {
-      header.classList.remove("hide");
-    }
+  const isScrollBottom = lastScrollPos < window.scrollY;
+  if (isScrollBottom) {
+    header.classList.add("hide");
+  } else {
+    header.classList.remove("hide");
+  }
 
-    lastScrollPos = window.scrollY;
-  };
+  lastScrollPos = window.scrollY;
+};
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY >= 50) {
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= 50) {
       if (header) header.classList.add("active");
       if (backTopBtn) backTopBtn.classList.add("active");
-      hideHeader();
-    } else {
+    hideHeader();
+  } else {
       if (header) header.classList.remove("active");
       if (backTopBtn) backTopBtn.classList.remove("active");
-    }
-  });
+  }
+});
 }
 
 const heroSlider = document.querySelector("[data-hero-slider]");
@@ -559,23 +559,23 @@ if (eventModal && eventModalClose) {
 const parallaxItems = document.querySelectorAll("[data-parallax-item]");
 
 if (parallaxItems.length > 0) {
-  let x, y;
+let x, y;
 
-  window.addEventListener("mousemove", function (event) {
-    x = (event.clientX / window.innerWidth) * 10 - 5;
-    y = (event.clientY / window.innerHeight) * 10 - 5;
+window.addEventListener("mousemove", function (event) {
+  x = (event.clientX / window.innerWidth) * 10 - 5;
+  y = (event.clientY / window.innerHeight) * 10 - 5;
 
-    x = x - x * 2;
-    y = y - y * 2;
+  x = x - x * 2;
+  y = y - y * 2;
 
-    for (let i = 0, len = parallaxItems.length; i < len; i++) {
+  for (let i = 0, len = parallaxItems.length; i < len; i++) {
       const item = parallaxItems[i];
       if (!item || !item.dataset) continue;
       const speed = Number(item.dataset.parallaxSpeed) || 1;
       const offsetX = x * speed;
       const offsetY = y * speed;
       item.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0px)`;
-    }
-  });
+  }
+});
 }
 

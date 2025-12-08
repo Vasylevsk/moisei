@@ -59,8 +59,18 @@
   object-fit: cover;
 }
 
+.hero .slider-bg img[src*="hero-slider-3"],
+.hero .slider-bg img[src*="hero-slider-3.webp"],
 .hero .slider-bg img[src*="hero-slider-3.jpg"] {
-  object-position: 65% center !important;
+  object-position: 70% center !important;
+}
+
+@media (min-width: 992px) {
+  .hero .slider-bg img[src*="hero-slider-3"],
+  .hero .slider-bg img[src*="hero-slider-3.webp"],
+  .hero .slider-bg img[src*="hero-slider-3.jpg"] {
+    object-position: 80% center !important;
+  }
 }
 
 .hero .slider-item.active .slider-bg {
@@ -388,6 +398,7 @@
   align-items: center;
   gap: 20px;
   margin-block-end: 40px;
+  padding-block: 35px;
 }
 
 .special-dish-content .del {
@@ -785,11 +796,13 @@ textarea.input-field {
   border-radius: var(--radius-24);
 }
 
+.event-single-image .card-banner picture img,
+.event-single-image .card-banner img,
 .event-single-image .card-banner .img-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 90% center;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 100% center !important;
 }
 
 .event-card {

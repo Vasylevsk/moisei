@@ -24,24 +24,19 @@
   }
 
   .service-card .card-content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-order: 0;
-    order: 0;
+    display: contents;
   }
 
   .service-card .card-content .card-title {
-    -webkit-order: 1;
-    order: 1;
+    -webkit-order: 0;
+    order: 0;
     margin-bottom: 20px;
     margin-block-end: 20px;
   }
 
   .service-card .has-before {
-    -webkit-order: 2;
-    order: 2;
+    -webkit-order: 1;
+    order: 1;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-block: 15px;
@@ -50,15 +45,15 @@
   }
 
   .service-card .card-banner {
-    -webkit-order: 2;
-    order: 2;
+    -webkit-order: 1;
+    order: 1;
     max-width: 260px;
     margin-inline: auto;
   }
 
-  .service-card .menu-view-link {
-    -webkit-order: 3;
-    order: 3;
+  .service-card .card-content .menu-view-link {
+    -webkit-order: 2;
+    order: 2;
     margin-top: 20px;
     margin-block-start: 20px;
     margin-bottom: 20px;
@@ -176,17 +171,6 @@
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
-    -webkit-order: 0;
-    order: 0;
-  }
-
-  .special-dish-content .container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-order: 0;
-    order: 0;
   }
 
   .special-dish-content .container {
@@ -214,11 +198,16 @@
   .special-dish-content .section-text {
     -webkit-order: 4;
     order: 4;
-    margin-bottom: 25px;
-    margin-block-end: 25px;
+    margin-bottom: 20px;
+    margin-block-end: 20px;
   }
 
-  .special-dish-content .special-dish-banner {
+  .special-dish-banner {
+    display: none;
+  }
+
+  .special-dish-banner-mobile {
+    display: block !important;
     -webkit-order: 5;
     order: 5;
     margin-bottom: 20px;
@@ -428,6 +417,8 @@
     opacity: 1;
     visibility: visible;
     position: relative;
+    height: 500px !important;
+    min-height: 500px;
   }
 
   .shisha-slider-dots {
@@ -892,6 +883,9 @@
 }
 
 @media (min-width: 992px) {
+  .shisha-images-container .shisha-image-item {
+    padding: 10px 35px !important;
+  }
 
   :root {
 
@@ -970,6 +964,32 @@
     position: relative;
   }
 
+  .special-dish-banner {
+    display: block;
+    -webkit-order: initial;
+    order: initial;
+    margin-bottom: initial;
+    margin-block-end: initial;
+  }
+
+  .special-dish-banner-mobile {
+    display: none !important;
+  }
+
+  .special-dish-content .abs-img,
+  .special-dish-content .section-subtitle,
+  .special-dish-content .section-title,
+  .special-dish-content .section-text,
+  .special-dish-content .wrapper,
+  .special-dish-content .btn {
+    -webkit-order: initial;
+    order: initial;
+    margin-bottom: initial;
+    margin-block-end: initial;
+    margin-top: initial;
+    margin-block-start: initial;
+  }
+
   .special-dish .section-subtitle::after,
   .special-dish .btn {
     margin-inline: 0;
@@ -979,7 +999,7 @@
     justify-content: flex-start;
   }
 
-  .special-dish .abs-img {
+  .special-dish-content .abs-img {
     position: absolute;
     top: 10px;
     left: -40px;

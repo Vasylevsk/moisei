@@ -60,12 +60,9 @@
       />
     </noscript>
 
-    <link rel="preload" href="./assets/css/combined.min.css" as="style" />
     <link rel="stylesheet" href="./assets/css/combined.min.css" />
 
     <link rel="preload" as="image" href="./assets/images/hero-slider-1.webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="./assets/images/hero-slider-2-1280.webp" />
-    <link rel="preload" as="image" href="./assets/images/hero-slider-3-1280.webp" />
 </head>
 
 <body id="top">
@@ -355,6 +352,7 @@
                   class="img-cover" 
                   decoding="async"
                   loading="lazy"
+                  style="object-position: 70% center !important;"
                   onerror="this.onerror=null; this.src='./assets/images/hero-slider-3-960.webp';">
               </picture>
             </div>
@@ -534,6 +532,22 @@
 
       <section class="special-dish text-center" aria-labelledby="dish-label">
 
+        <div class="special-dish-banner">
+          <picture>
+            <source 
+              type="image/webp" 
+              srcset="./assets/images/special-dish-banner.webp 1880w, ./assets/images/special-dish-banner-940.webp 940w, ./assets/images/special-dish-banner-640.webp 640w"
+              sizes="(max-width: 768px) 100vw, 940px">
+            <img 
+              src="./assets/images/special-dish-banner.png" 
+              width="940" 
+              height="900" 
+              loading="lazy" 
+              alt="special dish"
+              class="img-cover">
+          </picture>
+        </div>
+
         <div class="special-dish-content bg-black-10">
           <div class="container">
 
@@ -553,7 +567,7 @@
               refreshing drink. Come in and savor the moment!
             </p>
 
-            <div class="special-dish-banner">
+            <div class="special-dish-banner special-dish-banner-mobile">
               <picture>
                 <source 
                   type="image/webp" 
@@ -624,7 +638,8 @@
                     loading="lazy"
                     alt="Flavour so good you'll try to eat with your eyes." 
                     class="img-cover" 
-                    decoding="async">
+                    decoding="async"
+                    style="object-position: 100% center !important;">
                 </picture>
                   </div>
                 </div>

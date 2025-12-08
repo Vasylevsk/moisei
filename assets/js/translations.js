@@ -660,7 +660,7 @@ const translations = {
     "spaces.card.second": "Second floor",
 
     "about2.subtitle": "Our Story",
-    "about2.title": "A name with meaning",
+    "about2.title": "A Name With Meaning",
     "about2.text":
       "We spent a long time searching for the perfect name. Naming our restaurant after a Ukrainian city felt too commonplace. Instead, we chose to honor one of the greatest works of Ukraine's preeminent poet, Ivan Franko. Our name is inspired by his powerful philosophical poem, which centers on the destiny of the Ukrainian nation and its struggle for freedom. The work explores the complex relationship between a leader and the people, touching upon themes of betrayal, doubt, faith in the spirit's strength, and the inevitability of national revival despite all trials. This deep connection to the Ukrainian soul is the foundation of our identity.",
     "about2.call-label": "Book Through Call",
@@ -1366,7 +1366,7 @@ const translations = {
     "spaces.card.second": "Третій поверх",
 
     "about2.subtitle": "Наша історія",
-    "about2.title": "Ім'я, що має сенс",
+    "about2.title": "Ім'я, Що Має Сенс",
     "about2.text":
       "Ми довго шукали ідеальну назву. Назвати ресторан на честь українського міста здавалося надто буденно. Натомість ми вирішили вшанувати одну з найвидатніших робіт головного поета України — Івана Франка. Назва натхненна його філософською поемою, що розповідає про долю українського народу та його боротьбу за свободу. Вона досліджує складні відносини між провідником і народом, торкається тем зради, сумніву, віри у силу духу та неминучого відродження нації попри всі випробування. Саме цей глибокий звʼязок з українською душею є основою нашої ідентичності.",
     "about2.call-label": "Бронювання по телефону",

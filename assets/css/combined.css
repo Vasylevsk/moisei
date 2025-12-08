@@ -3757,21 +3757,6 @@ textarea.input-field {
     color: var(--white);
   }
 
-  select.input-field:not(:disabled) {
-    cursor: pointer;
-    pointer-events: auto;
-  }
-
-  .icon-wrapper:has(select.input-field:not(:disabled)) {
-    cursor: pointer;
-  }
-
-  .icon-wrapper:has(select.input-field:not(:disabled)) select.input-field {
-    pointer-events: auto;
-    z-index: 2;
-    position: relative;
-  }
-
   .hero-btn {
     transform: scale(0.7);
   }

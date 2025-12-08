@@ -295,47 +295,50 @@ const reservationFormHandler = () => {
     }
 
     enableBooking();
-    timeSelect.innerHTML = "";
-    const placeholder = document.createElement("option");
-    placeholder.value = "";
-    placeholder.textContent = getTranslation("reservation2.time.placeholder");
-    placeholder.disabled = true;
-    placeholder.hidden = true;
-    placeholder.selected = true;
-    timeSelect.appendChild(placeholder);
+    if (timeSelect) {
+      timeSelect.disabled = false;
+      timeSelect.innerHTML = "";
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = getTranslation("reservation2.time.placeholder");
+      placeholder.disabled = true;
+      placeholder.hidden = true;
+      placeholder.selected = true;
+      timeSelect.appendChild(placeholder);
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const isToday = parsedDate.getTime() === today.getTime();
-    const currentTime = new Date();
-    const currentHours = currentTime.getHours();
-    const currentMinutes = currentTime.getMinutes();
-    const currentTimeInMinutes = currentHours * 60 + currentMinutes;
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const isToday = parsedDate.getTime() === today.getTime();
+      const currentTime = new Date();
+      const currentHours = currentTime.getHours();
+      const currentMinutes = currentTime.getMinutes();
+      const currentTimeInMinutes = currentHours * 60 + currentMinutes;
 
-    slots.forEach((slot) => {
-      
-      if (isToday) {
-        const [slotHours, slotMinutes] = slot.split(":").map(Number);
-        const slotTimeInMinutes = slotHours * 60 + slotMinutes;
+      slots.forEach((slot) => {
+        
+        if (isToday) {
+          const [slotHours, slotMinutes] = slot.split(":").map(Number);
+          const slotTimeInMinutes = slotHours * 60 + slotMinutes;
 
-        if (slotTimeInMinutes <= currentTimeInMinutes + 15) {
-          return; 
+          if (slotTimeInMinutes <= currentTimeInMinutes + 15) {
+            return; 
+          }
         }
+
+        const option = document.createElement("option");
+        option.value = slot;
+        option.textContent = slot;
+        timeSelect.appendChild(option);
+      });
+
+      const firstEnabledOption = Array.from(timeSelect.options).find(
+        (opt) => !opt.disabled && opt.value
+      );
+      if (firstEnabledOption) {
+        firstEnabledOption.selected = true;
+      } else if (slots.length) {
+        timeSelect.selectedIndex = 1;
       }
-
-      const option = document.createElement("option");
-      option.value = slot;
-      option.textContent = slot;
-      timeSelect.appendChild(option);
-    });
-
-    const firstEnabledOption = Array.from(timeSelect.options).find(
-      (opt) => !opt.disabled && opt.value
-    );
-    if (firstEnabledOption) {
-      firstEnabledOption.selected = true;
-    } else if (slots.length) {
-      timeSelect.selectedIndex = 1;
     }
   };
 

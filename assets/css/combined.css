@@ -584,6 +584,17 @@ body.nav-active {
   pointer-events: auto;
 }
 
+.icon-wrapper:has(select.input-field) {
+  cursor: pointer;
+}
+
+.icon-wrapper:has(select.input-field:not(:disabled)) select.input-field {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 2;
+  position: relative;
+}
+
 .icon-wrapper:not(:has(input[type="date"])) .input-field {
   cursor: text !important;
   pointer-events: auto;
@@ -3735,14 +3746,54 @@ textarea.input-field {
     display: block;
   }
 
+  input.input-field[type="date"] {
+    font-family: var(--fontFamily-dm_sans) !important;
+    font-size: var(--fontSize-body-2) !important;
+    color: var(--white) !important;
+    text-transform: uppercase;
+  }
+
   input.input-field[type="date"]::-webkit-datetime-edit,
   input.input-field[type="date"]::-webkit-datetime-edit-fields-wrapper,
   input.input-field[type="date"]::-webkit-datetime-edit-text,
   input.input-field[type="date"]::-webkit-datetime-edit-month-field,
   input.input-field[type="date"]::-webkit-datetime-edit-day-field,
   input.input-field[type="date"]::-webkit-datetime-edit-year-field {
-    font-family: var(--fontFamily-dm_sans);
-    color: var(--white);
+    font-family: var(--fontFamily-dm_sans) !important;
+    font-size: var(--fontSize-body-2) !important;
+    color: var(--white) !important;
+    padding: 0;
+  }
+
+  select.input-field {
+    font-family: var(--fontFamily-dm_sans) !important;
+    font-size: var(--fontSize-body-2) !important;
+    color: var(--white) !important;
+    cursor: pointer !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none !important;
+  }
+
+  select.input-field:disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+  }
+
+  select.input-field:not(:disabled) {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
+  .icon-wrapper:has(select.input-field:not(:disabled)) {
+    cursor: pointer !important;
+  }
+
+  .icon-wrapper:has(select.input-field:not(:disabled)) select.input-field {
+    pointer-events: auto !important;
+    z-index: 2;
+    position: relative;
   }
 
   .hero-btn {

@@ -129,6 +129,17 @@
   pointer-events: auto;
 }
 
+.icon-wrapper:has(select.input-field) {
+  cursor: pointer;
+}
+
+.icon-wrapper:has(select.input-field:not(:disabled)) select.input-field {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 2;
+  position: relative;
+}
+
 .icon-wrapper:not(:has(input[type="date"])) .input-field {
   cursor: text !important;
   pointer-events: auto;

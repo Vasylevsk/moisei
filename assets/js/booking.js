@@ -295,7 +295,9 @@ const reservationFormHandler = () => {
     }
 
     enableBooking();
-    timeSelect.innerHTML = "";
+    if (timeSelect) {
+      timeSelect.disabled = false;
+      timeSelect.innerHTML = "";
     const placeholder = document.createElement("option");
     placeholder.value = "";
     placeholder.textContent = getTranslation("reservation2.time.placeholder");
@@ -329,13 +331,16 @@ const reservationFormHandler = () => {
       timeSelect.appendChild(option);
     });
 
-    const firstEnabledOption = Array.from(timeSelect.options).find(
-      (opt) => !opt.disabled && opt.value
-    );
-    if (firstEnabledOption) {
-      firstEnabledOption.selected = true;
-    } else if (slots.length) {
-      timeSelect.selectedIndex = 1;
+    if (timeSelect) {
+      timeSelect.disabled = false;
+      const firstEnabledOption = Array.from(timeSelect.options).find(
+        (opt) => !opt.disabled && opt.value
+      );
+      if (firstEnabledOption) {
+        firstEnabledOption.selected = true;
+      } else if (slots.length) {
+        timeSelect.selectedIndex = 1;
+      }
     }
   };
 

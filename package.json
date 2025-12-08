@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Moisei Restaurant Website",
   "scripts": {
+    "update-version": "node update-css-version.js",
     "optimize-images": "node optimize-images.js",
     "combine-css": "node combine-css.js",
     "minify-css": "node advanced-minify-css.js",

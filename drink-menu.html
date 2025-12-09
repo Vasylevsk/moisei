@@ -54,7 +54,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./assets/css/combined.min.css?v=9c1f26bd" />
+    <link rel="stylesheet" href="./assets/css/combined.min.css?v=7df6ff51" />
 </head>
 
 <body id="top">
@@ -1266,6 +1266,7 @@
           <a href="privacy-policy.html" class="label-2 footer-link hover-underline">Privacy Policy</a>
           <a href="terms-conditions.html" class="label-2 footer-link hover-underline">Terms & Conditions</a>
           <a href="cookie-policy.html" class="label-2 footer-link hover-underline">Cookie Policy</a>
+          <a href="#" class="label-2 footer-link hover-underline cookie-settings-btn" data-i18n="cookie.settings" style="cursor: pointer;">Cookie Settings</a>
         </div>
 
         <p class="footer-credit" style="margin-top: 20px;">
@@ -1286,9 +1287,24 @@
     <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
   </a>
 
-  <script src="./assets/js/translations.js?v=63cf57be"></script>
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-content">
+        <h3 class="cookie-banner-title" data-i18n="cookie.title">We use cookies</h3>
+        <p class="cookie-banner-message" data-i18n="cookie.message">We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking 'Accept All', you consent to our use of cookies. You can manage your preferences or learn more in our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button class="cookie-banner-btn cookie-banner-btn-accept" data-i18n="cookie.accept">Accept All</button>
+        <button class="cookie-banner-btn cookie-banner-btn-decline" data-i18n="cookie.decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/translations.js?v=7d36e8e7"></script>
+  <script src="./assets/js/cookie-banner.js?v=1074f4a9"></script>
   <script src="./assets/js/drink-menu.js?v=a7289934"></script>
-  <script src="./assets/js/script.js?v=5f7cd395"></script>
+  <script src="./assets/js/script.js?v=ca2022bb"></script>
 
     <script
       type="module"

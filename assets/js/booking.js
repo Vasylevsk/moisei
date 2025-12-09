@@ -42,7 +42,16 @@ const parseDateValue = (value) => {
 };
 
 const getCurrentLanguage = () => {
-  return localStorage.getItem("language") || "en";
+  // Check if cookies are allowed before using localStorage
+  if (typeof window.CookieBanner !== 'undefined' && window.CookieBanner.canUseStorage()) {
+    return localStorage.getItem("language") || "en";
+  }
+  // If cookies declined, still return language but don't save
+  // Try to get from current page state if available
+  if (typeof window.languageSwitcher !== 'undefined') {
+    return window.languageSwitcher.getCurrentLanguage() || "en";
+  }
+  return "en";
 };
 
 const getTranslation = (key) => {

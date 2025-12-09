@@ -46,10 +46,11 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./assets/css/combined.min.css?v=9c1f26bd" />
+    <link rel="stylesheet" href="./assets/css/combined.min.css?v=7df6ff51" />
 
     <style>
       .legal-page {
+        margin-top: 120px;
         padding: 120px 0 80px;
         background-color: var(--eerie-black-1);
         color: var(--white);
@@ -369,6 +370,7 @@
           <a href="privacy-policy.html" class="label-2 footer-link hover-underline" style="margin: 0 15px;">Privacy Policy</a>
           <a href="terms-conditions.html" class="label-2 footer-link hover-underline" style="margin: 0 15px;">Terms & Conditions</a>
           <a href="cookie-policy.html" class="label-2 footer-link hover-underline" style="margin: 0 15px;">Cookie Policy</a>
+          <a href="#" class="label-2 footer-link hover-underline cookie-settings-btn" style="margin: 0 15px; cursor: pointer;">Cookie Settings</a>
         </div>
         <p class="footer-credit" style="margin-top: 20px;">
           Made with <span class="footer-heart"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="white"/></svg></span> by <a href="https://ttmms.uk" target="_blank" rel="noopener noreferrer" class="footer-credit-link">TTMMs.</a>
@@ -381,9 +383,25 @@
     <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
   </a>
 
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-content">
+        <h3 class="cookie-banner-title">We use cookies</h3>
+        <p class="cookie-banner-message">We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking 'Accept All', you consent to our use of cookies. You can manage your preferences or learn more in our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button class="cookie-banner-btn cookie-banner-btn-accept">Accept All</button>
+        <button class="cookie-banner-btn cookie-banner-btn-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/translations.js?v=7d36e8e7"></script>
+  <script src="./assets/js/cookie-banner.js?v=1074f4a9"></script>
+  <script src="./assets/js/script.js?v=ca2022bb"></script>
 </body>
 </html>
 

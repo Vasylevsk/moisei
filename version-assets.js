@@ -54,6 +54,14 @@ const assetsToVersion = [
       /assets\/js\/drink-menu\.js(\?v=[\w-]+)?/g
     ]
   },
+  { 
+    file: 'assets/js/cookie-banner.js', 
+    patterns: [
+      /cookie-banner\.js(\?v=[\w-]+)?/g,
+      /\.\/assets\/js\/cookie-banner\.js(\?v=[\w-]+)?/g,
+      /assets\/js\/cookie-banner\.js(\?v=[\w-]+)?/g
+    ]
+  },
 ];
 
 // HTML файлы для обновления
@@ -62,7 +70,10 @@ const htmlFiles = [
   'reservation.html',
   'food-menu.html',
   'drink-menu.html',
-  'hookah-menu.html'
+  'hookah-menu.html',
+  'privacy-policy.html',
+  'terms-conditions.html',
+  'cookie-policy.html'
 ];
 
 /**

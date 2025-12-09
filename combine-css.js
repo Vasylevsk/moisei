@@ -18,6 +18,7 @@ const cssFiles = [
   'typography.css',
   'utilities.css',
   'components.css',
+  'cookie-banner.css',
   'layout.css',
   'sections.css',
   'responsive.css'

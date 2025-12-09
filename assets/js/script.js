@@ -447,12 +447,9 @@ if (eventModal && eventModalClose) {
       return window.languageSwitcher.getCurrentLanguage();
     }
     
-    // Check if cookies are allowed before using localStorage
-    if (typeof window.CookieBanner !== 'undefined' && window.CookieBanner.canUseStorage()) {
-      const storedLang = localStorage.getItem("language");
-      if (storedLang) {
-        return storedLang;
-      }
+    const storedLang = localStorage.getItem("language");
+    if (storedLang) {
+      return storedLang;
     }
     
     return "en";

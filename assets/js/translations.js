@@ -719,9 +719,6 @@ const translations = {
     "cookie.accept": "Accept All",
     "cookie.decline": "Decline",
     "cookie.settings": "Cookie Settings",
-    "cookie.decline.warning": "If you decline cookies, some features may not work properly:",
-    "cookie.decline.features": "• Language preference won't be saved<br>• Your settings will reset on each visit",
-    "cookie.decline.continue": "You can still browse the website, but some functionality will be limited.",
   },
 
   uk: {
@@ -1434,9 +1431,6 @@ const translations = {
     "cookie.accept": "Прийняти все",
     "cookie.decline": "Відхилити",
     "cookie.settings": "Налаштування cookies",
-    "cookie.decline.warning": "Якщо ви відхилите cookies, деякі функції можуть працювати неправильно:",
-    "cookie.decline.features": "• Налаштування мови не зберігатимуться<br>• Ваші налаштування скидатимуться при кожному відвідуванні",
-    "cookie.decline.continue": "Ви все ще можете переглядати сайт, але деякі функції будуть обмежені.",
   },
 };
 
@@ -1473,23 +1467,7 @@ class LanguageSwitcher {
 
   setLanguage(lang) {
     this.currentLang = lang;
-    
-    // Check if user has consented to cookies before using localStorage
-    if (typeof window.CookieBanner !== 'undefined' && window.CookieBanner.canUseStorage()) {
-      localStorage.setItem("language", lang);
-    } else if (typeof window.CookieBanner !== 'undefined' && window.CookieBanner.getConsent() === 'declined') {
-      // User declined cookies - don't save language preference
-      // But still allow language change for current session
-      // Show cookie banner again to remind about limitations
-      setTimeout(function() {
-        if (window.CookieBanner) {
-          window.CookieBanner.show();
-        }
-      }, 2000);
-    } else {
-      // If no consent yet, still allow language change but don't save
-      // This is okay as language change is a functional requirement
-    }
+    localStorage.setItem("language", lang);
 
     this.updateToggleUI();
     this.translatePage();

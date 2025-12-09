@@ -16,15 +16,6 @@
     },
     getConsent: function() {
       return getCookieConsentValue();
-    },
-    hasConsent: function() {
-      const consent = getCookieConsentValue();
-      return consent === 'accepted';
-    },
-    canUseStorage: function() {
-      const consent = getCookieConsentValue();
-      // If no consent or declined, can't use storage
-      return consent === 'accepted';
     }
   };
 
@@ -143,52 +134,9 @@
     hideCookieBanner();
   }
 
-  function showDeclineWarning() {
-    const banner = document.querySelector('.cookie-banner');
-    if (!banner) return;
-
-    const message = banner.querySelector('.cookie-banner-message');
-    const acceptBtn = banner.querySelector('.cookie-banner-btn-accept');
-    const declineBtn = banner.querySelector('.cookie-banner-btn-decline');
-    
-    if (message) {
-      const warningText = getTranslation('cookie.decline.warning');
-      const featuresText = getTranslation('cookie.decline.features');
-      const continueText = getTranslation('cookie.decline.continue');
-      const policyText = getTranslation('cookie.policy');
-      
-      message.innerHTML = `
-        <strong style="color: var(--gold-crayola); display: block; margin-bottom: 10px;">${warningText}</strong>
-        <div style="margin: 10px 0;">${featuresText}</div>
-        <div style="margin-top: 10px;">${continueText}</div>
-        <div style="margin-top: 15px; font-size: 1.3rem;">
-          <a href="cookie-policy.html" style="color: var(--gold-crayola); text-decoration: underline;">${policyText}</a>
-        </div>
-      `;
-    }
-    
-    // Update buttons
-    if (acceptBtn) {
-      acceptBtn.textContent = getTranslation('cookie.accept');
-      acceptBtn.style.display = 'inline-block';
-    }
-    if (declineBtn) {
-      declineBtn.style.display = 'none';
-    }
-  }
-
   function handleDecline() {
     setCookieConsent('declined');
-    // Show warning message instead of hiding immediately
-    showDeclineWarning();
-    
-    // Hide after 8 seconds if user doesn't interact
-    setTimeout(function() {
-      const consent = getCookieConsentValue();
-      if (consent === 'declined') {
-        hideCookieBanner();
-      }
-    }, 8000);
+    hideCookieBanner();
   }
 
   function setupEventListeners() {

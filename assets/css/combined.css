@@ -3469,9 +3469,10 @@ textarea.input-field {
    responsive.css
    ======================================== */
 
-
-
 @media (max-width: 768px) {
+  .topbar {
+    display: none !important;
+  }
 
   .footer-nav-mobile {
     display: none;
@@ -3927,8 +3928,7 @@ textarea.input-field {
     min-width: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.6s ease-in-out, 
-                visibility 0.6s ease-in-out;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;
@@ -3971,9 +3971,7 @@ textarea.input-field {
 }
 
 @media (min-width: 575px) {
-
   :root {
-
     --fontSize-body-2: 2rem;
   }
 
@@ -3987,7 +3985,7 @@ textarea.input-field {
   }
 
   .topbar {
-    display: block;
+    display: block !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -4083,7 +4081,9 @@ textarea.input-field {
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
+}
 
+@media (min-width: 768px) {
   .toggle-switch.active .toggle-thumb {
     left: 29px;
   }
@@ -4144,7 +4144,6 @@ textarea.input-field {
   .header {
     top: 51px;
   }
-
 
   .header.active {
     top: 0;
@@ -4281,7 +4280,6 @@ textarea.input-field {
 }
 
 @media (min-width: 768px) {
-
   .grid-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -4422,7 +4420,6 @@ textarea.input-field {
   }
 
   :root {
-
     --section-space: 100px;
   }
 
@@ -4586,9 +4583,7 @@ textarea.input-field {
 }
 
 @media (min-width: 1200px) {
-
   :root {
-
     --fontSize-title-2: 2.5rem;
   }
 
@@ -4799,7 +4794,6 @@ textarea.input-field {
 }
 
 @media (min-width: 1400px) {
-
   .navbar {
     margin-inline: auto;
   }

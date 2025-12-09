@@ -685,10 +685,12 @@
 }
 
 input.input-field[type="date"] {
-  text-transform: uppercase;
-  padding-inline-end: 10px;
+  padding-inline-end: 40px;
   cursor: pointer !important;
   width: 100% !important;
+  text-align: left;
+  font-family: var(--fontFamily-dm_sans);
+  font-size: inherit;
 }
 
 input.input-field[type="date"]::-webkit-calendar-picker-indicator {
@@ -702,6 +704,19 @@ input.input-field[type="date"]::-webkit-calendar-picker-indicator {
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+/* Стили для текста внутри date input */
+input.input-field[type="date"]::-webkit-datetime-edit,
+input.input-field[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input.input-field[type="date"]::-webkit-datetime-edit-text,
+input.input-field[type="date"]::-webkit-datetime-edit-month-field,
+input.input-field[type="date"]::-webkit-datetime-edit-day-field,
+input.input-field[type="date"]::-webkit-datetime-edit-year-field {
+  font-family: var(--fontFamily-dm_sans);
+  color: var(--white);
+  text-align: left;
+  padding: 0;
 }
 
 textarea.input-field {

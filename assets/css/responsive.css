@@ -121,6 +121,40 @@
     margin-top: 70px;
     margin-bottom: 70px;
     margin-block: 70px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .about-banner > .w-100 {
+    padding-inline-start: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about .abs-img-1 {
+    width: 100px;
+    max-width: 100px;
+    bottom: -60px;
+    left: 0;
+    padding-block: 20px;
+  }
+
+  .about .abs-img-1 .w-100 {
+    max-width: 100px;
+    width: 100%;
+  }
+
+  .about .abs-img-2 {
+    top: -30px;
+    right: 0;
+    max-width: 80px;
+  }
+
+  .about .abs-img-2 img {
+    max-width: 80px;
+    width: 100%;
   }
 
   .about .contact-label {
@@ -649,6 +683,8 @@
   input.input-field[type="date"]::-webkit-datetime-edit-year-field {
     font-family: var(--fontFamily-dm_sans);
     color: var(--white);
+    text-align: left;
+    padding: 0;
   }
 
   .hero-btn {

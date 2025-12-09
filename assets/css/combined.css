@@ -582,6 +582,9 @@ body.nav-active {
   --ionicon-stroke-width: 50px;
   pointer-events: none;
   z-index: 1;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .icon-wrapper:has(input.input-field[type="date"]) {
@@ -600,23 +603,44 @@ body.nav-active {
 .icon-wrapper:has(select.input-field:not(:disabled)) select.input-field {
   cursor: pointer !important;
   pointer-events: auto !important;
-  z-index: 2;
+  z-index: 1;
   position: relative;
 }
 
 /* Ensure chevron-down icon is visible and styled for all select elements */
 .icon-wrapper:has(select.input-field) ion-icon:last-child {
   display: block !important;
+  visibility: visible !important;
   pointer-events: none;
-  z-index: 1;
-  opacity: 1;
-  color: var(--white);
+  z-index: 10 !important;
+  opacity: 1 !important;
+  color: var(--white) !important;
   font-size: 1.4rem;
   --ionicon-stroke-width: 50px;
+  right: 10px !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 .icon-wrapper:has(select.input-field:disabled) ion-icon:last-child {
   opacity: 0.6;
+}
+
+/* Стрелочка для date input */
+.icon-wrapper:has(input[type="date"]) ion-icon:last-child {
+  display: block !important;
+  visibility: visible !important;
+  pointer-events: none;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  color: var(--white) !important;
+  font-size: 1.4rem;
+  --ionicon-stroke-width: 50px;
+  right: 10px !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 /* Hide default browser dropdown arrow for select */
@@ -642,13 +666,37 @@ select.input-field::-ms-expand {
 
 .icon-wrapper ion-icon:last-child {
   right: 10px;
+  z-index: 10 !important;
+  position: absolute !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Универсальные стили для всех стрелочек chevron-down */
+.icon-wrapper ion-icon[name="chevron-down"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  position: absolute !important;
+  right: 10px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  pointer-events: none !important;
+  color: var(--white) !important;
+  font-size: 1.4rem !important;
+  --ionicon-stroke-width: 50px;
 }
 
 /* Ensure chevron-down icon is visible for all select elements */
 .icon-wrapper:has(select.input-field) ion-icon:last-child {
-  display: block;
+  display: block !important;
   pointer-events: none;
   z-index: 1;
+  opacity: 1 !important;
+  color: var(--white) !important;
+  right: 10px !important;
 }
 
 .preload {
@@ -1819,10 +1867,12 @@ select.input-field::-ms-expand {
 }
 
 input.input-field[type="date"] {
-  text-transform: uppercase;
-  padding-inline-end: 10px;
+  padding-inline-end: 40px;
   cursor: pointer !important;
   width: 100% !important;
+  text-align: left;
+  font-family: var(--fontFamily-dm_sans);
+  font-size: inherit;
 }
 
 input.input-field[type="date"]::-webkit-calendar-picker-indicator {
@@ -1836,6 +1886,19 @@ input.input-field[type="date"]::-webkit-calendar-picker-indicator {
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+/* Стили для текста внутри date input */
+input.input-field[type="date"]::-webkit-datetime-edit,
+input.input-field[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input.input-field[type="date"]::-webkit-datetime-edit-text,
+input.input-field[type="date"]::-webkit-datetime-edit-month-field,
+input.input-field[type="date"]::-webkit-datetime-edit-day-field,
+input.input-field[type="date"]::-webkit-datetime-edit-year-field {
+  font-family: var(--fontFamily-dm_sans);
+  color: var(--white);
+  text-align: left;
+  padding: 0;
 }
 
 textarea.input-field {
@@ -3270,6 +3333,40 @@ textarea.input-field {
     margin-top: 70px;
     margin-bottom: 70px;
     margin-block: 70px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .about-banner > .w-100 {
+    padding-inline-start: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about .abs-img-1 {
+    width: 100px;
+    max-width: 100px;
+    bottom: -60px;
+    left: 0;
+    padding-block: 20px;
+  }
+
+  .about .abs-img-1 .w-100 {
+    max-width: 100px;
+    width: 100%;
+  }
+
+  .about .abs-img-2 {
+    top: -30px;
+    right: 0;
+    max-width: 80px;
+  }
+
+  .about .abs-img-2 img {
+    max-width: 80px;
+    width: 100%;
   }
 
   .about .contact-label {
@@ -3798,6 +3895,8 @@ textarea.input-field {
   input.input-field[type="date"]::-webkit-datetime-edit-year-field {
     font-family: var(--fontFamily-dm_sans);
     color: var(--white);
+    text-align: left;
+    padding: 0;
   }
 
   .hero-btn {

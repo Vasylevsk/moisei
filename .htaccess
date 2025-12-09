@@ -11,23 +11,34 @@
     ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType text/css "access plus 0 seconds"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 year"
+    # Файлы с версионированием кешируются долго
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
     ExpiresByType application/json "access plus 0 seconds"
     ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
 # Cache-Control Headers
 <IfModule mod_headers.c>
+    # Изображения кешируются долго
     <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico)$">
-        Header set Cache-Control "max-age=31536000, public"
+        Header set Cache-Control "max-age=31536000, public, immutable"
     </FilesMatch>
+    
+    # Файлы с версионированием (с ?v=) кешируются долго
     <FilesMatch "\.(css|js)$">
-        Header set Cache-Control "max-age=0, must-revalidate"
+        # Если есть query параметр версии, кешируем долго
+        SetEnvIf QueryString "^v=" HAS_VERSION
+        Header set Cache-Control "max-age=31536000, public, immutable" env=HAS_VERSION
+        # Если версии нет, не кешируем
+        Header set Cache-Control "max-age=0, must-revalidate" env=!HAS_VERSION
     </FilesMatch>
+    
+    # HTML файлы не кешируются
     <FilesMatch "\.(html|htm)$">
-        Header set Cache-Control "max-age=0, must-revalidate"
+        Header set Cache-Control "max-age=0, must-revalidate, no-cache"
     </FilesMatch>
 </IfModule>
 

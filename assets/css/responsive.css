@@ -126,7 +126,7 @@
     max-width: 100%;
     position: relative;
     padding-top: 30px;
-    padding-bottom: 0px;
+    padding-bottom: 60px;
   }
 
   .about-banner > .w-100 {
@@ -152,7 +152,7 @@
   .about .abs-img-1 {
     width: 100px;
     max-width: 100px;
-    bottom: 0px;
+    bottom: -60px;
     left: 0;
     padding-block: 20px;
   }

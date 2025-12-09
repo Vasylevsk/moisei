@@ -135,6 +135,20 @@
     max-width: 100%;
   }
 
+  .about-banner picture {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-banner picture img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
   .about .abs-img-1 {
     width: 100px;
     max-width: 100px;

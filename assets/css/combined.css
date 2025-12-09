@@ -3333,10 +3333,12 @@ textarea.input-field {
     margin-top: 70px;
     margin-bottom: 70px;
     margin-block: 70px;
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
     max-width: 100%;
     position: relative;
+    padding-top: 30px;
+    padding-bottom: 60px;
   }
 
   .about-banner > .w-100 {

@@ -188,3 +188,5 @@ grep -n "favicon" /path/to/website/index.html | head -10
 - Проверьте, что пути в HTML правильные (начинаются с `/`)
 
 
+
+

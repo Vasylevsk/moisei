@@ -3,12 +3,69 @@ Allow: /
 
 Sitemap: https://moisei.uk/sitemap.xml
 
+# Google
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 0
+
+# Bing / Microsoft
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
+User-agent: msnbot
+Allow: /
+Crawl-delay: 0
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 0
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 0
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 0
+
+# Twitter
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 0
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 0
+
+# Apple
+User-agent: Applebot
+Allow: /
+Crawl-delay: 0
+
+# Disallow server files
 Disallow: /server/
 Disallow: /email-templates/
-
+Disallow: /node_modules/
+Disallow: /.git/

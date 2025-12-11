@@ -43,6 +43,12 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <meta name="yandex" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="geo.region" content="GB-LND" />
+    <meta name="geo.placename" content="Brentford, London" />
+    <meta name="geo.position" content="51.4847492;-0.3018951" />
 
     <link rel="canonical" href="https://moisei.uk/reservation.html" />
     <link
@@ -1352,19 +1358,66 @@
     </div>
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ReservationAction",
-        "target": {
-          "@type": "ReservationPackage",
-          "name": "Table Reservation at Moisei"
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://moisei.uk/"
         },
-        "object": {
-          "@type": "Restaurant",
-          "name": "Moisei",
-          "url": "https://moisei.uk"
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reservations",
+          "item": "https://moisei.uk/reservation.html"
         }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Book a Table at Moisei – Ukrainian Restaurant London | Online Reservations",
+      "description": "Reserve your table at Moisei Ukrainian restaurant in Brentford, London. Book online for authentic Ukrainian food, premium hookah, cocktails & weekend parties.",
+      "image": "https://moisei.uk/assets/images/hero-slider-1.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Moisei"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Moisei",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://moisei.uk/assets/images/logo.svg"
+        }
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2025-12-10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://moisei.uk/reservation.html"
       }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ReservationAction",
+      "target": {
+        "@type": "ReservationPackage",
+        "name": "Table Reservation at Moisei"
+      },
+      "object": {
+        "@type": "Restaurant",
+        "name": "Moisei",
+        "url": "https://moisei.uk"
+      }
+    }
     </script>
 
     <script>

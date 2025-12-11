@@ -414,7 +414,7 @@ const translations = {
     "hookah.item27": "Love 66",
     "hookah.item27.desc": "Melon, watermelon, mint (taste of love)",
     "hookah.price.regular": "Hookah - £35",
-    "hookah.price.special": "Every Friday and Sunday - £25",
+    "hookah.price.special": "Every Friday and Sunday - £29",
     "hookah.price.fruit": "Fruit Hookah - £45",
     "hookah.text.mix": "Choose and mix your favorite flavors.",
     "hookah.text.fruit":
@@ -1185,7 +1185,7 @@ const translations = {
     "hookah.item27": "Love 66",
     "hookah.item27.desc": "Диня, кавун, м'ята (смак кохання)",
     "hookah.price.regular": "Кальян звичайний – £35",
-    "hookah.price.special": "Кожну п'ятницю та неділю – £25",
+    "hookah.price.special": "Кожну п'ятницю та неділю – £29",
     "hookah.price.fruit": "Кальян на фруктах – £45",
     "hookah.text.mix": "Обирайте та міксуйте улюблені смаки.",
     "hookah.text.fruit":

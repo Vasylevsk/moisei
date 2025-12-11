@@ -1,8 +1,5 @@
-
-
 const translations = {
   en: {
-    
     "topbar.opening-hours": "Opening hours",
 
     "nav.home": "Home",
@@ -96,31 +93,33 @@ const translations = {
 
     "food.starters.liver-pate": "Chicken liver pate",
     "food.starters.liver-pate.price": "£12.00",
-    "food.starters.liver-pate.desc": "Creamy chicken liver pate served with warm, freshly grilled bread.",
+    "food.starters.liver-pate.desc": "Served with grilled bread.",
     "food.starters.herring": "Herring fillet with potatoes and dark bread",
     "food.starters.herring.price": "£12.00",
-    "food.starters.herring.desc": "Fillets of Atlantic herring served with boiled potatoes and slices of traditional dark bread.",
+    "food.starters.herring.desc":
+      "Herring fillet with boiled potatoes and dark rye bread.",
     "food.starters.cold-meat": "Cold smoked meat platter",
     "food.starters.cold-meat.price": "£23.00",
-    "food.starters.cold-meat.desc": "A medium selection of high-quality, cold-smoked meats, perfect for sharing.",
+    "food.starters.cold-meat.desc": "Perfect for a company.",
     "food.starters.cheese": "Cheese platter",
     "food.starters.cheese.price": "£17.00",
-    "food.starters.cheese.desc": "A selection of premium cheeses, typically including hard, soft, and blue varieties.",
+    "food.starters.cheese.desc": "Selection of premium cheeses.",
     "food.starters.bruschetta-salmon": "Bruschetta with smoked salmon",
     "food.starters.bruschetta-salmon.price": "£3.50",
     "food.starters.bruschetta-salmon.desc":
-      "Crispy bread topped with creamy spread, smoked salmon, fresh lemon, avocado, and a touch of caviar.",
+      "Bruschetta with smoked salmon, lemon, avocado, caviar.",
     "food.starters.bruschetta-prosciutto": "Bruschetta with prosciutto",
     "food.starters.bruschetta-prosciutto.price": "£4.00",
     "food.starters.bruschetta-prosciutto.desc":
-      "Crispy bread topped with thin slices of Italian prosciutto and sun-dried tomatoes.",
+      "Bruschetta with prosciutto and sun-dried tomatoes.",
     "food.starters.pickled-veg": "Sour marinated vegetables platter",
     "food.starters.pickled-veg.price": "£14.00",
-    "food.starters.pickled-veg.desc": "A traditional assortment of pickled (marinated) vegetables, offering a tangy and crunchy accompaniment.",
+    "food.starters.pickled-veg.desc":
+      "Sauerkraut, cucumbers, tomatoes, zucchini, peppers, onions.",
     "food.starters.beer-platter-one": "Beer platter One (I)",
     "food.starters.beer-platter-one.price": "£23.00",
     "food.starters.beer-platter-one.desc":
-      "A hearty selection of cured meats and snacks, ideal for pairing with a cold beer.",
+      "Prosciutto, sausages, basturma, dark bread croutons.",
     "food.starters.beer-platter-two": "Beer platter Two (II)",
     "food.starters.beer-platter-two.price": "£19.00",
     "food.starters.beer-platter-two.desc":
@@ -132,10 +131,12 @@ const translations = {
       "A classic Eastern European salad featuring finely diced potatoes, carrots, peas, eggs, pickles, and sausage, dressed in a light mayonnaise.",
     "food.salads.prawns": "Prawns salad",
     "food.salads.prawns.price": "£15.00",
-    "food.salads.prawns.desc": "A refreshing mix of salad greens, tomatoes, feta cheese, and creamy avocado, topped with succulent prawns.",
+    "food.salads.prawns.desc":
+      "A refreshing mix of salad greens, tomatoes, feta cheese, and creamy avocado, topped with succulent prawns.",
     "food.salads.beef": "Hot beef salad",
     "food.salads.beef.price": "£19.00",
-    "food.salads.beef.desc": "Slices of warm, tender beef served over a fresh salad base with baked vegetables, finished with a creamy cheese sauce.",
+    "food.salads.beef.desc":
+      "Slices of warm, tender beef served over a fresh salad base with baked vegetables, finished with a creamy cheese sauce.",
     "food.salads.caesar": "Caesar salad",
     "food.salads.caesar.price": "£13.00",
     "food.salads.caesar.desc":
@@ -146,42 +147,54 @@ const translations = {
       "A mix of fresh salad greens, feta, tomatoes, and oranges, complemented by warm chicken liver and a tangy orange sauce.",
     "food.salads.mixed": "Mixed salad",
     "food.salads.mixed.price": "£8.00",
-    "food.salads.mixed.desc": "A simple, fresh salad of spring vegetables dressed with your choice of sour cream or oil.",
+    "food.salads.mixed.desc":
+      "A simple, fresh salad of spring vegetables dressed with your choice of sour cream or oil.",
 
     "food.mains.varenyky-cheese": "Varenyky with cottage cheese and potato",
     "food.mains.varenyky-cheese.price": "£11.00",
-    "food.mains.varenyky-cheese.desc": "Homemade dumplings filled with a classic mix of creamy cottage cheese and mashed potatoes.",
+    "food.mains.varenyky-cheese.desc":
+      "Homemade dumplings filled with a classic mix of creamy cottage cheese and mashed potatoes.",
     "food.mains.varenyky-cabbage": "Varenyky with cabbage and mushrooms",
     "food.mains.varenyky-cabbage.price": "£11.00",
-    "food.mains.varenyky-cabbage.desc": "Homemade dumplings filled with sauteed cabbage and fragrant forest mushrooms.",
+    "food.mains.varenyky-cabbage.desc":
+      "Homemade dumplings filled with sauteed cabbage and fragrant forest mushrooms.",
     "food.mains.varenyky-salmon": "Varenyky with salmon",
     "food.mains.varenyky-salmon.price": "£15.00",
-    "food.mains.varenyky-salmon.desc": "Homemade dumplings filled with a tender mixture of salmon.",
+    "food.mains.varenyky-salmon.desc":
+      "Homemade dumplings filled with a tender mixture of salmon.",
     "food.mains.pelmeni": "Pelmeni",
     "food.mains.pelmeni.price": "£12.00",
-    "food.mains.pelmeni.desc": "Traditional small dumplings, filled with seasoned pork.",
+    "food.mains.pelmeni.desc":
+      "Traditional small dumplings, filled with seasoned pork.",
     "food.mains.pancakes-sour-cream": "Potato pancakes with sour cream",
     "food.mains.pancakes-sour-cream.price": "£12.00",
-    "food.mains.pancakes-sour-cream.desc": "Golden-brown potato pancakes (deruny) served with a dollop of fresh sour cream.",
+    "food.mains.pancakes-sour-cream.desc":
+      "Golden-brown potato pancakes (deruny) served with a dollop of fresh sour cream.",
     "food.mains.pancakes-mushroom": "Potato pancakes with mushroom sauce",
     "food.mains.pancakes-mushroom.price": "£13.00",
-    "food.mains.pancakes-mushroom.desc": "Golden-brown potato pancakes (dranyky) served with a rich and creamy mushroom sauce.",
+    "food.mains.pancakes-mushroom.desc":
+      "Golden-brown potato pancakes (dranyky) served with a rich and creamy mushroom sauce.",
     "food.mains.pancakes-salmon":
       "Potato pancakes with salmon, caviar and cream cheese",
     "food.mains.pancakes-salmon.price": "£16.00",
-    "food.mains.pancakes-salmon.desc": "Potato pancakes topped with smoked salmon, creamy cheese, and a garnish of red caviar.",
+    "food.mains.pancakes-salmon.desc":
+      "Potato pancakes topped with smoked salmon, creamy cheese, and a garnish of red caviar.",
     "food.mains.mushrooms-potatoes": "Mushrooms with house fried potatoes",
     "food.mains.mushrooms-potatoes.price": "£11.00",
-    "food.mains.mushrooms-potatoes.desc": "Sauteed mushrooms served alongside golden-brown, home-style fried potatoes.",
+    "food.mains.mushrooms-potatoes.desc":
+      "Sauteed mushrooms served alongside golden-brown, home-style fried potatoes.",
     "food.mains.fried-carp": "Fried Carp",
     "food.mains.fried-carp.price": "£22.00",
-    "food.mains.fried-carp.desc": "A whole fresh carp, pan-fried until golden and crispy.",
+    "food.mains.fried-carp.desc":
+      "A whole fresh carp, pan-fried until golden and crispy.",
     "food.mains.beef-steak": "Beef steak",
     "food.mains.beef-steak.price": "£25.00",
-    "food.mains.beef-steak.desc": "A choice cut of tender beef steak, served with a generous side of crispy chips.",
+    "food.mains.beef-steak.desc":
+      "A choice cut of tender beef steak, served with a generous side of crispy chips.",
     "food.mains.grilled-chicken": "Grilled chicken",
     "food.mains.grilled-chicken.price": "£16.00",
-    "food.mains.grilled-chicken.desc": "Succulent chicken fillet, perfectly grilled and served with a side dish of your choice.",
+    "food.mains.grilled-chicken.desc":
+      "Succulent chicken fillet, perfectly grilled and served with a side dish of your choice.",
     "food.mains.hot-meat-platter": "Hot meat platter to share",
     "food.mains.hot-meat-platter.price": "£60.00",
     "food.mains.hot-meat-platter.desc":
@@ -191,41 +204,51 @@ const translations = {
     "food.mains.chef-special.desc": "Fried trout with mushrooms.",
     "food.mains.baby-chicken-tabaka": "Baby chicken tabaka",
     "food.mains.baby-chicken-tabaka.price": "£18.00",
-    "food.mains.baby-chicken-tabaka.desc": "Whole baby chicken, pan-fried under a press, served with rustic potato wedges.",
+    "food.mains.baby-chicken-tabaka.desc":
+      "Whole baby chicken, pan-fried under a press, served with rustic potato wedges.",
 
     "food.soups.borscht": "Ukrainian Borscht",
     "food.soups.borscht.price": "£10.00",
-    "food.soups.borscht.desc": "The signature Ukrainian beetroot soup with meat and vegetables, served with a dollop of sour cream.",
+    "food.soups.borscht.desc":
+      "The signature Ukrainian beetroot soup with meat and vegetables, served with a dollop of sour cream.",
     "food.soups.solyanka": "Solyanka",
     "food.soups.solyanka.price": "£10.00",
     "food.soups.solyanka.desc":
       "A thick, tangy, and rich Eastern European soup featuring an assortment of cured meats, sausages, and pickles.",
     "food.soups.chicken-soup": "Chicken soup",
     "food.soups.chicken-soup.price": "£10.00",
-    "food.soups.chicken-soup.desc": "A light and comforting broth made with chicken, often served with noodles or vegetables.",
+    "food.soups.chicken-soup.desc":
+      "A light and comforting broth made with chicken, often served with noodles or vegetables.",
     "food.soups.bohrach": "Bohrach",
     "food.soups.bohrach.price": "£12.00",
-    "food.soups.bohrach.desc": "A hearty and spicy Ukrainian meat goulash, cooked in a cauldron with potatoes and vegetables.",
+    "food.soups.bohrach.desc":
+      "A hearty and spicy Ukrainian meat goulash, cooked in a cauldron with potatoes and vegetables.",
 
     "food.desserts.cake-day": "Cake of the day",
     "food.desserts.cake-day.price": "£12.00",
-    "food.desserts.cake-day.desc": "Please ask your waiter about today's special cake.",
+    "food.desserts.cake-day.desc":
+      "Please ask your waiter about today's special cake.",
     "food.desserts.nalysnyky-cheese": "Cottage cheese pancakes",
     "food.desserts.nalysnyky-cheese.price": "£10.00",
-    "food.desserts.nalysnyky-cheese.desc": "Thin crepes filled with a sweet, creamy cottage cheese mixture.",
+    "food.desserts.nalysnyky-cheese.desc":
+      "Thin crepes filled with a sweet, creamy cottage cheese mixture.",
     "food.desserts.nalysnyky-poppy": "Poppy seeds pancakes",
     "food.desserts.nalysnyky-poppy.price": "£10.00",
-    "food.desserts.nalysnyky-poppy.desc": "Thin crepes filled with a rich and sweet poppy seed filling.",
+    "food.desserts.nalysnyky-poppy.desc":
+      "Thin crepes filled with a rich and sweet poppy seed filling.",
     "food.desserts.nalysnyky-cherries":
       "Sour cherries with whipped cream pancakes",
     "food.desserts.nalysnyky-cherries.price": "£10.00",
-    "food.desserts.nalysnyky-cherries.desc": "Thin crepes filled with tart sour cherries and topped with a swirl of whipped cream.",
+    "food.desserts.nalysnyky-cherries.desc":
+      "Thin crepes filled with tart sour cherries and topped with a swirl of whipped cream.",
     "food.desserts.varenyky-cherries": "Varenyky with sour cherries",
     "food.desserts.varenyky-cherries.price": "£12.00",
-    "food.desserts.varenyky-cherries.desc": "Sweet dumplings filled with fresh or frozen sour cherries, typically served with sour cream.",
+    "food.desserts.varenyky-cherries.desc":
+      "Sweet dumplings filled with fresh or frozen sour cherries, typically served with sour cream.",
     "food.desserts.syrnyky": "Syrnyky",
     "food.desserts.syrnyky.price": "£12.00",
-    "food.desserts.syrnyky.desc": "Traditional Ukrainian pan-fried cottage cheese patties, often served with jam or sour cream.",
+    "food.desserts.syrnyky.desc":
+      "Traditional Ukrainian pan-fried cottage cheese patties, often served with jam or sour cream.",
     "food.desserts.fruit-platter": "Fruit platter",
     "food.desserts.fruit-platter.price": "£20.00",
     "food.desserts.fruit-platter.desc": "Seasonal fruits",
@@ -236,12 +259,14 @@ const translations = {
     "food.extras.baked-potatoes.price": "£5.00",
     "food.extras.mash-potatoes": "Mash potatoes",
     "food.extras.mash-potatoes.price": "£4.00",
-    "food.extras.mash-potatoes.desc": "Creamy mashed potatoes, seasoned with butter and milk.",
+    "food.extras.mash-potatoes.desc":
+      "Creamy mashed potatoes, seasoned with butter and milk.",
     "food.extras.rice": "Rice",
     "food.extras.rice.price": "£4.00",
     "food.extras.ajika": "Ajika",
     "food.extras.ajika.price": "£3.00",
-    "food.extras.ajika.desc": "A traditional, spicy and aromatic paste made from red peppers, garlic, and herbs.",
+    "food.extras.ajika.desc":
+      "A traditional, spicy and aromatic paste made from red peppers, garlic, and herbs.",
     "food.extras.sauce": "Sauce",
     "food.extras.sauce.price": "£3.00",
     "food.extras.sour-cream": "Sour cream",
@@ -325,13 +350,16 @@ const translations = {
 
     "food.pasta.carbonara": "Pasta carbonara",
     "food.pasta.carbonara.price": "£15.00",
-    "food.pasta.carbonara.desc": "Classic Italian pasta dish with savory bacon, creamy egg sauce, and grated Parmesan cheese.",
+    "food.pasta.carbonara.desc":
+      "Classic Italian pasta dish with savory bacon, creamy egg sauce, and grated Parmesan cheese.",
     "food.pasta.prawns": "Pasta with prawns",
     "food.pasta.prawns.price": "£17.00",
-    "food.pasta.prawns.desc": "Pasta served in a rich cream sauce with Parmesan cheese and succulent grilled prawns.",
+    "food.pasta.prawns.desc":
+      "Pasta served in a rich cream sauce with Parmesan cheese and succulent grilled prawns.",
     "food.pasta.beef-veg": "Beef pasta with vegetables",
     "food.pasta.beef-veg.price": "£16.00",
-    "food.pasta.beef-veg.desc": "Pasta tossed with tender beef pieces, bell pepper, zucchini, and mushrooms.",
+    "food.pasta.beef-veg.desc":
+      "Pasta tossed with tender beef pieces, bell pepper, zucchini, and mushrooms.",
 
     "food.category.kids": "Kids Menu",
     "food.kids.chef-special": "Chef special",
@@ -410,9 +438,11 @@ const translations = {
     "drinks.badge.rating": "5.0",
 
     "drinks.beer.ukrainian": "Ukrainian beer",
-    "drinks.beer.ukrainian.desc": "A light and refreshing Ukrainian beer. 500ml.",
+    "drinks.beer.ukrainian.desc":
+      "A light and refreshing Ukrainian beer. 500ml.",
     "drinks.beer.corona": "Corona",
-    "drinks.beer.corona.desc": "A smooth Mexican pale beer, often served with lime. 330ml.",
+    "drinks.beer.corona.desc":
+      "A smooth Mexican pale beer, often served with lime. 330ml.",
     "drinks.beer.butwiser": "Budweiser",
     "drinks.beer.butwiser.desc": "A classic American-style pale beer. 330ml.",
 
@@ -423,12 +453,14 @@ const translations = {
     "drinks.whiskey.chivas": "Chivas",
     "drinks.whiskey.chivas.desc": "A Scottish whiskey.",
     "drinks.whiskey.captain-morgan": "Captain Morgan",
-    "drinks.whiskey.captain-morgan.desc": "A dark rum with warm notes of vanilla and spices.",
+    "drinks.whiskey.captain-morgan.desc":
+      "A dark rum with warm notes of vanilla and spices.",
     "drinks.whiskey.courvoisier": "Courvoisier",
     "drinks.whiskey.courvoisier.desc": "A French cognac.",
 
     "drinks.vodka.absolut": "Absolut",
-    "drinks.vodka.absolut.desc": "A premium Swedish vodka with a smooth, clean character.",
+    "drinks.vodka.absolut.desc":
+      "A premium Swedish vodka with a smooth, clean character.",
     "drinks.vodka.nemiroff": "Nemiroff",
     "drinks.vodka.nemiroff.desc": "A Ukrainian vodka.",
     "drinks.vodka.ciroc": "Ciroc",
@@ -444,12 +476,15 @@ const translations = {
     "drinks.white-wine.pinot-blanc.desc": "A dry white wine.",
 
     "drinks.red-wine.pinot-noir": "Pinot Noir",
-    "drinks.red-wine.pinot-noir.desc": "A light to medium-bodied red wine with delicate tannins.",
+    "drinks.red-wine.pinot-noir.desc":
+      "A light to medium-bodied red wine with delicate tannins.",
     "drinks.red-wine.alazany-valley": "Alazany Valley",
-    "drinks.red-wine.alazany-valley.desc": "A semi-sweet red wine from Georgia.",
+    "drinks.red-wine.alazany-valley.desc":
+      "A semi-sweet red wine from Georgia.",
 
     "drinks.champagne.prosecco": "Prosecco",
-    "drinks.champagne.prosecco.desc": "A crisp and lively Italian sparkling wine.",
+    "drinks.champagne.prosecco.desc":
+      "A crisp and lively Italian sparkling wine.",
     "drinks.champagne.martini-asti": "Martini Asti",
     "drinks.champagne.martini-asti.desc": "A sparkling wine.",
     "drinks.champagne.moet-chandon": "Moët&Chandon",
@@ -515,7 +550,8 @@ const translations = {
     "drinks.hot-drinks.breakfast-tea": "Black tea",
     "drinks.hot-drinks.breakfast-tea.desc": "A classic strong black tea.",
     "drinks.hot-drinks.carpathian-tea": "Carpathian tea",
-    "drinks.hot-drinks.carpathian-tea.desc": "A herbal tea made with Carpathian mountain herbs.",
+    "drinks.hot-drinks.carpathian-tea.desc":
+      "A herbal tea made with Carpathian mountain herbs.",
 
     "drinks.drinks.cola-sprite-fanta-330": "Soft drinks 330ml",
     "drinks.drinks.cola-sprite-fanta-330.desc": "Coca-cola/Sprite/Fanta.",
@@ -621,6 +657,34 @@ const translations = {
     "reservation2.contact.hours.lines":
       "Mon: Closed<br>Tue: Closed<br>Wed: 15:00-21:00<br>Thu: 15:00-21:00<br>Fri: 15:00-23:00<br>Sat: 12:00-00:00<br>Sun: 12:00-23:00",
     "reservation2.contact.social": "Our social media:",
+    "reservation2.rules.title": "Reservation Rules",
+    "reservation2.rules.link": "View Full Terms & Conditions",
+    "reservation2.rules.table.title": "Table Reservation Rules:",
+    "reservation2.rules.table.1":
+      "For reservations of 8 guests or more, you will be offered a banquet menu priced at £100 per person. It includes 7 cold dishes, 4 hot dishes, and the option to bring your own alcoholic and non-alcoholic beverages in any quantity.",
+    "reservation2.rules.table.2":
+      "All changes to the number of guests or the menu must be confirmed no later than 48 hours before the reservation.",
+    "reservation2.rules.table.3":
+      "The restaurant reserves the right to modify the reservation conditions in case of unforeseen circumstances, informing the client in advance.",
+    "reservation2.rules.table.4":
+      "The restaurant reserves the right to deny entry or ask you to leave the premises if the smart casual dress code is not followed or in cases of alcohol or drug intoxication.",
+    "reservation2.rules.table.5":
+      "Bringing and consuming your own alcoholic or non-alcoholic beverages is strictly prohibited.",
+    "reservation2.rules.table.6":
+      "The restaurant is not responsible for any personal belongings you may lose.",
+    "reservation2.rules.table.7":
+      "Please supervise your children during your visit.",
+    "reservation2.rules.lounge.title": "Lounge Area Reservation Rules:",
+    "reservation2.rules.lounge.1": "The lounge area operates until 22:30.",
+    "reservation2.rules.lounge.2":
+      "When reserving a table in the lounge area, ordering a hookah is mandatory. If declined, it will be automatically added to your bill.",
+    "reservation2.rules.lounge.3":
+      "Unfortunately, children are not allowed in the lounge area.",
+    "reservation2.rules.lounge.4":
+      "The restaurant reserves the right to deny entry or ask you to leave the premises if the smart casual dress code is not followed, as well as in cases of alcohol or drug intoxication.",
+    "reservation2.large-group.notice":
+      "Important: For groups of 8+ guests, please read our reservation rules before proceeding.",
+    "reservation2.large-group.read-rules": "Read Rules",
 
     "features.subtitle": "Why Choose Us",
     "features.title": "Our Strength",
@@ -681,13 +745,17 @@ const translations = {
     "events.card3.title": "New Year's Eve Party",
 
     "event.modal.title": "New Year's Eve Celebration",
-    "event.modal.description": "Join us for an unforgettable New Year's Eve at our restaurant! Special guest — Olha Tsybulska, beloved Ukrainian singer, performing her greatest hits exclusively for our guests.",
+    "event.modal.description":
+      "Join us for an unforgettable New Year's Eve at our restaurant! Special guest — Olha Tsybulska, beloved Ukrainian singer, performing her greatest hits exclusively for our guests.",
     "event.modal.time.start": "🕗 Start: 8:00 PM",
     "event.modal.time.end": "🌙 End: 2:00 AM",
-    "event.modal.features": "What awaits you:\n\n✨ Delicious festive menu\n\n🎵 Incredible music\n\n🎭 Special New Year's program",
+    "event.modal.features":
+      "What awaits you:\n\n✨ Delicious festive menu\n\n🎵 Incredible music\n\n🎭 Special New Year's program",
     "event.modal.price.regular": "💷 Ticket price: £200 per person",
-    "event.modal.price.special": "🔥 Early booking offer: Book by 1st December for just £150 per person!",
-    "event.modal.price.footer": "Reserve your spot now and celebrate the New Year together in a warm, vibrant atmosphere! 🥂",
+    "event.modal.price.special":
+      "🔥 Early booking offer: Book by 1st December for just £150 per person!",
+    "event.modal.price.footer":
+      "Reserve your spot now and celebrate the New Year together in a warm, vibrant atmosphere! 🥂",
     "event.modal.location": "📍 Location: Moisei Restaurant, Brentford",
     "event.modal.bookings.title": "Bookings:",
 
@@ -704,8 +772,7 @@ const translations = {
     "footer.link.tiktok": "Tik Tok",
     "footer.link.googlemap": "Google Map",
 
-    "footer.copyright":
-      "© 2022 Moisei. All Rights Reserved",
+    "footer.copyright": "© 2022 Moisei. All Rights Reserved",
     "footer.hours.title": "Opening hours:",
     "footer.hours.lines":
       "Mon: Closed<br>Tue: Closed<br>Wed: 15:00-21:00<br>Thu: 15:00-21:00<br>Fri: 15:00-23:00<br>Sat: 12:00-00:00<br>Sun: 12:00-23:00",
@@ -714,7 +781,8 @@ const translations = {
     "back-top.label": "Back to top",
 
     "cookie.title": "We use cookies",
-    "cookie.message": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking 'Accept All', you consent to our use of cookies. You can manage your preferences or learn more in our",
+    "cookie.message":
+      "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking 'Accept All', you consent to our use of cookies. You can manage your preferences or learn more in our",
     "cookie.policy": "Cookie Policy",
     "cookie.accept": "Accept All",
     "cookie.decline": "Decline",
@@ -722,7 +790,6 @@ const translations = {
   },
 
   uk: {
-    
     "topbar.opening-hours": "Години роботи",
 
     "nav.home": "Головна",
@@ -818,7 +885,8 @@ const translations = {
     "food.starters.liver-pate.desc": "подається з грильованим хлібом",
     "food.starters.herring": "Оселедець з картоплею та чорним хлібом",
     "food.starters.herring.price": "£12.00",
-    "food.starters.herring.desc": "Філе оселедця з відвареною картоплею та темного житнього хліба.",
+    "food.starters.herring.desc":
+      "Філе оселедця з відвареною картоплею та темного житнього хліба.",
     "food.starters.cold-meat": "М'ясна тарілка холодного копчення",
     "food.starters.cold-meat.price": "£23.00",
     "food.starters.cold-meat.desc": "Ідеально підходить для компанії.",
@@ -835,7 +903,8 @@ const translations = {
       "Брускета з прошуто та в'яленими помідорами",
     "food.starters.pickled-veg": "Плато з квашенини маринованими овочами",
     "food.starters.pickled-veg.price": "£14.00",
-    "food.starters.pickled-veg.desc": "Квашена капуста, огірки, помідори, кабачки, перець, цибуля.",
+    "food.starters.pickled-veg.desc":
+      "Квашена капуста, огірки, помідори, кабачки, перець, цибуля.",
     "food.starters.beer-platter-one": "Пивна тарілка (1)",
     "food.starters.beer-platter-one.price": "£23.00",
     "food.starters.beer-platter-one.desc":
@@ -869,13 +938,16 @@ const translations = {
 
     "food.mains.varenyky-cheese": "Вареники з сиром та картоплею",
     "food.mains.varenyky-cheese.price": "£11.00",
-    "food.mains.varenyky-cheese.desc": "Домашні вареники з класичною начинкою з ніжного кисломолочного сиру та картопляного пюре.",
+    "food.mains.varenyky-cheese.desc":
+      "Домашні вареники з класичною начинкою з ніжного кисломолочного сиру та картопляного пюре.",
     "food.mains.varenyky-cabbage": "Вареники з капустою та грибами",
     "food.mains.varenyky-cabbage.price": "£11.00",
-    "food.mains.varenyky-cabbage.desc": "Домашні вареники з начинкою з обсмаженої капусти та ароматних грибів.",
+    "food.mains.varenyky-cabbage.desc":
+      "Домашні вареники з начинкою з обсмаженої капусти та ароматних грибів.",
     "food.mains.varenyky-salmon": "Вареники з лососем",
     "food.mains.varenyky-salmon.price": "£15.00",
-    "food.mains.varenyky-salmon.desc": "Домашні вареники з ніжною начинкою з лосося.",
+    "food.mains.varenyky-salmon.desc":
+      "Домашні вареники з ніжною начинкою з лосося.",
     "food.mains.pelmeni": "Пельмені",
     "food.mains.pelmeni.price": "£12.00",
     "food.mains.pelmeni.desc": "Свинина",
@@ -884,16 +956,20 @@ const translations = {
     "food.mains.pancakes-sour-cream.desc": "Золотисті картопляні деруни.",
     "food.mains.pancakes-mushroom": "Деруни з грибним соусом",
     "food.mains.pancakes-mushroom.price": "£13.00",
-    "food.mains.pancakes-mushroom.desc": "Золотисті картопляні деруни та грибним соусом.",
+    "food.mains.pancakes-mushroom.desc":
+      "Золотисті картопляні деруни та грибним соусом.",
     "food.mains.pancakes-salmon": "Деруни з лососем, ікрою та крем сиром",
     "food.mains.pancakes-salmon.price": "£16.00",
-    "food.mains.pancakes-salmon.desc": "Картопляні деруни з копченим лососем, ніжним сиром і червоною ікрою.",
+    "food.mains.pancakes-salmon.desc":
+      "Картопляні деруни з копченим лососем, ніжним сиром і червоною ікрою.",
     "food.mains.mushrooms-potatoes": "Грибочки з жареною картоплею",
     "food.mains.mushrooms-potatoes.price": "£11.00",
-    "food.mains.mushrooms-potatoes.desc": "Обсмажені гриби, подані з золотистою домашньою смаженою картоплею.",
+    "food.mains.mushrooms-potatoes.desc":
+      "Обсмажені гриби, подані з золотистою домашньою смаженою картоплею.",
     "food.mains.fried-carp": "Смажений карп",
     "food.mains.fried-carp.price": "£22.00",
-    "food.mains.fried-carp.desc": "Свіжий короп цілим, обсмажений на сковороді до золотистої та хрусткої скоринки.",
+    "food.mains.fried-carp.desc":
+      "Свіжий короп цілим, обсмажений на сковороді до золотистої та хрусткої скоринки.",
     "food.mains.beef-steak": "Стейк з телятини",
     "food.mains.beef-steak.price": "£25.00",
     "food.mains.beef-steak.desc": "Телятина, подається з картоплею фрі.",
@@ -909,15 +985,15 @@ const translations = {
     "food.mains.chef-special.desc": "Смажена форель з грибами.",
     "food.mains.baby-chicken-tabaka": "Курча табака",
     "food.mains.baby-chicken-tabaka.price": "£18.00",
-    "food.mains.baby-chicken-tabaka.desc": "Курча табака з картоплею по-домашньому.",
+    "food.mains.baby-chicken-tabaka.desc":
+      "Курча табака з картоплею по-домашньому.",
 
     "food.soups.borscht": "Український борщ",
     "food.soups.borscht.price": "£10.00",
     "food.soups.borscht.desc": "Подається зі сметаною та чорним хлібом.",
     "food.soups.solyanka": "Солянка",
     "food.soups.solyanka.price": "£10.00",
-    "food.soups.solyanka.desc":
-      "Густий, насичений та пікантний суп.",
+    "food.soups.solyanka.desc": "Густий, насичений та пікантний суп.",
     "food.soups.chicken-soup": "Бульйон",
     "food.soups.chicken-soup.price": "£10.00",
     "food.soups.chicken-soup.desc": "Курячий бульйон, локшина, овочі.",
@@ -930,19 +1006,24 @@ const translations = {
     "food.desserts.cake-day.desc": "Запитайте офіціанта про сьогоднішній торт.",
     "food.desserts.nalysnyky-cheese": "Налисники з творогом",
     "food.desserts.nalysnyky-cheese.price": "£10.00",
-    "food.desserts.nalysnyky-cheese.desc": "Тонкі млинці з солодкою начинкою з ніжного сиру.",
+    "food.desserts.nalysnyky-cheese.desc":
+      "Тонкі млинці з солодкою начинкою з ніжного сиру.",
     "food.desserts.nalysnyky-poppy": "Налисники з маком",
     "food.desserts.nalysnyky-poppy.price": "£10.00",
-    "food.desserts.nalysnyky-poppy.desc": "Тонкі млинці з насиченою та солодкою начинкою з маку.",
+    "food.desserts.nalysnyky-poppy.desc":
+      "Тонкі млинці з насиченою та солодкою начинкою з маку.",
     "food.desserts.nalysnyky-cherries": "Налисники з вишнями та вершками",
     "food.desserts.nalysnyky-cherries.price": "£10.00",
-    "food.desserts.nalysnyky-cherries.desc": "Тонкі млинці з кислими вишнями, прикрашені хвилею збитих вершків.",
+    "food.desserts.nalysnyky-cherries.desc":
+      "Тонкі млинці з кислими вишнями, прикрашені хвилею збитих вершків.",
     "food.desserts.varenyky-cherries": "Вареники з вишнями",
     "food.desserts.varenyky-cherries.price": "£12.00",
-    "food.desserts.varenyky-cherries.desc": "Солодкі вареники з начинкою зі свіжих або заморожених кислих вишень, зазвичай подаються зі сметаною.",
+    "food.desserts.varenyky-cherries.desc":
+      "Солодкі вареники з начинкою зі свіжих або заморожених кислих вишень, зазвичай подаються зі сметаною.",
     "food.desserts.syrnyky": "Сирники",
     "food.desserts.syrnyky.price": "£12.00",
-    "food.desserts.syrnyky.desc": "Традиційні українські сирники, обсмажені на сковороді, подаються з варенням або сметаною.",
+    "food.desserts.syrnyky.desc":
+      "Традиційні українські сирники, обсмажені на сковороді, подаються з варенням або сметаною.",
     "food.desserts.fruit-platter": "Фруктове плато",
     "food.desserts.fruit-platter.price": "£20.00",
     "food.desserts.fruit-platter.desc": "Сезонні фрукти",
@@ -958,7 +1039,8 @@ const translations = {
     "food.extras.rice.price": "£4.00",
     "food.extras.ajika": "Аджика",
     "food.extras.ajika.price": "£3.00",
-    "food.extras.ajika.desc": "Традиційна гостра та ароматна паста з червоного перцю, часнику та спецій.",
+    "food.extras.ajika.desc":
+      "Традиційна гостра та ароматна паста з червоного перцю, часнику та спецій.",
     "food.extras.sauce": "Соус",
     "food.extras.sauce.price": "£3.00",
     "food.extras.sour-cream": "Сметана",
@@ -1017,12 +1099,10 @@ const translations = {
       "Рис, норі, крем-сир, авокадо, лосось, креветка, масаго (смажений).",
     "food.sushi.canadian": "Канадський рол",
     "food.sushi.canadian.price": "£15.00",
-    "food.sushi.canadian.desc":
-      "Рис, норі, крем-сир, огірок, вугор, соус.",
+    "food.sushi.canadian.desc": "Рис, норі, крем-сир, огірок, вугор, соус.",
     "food.sushi.deluxe": "Рол «Делюкс»",
     "food.sushi.deluxe.price": "£16.00",
-    "food.sushi.deluxe.desc":
-      "Рис, норі, крем-сир, краб, огірок, лосось.",
+    "food.sushi.deluxe.desc": "Рис, норі, крем-сир, краб, огірок, лосось.",
     "food.sushi.golden-dragon": "Золотий дракон",
     "food.sushi.golden-dragon.price": "£15.00",
     "food.sushi.golden-dragon.desc":
@@ -1059,10 +1139,12 @@ const translations = {
     "food.kids.baby-chicken.desc": "курча табака з картоплею по-домашньому",
     "food.kids.nuggets": "Нагетси",
     "food.kids.nuggets.price": "£8.00",
-    "food.kids.nuggets.desc": "Хрусткі курячі нагетси маленькими порціями, ідеальні для дітей.",
+    "food.kids.nuggets.desc":
+      "Хрусткі курячі нагетси маленькими порціями, ідеальні для дітей.",
     "food.kids.mac-cheese": "Паста з сиром",
     "food.kids.mac-cheese.price": "£8.00",
-    "food.kids.mac-cheese.desc": "Кремова паста, приготована на подвійних вершках із багатою сумішшю сирів.",
+    "food.kids.mac-cheese.desc":
+      "Кремова паста, приготована на подвійних вершках із багатою сумішшю сирів.",
     "food.kids.chicken-shish": "Курячий шашлик",
     "food.kids.chicken-shish.price": "£12.00",
     "food.kids.chicken-shish.desc": "Курячий шашлик з овочами.",
@@ -1140,7 +1222,8 @@ const translations = {
     "drinks.whiskey.chivas": "Чівас",
     "drinks.whiskey.chivas.desc": "Шотландський віскі.",
     "drinks.whiskey.captain-morgan": "Капітан Морган",
-    "drinks.whiskey.captain-morgan.desc": "Темний ром з теплими нотами ванілі та спецій.",
+    "drinks.whiskey.captain-morgan.desc":
+      "Темний ром з теплими нотами ванілі та спецій.",
     "drinks.whiskey.courvoisier": "Курвуазьє",
     "drinks.whiskey.courvoisier.desc": "Французький коньяк.",
 
@@ -1163,7 +1246,8 @@ const translations = {
     "drinks.red-wine.pinot-noir": "Піно Нуар",
     "drinks.red-wine.pinot-noir.desc": "Червоне сухе вино.",
     "drinks.red-wine.alazany-valley": "Долина Алазани",
-    "drinks.red-wine.alazany-valley.desc": "Червоне напівсолодке вино (Грузія).",
+    "drinks.red-wine.alazany-valley.desc":
+      "Червоне напівсолодке вино (Грузія).",
 
     "drinks.champagne.prosecco": "Просекко",
     "drinks.champagne.prosecco.desc": "Італійське ігристе вино.",
@@ -1307,7 +1391,8 @@ const translations = {
     "reservation.contact.hours.weekend.time": "12:00 - 23:30",
 
     "reservation2.title": "Онлайн бронювання",
-    "reservation2.subtitle": "Будь ласка, заповніть форму нижче, щоб забронювати столик.",
+    "reservation2.subtitle":
+      "Будь ласка, заповніть форму нижче, щоб забронювати столик.",
     "reservation2.partySize.placeholder": "Кількість осіб",
     "reservation2.partySize.1": "1 особа",
     "reservation2.partySize.2": "2 особи",
@@ -1334,6 +1419,34 @@ const translations = {
     "reservation2.contact.hours.lines":
       "Понеділок: Закрито<br>Вівторок: Закрито<br>Середа: 15:00-21:00<br>Четвер: 15:00-21:00<br>П'ятниця: 15:00-23:00<br>Субота: 12:00-00:00<br>Неділя: 12:00-23:00",
     "reservation2.contact.social": "Наші соціальні мережі:",
+    "reservation2.rules.title": "Правила бронювання",
+    "reservation2.rules.link": "Переглянути повні умови та правила",
+    "reservation2.rules.table.title": "Правила бронювання столика у закладі:",
+    "reservation2.rules.table.1":
+      "При бронюванні від 8 осіб вам буде запропоновано банкетне меню вартістю 100 фунтів з людини, яке включає 7 холодних страв, 4 гарячі страви, а також можливість принести з собою алкоголь та безалкогольні напої в будь-якій кількості.",
+    "reservation2.rules.table.2":
+      "Всі зміни в кількості осіб або меню мають бути погоджені не пізніше ніж за 48 годин до бронювання.",
+    "reservation2.rules.table.3":
+      "Ресторан залишає за собою право змінювати умови бронювання в разі непередбачених обставин, попередивши про це клієнта заздалегідь.",
+    "reservation2.rules.table.4":
+      "Ресторан залишає за собою право відмовити вам у вході або попросити покинути заклад у разі не дотримання дрес-коду smart casual або ж в разі алкогольного чи наркотичного сп'яніння.",
+    "reservation2.rules.table.5":
+      "Приносити з собою та розпивати алкогольні та безалкогольні напої строго заборонено.",
+    "reservation2.rules.table.6":
+      "Ресторан не несе відповідальності за загублені вами речі.",
+    "reservation2.rules.table.7":
+      "Будь ласка, слідкуйте за своїми дітьми під час перебування у закладі.",
+    "reservation2.rules.lounge.title": "Правила бронювання в лаундж зоні:",
+    "reservation2.rules.lounge.1": "Лаундж зона працює до 22:30.",
+    "reservation2.rules.lounge.2":
+      "При бронюванні столика в лаундж зоні замовлення кальяну є обов'язковим. У разі відмови кальян буде додано у чек автоматично.",
+    "reservation2.rules.lounge.3":
+      "На жаль, дітям перебувати у лаундж зоні заборонено.",
+    "reservation2.rules.lounge.4":
+      "Ресторан залишає за собою право відмовити у вході або попросити покинути заклад у разі порушення дрес-коду smart casual, а також у разі алкогольного чи наркотичного сп'яніння.",
+    "reservation2.large-group.notice":
+      "Важливо: Для груп від 8 осіб, будь ласка, прочитайте наші правила бронювання перед продовженням.",
+    "reservation2.large-group.read-rules": "Прочитати правила",
 
     "features.subtitle": "Чому обрати нас",
     "features.title": "Наші переваги",
@@ -1394,13 +1507,17 @@ const translations = {
     "events.card3.title": "Перший раз у Лондоні",
 
     "event.modal.title": "Новорічний вечір",
-    "event.modal.description": "Запрошуємо вас на незабутній новорічний вечір у нашому ресторані! Спеціальна гостя — Ольга Цибульська, улюблена українська співачка, яка виконає свої найкращі хіти саме для наших гостей.",
+    "event.modal.description":
+      "Запрошуємо вас на незабутній новорічний вечір у нашому ресторані! Спеціальна гостя — Ольга Цибульська, улюблена українська співачка, яка виконає свої найкращі хіти саме для наших гостей.",
     "event.modal.time.start": "🕗 Початок: 20:00",
     "event.modal.time.end": "🌙 Завершення: 02:00",
-    "event.modal.features": "На вас чекає:\n\n✨ Смачне святкове меню;\n\n🎵 Неймовірна музика;\n\n🎭 Спеціальна новорічна програма;",
+    "event.modal.features":
+      "На вас чекає:\n\n✨ Смачне святкове меню;\n\n🎵 Неймовірна музика;\n\n🎭 Спеціальна новорічна програма;",
     "event.modal.price.regular": "💷 Вартість місця — £200 з особи.",
-    "event.modal.price.special": "🔥 Якщо ви забронюєте місце до 1.12, то діє акційна ціна, всього £150/людини!",
-    "event.modal.price.footer": "Бронюйте вже зараз і зустріньмо Новий рік разом у теплій, яскравій атмосфері! 🥂",
+    "event.modal.price.special":
+      "🔥 Якщо ви забронюєте місце до 1.12, то діє акційна ціна, всього £150/людини!",
+    "event.modal.price.footer":
+      "Бронюйте вже зараз і зустріньмо Новий рік разом у теплій, яскравій атмосфері! 🥂",
     "event.modal.location": "📍 Локація: Moisei Restaurant, Brentford",
     "event.modal.bookings.title": "Бронювання за номерами:",
 
@@ -1426,7 +1543,8 @@ const translations = {
     "back-top.label": "Повернутися вгору",
 
     "cookie.title": "Ми використовуємо cookies",
-    "cookie.message": "Ми використовуємо cookies для покращення вашого досвіду перегляду, аналізу трафіку сайту та персоналізації контенту. Натискаючи 'Прийняти все', ви погоджуєтесь на використання cookies. Ви можете керувати своїми налаштуваннями або дізнатися більше в нашій",
+    "cookie.message":
+      "Ми використовуємо cookies для покращення вашого досвіду перегляду, аналізу трафіку сайту та персоналізації контенту. Натискаючи 'Прийняти все', ви погоджуєтесь на використання cookies. Ви можете керувати своїми налаштуваннями або дізнатися більше в нашій",
     "cookie.policy": "Політиці cookies",
     "cookie.accept": "Прийняти все",
     "cookie.decline": "Відхилити",
@@ -1472,7 +1590,9 @@ class LanguageSwitcher {
     this.updateToggleUI();
     this.translatePage();
 
-    document.dispatchEvent(new CustomEvent("languageChanged", { detail: { lang } }));
+    document.dispatchEvent(
+      new CustomEvent("languageChanged", { detail: { lang } })
+    );
   }
 
   updateToggleUI() {
@@ -1503,7 +1623,7 @@ class LanguageSwitcher {
     elements.forEach((element) => {
       const key = element.getAttribute("data-i18n");
       if (!key || !translations[this.currentLang]) return;
-      
+
       const translation = translations[this.currentLang][key];
 
       if (translation) {
@@ -1548,13 +1668,15 @@ class LanguageSwitcher {
 
     const partySizeSelect = document.querySelector('select[name="partySize"]');
     if (partySizeSelect) {
-      const partySizeOptions = partySizeSelect.querySelectorAll("option[value]");
+      const partySizeOptions =
+        partySizeSelect.querySelectorAll("option[value]");
       partySizeOptions.forEach((option) => {
         const value = option.getAttribute("value");
         if (value && value !== "") {
-          const key = value === "8-plus" 
-            ? "reservation2.partySize.8plus" 
-            : `reservation2.partySize.${value}`;
+          const key =
+            value === "8-plus"
+              ? "reservation2.partySize.8plus"
+              : `reservation2.partySize.${value}`;
           const translation = translations[this.currentLang][key];
           if (translation) {
             option.textContent = translation;

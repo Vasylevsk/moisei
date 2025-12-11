@@ -203,6 +203,333 @@
           transform: translateY(0);
         }
       }
+
+      /* Reservation Rules Modal */
+      .rules-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-2);
+      }
+
+      .rules-modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .rules-modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(4px);
+        cursor: pointer;
+      }
+
+      .rules-modal-container {
+        position: relative;
+        max-width: 800px;
+        width: 90%;
+        max-height: 90vh;
+        background: linear-gradient(
+          135deg,
+          var(--eerie-black-2) 0%,
+          var(--smoky-black-3) 100%
+        );
+        border: 2px solid var(--gold-crayola);
+        border-radius: 20px;
+        padding: 0;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        transform: scale(0.9) translateY(20px);
+        transition: var(--transition-2);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .rules-modal.active .rules-modal-container {
+        transform: scale(1) translateY(0);
+      }
+
+      .rules-modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--eerie-black-1);
+        border: 1px solid var(--white-alpha-10);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: var(--transition-1);
+      }
+
+      .rules-modal-close:hover {
+        background-color: var(--gold-crayola);
+        color: var(--eerie-black-1);
+        transform: rotate(90deg);
+      }
+
+      .rules-modal-close ion-icon {
+        font-size: 24px;
+      }
+
+      .rules-modal-content {
+        padding: 40px;
+        overflow-y: auto;
+        flex: 1;
+      }
+
+      .rules-box-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--white-alpha-10);
+      }
+
+      .rules-box-header ion-icon {
+        font-size: 32px;
+        color: var(--gold-crayola);
+        flex-shrink: 0;
+      }
+
+      .rules-box-title {
+        font-family: var(--fontFamily-forum);
+        font-size: 2.4rem;
+        color: var(--white);
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .rules-box-content {
+        color: var(--quick-silver);
+      }
+
+      .rules-section {
+        margin-bottom: 28px;
+      }
+
+      .rules-section:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .rules-section-title {
+        font-family: var(--fontFamily-forum);
+        font-size: 1.8rem;
+        color: var(--gold-crayola);
+        margin-bottom: 16px;
+        font-weight: 400;
+      }
+
+      .rules-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .rules-list li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 12px;
+        font-size: 1.5rem;
+        line-height: 1.7;
+        color: var(--quick-silver);
+      }
+
+      .rules-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--gold-crayola);
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      .rules-box-footer {
+        margin-top: 30px;
+        padding-top: 24px;
+        border-top: 1px solid var(--white-alpha-10);
+        text-align: center;
+      }
+
+      .rules-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--gold-crayola);
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 600;
+        transition: var(--transition-1);
+      }
+
+      .rules-link:hover {
+        color: var(--white);
+        gap: 14px;
+      }
+
+      .rules-link ion-icon {
+        font-size: 20px;
+        transition: var(--transition-1);
+      }
+
+      .rules-link:hover ion-icon {
+        transform: translateX(4px);
+      }
+
+      .rules-modal-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .rules-modal-btn ion-icon {
+        font-size: 20px;
+      }
+
+      /* Large Group Notice */
+      .large-group-notice {
+        margin: 20px 0;
+        padding: 16px 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(218, 165, 32, 0.1) 0%,
+          rgba(218, 165, 32, 0.05) 100%
+        );
+        border: 1px solid var(--gold-crayola);
+        border-radius: 12px;
+        animation: slideDown 0.3s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .notice-content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .notice-content ion-icon {
+        font-size: 24px;
+        color: var(--gold-crayola);
+        flex-shrink: 0;
+      }
+
+      .notice-text {
+        flex: 1;
+        margin: 0;
+        color: var(--white);
+        font-size: 1.4rem;
+        line-height: 1.5;
+        min-width: 200px;
+      }
+
+      .notice-btn {
+        padding: 8px 16px;
+        background-color: var(--gold-crayola);
+        color: var(--eerie-black-1);
+        border: none;
+        border-radius: 6px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition-1);
+        white-space: nowrap;
+      }
+
+      .notice-btn:hover {
+        background-color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 767px) {
+        .large-group-notice {
+          padding: 14px 16px;
+        }
+
+        .notice-content {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .notice-content ion-icon {
+          font-size: 22px;
+        }
+
+        .notice-text {
+          font-size: 1.3rem;
+          min-width: auto;
+        }
+
+        .notice-btn {
+          width: 100%;
+          padding: 10px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .rules-modal-container {
+          width: 95%;
+          max-height: 95vh;
+          border-radius: 16px;
+        }
+
+        .rules-modal-content {
+          padding: 30px 20px;
+        }
+
+        .rules-modal-close {
+          top: 15px;
+          right: 15px;
+          width: 36px;
+          height: 36px;
+        }
+
+        .rules-box-title {
+          font-size: 2rem;
+        }
+
+        .rules-section-title {
+          font-size: 1.6rem;
+        }
+
+        .rules-list li {
+          font-size: 1.4rem;
+          padding-left: 24px;
+        }
+
+        .rules-link {
+          font-size: 1.4rem;
+        }
+      }
     </style>
   </head>
 
@@ -565,6 +892,35 @@
                   Monday & Tuesday closed.
                 </p>
 
+                <!-- Large Group Notice -->
+                <div
+                  class="large-group-notice"
+                  id="largeGroupNotice"
+                  style="display: none"
+                >
+                  <div class="notice-content">
+                    <ion-icon
+                      name="alert-circle-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+                    <p
+                      class="notice-text"
+                      data-i18n="reservation2.large-group.notice"
+                    >
+                      Important: For groups of 8+ guests, please read our
+                      reservation rules before proceeding.
+                    </p>
+                    <button
+                      type="button"
+                      class="notice-btn"
+                      data-rules-modal-toggler
+                      data-i18n="reservation2.large-group.read-rules"
+                    >
+                      Read Rules
+                    </button>
+                  </div>
+                </div>
+
                 <div class="step-controls">
                   <button
                     type="button"
@@ -580,6 +936,29 @@
                       data-i18n="reservation2.btn.next"
                     >
                       Next
+                    </span>
+                  </button>
+                </div>
+
+                <!-- Button to open rules modal -->
+                <div class="text-center" style="margin: 20px 0">
+                  <button
+                    type="button"
+                    class="btn btn-secondary rules-modal-btn"
+                    data-rules-modal-toggler
+                  >
+                    <span
+                      class="text text-1"
+                      data-i18n="reservation2.rules.title"
+                    >
+                      Reservation Rules
+                    </span>
+                    <span
+                      class="text text-2"
+                      aria-hidden="true"
+                      data-i18n="reservation2.rules.title"
+                    >
+                      Reservation Rules
                     </span>
                   </button>
                 </div>
@@ -749,7 +1128,7 @@
 
               <div class="social-row">
                 <a
-                  href="https://www.facebook.com/moiseirestaurant/?ref=_xav_ig_profile_page_web#"
+                  href="https://www.facebook.com/share/17n8iGsdW4/?mibextid=wwXIfr"
                   class="body-4 contact-link"
                 >
                   <ion-icon name="logo-facebook"></ion-icon>
@@ -901,6 +1280,77 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
+    <!-- Reservation Rules Modal -->
+    <div class="rules-modal" id="rulesModal" data-rules-modal>
+      <div class="rules-modal-overlay" data-rules-modal-toggler></div>
+      <div class="rules-modal-container">
+        <button
+          class="rules-modal-close"
+          data-rules-modal-toggler
+          aria-label="Close modal"
+        >
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+        <div class="rules-modal-content">
+          <div class="rules-box-header">
+            <ion-icon
+              name="information-circle-outline"
+              aria-hidden="true"
+            ></ion-icon>
+            <h3 class="rules-box-title" data-i18n="reservation2.rules.title">
+              Reservation Rules
+            </h3>
+          </div>
+          <div class="rules-box-content">
+            <div class="rules-section">
+              <h4
+                class="rules-section-title"
+                data-i18n="reservation2.rules.table.title"
+              >
+                Table Reservation Rules:
+              </h4>
+              <ul class="rules-list">
+                <li data-i18n="reservation2.rules.table.1"></li>
+                <li data-i18n="reservation2.rules.table.2"></li>
+                <li data-i18n="reservation2.rules.table.3"></li>
+                <li data-i18n="reservation2.rules.table.4"></li>
+                <li data-i18n="reservation2.rules.table.5"></li>
+                <li data-i18n="reservation2.rules.table.6"></li>
+                <li data-i18n="reservation2.rules.table.7"></li>
+              </ul>
+            </div>
+            <div class="rules-section">
+              <h4
+                class="rules-section-title"
+                data-i18n="reservation2.rules.lounge.title"
+              >
+                Lounge Area Reservation Rules:
+              </h4>
+              <ul class="rules-list">
+                <li data-i18n="reservation2.rules.lounge.1"></li>
+                <li data-i18n="reservation2.rules.lounge.2"></li>
+                <li data-i18n="reservation2.rules.lounge.3"></li>
+                <li data-i18n="reservation2.rules.lounge.4"></li>
+              </ul>
+            </div>
+            <div class="rules-box-footer">
+              <a
+                href="terms-conditions.html#table-reservations"
+                class="rules-link"
+                data-i18n="reservation2.rules.link"
+              >
+                View Full Terms & Conditions
+                <ion-icon
+                  name="arrow-forward-outline"
+                  aria-hidden="true"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -915,6 +1365,59 @@
           "url": "https://moisei.uk"
         }
       }
+    </script>
+
+    <script>
+      // Rules Modal Toggle
+      (function () {
+        const modal = document.getElementById("rulesModal");
+        const togglers = document.querySelectorAll(
+          "[data-rules-modal-toggler]"
+        );
+
+        if (!modal) return;
+
+        function toggleModal() {
+          modal.classList.toggle("active");
+          document.body.style.overflow = modal.classList.contains("active")
+            ? "hidden"
+            : "";
+        }
+
+        togglers.forEach((toggler) => {
+          toggler.addEventListener("click", toggleModal);
+        });
+
+        // Close on Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.classList.contains("active")) {
+            toggleModal();
+          }
+        });
+      })();
+
+      // Large Group Notice
+      (function () {
+        const partySizeSelect = document.querySelector(
+          'select[name="partySize"]'
+        );
+        const notice = document.getElementById("largeGroupNotice");
+
+        if (!partySizeSelect || !notice) return;
+
+        function checkPartySize() {
+          if (partySizeSelect.value === "8-plus") {
+            notice.style.display = "block";
+          } else {
+            notice.style.display = "none";
+          }
+        }
+
+        partySizeSelect.addEventListener("change", checkPartySize);
+
+        // Check on page load in case value is already set
+        checkPartySize();
+      })();
     </script>
   </body>
 </html>

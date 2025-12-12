@@ -414,7 +414,7 @@ const translations = {
     "hookah.item27": "Love 66",
     "hookah.item27.desc": "Melon, watermelon, mint (taste of love)",
     "hookah.price.regular": "Hookah - £35",
-    "hookah.price.special": "Every Friday and Saturday - £29",
+    "hookah.price.special": "Every Friday and Sunday - £29",
     "hookah.price.fruit": "Fruit Hookah - £45",
     "hookah.text.mix": "Choose and mix your favorite flavors.",
     "hookah.text.fruit":
@@ -1185,7 +1185,7 @@ const translations = {
     "hookah.item27": "Love 66",
     "hookah.item27.desc": "Диня, кавун, м'ята (смак кохання)",
     "hookah.price.regular": "Кальян звичайний – £35",
-    "hookah.price.special": "Кожну п'ятницю та суботу – £29",
+    "hookah.price.special": "Кожну п'ятницю та неділю – £29",
     "hookah.price.fruit": "Кальян на фруктах – £45",
     "hookah.text.mix": "Обирайте та міксуйте улюблені смаки.",
     "hookah.text.fruit":
@@ -1623,7 +1623,7 @@ class LanguageSwitcher {
     elements.forEach((element) => {
       const key = element.getAttribute("data-i18n");
       if (!key || !translations[this.currentLang]) return;
-
+      
       const translation = translations[this.currentLang][key];
 
       if (translation) {
@@ -1675,8 +1675,8 @@ class LanguageSwitcher {
         if (value && value !== "") {
           const key =
             value === "8-plus"
-              ? "reservation2.partySize.8plus"
-              : `reservation2.partySize.${value}`;
+            ? "reservation2.partySize.8plus" 
+            : `reservation2.partySize.${value}`;
           const translation = translations[this.currentLang][key];
           if (translation) {
             option.textContent = translation;

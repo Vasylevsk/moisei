@@ -112,9 +112,130 @@
     />
 
     <link rel="stylesheet" href="./assets/css/combined.min.css?v=e5be214b" />
+    
+    <!-- Hookah Menu Video Background Styles -->
+    <style>
+      /* Hookah Menu Background Video - Fixed Implementation */
+      .hookah-video-background {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        pointer-events: none !important;
+      }
+
+      .hookah-bg-video {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        filter: brightness(0.3) !important;
+        pointer-events: none !important;
+        user-select: none !important;
+        display: block !important;
+        clip-path: inset(0 0 5% 0) !important;
+        -webkit-clip-path: inset(0 0 5% 0) !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+      }
+
+      /* Контент поверх видео */
+      .page-main,
+      main {
+        position: relative !important;
+        z-index: 1 !important;
+        background: transparent !important;
+      }
+
+      .header,
+      .topbar {
+        position: relative !important;
+        z-index: 10 !important;
+        background: transparent !important;
+      }
+
+      .hookah-menu-section {
+        position: relative !important;
+        z-index: 2 !important;
+        background: transparent !important;
+      }
+
+      .hookah-menu-section .container {
+        position: relative !important;
+        z-index: 2 !important;
+        text-align: center !important;
+        padding: 2rem !important;
+        max-width: 900px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+        background: transparent !important;
+      }
+
+      /* Header padding для hookah-menu */
+      .header {
+        padding: 0 !important;
+      }
+
+      /* Section padding для hookah-menu */
+      .hookah-menu-section {
+        padding: 15px !important;
+      }
+
+      @media (max-width: 768px) {
+        .hookah-bg-video {
+          filter: brightness(0.25) !important;
+          clip-path: inset(0 0 8% 0) !important;
+          -webkit-clip-path: inset(0 0 8% 0) !important;
+        }
+        
+        .hookah-menu-section .container {
+          padding: 1.5rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hookah-bg-video {
+          filter: brightness(0.2) !important;
+          clip-path: inset(0 0 10% 0) !important;
+          -webkit-clip-path: inset(0 0 10% 0) !important;
+        }
+        
+        .hookah-menu-section .container {
+          padding: 1rem !important;
+        }
+      }
+    </style>
 </head>
 
 <body id="top">
+
+  <!-- Background Video -->
+  <div class="hookah-video-background">
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      preload="auto"
+      class="hookah-bg-video"
+      aria-hidden="true"
+      tabindex="-1">
+      <source src="./assets/images/shishabg.mp4" type="video/mp4">
+      <!-- Fallback для браузеров без поддержки video -->
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
   <div class="preload" data-preaload>
     <div class="circle"></div>
@@ -426,11 +547,6 @@
               <span class="shisha-dot" data-shisha-dot="2"></span>
             </div>
           </div>
-
-          <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
-          <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
 
         </div>
       </section>

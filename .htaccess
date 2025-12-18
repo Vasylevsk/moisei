@@ -48,3 +48,19 @@
 </IfModule>
 FileETag None
 
+# Security: Block access to .git directory and all subdirectories
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.git - [F,L]
+</IfModule>
+
+# Block access to .git directory (Apache 2.4+)
+<DirectoryMatch "^.*/\.git/">
+    Require all denied
+</DirectoryMatch>
+
+# Block access to .git files and directories
+<FilesMatch "^\.git">
+    Require all denied
+</FilesMatch>
+

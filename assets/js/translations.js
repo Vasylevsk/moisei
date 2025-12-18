@@ -481,6 +481,9 @@ const translations = {
     "drinks.red-wine.alazany-valley": "Alazany Valley",
     "drinks.red-wine.alazany-valley.desc":
       "A semi-sweet red wine from Georgia.",
+    "drinks.red-wine.mulled-wine": "Mulled Wine",
+    "drinks.red-wine.mulled-wine.desc":
+      "A warm spiced red wine with cinnamon, orange, and festive flavors.",
 
     "drinks.champagne.prosecco": "Prosecco",
     "drinks.champagne.prosecco.desc":
@@ -1248,6 +1251,9 @@ const translations = {
     "drinks.red-wine.alazany-valley": "Долина Алазани",
     "drinks.red-wine.alazany-valley.desc":
       "Червоне напівсолодке вино (Грузія).",
+    "drinks.red-wine.mulled-wine": "Глінтвейн",
+    "drinks.red-wine.mulled-wine.desc":
+      "Тепле пряне червоне вино з корицею, апельсином та святковими ароматами.",
 
     "drinks.champagne.prosecco": "Просекко",
     "drinks.champagne.prosecco.desc": "Італійське ігристе вино.",

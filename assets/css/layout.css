@@ -10,7 +10,7 @@
 
 .header {
   position: fixed;
-  top: 0;
+  top: 28px;
   left: 0;
   width: 100%;
   background-color: transparent;
@@ -83,7 +83,7 @@
 .navbar {
   position: fixed;
   background-color: var(--smoky-black-1);
-  top: 0;
+  top: 28px;
   left: -360px;
   bottom: 0;
   max-width: 360px;

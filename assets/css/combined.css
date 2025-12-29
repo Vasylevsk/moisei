@@ -1094,7 +1094,7 @@ select.input-field::-ms-expand {
 
 .header {
   position: fixed;
-  top: 0;
+  top: 28px;
   left: 0;
   width: 100%;
   background-color: transparent;
@@ -1167,7 +1167,7 @@ select.input-field::-ms-expand {
 .navbar {
   position: fixed;
   background-color: var(--smoky-black-1);
-  top: 0;
+  top: 28px;
   left: -360px;
   bottom: 0;
   max-width: 360px;
@@ -1459,6 +1459,75 @@ select.input-field::-ms-expand {
   min-height: 100vh;
   overflow: hidden;
   z-index: 1;
+}
+
+/* Hero ticker - бегущая строка */
+.hero-ticker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  border-bottom: 1px solid var(--gold-crayola-alpha-20);
+  overflow: hidden;
+  z-index: 9999;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-1);
+}
+
+.hero-ticker:hover {
+  background-color: #1a1a1a;
+}
+
+.hero-ticker-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.hero-ticker-text {
+  display: inline-block;
+  color: var(--gold-crayola);
+  font-size: 1.1rem;
+  font-weight: var(--weight-medium);
+  padding-inline: 60px;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-ticker {
+    height: 24px;
+  }
+
+  .hero-ticker-text {
+    font-size: 0.9rem;
+    padding-inline: 40px;
+  }
+  
+  .header {
+    top: 24px;
+  }
+  
+  .navbar {
+    top: 24px;
+  }
 }
 
 .hero .slider-item {
@@ -1822,6 +1891,115 @@ select.input-field::-ms-expand {
 
 .special-dish-content {
   padding-block: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Swiper wrapper for special-dish */
+.special-dish-swiper-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.special-dish-swiper {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.special-dish-swiper .swiper-slide .special-dish {
+  position: relative;
+}
+
+.special-dish-swiper .swiper-slide .special-dish .shape {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Swiper navigation buttons */
+.special-dish-swiper .swiper-button-next,
+.special-dish-swiper .swiper-button-prev {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .special-dish-swiper .swiper-button-next,
+  .special-dish-swiper .swiper-button-prev {
+    display: grid;
+    position: absolute;
+    z-index: 10;
+    color: #8fad81;
+    font-size: 2.4rem;
+    border: 1px solid #8fad81;
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: var(--transition-1);
+    background: transparent;
+    margin: 0;
+  }
+
+  .special-dish-swiper .swiper-button-next::after,
+  .special-dish-swiper .swiper-button-prev::after {
+    font-size: 20px;
+    transform: rotate(-45deg);
+  }
+
+  .special-dish-swiper .swiper-button-next {
+    right: 30px;
+  }
+
+  .special-dish-swiper .swiper-button-prev {
+    left: 30px;
+  }
+
+  .special-dish-swiper .swiper-button-next:is(:hover, :focus-visible),
+  .special-dish-swiper .swiper-button-prev:is(:hover, :focus-visible) {
+    background-color: #8fad81;
+    color: var(--black);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .special-dish-swiper .swiper-button-next,
+  .special-dish-swiper .swiper-button-prev {
+    width: 38px;
+    height: 38px;
+    font-size: 2rem;
+  }
+
+  .special-dish-swiper .swiper-button-next::after,
+  .special-dish-swiper .swiper-button-prev::after {
+    font-size: 18px;
+  }
+
+  .special-dish-swiper .swiper-button-next {
+    right: 20px;
+  }
+
+  .special-dish-swiper .swiper-button-prev {
+    left: 20px;
+  }
+}
+
+/* Swiper pagination */
+.special-dish-swiper .swiper-pagination {
+  bottom: 30px;
+}
+
+.special-dish-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: var(--gold-crayola);
+  opacity: 0.5;
+  transition: var(--transition-1);
+}
+
+.special-dish-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--gold-crayola);
 }
 
 .special-dish .abs-img {
@@ -1881,6 +2059,8 @@ select.input-field::-ms-expand {
   .special-dish-banner .img-cover {
     max-width: 100%;
     width: 100%;
+    max-height: 700px;
+    aspect-ratio: auto;
     height: 100%;
     aspect-ratio: auto;
     object-fit: cover;
@@ -3693,7 +3873,9 @@ textarea.input-field {
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
+    min-height: auto;
   }
+
 
   .special-dish-content .container {
     display: -webkit-flex;
@@ -3987,7 +4169,7 @@ textarea.input-field {
   .topbar {
     display: block !important;
     position: fixed;
-    top: 0;
+    top: 28px;
     left: 0;
     width: 100%;
     padding-block: 10px;
@@ -4081,7 +4263,7 @@ textarea.input-field {
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-}
+  }
 
 @media (min-width: 768px) {
   .toggle-switch.active .toggle-thumb {
@@ -4142,11 +4324,11 @@ textarea.input-field {
   }
 
   .header {
-    top: 51px;
+    top: 58px;
   }
 
   .header.active {
-    top: 0;
+    top: 28px;
   }
 
   .header .btn {
@@ -4359,6 +4541,38 @@ textarea.input-field {
   }
 
   .hero .slider-btn:is(:hover, :focus-visible) {
+    background-color: var(--gold-crayola);
+    color: var(--black);
+  }
+
+  .special-dish .slider-btn {
+    display: grid;
+    position: absolute;
+    z-index: 1;
+    color: var(--gold-crayola);
+    font-size: 2.4rem;
+    border: 1px solid var(--gold-crayola);
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: var(--transition-1);
+  }
+
+  .special-dish .slider-btn ion-icon {
+    transform: rotate(-45deg);
+  }
+
+  .special-dish .slider-btn.prev {
+    left: 30px;
+  }
+
+  .special-dish .slider-btn.next {
+    right: 30px;
+  }
+
+  .special-dish .slider-btn:is(:hover, :focus-visible) {
     background-color: var(--gold-crayola);
     color: var(--black);
   }
@@ -4715,7 +4929,7 @@ textarea.input-field {
   }
 
   .special-dish-content {
-    padding: 225px 120px;
+    padding: 100px 120px;
     padding-inline-end: 0;
   }
 
@@ -4973,6 +5187,163 @@ textarea.input-field {
 @media (max-width: 1200px) {
   .header .btn {
     display: none !important;
+  }
+}
+
+/* Hookah Menu Background Video - Fixed Implementation */
+.hookah-video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  /* Предотвращаем влияние на layout */
+  isolation: isolate;
+}
+
+.hookah-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: brightness(0.3);
+  pointer-events: none;
+  user-select: none;
+  display: block;
+  /* Скрываем нижние 5% где обычно водяной знак */
+  clip-path: inset(0 0 5% 0);
+  -webkit-clip-path: inset(0 0 5% 0);
+  /* Гарантируем покрытие всего экрана */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Убеждаемся что контент виден поверх видео */
+body:has(.hookah-video-background) {
+  position: relative;
+}
+
+body:has(.hookah-video-background) .page-main,
+body:has(.hookah-video-background) main {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+body:has(.hookah-video-background) .header,
+body:has(.hookah-video-background) .topbar {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+/* Стили для контента hookah-menu-section поверх видео */
+body:has(.hookah-video-background) .hookah-menu-section {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+body:has(.hookah-video-background) .hookah-menu-section .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background: transparent;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .hookah-video-background {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .hookah-bg-video {
+    filter: brightness(0.25);
+    /* Больше скрываем на мобильных */
+    clip-path: inset(0 0 8% 0);
+    -webkit-clip-path: inset(0 0 8% 0);
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  body:has(.hookah-video-background) .hookah-menu-section .container {
+    padding: 1.5rem;
+  }
+}
+
+/* Адаптация для планшетов */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hookah-bg-video {
+    filter: brightness(0.28);
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .hookah-bg-video {
+    filter: brightness(0.2);
+    /* Еще больше скрываем на очень маленьких экранах */
+    clip-path: inset(0 0 10% 0);
+    -webkit-clip-path: inset(0 0 10% 0);
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  body:has(.hookah-video-background) .hookah-menu-section .container {
+    padding: 1rem;
+  }
+}
+
+/* Для больших экранов */
+@media (min-width: 1920px) {
+  .hookah-bg-video {
+    filter: brightness(0.35);
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+/* Для альбомной ориентации на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hookah-bg-video {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Предотвращаем проблемы с производительностью на слабых устройствах */
+@media (prefers-reduced-motion: reduce) {
+  .hookah-bg-video {
+    animation: none;
   }
 }
 

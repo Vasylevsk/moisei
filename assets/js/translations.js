@@ -45,6 +45,8 @@ const translations = {
     "hero.slide3.text":
       "Join the party and make every evening a special celebration with great company.",
 
+    "hero.ticker.text": "🎉 New Year's Eve Event - Book now for £150 per person! 🎉",
+
     "drink.subtitle": "Drink Menu",
     "drink.title": "Drink Menu",
     "menu.subtitle": "Food Menu",
@@ -548,6 +550,12 @@ const translations = {
     "drinks.cocktails.blue-eye.desc":
       "Gin, Martini bianco, blue curacao, lemon juice",
 
+    "drinks.cocktails.red-winter": "Red Winter Cocktail",
+    "drinks.cocktails.red-winter.desc": "Ice, Cherry, Amaretto, Cranberry juice.",
+
+    "drinks.cocktails.blue-winter": "Blue Winter Cocktail",
+    "drinks.cocktails.blue-winter.desc": "Bacardi, Malibu, Coconut milk, Pineapple juice, Blue Curacao.",
+
     "drinks.hot-drinks.latte": "Latte",
     "drinks.hot-drinks.espresso": "Espresso",
     "drinks.hot-drinks.breakfast-tea": "Black tea",
@@ -601,6 +609,23 @@ const translations = {
       "Daily Lunch Perfection Awaits! Indulge in our exquisite set lunch, featuring a delightful main course, a comforting soup, and a refreshing drink. Come in and savor the moment!",
     "special.price.old": "£25.00",
     "special.price.new": "£15.00",
+
+    "special2.badge": "SPECIAL OFFER",
+    "special2.title": "Meal Set",
+    "special2.text": "Burger, chips and mulled wine.",
+    "special2.price.new": "£21.00",
+
+    "special.slide1.badge": "SPECIAL OFFER",
+    "special.slide1.title": "Business Lunch",
+    "special.slide1.text":
+      "Daily Lunch Perfection Awaits! Indulge in our exquisite set lunch, featuring a delightful main course, a comforting soup, and a refreshing drink. Come in and savor the moment!",
+    "special.slide1.price.old": "£25.00",
+    "special.slide1.price.new": "£15.00",
+
+    "special.slide2.badge": "SPECIAL OFFER",
+    "special.slide2.title": "Meal Deal",
+    "special.slide2.text": "Burger, chips and mulled wine.",
+    "special.slide2.price.new": "£21.00",
 
     "testi.quote.open": '"',
     "testi.quote.close": '"',
@@ -754,7 +779,7 @@ const translations = {
     "event.modal.time.end": "🌙 End: 2:00 AM",
     "event.modal.features":
       "What awaits you:\n\n✨ Delicious festive menu\n\n🎵 Incredible music\n\n🎭 Special New Year's program",
-    "event.modal.price.regular": "💷 Ticket price: £200 per person",
+    "event.modal.price.regular": "💷 Ticket price: £150 per person",
     "event.modal.price.special":
       "🔥 Early booking offer: Book by 1st December for just £150 per person!",
     "event.modal.price.footer":
@@ -836,6 +861,8 @@ const translations = {
     "hero.slide3.title": "Для незабутніх <br> вечорів та яскравих спогадів",
     "hero.slide3.text":
       "Приєднуйтесь до вечірки і зробіть кожен вечір особливим святом з чудовою компанією.",
+
+    "hero.ticker.text": "🎉 Новорічний вечір - Бронюйте зараз за £150 з особи! 🎉",
 
     "drink.subtitle": "Меню напоїв",
     "drink.title": "Меню напоїв",
@@ -1318,6 +1345,12 @@ const translations = {
     "drinks.cocktails.blue-eye.desc":
       "Джин, Martini bianco, блакитний курасао, лимонний сік",
 
+    "drinks.cocktails.red-winter": "Червоний зимовий коктейль",
+    "drinks.cocktails.red-winter.desc": "Лід, вишня, амаретто, журавлиновий сік.",
+
+    "drinks.cocktails.blue-winter": "Синій зимовий коктейль",
+    "drinks.cocktails.blue-winter.desc": "Bacardi, Malibu, кокосове молоко, ананасовий сік, блакитний курасао.",
+
     "drinks.hot-drinks.latte": "Latte",
     "drinks.hot-drinks.espresso": "Espresso",
     "drinks.hot-drinks.breakfast-tea": "Сніданковий чай",
@@ -1365,6 +1398,23 @@ const translations = {
       "Досконалий обід чекає на вас! Насолоджуйтеся нашим вишуканим сет-ланчем, до якого входять основна страва, ароматний суп та освіжаючий напій. Завітайте та скуштуйте момент!",
     "special.price.old": "£25.00",
     "special.price.new": "£15.00",
+
+    "special2.badge": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ",
+    "special2.title": "Сет Меню",
+    "special2.text": "Бургер, картопля фрі та глінтвейн.",
+    "special2.price.new": "£21.00",
+
+    "special.slide1.badge": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ",
+    "special.slide1.title": "Бізнес-ланч",
+    "special.slide1.text":
+      "Досконалий обід чекає на вас! Насолоджуйтеся нашим вишуканим сет-ланчем, до якого входять основна страва, ароматний суп та освіжаючий напій. Завітайте та скуштуйте момент!",
+    "special.slide1.price.old": "£25.00",
+    "special.slide1.price.new": "£15.00",
+
+    "special.slide2.badge": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ",
+    "special.slide2.title": "Сет-меню",
+    "special.slide2.text": "Бургер, картопля фрі та глінтвейн.",
+    "special.slide2.price.new": "£21.00",
 
     "testi.quote.open": '"',
     "testi.quote.close": '"',
@@ -1519,7 +1569,7 @@ const translations = {
     "event.modal.time.end": "🌙 Завершення: 02:00",
     "event.modal.features":
       "На вас чекає:\n\n✨ Смачне святкове меню;\n\n🎵 Неймовірна музика;\n\n🎭 Спеціальна новорічна програма;",
-    "event.modal.price.regular": "💷 Вартість місця — £200 з особи.",
+    "event.modal.price.regular": "💷 Вартість місця — £150 з особи.",
     "event.modal.price.special":
       "🔥 Якщо ви забронюєте місце до 1.12, то діє акційна ціна, всього £150/людини!",
     "event.modal.price.footer":

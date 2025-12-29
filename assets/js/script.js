@@ -173,6 +173,7 @@ if (
   window.addEventListener("load", autoSlide);
 }
 
+
 const shishaContainer = document.querySelector("[data-shisha-slider]");
 const shishaItems = document.querySelectorAll(".shisha-image-item");
 const shishaDots = document.querySelectorAll("[data-shisha-dot]");
@@ -438,7 +439,6 @@ if (eventModal && eventModalClose) {
   const modalTimeEnd = eventModal.querySelector("[data-event-modal-time-end]");
   const modalFeatures = eventModal.querySelector("[data-event-modal-features]");
   const modalPriceRegular = eventModal.querySelector("[data-event-modal-price-regular]");
-  const modalPriceSpecial = eventModal.querySelector("[data-event-modal-price-special]");
   const modalLocation = eventModal.querySelector("[data-event-modal-location-text]");
   const modalBookingsTitle = eventModal.querySelector("[data-event-modal-bookings-title]");
 
@@ -514,10 +514,6 @@ if (eventModal && eventModalClose) {
       modalPriceRegular.textContent = getTranslation("event.modal.price.regular");
     }
 
-    if (modalPriceSpecial) {
-      modalPriceSpecial.innerHTML = getTranslation("event.modal.price.special") + "<br><br>" + getTranslation("event.modal.price.footer");
-    }
-
     if (modalLocation) {
       modalLocation.textContent = getTranslation("event.modal.location");
     }
@@ -578,4 +574,57 @@ window.addEventListener("mousemove", function (event) {
   }
 });
 }
+
+// Initialize Swiper for special-dish
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof Swiper !== 'undefined') {
+    const specialDishSwiper = new Swiper('.special-dish-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      autoHeight: false,
+      autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.special-dish-swiper .swiper-button-next',
+        prevEl: '.special-dish-swiper .swiper-button-prev',
+      },
+      speed: 800,
+      effect: 'slide',
+      on: {
+        init: function() {
+          syncSlideHeights();
+        },
+        slideChange: function() {
+          syncSlideHeights();
+        }
+      }
+    });
+
+    function syncSlideHeights() {
+      const slides = document.querySelectorAll('.special-dish-swiper .swiper-slide .special-dish');
+      if (slides.length < 2) return;
+      
+      let maxHeight = 0;
+      slides.forEach(slide => {
+        slide.style.height = 'auto';
+        const height = slide.offsetHeight;
+        if (height > maxHeight) {
+          maxHeight = height;
+        }
+      });
+      
+      slides.forEach(slide => {
+        slide.style.height = maxHeight + 'px';
+      });
+    }
+
+    // Sync heights on window resize
+    window.addEventListener('resize', function() {
+      syncSlideHeights();
+    });
+  }
+});
 

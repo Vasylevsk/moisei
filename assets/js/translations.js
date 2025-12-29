@@ -22,7 +22,7 @@ const translations = {
 
     "btn.book-table": "Book A Table",
     "btn.view-menu": "View Our Menu",
-    "btn.view-hookah-menu": "View Hookah Menu",
+    "btn.view-hookah-menu": "View Lounge Menu",
     "btn.view-events": "View Our Events",
     "btn.view-all": "View All Menu",
     "btn.book-now": "Book Now",
@@ -33,9 +33,9 @@ const translations = {
     "hero.slide1.title": "For the love of <br> delicious Ukrainian food",
     "hero.slide1.text": "Tasty foods and drinks",
 
-    "hero.slide2.subtitle": "Hookahs",
+    "hero.slide2.subtitle": "Lounge",
     "hero.slide2.title":
-      "For the art of <br> perfect relaxation and smoky clouds",
+      "For the art of <br> perfect relaxation and aromatic clouds",
     "hero.slide2.text":
       "Gather your friends and share the warmth of conversation and deep flavors",
 
@@ -44,8 +44,6 @@ const translations = {
       "For the unforgettable <br> nights and lively memories",
     "hero.slide3.text":
       "Join the party and make every evening a special celebration with great company.",
-
-    "hero.ticker.text": "🎉 New Year's Eve Event - Book now for £150 per person! 🎉",
 
     "drink.subtitle": "Drink Menu",
     "drink.title": "Drink Menu",
@@ -380,9 +378,9 @@ const translations = {
     "food.kids.chicken-shish.price": "£12.00",
     "food.kids.chicken-shish.desc": "Chicken shish, vegetable",
 
-    "hookah.subtitle": "Hookah Menu",
+    "hookah.subtitle": "Lounge Menu",
     "hookah.title":
-      "There are also various flavours available, please check with the hookah master. We offer Ukrainian tobacco brands such as Yummy, 420, Buta, Dead Horse, and Molfar.",
+      "There are also various flavours available, please check with the lounge master. We offer various premium flavors and blends.",
     "hookah.category1.title": "Fruits and Berries",
     "hookah.category2.title": "Citrus and Exotic",
     "hookah.category3.title": "Tasty and Aromatic",
@@ -415,14 +413,14 @@ const translations = {
     "hookah.item26": "Fruit chewing gum",
     "hookah.item27": "Love 66",
     "hookah.item27.desc": "Melon, watermelon, mint (taste of love)",
-    "hookah.price.regular": "Hookah - £35",
+    "hookah.price.regular": "Lounge - £35",
     "hookah.price.special": "Every Friday and Sunday - £29",
-    "hookah.price.fruit": "Fruit Hookah - £45",
+    "hookah.price.fruit": "Fruit Lounge - £45",
     "hookah.text.mix": "Choose and mix your favorite flavors.",
     "hookah.text.fruit":
-      "These fruit hookahs add a special aroma and unique flavor, perfect for those who want to try something unusual!",
+      "These fruit lounges add a special aroma and unique flavor, perfect for those who want to try something unusual!",
     "hookah.recommendations.title":
-      "*We recommend one hookah for 1-3 people. Smoking duration: 1 to 1.5 hours.",
+      "*We recommend one lounge session for 1-3 people. Duration: 1 to 1.5 hours.",
 
     "drinks.category.most-liked": "Most Liked",
     "drinks.category.beer": "Beer",
@@ -550,12 +548,6 @@ const translations = {
     "drinks.cocktails.blue-eye.desc":
       "Gin, Martini bianco, blue curacao, lemon juice",
 
-    "drinks.cocktails.red-winter": "Red Winter Cocktail",
-    "drinks.cocktails.red-winter.desc": "Ice, Cherry, Amaretto, Cranberry juice.",
-
-    "drinks.cocktails.blue-winter": "Blue Winter Cocktail",
-    "drinks.cocktails.blue-winter.desc": "Bacardi, Malibu, Coconut milk, Pineapple juice, Blue Curacao.",
-
     "drinks.hot-drinks.latte": "Latte",
     "drinks.hot-drinks.espresso": "Espresso",
     "drinks.hot-drinks.breakfast-tea": "Black tea",
@@ -609,23 +601,6 @@ const translations = {
       "Daily Lunch Perfection Awaits! Indulge in our exquisite set lunch, featuring a delightful main course, a comforting soup, and a refreshing drink. Come in and savor the moment!",
     "special.price.old": "£25.00",
     "special.price.new": "£15.00",
-
-    "special2.badge": "SPECIAL OFFER",
-    "special2.title": "Meal Set",
-    "special2.text": "Burger, chips and mulled wine.",
-    "special2.price.new": "£21.00",
-
-    "special.slide1.badge": "SPECIAL OFFER",
-    "special.slide1.title": "Business Lunch",
-    "special.slide1.text":
-      "Daily Lunch Perfection Awaits! Indulge in our exquisite set lunch, featuring a delightful main course, a comforting soup, and a refreshing drink. Come in and savor the moment!",
-    "special.slide1.price.old": "£25.00",
-    "special.slide1.price.new": "£15.00",
-
-    "special.slide2.badge": "SPECIAL OFFER",
-    "special.slide2.title": "Meal Deal",
-    "special.slide2.text": "Burger, chips and mulled wine.",
-    "special.slide2.price.new": "£21.00",
 
     "testi.quote.open": '"',
     "testi.quote.close": '"',
@@ -705,7 +680,7 @@ const translations = {
     "reservation2.rules.lounge.title": "Lounge Area Reservation Rules:",
     "reservation2.rules.lounge.1": "The lounge area operates until 22:30.",
     "reservation2.rules.lounge.2":
-      "When reserving a table in the lounge area, ordering a hookah is mandatory. If declined, it will be automatically added to your bill.",
+      "When reserving a table in the lounge area, ordering a lounge session is mandatory. If declined, it will be automatically added to your bill.",
     "reservation2.rules.lounge.3":
       "Unfortunately, children are not allowed in the lounge area.",
     "reservation2.rules.lounge.4":
@@ -736,10 +711,10 @@ const translations = {
     "menus.subtitle": "Our menu",
     "menus.title": "Choose Your Vibe",
     "menus.text":
-      "Discover Moisei across three levels of delight. Each level offers a unique experience — from bold kitchen flavors to refreshing drinks and relaxing hookah. Choose Your Vibe!",
+      "Discover Moisei across three levels of delight. Each level offers a unique experience — from bold kitchen flavors to refreshing drinks and relaxing lounge. Choose Your Vibe!",
     "menus.card.food.title": "Food",
     "menus.card.drink.title": "Drink",
-    "menus.card.hookah.title": "Hookah",
+    "menus.card.hookah.title": "Lounge",
 
     "spaces.subtitle": "Our Spaces",
     "spaces.title": "Choose Your Vibe: Our Unique Spaces Await",
@@ -779,7 +754,7 @@ const translations = {
     "event.modal.time.end": "🌙 End: 2:00 AM",
     "event.modal.features":
       "What awaits you:\n\n✨ Delicious festive menu\n\n🎵 Incredible music\n\n🎭 Special New Year's program",
-    "event.modal.price.regular": "💷 Ticket price: £150 per person",
+    "event.modal.price.regular": "💷 Ticket price: £200 per person",
     "event.modal.price.special":
       "🔥 Early booking offer: Book by 1st December for just £150 per person!",
     "event.modal.price.footer":
@@ -840,7 +815,7 @@ const translations = {
 
     "btn.book-table": "Забронювати столик",
     "btn.view-menu": "Переглянути меню",
-    "btn.view-hookah-menu": "Меню кальянів",
+    "btn.view-hookah-menu": "Меню лаунжу",
     "btn.view-events": "Наші події",
     "btn.view-all": "Все меню",
     "btn.book-now": "Забронювати зараз",
@@ -851,7 +826,7 @@ const translations = {
     "hero.slide1.title": "Закохайтесь у <br> смачну українську їжу",
     "hero.slide1.text": "Смачні страви та напої",
 
-    "hero.slide2.subtitle": "Кальяни",
+    "hero.slide2.subtitle": "Лаунж",
     "hero.slide2.title":
       "Мистецтво <br> ідеального розслаблення та димних хмар",
     "hero.slide2.text":
@@ -861,8 +836,6 @@ const translations = {
     "hero.slide3.title": "Для незабутніх <br> вечорів та яскравих спогадів",
     "hero.slide3.text":
       "Приєднуйтесь до вечірки і зробіть кожен вечір особливим святом з чудовою компанією.",
-
-    "hero.ticker.text": "🎉 Новорічний вечір - Бронюйте зараз за £150 з особи! 🎉",
 
     "drink.subtitle": "Меню напоїв",
     "drink.title": "Меню напоїв",
@@ -1179,9 +1152,9 @@ const translations = {
     "food.kids.chicken-shish.price": "£12.00",
     "food.kids.chicken-shish.desc": "Курячий шашлик з овочами.",
 
-    "hookah.subtitle": "Кальянна карта",
+    "hookah.subtitle": "Лаунж карта",
     "hookah.title":
-      "Також доступні різні смаки, будь ласка, уточніть у кальянного майстра. Ми пропонуємо українські бренди тютюну, такі як Yummy, 420, Buta, Dead Horse та Molfar.",
+      "Також доступні різні смаки, будь ласка, уточніть у майстра лаунжу. Ми пропонуємо різноманітні преміум смаки та суміші.",
     "hookah.category1.title": "Фрукти та ягоди",
     "hookah.category2.title": "Цитрусові та екзотика",
     "hookah.category3.title": "Смакові та ароматні",
@@ -1214,14 +1187,14 @@ const translations = {
     "hookah.item26": "Фруктова жуйка",
     "hookah.item27": "Love 66",
     "hookah.item27.desc": "Диня, кавун, м'ята (смак кохання)",
-    "hookah.price.regular": "Кальян звичайний – £35",
+    "hookah.price.regular": "Лаунж звичайний – £35",
     "hookah.price.special": "Кожну п'ятницю та неділю – £29",
-    "hookah.price.fruit": "Кальян на фруктах – £45",
+    "hookah.price.fruit": "Лаунж на фруктах – £45",
     "hookah.text.mix": "Обирайте та міксуйте улюблені смаки.",
     "hookah.text.fruit":
-      "Ці кальяни на фруктах додають особливий аромат та неповторний смак, ідеально підходять для тих, хто хоче спробувати щось незвичайне!",
+      "Ці лаунжі на фруктах додають особливий аромат та неповторний смак, ідеально підходять для тих, хто хоче спробувати щось незвичайне!",
     "hookah.recommendations.title":
-      "*Рекомендуємо курити 1 кальян на 1-3 людини. Час куріння: 1-1,5 години.",
+      "*Рекомендуємо 1 лаунж сесію на 1-3 людини. Тривалість: 1-1,5 години.",
 
     "drinks.category.most-liked": "Найпопулярніші",
     "drinks.category.beer": "Пиво",
@@ -1345,12 +1318,6 @@ const translations = {
     "drinks.cocktails.blue-eye.desc":
       "Джин, Martini bianco, блакитний курасао, лимонний сік",
 
-    "drinks.cocktails.red-winter": "Червоний зимовий коктейль",
-    "drinks.cocktails.red-winter.desc": "Лід, вишня, амаретто, журавлиновий сік.",
-
-    "drinks.cocktails.blue-winter": "Синій зимовий коктейль",
-    "drinks.cocktails.blue-winter.desc": "Bacardi, Malibu, кокосове молоко, ананасовий сік, блакитний курасао.",
-
     "drinks.hot-drinks.latte": "Latte",
     "drinks.hot-drinks.espresso": "Espresso",
     "drinks.hot-drinks.breakfast-tea": "Сніданковий чай",
@@ -1398,23 +1365,6 @@ const translations = {
       "Досконалий обід чекає на вас! Насолоджуйтеся нашим вишуканим сет-ланчем, до якого входять основна страва, ароматний суп та освіжаючий напій. Завітайте та скуштуйте момент!",
     "special.price.old": "£25.00",
     "special.price.new": "£15.00",
-
-    "special2.badge": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ",
-    "special2.title": "Сет Меню",
-    "special2.text": "Бургер, картопля фрі та глінтвейн.",
-    "special2.price.new": "£21.00",
-
-    "special.slide1.badge": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ",
-    "special.slide1.title": "Бізнес-ланч",
-    "special.slide1.text":
-      "Досконалий обід чекає на вас! Насолоджуйтеся нашим вишуканим сет-ланчем, до якого входять основна страва, ароматний суп та освіжаючий напій. Завітайте та скуштуйте момент!",
-    "special.slide1.price.old": "£25.00",
-    "special.slide1.price.new": "£15.00",
-
-    "special.slide2.badge": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ",
-    "special.slide2.title": "Сет-меню",
-    "special.slide2.text": "Бургер, картопля фрі та глінтвейн.",
-    "special.slide2.price.new": "£21.00",
 
     "testi.quote.open": '"',
     "testi.quote.close": '"',
@@ -1495,7 +1445,7 @@ const translations = {
     "reservation2.rules.lounge.title": "Правила бронювання в лаундж зоні:",
     "reservation2.rules.lounge.1": "Лаундж зона працює до 22:30.",
     "reservation2.rules.lounge.2":
-      "При бронюванні столика в лаундж зоні замовлення кальяну є обов'язковим. У разі відмови кальян буде додано у чек автоматично.",
+      "При бронюванні столика в лаундж зоні замовлення лаунж сесії є обов'язковим. У разі відмови лаунж сесія буде додана у чек автоматично.",
     "reservation2.rules.lounge.3":
       "На жаль, дітям перебувати у лаундж зоні заборонено.",
     "reservation2.rules.lounge.4":
@@ -1526,10 +1476,10 @@ const translations = {
     "menus.subtitle": "Меню",
     "menus.title": "Обирайте свій настрій",
     "menus.text":
-      "Відкрийте для себе Moisei на трьох рівнях насолоди. Кожен рівень дарує особливий досвід — від яскравої кухні до освіжаючих напоїв та розслаблюючого кальяну. Обирайте свій настрій!",
+      "Відкрийте для себе Moisei на трьох рівнях насолоди. Кожен рівень дарує особливий досвід — від яскравої кухні до освіжаючих напоїв та розслаблюючого лаунжу. Обирайте свій настрій!",
     "menus.card.food.title": "Кухня",
     "menus.card.drink.title": "Напої",
-    "menus.card.hookah.title": "Кальяни",
+    "menus.card.hookah.title": "Лаунж",
 
     "spaces.subtitle": "Наші простори",
     "spaces.title": "Обирайте свій настрій: унікальні простори чекають",
@@ -1569,7 +1519,7 @@ const translations = {
     "event.modal.time.end": "🌙 Завершення: 02:00",
     "event.modal.features":
       "На вас чекає:\n\n✨ Смачне святкове меню;\n\n🎵 Неймовірна музика;\n\n🎭 Спеціальна новорічна програма;",
-    "event.modal.price.regular": "💷 Вартість місця — £150 з особи.",
+    "event.modal.price.regular": "💷 Вартість місця — £200 з особи.",
     "event.modal.price.special":
       "🔥 Якщо ви забронюєте місце до 1.12, то діє акційна ціна, всього £150/людини!",
     "event.modal.price.footer":

@@ -1094,7 +1094,7 @@ select.input-field::-ms-expand {
 
 .header {
   position: fixed;
-  top: 28px;
+  top: 0;
   left: 0;
   width: 100%;
   background-color: transparent;
@@ -1167,7 +1167,7 @@ select.input-field::-ms-expand {
 .navbar {
   position: fixed;
   background-color: var(--smoky-black-1);
-  top: 28px;
+  top: 0;
   left: -360px;
   bottom: 0;
   max-width: 360px;
@@ -1463,15 +1463,15 @@ select.input-field::-ms-expand {
 
 /* Hero ticker - бегущая строка */
 .hero-ticker {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
-  border-bottom: 1px solid var(--gold-crayola-alpha-20);
+  background-color: var(--black-alpha-90);
+  border-top: 1px solid var(--gold-crayola-alpha-20);
   overflow: hidden;
-  z-index: 9999;
-  height: 28px;
+  z-index: 3;
+  height: 45px;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -1480,7 +1480,7 @@ select.input-field::-ms-expand {
 }
 
 .hero-ticker:hover {
-  background-color: #1a1a1a;
+  background-color: var(--black-alpha-95);
 }
 
 .hero-ticker-content {
@@ -1494,12 +1494,11 @@ select.input-field::-ms-expand {
 .hero-ticker-text {
   display: inline-block;
   color: var(--gold-crayola);
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: var(--weight-medium);
   padding-inline: 60px;
   letter-spacing: 0.5px;
   flex-shrink: 0;
-  line-height: 1;
 }
 
 @keyframes ticker-scroll {
@@ -1513,20 +1512,12 @@ select.input-field::-ms-expand {
 
 @media (max-width: 767px) {
   .hero-ticker {
-    height: 24px;
+    height: 40px;
   }
 
   .hero-ticker-text {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding-inline: 40px;
-  }
-  
-  .header {
-    top: 24px;
-  }
-  
-  .navbar {
-    top: 24px;
   }
 }
 
@@ -4169,7 +4160,7 @@ textarea.input-field {
   .topbar {
     display: block !important;
     position: fixed;
-    top: 28px;
+    top: 0;
     left: 0;
     width: 100%;
     padding-block: 10px;
@@ -4324,11 +4315,11 @@ textarea.input-field {
   }
 
   .header {
-    top: 58px;
+    top: 51px;
   }
 
   .header.active {
-    top: 28px;
+    top: 0;
   }
 
   .header .btn {

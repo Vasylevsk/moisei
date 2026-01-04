@@ -602,6 +602,10 @@ const translations = {
     "special.price.old": "£25.00",
     "special.price.new": "£15.00",
 
+    "special2.badge": "SPECIAL OFFER",
+    "special2.title": "Meal Set",
+    "special2.text": "Burger, chips and mulled wine.",
+
     "testi.quote.open": '"',
     "testi.quote.close": '"',
     "testi.text":
@@ -1365,6 +1369,10 @@ const translations = {
       "Досконалий обід чекає на вас! Насолоджуйтеся нашим вишуканим сет-ланчем, до якого входять основна страва, ароматний суп та освіжаючий напій. Завітайте та скуштуйте момент!",
     "special.price.old": "£25.00",
     "special.price.new": "£15.00",
+
+    "special2.badge": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ",
+    "special2.title": "Сет з їжею",
+    "special2.text": "Бургер, картопля фрі та глінтвейн.",
 
     "testi.quote.open": '"',
     "testi.quote.close": '"',

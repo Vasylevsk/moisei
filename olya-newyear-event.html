@@ -249,11 +249,11 @@
 
           <h2 class="headline-2 section-title" style="margin-top: 60px; margin-bottom: 40px;" data-i18n="event.olya.gallery.title">Event Gallery</h2>
 
-          <div class="hero text-center" style="position: relative; min-height: 600px; margin: 40px 0;">
-            <ul class="hero-slider" data-hero-slider>
+          <div class="event-gallery-slider" style="position: relative; max-width: 1200px; margin: 40px auto; min-height: 600px;">
+            <ul class="event-gallery-slider-list" data-event-gallery-slider>
 
-              <li class="slider-item active" data-hero-slider-item>
-                <div class="slider-bg">
+              <li class="event-gallery-slide active" data-event-gallery-slide>
+                <div class="event-gallery-image-wrapper">
                   <picture>
                     <source 
                       type="image/webp" 
@@ -279,7 +279,7 @@
                       width="1000" 
                       height="600" 
                       alt="New Year's Eve event at Moisei restaurant - Olya Tsybulska performance" 
-                      class="img-cover" 
+                      class="event-gallery-image" 
                       fetchpriority="high" 
                       decoding="async"
                       loading="eager">
@@ -287,8 +287,8 @@
                 </div>
               </li>
 
-              <li class="slider-item" data-hero-slider-item>
-                <div class="slider-bg">
+              <li class="event-gallery-slide" data-event-gallery-slide>
+                <div class="event-gallery-image-wrapper">
                   <picture>
                     <source 
                       type="image/webp" 
@@ -314,15 +314,15 @@
                       width="1000" 
                       height="600" 
                       alt="New Year's Eve celebration at Moisei - Ukrainian singer Olya Tsybulska" 
-                      class="img-cover" 
+                      class="event-gallery-image" 
                       decoding="async"
                       loading="lazy">
                   </picture>
                 </div>
               </li>
 
-              <li class="slider-item" data-hero-slider-item>
-                <div class="slider-bg">
+              <li class="event-gallery-slide" data-event-gallery-slide>
+                <div class="event-gallery-image-wrapper">
                   <picture>
                     <source 
                       type="image/webp" 
@@ -348,15 +348,15 @@
                       width="1000" 
                       height="600" 
                       alt="New Year's Eve event Moisei restaurant London - Live music performance" 
-                      class="img-cover" 
+                      class="event-gallery-image" 
                       decoding="async"
                       loading="lazy">
                   </picture>
                 </div>
               </li>
 
-              <li class="slider-item" data-hero-slider-item>
-                <div class="slider-bg">
+              <li class="event-gallery-slide" data-event-gallery-slide>
+                <div class="event-gallery-image-wrapper">
                   <picture>
                     <source 
                       type="image/webp" 
@@ -382,15 +382,15 @@
                       width="1000" 
                       height="600" 
                       alt="New Year's Eve party at Moisei - Ukrainian restaurant event London" 
-                      class="img-cover" 
+                      class="event-gallery-image" 
                       decoding="async"
                       loading="lazy">
                   </picture>
                 </div>
               </li>
 
-              <li class="slider-item" data-hero-slider-item>
-                <div class="slider-bg">
+              <li class="event-gallery-slide" data-event-gallery-slide>
+                <div class="event-gallery-image-wrapper">
                   <picture>
                     <source 
                       type="image/webp" 
@@ -416,15 +416,15 @@
                       width="1000" 
                       height="600" 
                       alt="Olya Tsybulska New Year's Eve concert at Moisei restaurant" 
-                      class="img-cover" 
+                      class="event-gallery-image" 
                       decoding="async"
                       loading="lazy">
                   </picture>
                 </div>
               </li>
 
-              <li class="slider-item" data-hero-slider-item>
-                <div class="slider-bg">
+              <li class="event-gallery-slide" data-event-gallery-slide>
+                <div class="event-gallery-image-wrapper">
                   <picture>
                     <source 
                       type="image/webp" 
@@ -450,15 +450,15 @@
                       width="1000" 
                       height="600" 
                       alt="New Year celebration at Moisei Ukrainian restaurant Brentford" 
-                      class="img-cover" 
+                      class="event-gallery-image" 
                       decoding="async"
                       loading="lazy">
                   </picture>
                 </div>
               </li>
 
-              <li class="slider-item" data-hero-slider-item>
-                <div class="slider-bg">
+              <li class="event-gallery-slide" data-event-gallery-slide>
+                <div class="event-gallery-image-wrapper">
                   <picture>
                     <source 
                       type="image/webp" 
@@ -484,7 +484,7 @@
                       width="1000" 
                       height="600" 
                       alt="New Year's Eve event Moisei - Live music and celebration" 
-                      class="img-cover" 
+                      class="event-gallery-image" 
                       decoding="async"
                       loading="lazy">
                   </picture>
@@ -493,14 +493,116 @@
 
             </ul>
 
-            <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+            <button class="event-gallery-btn prev" aria-label="slide to previous" data-event-gallery-prev>
               <ion-icon name="chevron-back"></ion-icon>
             </button>
 
-            <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+            <button class="event-gallery-btn next" aria-label="slide to next" data-event-gallery-next>
               <ion-icon name="chevron-forward"></ion-icon>
             </button>
           </div>
+
+          <style>
+            .event-gallery-slider {
+              position: relative;
+              overflow: hidden;
+              border-radius: var(--radius-24);
+            }
+
+            .event-gallery-slider-list {
+              position: relative;
+              width: 100%;
+              height: 600px;
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+
+            .event-gallery-slide {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              visibility: hidden;
+              transition: opacity 0.5s ease, visibility 0.5s ease;
+            }
+
+            .event-gallery-slide.active {
+              opacity: 1;
+              visibility: visible;
+            }
+
+            .event-gallery-image-wrapper {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+            }
+
+            .event-gallery-image {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              object-position: center;
+              display: block;
+            }
+
+            .event-gallery-btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 50px;
+              height: 50px;
+              background-color: var(--gold-crayola);
+              color: var(--eerie-black-1);
+              border: none;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              z-index: 10;
+              transition: var(--transition-1);
+              font-size: 2rem;
+            }
+
+            .event-gallery-btn:hover {
+              background-color: var(--white);
+              transform: translateY(-50%) scale(1.1);
+            }
+
+            .event-gallery-btn.prev {
+              left: 20px;
+            }
+
+            .event-gallery-btn.next {
+              right: 20px;
+            }
+
+            @media (max-width: 768px) {
+              .event-gallery-slider-list {
+                height: 400px;
+              }
+
+              .event-gallery-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+              }
+
+              .event-gallery-btn.prev {
+                left: 10px;
+              }
+
+              .event-gallery-btn.next {
+                right: 10px;
+              }
+            }
+          </style>
 
           <div style="margin-top: 60px;">
             <a href="reservation.html" class="btn btn-primary">
@@ -662,6 +764,60 @@
   <script src="./assets/js/translations.js?v=20250111-google-ads" defer></script>
   <script src="./assets/js/cookie-banner.js?v=20250111-google-ads" defer></script>
   <script src="./assets/js/script.js?v=20250111-google-ads" defer></script>
+  
+  <script>
+    // Event Gallery Slider
+    document.addEventListener("DOMContentLoaded", function() {
+      const eventGallerySlider = document.querySelector("[data-event-gallery-slider]");
+      const eventGallerySlides = document.querySelectorAll("[data-event-gallery-slide]");
+      const eventGalleryPrevBtn = document.querySelector("[data-event-gallery-prev]");
+      const eventGalleryNextBtn = document.querySelector("[data-event-gallery-next]");
+
+      if (eventGallerySlider && eventGallerySlides.length && eventGalleryPrevBtn && eventGalleryNextBtn) {
+        let currentSlidePos = 0;
+        let lastActiveSlide = eventGallerySlides[0];
+
+        const updateSlidePos = function() {
+          lastActiveSlide.classList.remove("active");
+          eventGallerySlides[currentSlidePos].classList.add("active");
+          lastActiveSlide = eventGallerySlides[currentSlidePos];
+        };
+
+        const slideNext = function() {
+          if (currentSlidePos >= eventGallerySlides.length - 1) {
+            currentSlidePos = 0;
+          } else {
+            currentSlidePos++;
+          }
+          updateSlidePos();
+        };
+
+        const slidePrev = function() {
+          if (currentSlidePos <= 0) {
+            currentSlidePos = eventGallerySlides.length - 1;
+          } else {
+            currentSlidePos--;
+          }
+          updateSlidePos();
+        };
+
+        eventGalleryNextBtn.addEventListener("click", slideNext);
+        eventGalleryPrevBtn.addEventListener("click", slidePrev);
+
+        // Auto-slide every 5 seconds
+        let autoSlideInterval = setInterval(slideNext, 5000);
+
+        // Pause on hover
+        eventGallerySlider.addEventListener("mouseenter", function() {
+          clearInterval(autoSlideInterval);
+        });
+
+        eventGallerySlider.addEventListener("mouseleave", function() {
+          autoSlideInterval = setInterval(slideNext, 5000);
+        });
+      }
+    });
+  </script>
 
   <script
     type="module"

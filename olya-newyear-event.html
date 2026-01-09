@@ -529,11 +529,13 @@
               transition: opacity 0.5s ease, visibility 0.5s ease;
               margin: 0;
               padding: 0;
+              z-index: 1;
             }
 
             .event-gallery-slide.active {
               opacity: 1;
               visibility: visible;
+              z-index: 2;
             }
 
             .event-gallery-image-wrapper {
@@ -800,21 +802,37 @@
     <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
   </a>
 
-  <script src="./assets/js/translations.js?v=20250111-google-ads" defer></script>
+  <script src="./assets/js/translations.js?v=20250111-google-ads"></script>
   <script src="./assets/js/cookie-banner.js?v=20250111-google-ads" defer></script>
-  <script src="./assets/js/script.js?v=20250111-google-ads" defer></script>
+  <script src="./assets/js/script.js?v=20250111-google-ads"></script>
   
   <script>
-    // Event Gallery Slider
-    document.addEventListener("DOMContentLoaded", function() {
+    // Event Gallery Slider - wait for all scripts to load
+    window.addEventListener("load", function() {
       const eventGallerySlider = document.querySelector("[data-event-gallery-slider]");
       const eventGallerySlides = document.querySelectorAll("[data-event-gallery-slide]");
       const eventGalleryPrevBtn = document.querySelector("[data-event-gallery-prev]");
       const eventGalleryNextBtn = document.querySelector("[data-event-gallery-next]");
 
+      console.log("Gallery elements:", {
+        slider: eventGallerySlider,
+        slides: eventGallerySlides.length,
+        prevBtn: eventGalleryPrevBtn,
+        nextBtn: eventGalleryNextBtn
+      });
+
       if (eventGallerySlider && eventGallerySlides.length && eventGalleryPrevBtn && eventGalleryNextBtn) {
         let currentSlidePos = 0;
         let lastActiveSlide = eventGallerySlides[0];
+
+        // Ensure first slide is active
+        eventGallerySlides.forEach((slide, index) => {
+          if (index === 0) {
+            slide.classList.add("active");
+          } else {
+            slide.classList.remove("active");
+          }
+        });
 
         const updateSlidePos = function() {
           lastActiveSlide.classList.remove("active");
@@ -854,6 +872,8 @@
         eventGallerySlider.addEventListener("mouseleave", function() {
           autoSlideInterval = setInterval(slideNext, 5000);
         });
+      } else {
+        console.error("Gallery slider initialization failed - missing elements");
       }
     });
   </script>

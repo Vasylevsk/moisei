@@ -887,8 +887,39 @@
   <script src="./assets/js/script.js?v=20250111-google-ads"></script>
   
   <script>
-    // Event Gallery Slider - wait for all scripts to load
+    // Ensure translations are applied
+    function ensureTranslations() {
+      if (window.languageSwitcher && typeof window.languageSwitcher.translatePage === "function") {
+        window.languageSwitcher.translatePage();
+      } else if (typeof translations !== "undefined") {
+        // Fallback: manual translation if LanguageSwitcher is not available
+        const currentLang = localStorage.getItem("language") || "en";
+        const elements = document.querySelectorAll("[data-i18n]");
+        elements.forEach(function(element) {
+          const key = element.getAttribute("data-i18n");
+          if (key && translations[currentLang] && translations[currentLang][key]) {
+            if (element.hasAttribute("data-i18n-html")) {
+              element.innerHTML = translations[currentLang][key];
+            } else {
+              element.textContent = translations[currentLang][key];
+            }
+          }
+        });
+      }
+    }
+
+    // Try to apply translations when DOM is ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", ensureTranslations);
+    } else {
+      ensureTranslations();
+    }
+
+    // Also ensure translations after full page load
     window.addEventListener("load", function() {
+      ensureTranslations();
+      
+      // Event Gallery Slider - wait for all scripts to load
       const eventGallerySlider = document.querySelector("[data-event-gallery-slider]");
       const eventGallerySlides = document.querySelectorAll("[data-event-gallery-slide]");
       const eventGalleryPrevBtn = document.querySelector("[data-event-gallery-prev]");
@@ -955,6 +986,9 @@
       } else {
         console.error("Gallery slider initialization failed - missing elements");
       }
+      
+      // Final check for translations
+      ensureTranslations();
     });
   </script>
 

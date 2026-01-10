@@ -1759,10 +1759,30 @@ class LanguageSwitcher {
   }
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => {
+// Ensure DOM is fully ready before initializing LanguageSwitcher
+function initLanguageSwitcher() {
+  if (!window.languageSwitcher) {
     window.languageSwitcher = new LanguageSwitcher();
-  });
-} else {
-  window.languageSwitcher = new LanguageSwitcher();
+  }
 }
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initLanguageSwitcher);
+} else if (document.readyState === "interactive" || document.readyState === "complete") {
+  // DOM is already loaded, but wait a bit to ensure all elements are ready
+  if (document.body) {
+    initLanguageSwitcher();
+  } else {
+    document.addEventListener("DOMContentLoaded", initLanguageSwitcher);
+  }
+} else {
+  // Fallback: wait for DOMContentLoaded
+  document.addEventListener("DOMContentLoaded", initLanguageSwitcher);
+}
+
+// Also ensure translations are applied after full page load
+window.addEventListener("load", function() {
+  if (window.languageSwitcher && typeof window.languageSwitcher.translatePage === "function") {
+    window.languageSwitcher.translatePage();
+  }
+});

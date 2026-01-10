@@ -53,3 +53,6 @@ grep "favicon.*v=20250111" index.html
 - Все изменения временные для Google Ads
 - После запуска рекламы нужно вернуть все обратно (см. TEMP_GOOGLE_ADS_CHANGES.md)
 
+
+
+

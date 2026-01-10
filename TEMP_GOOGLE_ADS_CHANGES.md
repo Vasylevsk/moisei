@@ -34,3 +34,6 @@ git restore index.html hookah-menu.html reservation.html assets/js/translations.
 
 **ПОМНИТЬ:** Это временные изменения только для Google Ads!
 
+
+
+

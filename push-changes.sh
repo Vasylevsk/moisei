@@ -30,3 +30,6 @@ git push origin master
 
 echo "✅ Готово! Изменения запушены."
 
+
+
+

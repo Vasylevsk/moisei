@@ -14,7 +14,8 @@
 
 .hero {
   position: relative;
-  padding-block: 120px;
+  padding-block-start: 0;
+  padding-block-end: 120px;
   min-height: 100vh;
   overflow: hidden;
   z-index: 1;
@@ -50,8 +51,14 @@
   transform: scale(1);
   pointer-events: none;
   user-select: none;
-  z-index: -1;
+  z-index: 0 !important;
   filter: brightness(0.45);
+}
+
+/* Ensure hero starts from top, header and topbar overlay it */
+.hero {
+  margin-block-start: 0;
+  padding-block-start: 0;
 }
 
 .hero .slider-bg .img-cover {

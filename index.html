@@ -132,7 +132,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://moisei.uk/favicon-192x192.png?v=20250111" />
     <link rel="apple-touch-icon" sizes="192x192" href="https://moisei.uk/favicon-192x192.png?v=20250111" />
     <!-- Manifest для PWA и поисковых систем -->
-    <link rel="manifest" href="https://moisei.uk/site.webmanifest" />
+    <link rel="manifest" href="./site.webmanifest" />
     <meta name="theme-color" content="#1a1a1a" />
     <!-- Дополнительные meta-теги для favicon в поисковых системах -->
     <meta name="msapplication-TileColor" content="#1a1a1a" />
@@ -155,7 +155,7 @@
       />
     </noscript>
 
-    <link rel="stylesheet" href="./assets/css/combined.min.css?v=20250111-google-ads" />
+    <link rel="stylesheet" href="./assets/css/combined.min.css?v=20250115-21" />
     
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -334,18 +334,18 @@
           </li>
 
           <li class="navbar-item">
-            <a href="index.html#events" class="navbar-link hover-underline">
-              <div class="separator"></div>
-
-              <span class="span" data-i18n="nav.events">Events</span>
-            </a>
-          </li>
-
-          <li class="navbar-item">
             <a href="index.html#about" class="navbar-link hover-underline">
               <div class="separator"></div>
 
               <span class="span" data-i18n="nav.about">About Us</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html#events" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span" data-i18n="nav.events">Events</span>
             </a>
           </li>
 
@@ -852,7 +852,7 @@
                 </div>
 
                 <div class="special-dish-content bg-black-10">
-                  <div class="container">
+        <div class="container">
 
                     <img src="./assets/images/badge-1.png" width="28" height="41" loading="lazy" alt="" class="abs-img" aria-hidden="true">
 
@@ -920,272 +920,6 @@
         </div>
       </section>
 
-      <section class="section event bg-black-10 text-center" aria-label="event" id="events">
-        <div class="container">
-
-          <p
-            class="section-subtitle label-2 text-center"
-            data-i18n="events.subtitle"
-          >
-            Events
-          </p>
-
-          <div class="event-slider-container" style="position: relative; max-width: 600px; margin: 0 auto; width: 100%;">
-            <div class="event-slider-wrapper" data-events-slider style="position: relative; overflow: hidden; border-radius: var(--radius-24);">
-              <div class="event-slider-track">
-                <!-- Slide 1: Olya Event -->
-                <div class="event-slider-slide active" data-event-slide>
-                  <div class="event-single-image" style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
-                    <div class="event-card has-before hover:shine event-card-past" style="position: relative; overflow: hidden; border-radius: var(--radius-24); width: 100%; max-width: 600px;">
-                      <div class="card-banner img-holder" style="--width: 500; --height: 600; position: relative;">
-                        <span class="event-passed-badge" style="position: absolute; top: 20px; left: 20px; z-index: 3; background: linear-gradient(135deg, #6a9c5f 0%, var(--gold-crayola) 100%); color: var(--white); padding: 10px 20px; border-radius: 12px; font-size: 1.3rem; font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5); backdrop-filter: blur(10px); transition: all 0.3s ease; animation: pulse-glow-green 2s ease-in-out infinite;" data-i18n="event.passed">Event Passed</span>
-                        <picture>
-                          <source type="image/webp" srcset="./assets/images/events/olya_newyear/IMG_2785.webp 1000w, ./assets/images/events/olya_newyear/IMG_2785-750.webp 750w, ./assets/images/events/olya_newyear/IMG_2785-500.webp 500w" sizes="(max-width: 768px) 500px, 750px">
-                          <img src="./assets/images/events/olya_newyear/IMG_2785-500.webp" width="1000" height="600" loading="lazy" alt="New Year's Eve celebration at Moisei - Ukrainian singer Olya Tsybulska" class="img-cover" decoding="async" style="transition: transform 0.5s ease;">
-                        </picture>
-                      </div>
-                    </div>
-                    <div style="text-align: center; width: 100%; max-width: 600px;">
-                      <a href="olya-newyear-event.html" class="btn btn-primary">
-                        <span class="text text-1" data-i18n="btn.review-event">Review Event</span>
-                        <span class="text text-2" data-i18n="btn.review-event" aria-hidden="true">Review Event</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 2: Kateryna Event -->
-                <div class="event-slider-slide" data-event-slide>
-                  <div class="event-single-image" style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
-                    <div class="event-card has-before hover:shine event-card-past" style="position: relative; overflow: hidden; border-radius: var(--radius-24); width: 100%; max-width: 600px;">
-                      <div class="card-banner img-holder" style="--width: 500; --height: 600; position: relative;">
-                        <span class="event-passed-badge" style="position: absolute; top: 20px; left: 20px; z-index: 3; background: linear-gradient(135deg, #6a9c5f 0%, var(--gold-crayola) 100%); color: var(--white); padding: 10px 20px; border-radius: 12px; font-size: 1.3rem; font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5); backdrop-filter: blur(10px); transition: all 0.3s ease; animation: pulse-glow-green 2s ease-in-out infinite;" data-i18n="event.passed">Event Passed</span>
-                        <picture>
-                          <source type="image/webp" srcset="./assets/images/events/KaterynaBuzhynska/IMG_3320.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3320-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3320-500.webp 500w" sizes="(max-width: 768px) 500px, 750px">
-                          <img src="./assets/images/events/KaterynaBuzhynska/IMG_3320-500.webp" width="1000" height="600" loading="lazy" alt="Kateryna Buzhynska and Mykhailo Grytskan concert at Moisei restaurant" class="img-cover" decoding="async" style="transition: transform 0.5s ease;">
-                        </picture>
-                      </div>
-                    </div>
-                    <div style="text-align: center; width: 100%; max-width: 600px;">
-                      <a href="kateryna-buzhynska-event.html" class="btn btn-primary">
-                        <span class="text text-1" data-i18n="btn.review-event">Review Event</span>
-                        <span class="text text-2" data-i18n="btn.review-event" aria-hidden="true">Review Event</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 3: Oksana Bilozir Event -->
-                <div class="event-slider-slide" data-event-slide>
-                  <div class="event-single-image" style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
-                    <div class="event-card has-before hover:shine event-card-past" style="position: relative; overflow: hidden; border-radius: var(--radius-24); width: 100%; max-width: 600px;">
-                      <div class="card-banner img-holder" style="--width: 500; --height: 600; position: relative;">
-                        <span class="event-passed-badge" style="position: absolute; top: 20px; left: 20px; z-index: 3; background: linear-gradient(135deg, #6a9c5f 0%, var(--gold-crayola) 100%); color: var(--white); padding: 10px 20px; border-radius: 12px; font-size: 1.3rem; font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5); backdrop-filter: blur(10px); transition: all 0.3s ease; animation: pulse-glow-green 2s ease-in-out infinite;" data-i18n="event.passed">Event Passed</span>
-                        <picture>
-                          <source type="image/webp" srcset="./assets/images/events/OksanaBilozir/IMG_5605.webp 1000w, ./assets/images/events/OksanaBilozir/IMG_5605-750.webp 750w, ./assets/images/events/OksanaBilozir/IMG_5605-500.webp 500w" sizes="(max-width: 768px) 500px, 750px">
-                          <img src="./assets/images/events/OksanaBilozir/IMG_5605-500.webp" width="1000" height="600" loading="lazy" alt="Oksana Bilozir charity concert at Moisei restaurant" class="img-cover" decoding="async" style="transition: transform 0.5s ease;">
-                        </picture>
-                      </div>
-                    </div>
-                    <div style="text-align: center; width: 100%; max-width: 600px;">
-                      <a href="oksana-bilozir-event.html" class="btn btn-primary">
-                        <span class="text text-1" data-i18n="btn.review-event">Review Event</span>
-                        <span class="text text-2" data-i18n="btn.review-event" aria-hidden="true">Review Event</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <button class="event-slider-nav-btn prev" aria-label="previous event" data-events-slider-prev>
-              <ion-icon name="chevron-back"></ion-icon>
-            </button>
-            <button class="event-slider-nav-btn next" aria-label="next event" data-events-slider-next>
-              <ion-icon name="chevron-forward"></ion-icon>
-            </button>
-          </div>
-          
-          <style>
-            @keyframes pulse-glow-green {
-              0%, 100% {
-                box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5);
-                transform: scale(1);
-              }
-              50% {
-                box-shadow: 0 8px 30px rgba(106, 156, 95, 0.7);
-                transform: scale(1.02);
-              }
-            }
-            
-            .event-card-past:hover .img-cover {
-              transform: scale(1.08);
-            }
-            
-            .event-card-past:hover .event-passed-badge {
-              transform: scale(1.05);
-              box-shadow: 0 8px 30px rgba(106, 156, 95, 0.7);
-            }
-            
-            @media (max-width: 768px) {
-              .event-passed-badge {
-                top: 15px !important;
-                left: 15px !important;
-                padding: 8px 16px !important;
-                font-size: 1.1rem !important;
-                letter-spacing: 1px !important;
-              }
-            }
-            
-            @media (max-width: 480px) {
-              .event-passed-badge {
-                top: 10px !important;
-                left: 10px !important;
-                padding: 6px 12px !important;
-                font-size: 1rem !important;
-              }
-            }
-
-            /* Events Slider Styles */
-            .event-slider-container {
-              position: relative;
-              width: 100%;
-              max-width: 720px;
-              margin: 0 auto;
-              padding: 0;
-            }
-
-            .event-slider-wrapper {
-              position: relative;
-              width: 100%;
-              overflow: hidden;
-              border-radius: var(--radius-24);
-            }
-
-            .event-slider-track {
-              position: relative;
-              width: 100%;
-            }
-
-            .event-slider-slide {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              opacity: 0;
-              visibility: hidden;
-              transition: opacity 0.6s ease, visibility 0.6s ease;
-              z-index: 1;
-            }
-
-            .event-slider-slide.active {
-              position: relative;
-              opacity: 1;
-              visibility: visible;
-              z-index: 2;
-            }
-
-            .event-slider-nav-btn {
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              z-index: 10;
-              width: 50px;
-              height: 50px;
-              background: rgba(143, 173, 129, 0.9);
-              border: 2px solid var(--gold-crayola);
-              border-radius: 50%;
-              color: var(--eerie-black-1);
-              cursor: pointer;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 2rem;
-              transition: all 0.3s ease;
-              backdrop-filter: blur(10px);
-              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-              padding: 0;
-              opacity: 0.7;
-            }
-
-            .event-slider-container:hover .event-slider-nav-btn {
-              opacity: 1;
-            }
-
-            .event-slider-nav-btn.prev {
-              left: -70px;
-            }
-
-            .event-slider-nav-btn.next {
-              right: -70px;
-            }
-
-            .event-slider-nav-btn:hover {
-              background: var(--gold-crayola);
-              transform: translateY(-50%) scale(1.1);
-              box-shadow: 0 6px 20px rgba(143, 173, 129, 0.5);
-              border-color: var(--gold-crayola);
-            }
-
-            .event-slider-nav-btn:active {
-              transform: translateY(-50%) scale(0.95);
-            }
-
-            @media (max-width: 768px) {
-              .event-slider-container {
-                max-width: 100%;
-                padding: 0 55px;
-              }
-
-              .event-slider-nav-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 1.6rem;
-                position: absolute;
-              }
-
-              .event-slider-nav-btn.prev {
-                left: 5px;
-              }
-
-              .event-slider-nav-btn.next {
-                right: 5px;
-              }
-
-              .event-slider-nav-btn:hover {
-                transform: translateY(-50%) scale(1.1);
-              }
-
-              .event-slider-nav-btn:active {
-                transform: translateY(-50%) scale(0.95);
-              }
-            }
-
-            @media (max-width: 480px) {
-              .event-slider-container {
-                padding: 0 50px;
-              }
-
-              .event-slider-nav-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.4rem;
-              }
-
-              .event-slider-nav-btn.prev {
-                left: 2px;
-              }
-
-              .event-slider-nav-btn.next {
-                right: 2px;
-              }
-            }
-          </style>
-
-
-              </div>
-      </section>
-
       <section class="section about text-center" aria-labelledby="about-label" id="about">
         <div class="container">
 
@@ -1235,6 +969,399 @@
 
         </div>
       </section>
+
+      <section class="special-dish-swiper-wrapper" aria-label="event" id="events">
+        <div class="swiper event-swiper">
+          <div class="swiper-wrapper">
+
+            <!-- Slide 1: Alena Omargalieva Event -->
+            <div class="swiper-slide">
+              <div class="special-dish text-center" aria-labelledby="event-label-alena">
+                <div class="special-dish-banner" style="position: relative;">
+                  <picture>
+                    <source 
+                      type="image/webp" 
+                      srcset="./assets/images/events/AlenaMorgileva/IMG_0394.webp 1000w, ./assets/images/events/AlenaMorgileva/IMG_0394-750.webp 750w, ./assets/images/events/AlenaMorgileva/IMG_0394-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
+                    <img 
+                      src="./assets/images/events/AlenaMorgileva/IMG_0394-500.webp" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
+                      alt="Alena Omargalieva solo concert at Moisei restaurant - Great Solo Concert Live Sound"
+                      class="img-cover">
+                  </picture>
+                </div>
+
+                <div class="special-dish-content bg-black-10">
+                  <div class="container">
+
+                    <p class="section-subtitle label-2" data-i18n="event.alena.subtitle">
+                      Event
+                    </p>
+
+                    <h2 class="headline-1 section-title" data-i18n="event.alena.title">
+                      Alena Omargalieva
+                    </h2>
+
+                    <div class="special-dish-banner special-dish-banner-mobile">
+                      <picture>
+                        <source 
+                          type="image/webp" 
+                          srcset="./assets/images/events/AlenaMorgileva/IMG_0394.webp 1000w, ./assets/images/events/AlenaMorgileva/IMG_0394-750.webp 750w, ./assets/images/events/AlenaMorgileva/IMG_0394-500.webp 500w"
+                          sizes="(max-width: 768px) 100vw, 940px">
+                        <img 
+                          src="./assets/images/events/AlenaMorgileva/IMG_0394-500.webp" 
+                          width="940" 
+                          height="900" 
+                          loading="lazy" 
+                          alt="Alena Omargalieva solo concert at Moisei restaurant"
+                          class="img-cover">
+                      </picture>
+                    </div>
+
+                    <a href="alena-omargalieva-event.html" class="btn btn-primary">
+                      <span class="text text-1" data-i18n="btn.review-event">Review Event</span>
+                      <span class="text text-2" data-i18n="btn.review-event" aria-hidden="true">Review Event</span>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Olya Event -->
+            <div class="swiper-slide">
+              <div class="special-dish text-center" aria-labelledby="event-label-1">
+                <div class="special-dish-banner" style="position: relative;">
+                  <span class="event-passed-badge" data-i18n="event.passed">Event Ended</span>
+                  <picture>
+                    <source 
+                      type="image/webp" 
+                      srcset="./assets/images/events/olya_newyear/IMG_2785.webp 1000w, ./assets/images/events/olya_newyear/IMG_2785-750.webp 750w, ./assets/images/events/olya_newyear/IMG_2785-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
+                    <img 
+                      src="./assets/images/events/olya_newyear/IMG_2785-500.webp" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
+                      alt="New Year's Eve celebration at Moisei - Ukrainian singer Olya Tsybulska"
+                      class="img-cover">
+                  </picture>
+                </div>
+
+                <div class="special-dish-content bg-black-10">
+                  <div class="container">
+
+                    <p class="section-subtitle label-2" data-i18n="event.olya.subtitle">
+                      Event
+                    </p>
+
+                    <h2 class="headline-1 section-title" data-i18n="event.olya.title">
+                      New Year's Eve with Olya Tsybulska
+                    </h2>
+
+                    <div class="special-dish-banner special-dish-banner-mobile">
+                <picture>
+                  <source 
+                    type="image/webp" 
+                          srcset="./assets/images/events/olya_newyear/IMG_2785.webp 1000w, ./assets/images/events/olya_newyear/IMG_2785-750.webp 750w, ./assets/images/events/olya_newyear/IMG_2785-500.webp 500w"
+                          sizes="(max-width: 768px) 100vw, 940px">
+                        <img 
+                          src="./assets/images/events/olya_newyear/IMG_2785-500.webp" 
+                          width="940" 
+                          height="900" 
+                    loading="lazy"
+                          alt="New Year's Eve celebration at Moisei - Ukrainian singer Olya Tsybulska"
+                          class="img-cover">
+                </picture>
+                  </div>
+
+                    <a href="olya-newyear-event.html" class="btn btn-primary">
+                      <span class="text text-1" data-i18n="btn.review-event">Review Event</span>
+                      <span class="text text-2" data-i18n="btn.review-event" aria-hidden="true">Review Event</span>
+                    </a>
+
+                </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Kateryna Event -->
+            <div class="swiper-slide">
+              <div class="special-dish text-center" aria-labelledby="event-label-2">
+                <div class="special-dish-banner" style="position: relative;">
+                  <span class="event-passed-badge" data-i18n="event.passed">Event Ended</span>
+                  <picture>
+                    <source 
+                      type="image/webp" 
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3320.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3320-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3320-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
+                    <img 
+                      src="./assets/images/events/KaterynaBuzhynska/IMG_3320-500.webp" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
+                      alt="Kateryna Buzhynska and Mykhailo Grytskan concert at Moisei restaurant"
+                      class="img-cover">
+                  </picture>
+                </div>
+
+                <div class="special-dish-content bg-black-10">
+                  <div class="container">
+
+                    <p class="section-subtitle label-2" data-i18n="event.kateryna.subtitle">
+                      Event
+                    </p>
+
+                    <h2 class="headline-1 section-title" data-i18n="event.kateryna.title">
+                      Kateryna Buzhynska and Mykhailo Grytskan
+                    </h2>
+
+                    <div class="special-dish-banner special-dish-banner-mobile">
+                      <picture>
+                        <source 
+                          type="image/webp" 
+                          srcset="./assets/images/events/KaterynaBuzhynska/IMG_3320.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3320-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3320-500.webp 500w"
+                          sizes="(max-width: 768px) 100vw, 940px">
+                        <img 
+                          src="./assets/images/events/KaterynaBuzhynska/IMG_3320-500.webp" 
+                          width="940" 
+                          height="900" 
+                          loading="lazy" 
+                          alt="Kateryna Buzhynska and Mykhailo Grytskan concert at Moisei restaurant"
+                          class="img-cover">
+                      </picture>
+                    </div>
+
+                    <a href="kateryna-buzhynska-event.html" class="btn btn-primary">
+                      <span class="text text-1" data-i18n="btn.review-event">Review Event</span>
+                      <span class="text text-2" data-i18n="btn.review-event" aria-hidden="true">Review Event</span>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Oksana Bilozir Event -->
+            <div class="swiper-slide">
+              <div class="special-dish text-center" aria-labelledby="event-label-3">
+                <div class="special-dish-banner" style="position: relative;">
+                  <span class="event-passed-badge" data-i18n="event.passed">Event Ended</span>
+                  <picture>
+                    <source 
+                      type="image/webp" 
+                      srcset="./assets/images/events/OksanaBilozir/IMG_5605.webp 1000w, ./assets/images/events/OksanaBilozir/IMG_5605-750.webp 750w, ./assets/images/events/OksanaBilozir/IMG_5605-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
+                    <img 
+                      src="./assets/images/events/OksanaBilozir/IMG_5605-500.webp" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
+                      alt="Oksana Bilozir charity concert at Moisei restaurant"
+                      class="img-cover">
+                  </picture>
+                </div>
+
+                <div class="special-dish-content bg-black-10">
+                  <div class="container">
+
+                    <p class="section-subtitle label-2" data-i18n="event.oksana.subtitle">
+                      Event
+                    </p>
+
+                    <h2 class="headline-1 section-title" data-i18n="event.oksana.title">
+                      Oksana Bilozir
+                    </h2>
+
+                    <div class="special-dish-banner special-dish-banner-mobile">
+                      <picture>
+                        <source 
+                          type="image/webp" 
+                          srcset="./assets/images/events/OksanaBilozir/IMG_5605.webp 1000w, ./assets/images/events/OksanaBilozir/IMG_5605-750.webp 750w, ./assets/images/events/OksanaBilozir/IMG_5605-500.webp 500w"
+                          sizes="(max-width: 768px) 100vw, 940px">
+                        <img 
+                          src="./assets/images/events/OksanaBilozir/IMG_5605-500.webp" 
+                          width="940" 
+                          height="900" 
+                          loading="lazy" 
+                          alt="Oksana Bilozir charity concert at Moisei restaurant"
+                          class="img-cover">
+                      </picture>
+                    </div>
+
+                    <a href="oksana-bilozir-event.html" class="btn btn-primary">
+                      <span class="text text-1" data-i18n="btn.review-event">Review Event</span>
+                      <span class="text text-2" data-i18n="btn.review-event" aria-hidden="true">Review Event</span>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <!-- Navigation buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+              </div>
+      </section>
+      
+      <style>
+        @keyframes pulse-glow-green {
+          0%, 100% {
+            box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5);
+            transform: scale(1);
+          }
+          50% {
+            box-shadow: 0 8px 30px rgba(106, 156, 95, 0.7);
+            transform: scale(1.02);
+          }
+        }
+        
+        .event-passed-badge {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          z-index: 3;
+          background: linear-gradient(135deg, #6a9c5f 0%, var(--gold-crayola) 100%);
+          color: var(--white);
+          padding: 10px 20px;
+          border-radius: 12px;
+          font-size: 1.3rem;
+          font-weight: var(--weight-bold);
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5);
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+          animation: pulse-glow-green 2s ease-in-out infinite;
+        }
+        
+        @media (max-width: 768px) {
+          .event-passed-badge {
+            top: 15px !important;
+            left: 15px !important;
+            padding: 8px 16px !important;
+            font-size: 1.1rem !important;
+            letter-spacing: 1px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .event-passed-badge {
+            top: 10px !important;
+            left: 10px !important;
+            padding: 6px 12px !important;
+            font-size: 1rem !important;
+          }
+        }
+
+        /* Reverse order for event-swiper: content left, banner right */
+        @media (min-width: 992px) {
+          .event-swiper .special-dish {
+            grid-template-columns: 1fr 1fr;
+          }
+          
+          .event-swiper .special-dish-banner {
+            order: 2;
+          }
+          
+          .event-swiper .special-dish-content {
+            order: 1;
+          }
+          
+          /* Adjust badge position for right-side banner */
+          .event-swiper .event-passed-badge {
+            left: auto;
+            right: 20px;
+          }
+        }
+
+        /* Navigation buttons - exactly same style as special-dish-swiper */
+        .event-swiper .swiper-button-next,
+        .event-swiper .swiper-button-prev {
+          display: none;
+        }
+
+        @media (min-width: 768px) {
+          .event-swiper .swiper-button-next,
+          .event-swiper .swiper-button-prev {
+            display: grid;
+            position: absolute;
+            z-index: 10;
+            color: #8fad81;
+            font-size: 2.4rem;
+            border: 1px solid #8fad81;
+            width: 45px;
+            height: 45px;
+            place-items: center;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            transition: var(--transition-1);
+            background: transparent;
+            margin: 0;
+          }
+
+          .event-swiper .swiper-button-next::after,
+          .event-swiper .swiper-button-prev::after {
+            font-size: 20px;
+            transform: rotate(-45deg);
+          }
+
+          .event-swiper .swiper-button-next {
+            right: 30px;
+          }
+
+          .event-swiper .swiper-button-prev {
+            left: 30px;
+          }
+
+          .event-swiper .swiper-button-next:is(:hover, :focus-visible),
+          .event-swiper .swiper-button-prev:is(:hover, :focus-visible) {
+            background-color: #8fad81;
+            color: var(--black);
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          .event-swiper .swiper-button-next,
+          .event-swiper .swiper-button-prev {
+            width: 38px;
+            height: 38px;
+            font-size: 2rem;
+          }
+
+          .event-swiper .swiper-button-next::after,
+          .event-swiper .swiper-button-prev::after {
+            font-size: 18px;
+          }
+
+          .event-swiper .swiper-button-next {
+            right: 20px;
+          }
+
+          .event-swiper .swiper-button-prev {
+            left: 20px;
+          }
+        }
+
+        /* Event section title margin-bottom on mobile */
+        @media (max-width: 767px) {
+          .event-swiper .section-title {
+            margin-bottom: 20px;
+          }
+        }
+
+        /* Review Event button margin-top on large screens */
+        @media (min-width: 992px) {
+          .event-swiper .special-dish-content .btn.btn-primary {
+            margin-top: 20px;
+          }
+        }
+      </style>
 
       <section class="section service bg-black-10 text-center" aria-label="service">
         <div class="container">
@@ -1553,11 +1680,11 @@
           </li>
 
           <li>
-            <a href="index.html#events" class="label-2 footer-link hover-underline" data-i18n="nav.events">Events</a>
+            <a href="index.html#about" class="label-2 footer-link hover-underline" data-i18n="nav.about">About Us</a>
           </li>
 
           <li>
-            <a href="index.html#about" class="label-2 footer-link hover-underline" data-i18n="nav.about">About Us</a>
+            <a href="index.html#events" class="label-2 footer-link hover-underline" data-i18n="nav.events">Events</a>
           </li>
 
           <li>
@@ -1679,7 +1806,7 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
-  <script src="./assets/js/script.js?v=20250111-google-ads" defer></script>
+  <script src="./assets/js/script.js?v=20250115-21" defer></script>
 
     <script
       type="module"
@@ -1923,72 +2050,5 @@
     }
     </script>
 
-  <script>
-    // Events Slider - переключение между двумя событиями (Olya и Kateryna)
-    window.addEventListener("load", function() {
-      const sliderWrapper = document.querySelector("[data-events-slider]");
-      const slides = sliderWrapper ? sliderWrapper.querySelectorAll("[data-event-slide]") : [];
-      const prevBtn = document.querySelector("[data-events-slider-prev]");
-      const nextBtn = document.querySelector("[data-events-slider-next]");
-
-      if (slides.length === 0 || !prevBtn || !nextBtn) {
-        return;
-      }
-
-      let currentSlide = 0;
-      let autoSlideInterval;
-
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          if (i === index) {
-            slide.classList.add("active");
-          } else {
-            slide.classList.remove("active");
-          }
-        });
-      }
-
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      }
-
-      function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-      }
-
-      function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-      }
-
-      function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-      }
-
-      // Initialize
-      showSlide(0);
-      startAutoSlide();
-
-      // Event listeners
-      nextBtn.addEventListener("click", function() {
-        stopAutoSlide();
-        nextSlide();
-        startAutoSlide();
-      });
-
-      prevBtn.addEventListener("click", function() {
-        stopAutoSlide();
-        prevSlide();
-        startAutoSlide();
-      });
-
-      // Pause on hover
-      if (sliderWrapper) {
-        sliderWrapper.addEventListener("mouseenter", stopAutoSlide);
-        sliderWrapper.addEventListener("mouseleave", startAutoSlide);
-      }
-    });
-  </script>
 </body>
 </html>

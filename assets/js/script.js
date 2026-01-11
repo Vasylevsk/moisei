@@ -39,50 +39,42 @@ const addEventOnElements = function (elements, eventType, callback) {
   }
 };
 
+/**
+ * NAVBAR
+ */
+
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
 
-if (navbar && overlay) {
 const toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
   document.body.classList.toggle("nav-active");
-};
-
-const closeNavbar = function () {
-  navbar.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.classList.remove("nav-active");
-};
-
-  if (navTogglers.length > 0) {
-addEventOnElements(navTogglers, "click", toggleNavbar);
-  }
 }
 
+addEventOnElements(navTogglers, "click", toggleNavbar);
+
+// Close navbar when clicking on links
 const navbarLinks = document.querySelectorAll(".navbar-link");
-if (navbarLinks.length > 0 && navbar && overlay) {
-  const closeNavbar = function () {
+navbarLinks.forEach(function (link) {
+  link.addEventListener("click", function () {
     navbar.classList.remove("active");
     overlay.classList.remove("active");
     document.body.classList.remove("nav-active");
-  };
-navbarLinks.forEach(function (link) {
-  link.addEventListener("click", function () {
-    closeNavbar();
   });
 });
-}
+
+/**
+ * HEADER & BACK TOP BTN
+ */
 
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
-if (header || backTopBtn) {
 let lastScrollPos = 0;
 
 const hideHeader = function () {
-    if (!header) return;
   const isScrollBottom = lastScrollPos < window.scrollY;
   if (isScrollBottom) {
     header.classList.add("hide");
@@ -91,19 +83,18 @@ const hideHeader = function () {
   }
 
   lastScrollPos = window.scrollY;
-};
+}
 
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 50) {
-      if (header) header.classList.add("active");
-      if (backTopBtn) backTopBtn.classList.add("active");
+    header.classList.add("active");
+    backTopBtn.classList.add("active");
     hideHeader();
   } else {
-      if (header) header.classList.remove("active");
-      if (backTopBtn) backTopBtn.classList.remove("active");
+    header.classList.remove("active");
+    backTopBtn.classList.remove("active");
   }
 });
-}
 
 const heroSlider = document.querySelector("[data-hero-slider]");
 const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
@@ -172,7 +163,6 @@ if (
 
   window.addEventListener("load", autoSlide);
 }
-
 
 const shishaContainer = document.querySelector("[data-shisha-slider]");
 const shishaItems = document.querySelectorAll(".shisha-image-item");
@@ -439,6 +429,7 @@ if (eventModal && eventModalClose) {
   const modalTimeEnd = eventModal.querySelector("[data-event-modal-time-end]");
   const modalFeatures = eventModal.querySelector("[data-event-modal-features]");
   const modalPriceRegular = eventModal.querySelector("[data-event-modal-price-regular]");
+  const modalPriceSpecial = eventModal.querySelector("[data-event-modal-price-special]");
   const modalLocation = eventModal.querySelector("[data-event-modal-location-text]");
   const modalBookingsTitle = eventModal.querySelector("[data-event-modal-bookings-title]");
 
@@ -514,6 +505,10 @@ if (eventModal && eventModalClose) {
       modalPriceRegular.textContent = getTranslation("event.modal.price.regular");
     }
 
+    if (modalPriceSpecial) {
+      modalPriceSpecial.innerHTML = getTranslation("event.modal.price.special") + "<br><br>" + getTranslation("event.modal.price.footer");
+    }
+
     if (modalLocation) {
       modalLocation.textContent = getTranslation("event.modal.location");
     }
@@ -574,57 +569,4 @@ window.addEventListener("mousemove", function (event) {
   }
 });
 }
-
-// Initialize Swiper for special-dish
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Swiper !== 'undefined') {
-    const specialDishSwiper = new Swiper('.special-dish-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: true,
-      autoHeight: false,
-      autoplay: {
-        delay: 7000,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: '.special-dish-swiper .swiper-button-next',
-        prevEl: '.special-dish-swiper .swiper-button-prev',
-      },
-      speed: 800,
-      effect: 'slide',
-      on: {
-        init: function() {
-          syncSlideHeights();
-        },
-        slideChange: function() {
-          syncSlideHeights();
-        }
-      }
-    });
-
-    function syncSlideHeights() {
-      const slides = document.querySelectorAll('.special-dish-swiper .swiper-slide .special-dish');
-      if (slides.length < 2) return;
-      
-      let maxHeight = 0;
-      slides.forEach(slide => {
-        slide.style.height = 'auto';
-        const height = slide.offsetHeight;
-        if (height > maxHeight) {
-          maxHeight = height;
-        }
-      });
-      
-      slides.forEach(slide => {
-        slide.style.height = maxHeight + 'px';
-      });
-    }
-
-    // Sync heights on window resize
-    window.addEventListener('resize', function() {
-      syncSlideHeights();
-    });
-  }
-});
 

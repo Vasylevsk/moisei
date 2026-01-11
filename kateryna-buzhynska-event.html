@@ -35,6 +35,9 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico?v=20250111" />
     <link rel="stylesheet" href="./assets/css/combined.min.css?v=20250111-google-ads" />
     
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -216,536 +219,444 @@
     </div>
   </header>
 
-  <main>
+  <main style="margin-top: 100px;">
+      <style>
+        @media (max-width: 768px) {
+          main {
+            margin-top: 60px !important;
+          }
+        }
+      </style>
     <article>
 
-      <section class="section event-gallery bg-black-10 text-center" aria-label="event gallery" style="padding-top: 120px;">
+      <section class="special-dish-swiper-wrapper" aria-label="event" id="event-detail">
+        <div class="special-dish text-center">
+          <div class="special-dish-content bg-black-10">
         <div class="container">
 
-          <p class="section-subtitle label-2" style="margin-top: 40px;" data-i18n="event.kateryna.subtitle">Concert Event</p>
+              <p class="section-subtitle label-2" data-i18n="event.kateryna.subtitle">Event</p>
 
-          <h1 class="headline-1 section-title" data-i18n="event.kateryna.title">Kateryna Buzhynska and Mykhailo Grytskan</h1>
+              <h2 class="headline-1 section-title" data-i18n="event.kateryna.title">Kateryna Buzhynska and Mykhailo Grytskan</h2>
 
-          <p class="section-text" style="margin-bottom: 20px;" data-i18n="event.kateryna.description">
-            Our hall was filled with music, emotions and sincere smiles, as Kateryna Buzhynska and Mykhailo Grytskan performed for us!
-          </p>
+              <p class="section-text" style="margin-bottom: 20px;" data-i18n="event.kateryna.description">
+                Our hall was filled with music, emotions and sincere smiles, as Kateryna Buzhynska and Mykhailo Grytskan performed for us!
+              </p>
 
-          <p class="section-text" style="margin-bottom: 20px;" data-i18n="event.kateryna.description2">
-            Thank you to everyone who spent this evening with us, the atmosphere was truly magical 💫
-          </p>
+              <p class="section-text" style="margin-bottom: 20px;" data-i18n="event.kateryna.description2">
+                Thank you to everyone who spent this evening with us, the atmosphere was truly magical 💫
+              </p>
 
-          <p class="section-text" style="margin-bottom: 40px;" data-i18n="event.kateryna.description3">
-            Special thanks to our talented artists, who have already performed here before.
-          </p>
+              <p class="section-text" style="margin-bottom: 40px;" data-i18n="event.kateryna.description3">
+                Special thanks to our talented artists, who have already performed here before.
+              </p>
 
-          <h2 class="headline-2 section-title" style="margin-top: 60px; margin-bottom: 40px;" data-i18n="event.kateryna.gallery.title">Event Gallery</h2>
+            </div>
+          </div>
 
-          <div class="event-gallery-slider" style="position: relative; max-width: 1200px; margin: 20px auto 0; min-height: 600px; width: 100%;">
-            <ul class="event-gallery-slider-list" data-event-gallery-slider>
+          <div class="special-dish-banner" style="position: relative;">
+            <span class="event-passed-badge" data-i18n="event.passed">Event Ended</span>
 
-              <li class="event-gallery-slide active" data-event-gallery-slide>
-                <div class="event-gallery-image-wrapper">
+            <!-- Event Gallery Slider using Swiper -->
+            <div class="swiper event-gallery-swiper">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
                   <picture>
                     <source 
                       type="image/webp" 
-                      media="(max-width: 640px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3294-500.webp 500w"
-                    sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 960px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3294-750.webp 750w"
-                    sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 1280px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3294-750.webp 1280w"
-                    sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3294.webp 1920w"
-                    sizes="100vw">
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3294.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3294-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3294-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
                     <img 
-                      src="./assets/images/events/KaterynaBuzhynska/IMG_3294-500.webp"
-                      width="1000" 
-                      height="600" 
+                      src="./assets/images/events/KaterynaBuzhynska/IMG_3294-500.webp" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
                       alt="Kateryna Buzhynska and Mykhailo Grytskan concert at Moisei restaurant" 
-                      class="event-gallery-image" 
+                      class="img-cover"
                       fetchpriority="high" 
-                      decoding="async"
-                      loading="eager">
+                      decoding="async">
                   </picture>
                 </div>
-              </li>
 
-              <li class="event-gallery-slide" data-event-gallery-slide>
-                <div class="event-gallery-image-wrapper">
+                <div class="swiper-slide">
                   <picture>
                     <source 
                       type="image/webp" 
-                      media="(max-width: 640px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3295-500.webp 500w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 960px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3295-750.webp 750w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 1280px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3295-750.webp 1280w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3295.webp 1920w"
-                      sizes="100vw">
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3295.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3295-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3295-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
                     <img 
                       src="./assets/images/events/KaterynaBuzhynska/IMG_3295-500.webp" 
-                      width="1000" 
-                      height="600" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
                       alt="Kateryna Buzhynska and Mykhailo Grytskan concert at Moisei restaurant" 
-                      class="event-gallery-image" 
-                      decoding="async"
-                      loading="lazy">
+                      class="img-cover"
+                      decoding="async">
                   </picture>
                 </div>
-              </li>
 
-              <li class="event-gallery-slide" data-event-gallery-slide>
-                <div class="event-gallery-image-wrapper">
+                <div class="swiper-slide">
                   <picture>
                     <source 
                       type="image/webp" 
-                      media="(max-width: 640px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3296-500.webp 500w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 960px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3296-750.webp 750w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 1280px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3296-750.webp 1280w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3296.webp 1920w"
-                      sizes="100vw">
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3296.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3296-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3296-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
                     <img 
                       src="./assets/images/events/KaterynaBuzhynska/IMG_3296-500.webp" 
-                      width="1000" 
-                      height="600" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
                       alt="Kateryna Buzhynska and Mykhailo Grytskan live performance at Moisei restaurant" 
-                      class="event-gallery-image" 
-                      decoding="async"
-                      loading="lazy">
+                      class="img-cover"
+                      decoding="async">
                   </picture>
                 </div>
-              </li>
 
-              <li class="event-gallery-slide" data-event-gallery-slide>
-                <div class="event-gallery-image-wrapper">
+                <div class="swiper-slide">
                   <picture>
                     <source 
                       type="image/webp" 
-                      media="(max-width: 640px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3301-500.webp 500w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 960px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3301-750.webp 750w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 1280px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3301-750.webp 1280w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3301.webp 1920w"
-                      sizes="100vw">
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3301.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3301-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3301-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
                     <img 
                       src="./assets/images/events/KaterynaBuzhynska/IMG_3301-500.webp" 
-                      width="1000" 
-                      height="600" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
                       alt="Kateryna Buzhynska and Mykhailo Grytskan concert event at Moisei restaurant" 
-                      class="event-gallery-image" 
-                      decoding="async"
-                      loading="lazy">
+                      class="img-cover"
+                      decoding="async">
                   </picture>
                 </div>
-              </li>
 
-              <li class="event-gallery-slide" data-event-gallery-slide>
-                <div class="event-gallery-image-wrapper">
+                <div class="swiper-slide">
                   <picture>
                     <source 
                       type="image/webp" 
-                      media="(max-width: 640px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3303-500.webp 500w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 960px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3303-750.webp 750w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 1280px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3303-750.webp 1280w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3303.webp 1920w"
-                      sizes="100vw">
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3303.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3303-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3303-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
                     <img 
                       src="./assets/images/events/KaterynaBuzhynska/IMG_3303-500.webp" 
-                      width="1000" 
-                      height="600" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
                       alt="Kateryna Buzhynska and Mykhailo Grytskan music performance at Moisei restaurant" 
-                      class="event-gallery-image" 
-                      decoding="async"
-                      loading="lazy">
+                      class="img-cover"
+                      decoding="async">
                   </picture>
                 </div>
-              </li>
 
-              <li class="event-gallery-slide" data-event-gallery-slide>
-                <div class="event-gallery-image-wrapper">
+                <div class="swiper-slide">
                   <picture>
                     <source 
                       type="image/webp" 
-                      media="(max-width: 640px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3304-500.webp 500w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 960px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3304-750.webp 750w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 1280px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3304-750.webp 1280w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3304.webp 1920w"
-                      sizes="100vw">
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3304.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3304-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3304-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
                     <img 
                       src="./assets/images/events/KaterynaBuzhynska/IMG_3304-500.webp" 
-                      width="1000" 
-                      height="600" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
                       alt="Kateryna Buzhynska and Mykhailo Grytskan performance at Moisei Ukrainian restaurant Brentford" 
-                      class="event-gallery-image" 
-                      decoding="async"
-                      loading="lazy">
+                      class="img-cover"
+                      decoding="async">
                   </picture>
                 </div>
-              </li>
 
-              <li class="event-gallery-slide" data-event-gallery-slide>
-                <div class="event-gallery-image-wrapper">
+                <div class="swiper-slide">
                   <picture>
                     <source 
                       type="image/webp" 
-                      media="(max-width: 640px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3310-500.webp 500w"
-                    sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 960px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3310-750.webp 750w"
-                    sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 1280px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3310-750.webp 1280w"
-                    sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3310.webp 1920w"
-                    sizes="100vw">
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3310.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3310-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3310-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
                     <img 
                       src="./assets/images/events/KaterynaBuzhynska/IMG_3310-500.webp" 
-                      width="1000" 
-                      height="600" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
                       alt="Kateryna Buzhynska and Mykhailo Grytskan concert at Moisei restaurant" 
-                      class="event-gallery-image" 
-                      decoding="async"
-                      loading="lazy">
+                      class="img-cover"
+                      decoding="async">
                   </picture>
                 </div>
-              </li>
 
-              <li class="event-gallery-slide" data-event-gallery-slide>
-                <div class="event-gallery-image-wrapper">
+                <div class="swiper-slide">
                   <picture>
                     <source 
                       type="image/webp" 
-                      media="(max-width: 640px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3319-500.webp 500w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 960px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3319-750.webp 750w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      media="(max-width: 1280px)"
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3319-750.webp 1280w"
-                      sizes="100vw">
-                    <source 
-                      type="image/webp" 
-                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3319.webp 1920w"
-                      sizes="100vw">
+                      srcset="./assets/images/events/KaterynaBuzhynska/IMG_3319.webp 1000w, ./assets/images/events/KaterynaBuzhynska/IMG_3319-750.webp 750w, ./assets/images/events/KaterynaBuzhynska/IMG_3319-500.webp 500w"
+                      sizes="(max-width: 768px) 100vw, 940px">
                     <img 
                       src="./assets/images/events/KaterynaBuzhynska/IMG_3319-500.webp" 
-                      width="1000" 
-                      height="600" 
+                      width="940" 
+                      height="900" 
+                      loading="lazy" 
                       alt="Kateryna Buzhynska and Mykhailo Grytskan performance at Moisei restaurant" 
-                      class="event-gallery-image" 
-                      decoding="async"
-                      loading="lazy">
+                      class="img-cover"
+                      decoding="async">
                   </picture>
                 </div>
-              </li>
 
-            </ul>
-
-            <button class="event-gallery-btn prev" aria-label="slide to previous" data-event-gallery-prev>
-              <ion-icon name="chevron-back"></ion-icon>
-            </button>
-
-            <button class="event-gallery-btn next" aria-label="slide to next" data-event-gallery-next>
-              <ion-icon name="chevron-forward"></ion-icon>
-            </button>
+              </div>
+              
+              <!-- Navigation buttons -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
           </div>
 
-          <style>
-            .event-gallery-slider {
-              position: relative;
-              overflow: hidden;
-              border-radius: var(--radius-24);
-              width: 100%;
-              margin: 0 auto;
-            }
+          <div class="special-dish-content bg-black-10">
+            <div class="container">
 
-            .event-gallery-slider-list {
-              position: relative;
-              width: 100%;
-              height: 600px;
-              list-style: none;
-              padding: 0;
-              margin: 0;
-            }
+              <div style="margin-top: 40px;">
+                <a href="index.html#events" class="btn btn-primary">
+                  <span class="text text-1" data-i18n="btn.back-to-events">Back to Events</span>
+                  <span class="text text-2" data-i18n="btn.back-to-events" aria-hidden="true">Back to Events</span>
+                </a>
+              </div>
 
-            .event-gallery-slide {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              opacity: 0;
-              visibility: hidden;
-              transition: opacity 0.5s ease, visibility 0.5s ease;
-              margin: 0;
-              padding: 0;
-              z-index: 1;
-            }
-
-            .event-gallery-slide.active {
-              opacity: 1;
-              visibility: visible;
-              z-index: 2;
-            }
-
-            .event-gallery-image-wrapper {
-              width: 100%;
-              height: 100%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              overflow: hidden;
-              padding: 10px 0;
-              margin: 0;
-            }
-
-            .event-gallery-image {
-              max-width: 100%;
-              max-height: 100%;
-              width: auto;
-              height: auto;
-              object-fit: contain;
-              object-position: center;
-              display: block;
-              margin: 0;
-            }
-
-            .event-gallery-image-wrapper picture {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 100%;
-              height: 100%;
-              margin: 0;
-            }
-
-            .event-gallery-btn {
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              width: 50px;
-              height: 50px;
-              background-color: var(--gold-crayola);
-              color: var(--eerie-black-1);
-              border: none;
-              border-radius: 50%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              cursor: pointer;
-              z-index: 10;
-              transition: var(--transition-1);
-              font-size: 2rem;
-            }
-
-            .event-gallery-btn:hover {
-              background-color: var(--white);
-              transform: translateY(-50%) scale(1.1);
-            }
-
-            .event-gallery-btn.prev {
-              left: 20px;
-            }
-
-            .event-gallery-btn.next {
-              right: 20px;
-            }
-
-            @media (max-width: 768px) {
-              .event-gallery-slider {
-                min-height: 70vh;
-                height: 70vh;
-                max-height: 70vh;
-                border-radius: var(--radius-24);
-                margin: 20px auto 0;
-                padding: 0;
-                width: calc(100% - 20px);
-                max-width: calc(100% - 20px);
-              }
-
-              .event-gallery-slider-list {
-                height: 100%;
-                min-height: 100%;
-                max-height: 100%;
-                width: 100%;
-              }
-
-              .event-gallery-slide {
-                height: 100%;
-              }
-
-              .event-gallery-image-wrapper {
-                height: 100%;
-                min-height: 100%;
-                padding: 15px;
-                box-sizing: border-box;
-              }
-
-              .event-gallery-image {
-                width: auto;
-                max-width: 100%;
-                height: auto;
-                max-height: 100%;
-                object-fit: contain;
-                object-position: center;
-                border-radius: 12px;
-              }
-
-              .event-gallery-image-wrapper picture {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              }
-
-              .event-gallery-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.8rem;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: rgba(143, 173, 129, 0.9);
-                backdrop-filter: blur(10px);
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-              }
-
-              .event-gallery-btn.prev {
-                left: 10px;
-              }
-
-              .event-gallery-btn.next {
-                right: 10px;
-              }
-
-              .event-gallery-btn:hover {
-                transform: translateY(-50%) scale(1.1);
-                background-color: rgba(143, 173, 129, 1);
-              }
-
-              .event-gallery-btn:active {
-                transform: translateY(-50%) scale(0.95);
-              }
-            }
-
-            @media (max-width: 480px) {
-              .event-gallery-slider {
-                min-height: 60vh;
-                height: 60vh;
-                max-height: 60vh;
-              }
-
-              .event-gallery-image-wrapper {
-                padding: 10px;
-              }
-
-              .event-gallery-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.5rem;
-              }
-
-              .event-gallery-btn.prev {
-                left: 8px;
-              }
-
-              .event-gallery-btn.next {
-                right: 8px;
-              }
-            }
-          </style>
-
-          <div style="margin-top: 20px;">
-            <a href="index.html#events" class="btn btn-secondary">
-              <span class="text text-1" data-i18n="btn.back-to-events">Back to Events</span>
-              <span class="text text-2" data-i18n="btn.back-to-events" aria-hidden="true">Back to Events</span>
-            </a>
+            </div>
           </div>
-
-          <img src="./assets/images/shape-1.png" width="246" height="412" loading="lazy" alt=""
-            class="shape shape-1 move-anim" aria-hidden="true">
-          <img src="./assets/images/shape-2.png" width="343" height="345" loading="lazy" alt=""
-            class="shape shape-2 move-anim" aria-hidden="true">
-
         </div>
       </section>
+
+          <style>
+        @keyframes pulse-glow-green {
+          0%, 100% {
+            box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5);
+            transform: scale(1);
+          }
+          50% {
+            box-shadow: 0 8px 30px rgba(106, 156, 95, 0.7);
+            transform: scale(1.02);
+          }
+        }
+        
+        .event-passed-badge {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          z-index: 3;
+          background: linear-gradient(135deg, #6a9c5f 0%, var(--gold-crayola) 100%);
+          color: var(--white);
+          padding: 10px 20px;
+          border-radius: 12px;
+          font-size: 1.3rem;
+          font-weight: var(--weight-bold);
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5);
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+          animation: pulse-glow-green 2s ease-in-out infinite;
+        }
+        
+        .event-gallery-swiper {
+              width: 100%;
+              height: 100%;
+        }
+        
+        .event-gallery-swiper .swiper-slide {
+          width: 100%;
+          height: 100%;
+        }
+        
+        .event-gallery-swiper .swiper-slide {
+              padding: 0;
+              margin: 0;
+            }
+
+        .event-gallery-swiper .swiper-slide img {
+              width: 100%;
+              height: 100%;
+          object-fit: cover;
+          padding: 0;
+              margin: 0;
+          display: block;
+        }
+        
+        @media (max-width: 768px) {
+          .special-dish-banner {
+            display: block !important;
+            width: 100%;
+            min-height: 400px;
+            height: auto;
+          }
+          
+          .event-gallery-swiper {
+              width: 100%;
+            min-height: 400px;
+            height: 60vh;
+            max-height: 600px;
+          }
+          
+          .event-gallery-swiper .swiper-slide {
+            height: 100%;
+          }
+          
+          .event-gallery-swiper .swiper-slide img {
+              width: 100%;
+              height: 100%;
+            object-fit: cover;
+          }
+        }
+        
+        .event-gallery-swiper .swiper-button-next,
+        .event-gallery-swiper .swiper-button-prev {
+          display: none;
+        }
+        
+        @media (min-width: 768px) {
+          .event-gallery-swiper .swiper-button-next,
+          .event-gallery-swiper .swiper-button-prev {
+            display: grid;
+            position: absolute;
+            z-index: 10;
+            color: #8fad81;
+            font-size: 2.4rem;
+            border: 1px solid #8fad81;
+            width: 45px;
+            height: 45px;
+            place-items: center;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            transition: var(--transition-1);
+            background: transparent;
+              margin: 0;
+            }
+
+          .event-gallery-swiper .swiper-button-next::after,
+          .event-gallery-swiper .swiper-button-prev::after {
+            font-size: 20px;
+            transform: rotate(-45deg);
+          }
+          
+          .event-gallery-swiper .swiper-button-next {
+            right: 30px;
+          }
+          
+          .event-gallery-swiper .swiper-button-prev {
+            left: 30px;
+          }
+          
+          .event-gallery-swiper .swiper-button-next:is(:hover,:focus-visible),
+          .event-gallery-swiper .swiper-button-prev:is(:hover,:focus-visible) {
+            background-color: #8fad81;
+            color: var(--black);
+          }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+          .event-gallery-swiper .swiper-button-next,
+          .event-gallery-swiper .swiper-button-prev {
+            width: 38px;
+            height: 38px;
+            font-size: 2rem;
+          }
+          
+          .event-gallery-swiper .swiper-button-next::after,
+          .event-gallery-swiper .swiper-button-prev::after {
+            font-size: 18px;
+          }
+          
+          .event-gallery-swiper .swiper-button-next {
+            right: 20px;
+          }
+          
+          .event-gallery-swiper .swiper-button-prev {
+            left: 20px;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .event-passed-badge {
+            top: 15px !important;
+            left: 15px !important;
+            padding: 8px 16px !important;
+            font-size: 1.1rem !important;
+            letter-spacing: 1px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .event-passed-badge {
+            top: 10px !important;
+            left: 10px !important;
+            padding: 6px 12px !important;
+            font-size: 1rem !important;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          main {
+            margin-top: 60px !important;
+          }
+          
+          .special-dish {
+            padding-block: 20px !important;
+          }
+          
+          .special-dish-content {
+            padding-block: 20px !important;
+          }
+          
+          .special-dish-content .container {
+            padding-block: 10px !important;
+          }
+          
+          .section-subtitle {
+            margin-bottom: 8px !important;
+            margin-block-end: 8px !important;
+          }
+          
+          .section-title {
+            margin-bottom: 12px !important;
+            margin-block-end: 12px !important;
+          }
+          
+          .section-text {
+            margin-bottom: 15px !important;
+            margin-block-end: 15px !important;
+          }
+          
+          .special-dish-content .btn {
+            margin-top: 20px !important;
+            margin-block-start: 20px !important;
+          }
+        }
+        
+        @media (min-width: 992px) {
+          .special-dish {
+            align-items: stretch !important;
+          }
+          
+          .special-dish-content {
+            padding-block: 40px !important;
+            padding-inline: 50px 25px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 100% !important;
+          }
+          
+          .special-dish-banner {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 100% !important;
+            padding-block: 40px !important;
+          }
+          
+          .event-gallery-swiper {
+            height: 100% !important;
+            max-height: 100% !important;
+          }
+          
+          .special-dish-content .container {
+            padding-block: 20px !important;
+          }
+        }
+      </style>
 
     </article>
   </main>
@@ -885,6 +796,7 @@
   <script src="./assets/js/translations.js?v=20250111-google-ads"></script>
   <script src="./assets/js/cookie-banner.js?v=20250111-google-ads" defer></script>
   <script src="./assets/js/script.js?v=20250111-google-ads"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
   <script>
     // Ensure translations are applied
@@ -900,7 +812,7 @@
           if (key && translations[currentLang] && translations[currentLang][key]) {
             if (element.hasAttribute("data-i18n-html")) {
               element.innerHTML = translations[currentLang][key];
-            } else {
+          } else {
               element.textContent = translations[currentLang][key];
             }
           }
@@ -911,7 +823,7 @@
     // Try to apply translations when DOM is ready
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", ensureTranslations);
-    } else {
+          } else {
       ensureTranslations();
     }
 
@@ -919,76 +831,29 @@
     window.addEventListener("load", function() {
       ensureTranslations();
       
-      // Event Gallery Slider - wait for all scripts to load
-      const eventGallerySlider = document.querySelector("[data-event-gallery-slider]");
-      const eventGallerySlides = document.querySelectorAll("[data-event-gallery-slide]");
-      const eventGalleryPrevBtn = document.querySelector("[data-event-gallery-prev]");
-      const eventGalleryNextBtn = document.querySelector("[data-event-gallery-next]");
-
-      console.log("Gallery elements:", {
-        slider: eventGallerySlider,
-        slides: eventGallerySlides.length,
-        prevBtn: eventGalleryPrevBtn,
-        nextBtn: eventGalleryNextBtn
-      });
-
-      if (eventGallerySlider && eventGallerySlides.length && eventGalleryPrevBtn && eventGalleryNextBtn) {
-        let currentSlidePos = 0;
-        let lastActiveSlide = eventGallerySlides[0];
-
-        // Ensure first slide is active
-        eventGallerySlides.forEach((slide, index) => {
-          if (index === 0) {
-            slide.classList.add("active");
-          } else {
-            slide.classList.remove("active");
-          }
-        });
-
-        const updateSlidePos = function() {
-          lastActiveSlide.classList.remove("active");
-          eventGallerySlides[currentSlidePos].classList.add("active");
-          lastActiveSlide = eventGallerySlides[currentSlidePos];
-        };
-
-        const slideNext = function() {
-          if (currentSlidePos >= eventGallerySlides.length - 1) {
-            currentSlidePos = 0;
-          } else {
-            currentSlidePos++;
-          }
-          updateSlidePos();
-        };
-
-        const slidePrev = function() {
-          if (currentSlidePos <= 0) {
-            currentSlidePos = eventGallerySlides.length - 1;
-          } else {
-            currentSlidePos--;
-          }
-          updateSlidePos();
-        };
-
-        eventGalleryNextBtn.addEventListener("click", slideNext);
-        eventGalleryPrevBtn.addEventListener("click", slidePrev);
-
-        // Auto-slide every 5 seconds
-        let autoSlideInterval = setInterval(slideNext, 5000);
-
-        // Pause on hover
-        eventGallerySlider.addEventListener("mouseenter", function() {
-          clearInterval(autoSlideInterval);
-        });
-
-        eventGallerySlider.addEventListener("mouseleave", function() {
-          autoSlideInterval = setInterval(slideNext, 5000);
-        });
-      } else {
-        console.error("Gallery slider initialization failed - missing elements");
-      }
-      
       // Final check for translations
       ensureTranslations();
+    });
+    
+    // Initialize Swiper for event gallery
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof Swiper !== 'undefined') {
+        const eventGallerySwiper = new Swiper('.event-gallery-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          navigation: {
+            nextEl: '.event-gallery-swiper .swiper-button-next',
+            prevEl: '.event-gallery-swiper .swiper-button-prev',
+          },
+          speed: 800,
+          effect: 'slide',
+        });
+      }
     });
   </script>
 

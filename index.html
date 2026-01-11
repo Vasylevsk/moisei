@@ -1361,6 +1361,14 @@
             margin-top: 20px;
           }
         }
+
+        /* Hide navigation buttons for special-dish-swiper on mobile */
+        @media (max-width: 767px) {
+          .special-dish-swiper .swiper-button-next,
+          .special-dish-swiper .swiper-button-prev {
+            display: none !important;
+          }
+        }
       </style>
 
       <section class="section service bg-black-10 text-center" aria-label="service">

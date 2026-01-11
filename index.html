@@ -1806,7 +1806,48 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
-  <script src="./assets/js/script.js?v=20250115-21" defer></script>
+  <script src="./assets/js/script.js?v=20250115-22" defer></script>
+
+  <!-- Initialize Swiper sliders -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Special Dish Swiper
+      const specialDishSwiper = document.querySelector('.special-dish-swiper');
+      if (specialDishSwiper) {
+        new Swiper('.special-dish-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          navigation: {
+            nextEl: '.special-dish-swiper .swiper-button-next',
+            prevEl: '.special-dish-swiper .swiper-button-prev',
+          },
+        });
+      }
+
+      // Initialize Event Swiper
+      const eventSwiper = document.querySelector('.event-swiper');
+      if (eventSwiper) {
+        new Swiper('.event-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          navigation: {
+            nextEl: '.event-swiper .swiper-button-next',
+            prevEl: '.event-swiper .swiper-button-prev',
+          },
+        });
+      }
+    });
+  </script>
 
     <script
       type="module"

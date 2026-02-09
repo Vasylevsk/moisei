@@ -131,11 +131,35 @@
 
   function handleAccept() {
     setCookieConsent('accepted');
+    
+    // Update Google Consent Mode to 'granted' via dataLayer (works with GTM)
+    // This format is compatible with GTM Consent Mode v2
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'consent',
+      'consent': {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted'
+      }
+    });
+    
     hideCookieBanner();
   }
 
   function handleDecline() {
     setCookieConsent('declined');
+    
+    // Keep Google Consent Mode as 'denied' via dataLayer (works with GTM)
+    // This format is compatible with GTM Consent Mode v2
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'consent',
+      'consent': {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied'
+      }
+    });
+    
     hideCookieBanner();
   }
 
@@ -161,6 +185,26 @@
     // Check if consent was already given
     const consent = getCookieConsentValue();
     if (!hasConsentExpired() && consent) {
+      // Update Google Consent Mode based on existing consent via dataLayer (works with GTM)
+      // This format is compatible with GTM Consent Mode v2
+      window.dataLayer = window.dataLayer || [];
+      if (consent === 'accepted') {
+        window.dataLayer.push({
+          'event': 'consent',
+          'consent': {
+            'analytics_storage': 'granted',
+            'ad_storage': 'granted'
+          }
+        });
+      } else {
+        window.dataLayer.push({
+          'event': 'consent',
+          'consent': {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
+          }
+        });
+      }
       return; // Don't show banner if consent exists and hasn't expired
     }
 

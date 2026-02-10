@@ -13,6 +13,37 @@
     })(window,document,'script','dataLayer','GTM-MH8D9KRX');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google Tag Manager event - delayed navigation helper -->
+    <script>
+      // Helper function to delay opening a URL until a GTM event is sent via dataLayer.
+      // Call it in response to an action that should navigate to a URL.
+      function gtagSendEvent(url) {
+        window.dataLayer = window.dataLayer || [];
+        
+        var callback = function () {
+          if (typeof url === 'string') {
+            window.location = url;
+          }
+        };
+        
+        // Push event to dataLayer (works with GTM)
+        window.dataLayer.push({
+          'event': 'manual_event_PAGE_VIEW',
+          'event_timeout': 2000,
+          'event_callback': callback
+        });
+        
+        // Fallback timeout in case GTM doesn't fire callback
+        setTimeout(function() {
+          if (typeof url === 'string' && window.location.href !== url) {
+            window.location = url;
+          }
+        }, 2000);
+        
+        return false;
+      }
+    </script>
+
     <title>Alena Omargalieva Solo Concert | Moisei Ukrainian Restaurant London</title>
     <meta name="title" content="Alena Omargalieva Solo Concert | Moisei Ukrainian Restaurant London" />
     <meta name="description" content="Great Solo Concert - Live Sound. Join us for an unforgettable evening with Alena Omargalieva at Moisei restaurant." />

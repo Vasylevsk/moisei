@@ -74,6 +74,25 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&family=Montserrat:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    
+    <style>
+      /* Fix for special-dish-content on mobile - prevent full width stretching */
+      @media (max-width: 768px) {
+        .special-dish-content.bg-black-10 {
+          padding-inline: 16px !important;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        
+        .special-dish-content.bg-black-10 .container {
+          max-width: 100% !important;
+          width: 100%;
+          margin-inline: 0 !important;
+          padding-inline: 0 !important;
+          box-sizing: border-box;
+        }
+      }
+    </style>
 </head>
 
 <body id="top">

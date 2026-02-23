@@ -7,6 +7,7 @@ const translations = {
     "nav.events": "Events",
     "nav.reservation": "Reservations",
     "nav.about": "About Us",
+    "nav.wedding": "Wedding",
     "nav.contact": "Contact",
 
     "nav.visit-us": "Visit Us",
@@ -736,6 +737,17 @@ const translations = {
       "We spent a long time searching for the perfect name. Naming our restaurant after a Ukrainian city felt too commonplace. Instead, we chose to honor one of the greatest works of Ukraine's preeminent poet, Ivan Franko. Our name is inspired by his powerful philosophical poem, which centers on the destiny of the Ukrainian nation and its struggle for freedom. The work explores the complex relationship between a leader and the people, touching upon themes of betrayal, doubt, faith in the spirit's strength, and the inevitability of national revival despite all trials. This deep connection to the Ukrainian soul is the foundation of our identity.",
     "about2.call-label": "Book Through Call",
 
+    "wedding.subtitle": "Wedding Season",
+    "wedding.title": "We've Started Collaborating with Banquet Halls in London!",
+    "wedding.text":
+      "Now you can choose not only celebrations at our restaurant, but also separate banquet halls for your wedding, engagement, or special event 💍",
+    "wedding.text2":
+      "The holiday season is beginning, and we would be happy to be part of your important day, taking care of the atmosphere, service, and delicious menu from Moisei.",
+    "wedding.contact":
+      "📩 Write to us in direct on <a href=\"https://www.instagram.com/moiseirestaurant/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link hover-underline\">Instagram</a> or <a href=\"tel:+447932393730\" class=\"link hover-underline\">call us</a>.",
+    "wedding.contact2":
+      " We'll send all current offers and find the perfect option just for you.",
+
     "events.subtitle": "Events",
     "events.title": "Events",
 
@@ -849,6 +861,7 @@ const translations = {
     "nav.events": "Події",
     "nav.reservation": "Бронювання",
     "nav.about": "Про нас",
+    "nav.wedding": "Весілля",
     "nav.contact": "Контакти",
 
     "nav.visit-us": "Відвідайте нас",
@@ -1549,6 +1562,17 @@ const translations = {
     "about2.text":
       "Ми довго шукали ідеальну назву. Назвати ресторан на честь українського міста здавалося надто буденно. Натомість ми вирішили вшанувати одну з найвидатніших робіт головного поета України — Івана Франка. Назва натхненна його філософською поемою, що розповідає про долю українського народу та його боротьбу за свободу. Вона досліджує складні відносини між провідником і народом, торкається тем зради, сумніву, віри у силу духу та неминучого відродження нації попри всі випробування. Саме цей глибокий звʼязок з українською душею є основою нашої ідентичності.",
     "about2.call-label": "Бронювання по телефону",
+
+    "wedding.subtitle": "Весілля",
+    "wedding.title": "Ми розпочали співпрацю з банкетними залами в Лондоні!",
+    "wedding.text":
+      "Тепер ви можете обрати не лише святкування у нашому ресторані, а й окремі банкетні зали для вашого весілля, заручин чи особливої події 💍",
+    "wedding.text2":
+      "Починається сезон свят, і ми будемо щасливі стати частинкою вашого важливого дня, подбавши про атмосферу, сервіс і смачне меню від Moisei.",
+    "wedding.contact":
+      "📩 Пишіть нам у direct в <a href=\"https://www.instagram.com/moiseirestaurant/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link hover-underline\">Instagram</a> або <a href=\"tel:+447932393730\" class=\"link hover-underline\">зателефонуйте нам</a>.",
+    "wedding.contact2":
+      " Надішлемо всі актуальні пропозиції та підберемо ідеальний варіант саме для вас.",
 
     "events.subtitle": "Події",
     "events.title": "Події",

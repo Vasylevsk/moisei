@@ -460,20 +460,21 @@
           }
         }
         
+        /* Navigation buttons - exactly same style as event-swiper in events section */
         .event-gallery-swiper .swiper-button-next,
         .event-gallery-swiper .swiper-button-prev {
           display: none;
         }
-        
+
         @media (min-width: 768px) {
           .event-gallery-swiper .swiper-button-next,
           .event-gallery-swiper .swiper-button-prev {
             display: grid;
             position: absolute;
             z-index: 10;
-            color: var(--gold-crayola);
+            color: #8fad81;
             font-size: 2.4rem;
-            border: 1px solid var(--gold-crayola);
+            border: 1px solid #8fad81;
             width: 45px;
             height: 45px;
             place-items: center;
@@ -483,28 +484,28 @@
             background: transparent;
             margin: 0;
           }
-          
+
           .event-gallery-swiper .swiper-button-next::after,
           .event-gallery-swiper .swiper-button-prev::after {
             font-size: 20px;
             transform: rotate(-45deg);
           }
-          
+
           .event-gallery-swiper .swiper-button-next {
             right: 30px;
           }
-          
+
           .event-gallery-swiper .swiper-button-prev {
             left: 30px;
           }
-          
-          .event-gallery-swiper .swiper-button-next:is(:hover,:focus-visible),
-          .event-gallery-swiper .swiper-button-prev:is(:hover,:focus-visible) {
-            background-color: var(--gold-crayola);
+
+          .event-gallery-swiper .swiper-button-next:is(:hover, :focus-visible),
+          .event-gallery-swiper .swiper-button-prev:is(:hover, :focus-visible) {
+            background-color: #8fad81;
             color: var(--black);
           }
         }
-        
+
         @media (min-width: 768px) and (max-width: 991px) {
           .event-gallery-swiper .swiper-button-next,
           .event-gallery-swiper .swiper-button-prev {
@@ -512,16 +513,16 @@
             height: 38px;
             font-size: 2rem;
           }
-          
+
           .event-gallery-swiper .swiper-button-next::after,
           .event-gallery-swiper .swiper-button-prev::after {
             font-size: 18px;
           }
-          
+
           .event-gallery-swiper .swiper-button-next {
             right: 20px;
           }
-          
+
           .event-gallery-swiper .swiper-button-prev {
             left: 20px;
           }
@@ -670,8 +671,42 @@
         }
         
         @media (min-width: 992px) {
-          .special-dish {
+          /* Make entire section full width on desktop */
+          #event-detail.special-dish-swiper-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          
+          #event-detail .special-dish {
             align-items: stretch !important;
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          
+          /* Make special-dish-content.bg-black-10 full width on desktop */
+          #event-detail .special-dish-content.bg-black-10 {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding-inline: 0 !important;
+            margin-inline: 0 !important;
+          }
+          
+          /* Fix for event-info container - make it wider on desktop */
+          #event-detail .special-dish-content.bg-black-10 .container {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding-inline: 40px !important;
+            margin-inline: 0 !important;
+          }
+          
+          .event-info {
+            max-width: 100% !important;
+          }
+          
+          .event-info-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 30px !important;
+            max-width: 100% !important;
           }
           
           .special-dish-content {

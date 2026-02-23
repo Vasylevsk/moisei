@@ -344,6 +344,14 @@
           </li>
 
           <li class="navbar-item">
+            <a href="index.html#wedding" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span" data-i18n="nav.wedding">Wedding</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
             <a href="index.html#events" class="navbar-link hover-underline">
               <div class="separator"></div>
 
@@ -922,6 +930,50 @@
         </div>
       </section>
 
+      <section class="section wedding-section bg-black-10" aria-labelledby="wedding-label" id="wedding">
+        <div class="container">
+          <div class="wedding-content">
+            <div class="wedding-text">
+              <p class="label-2 section-subtitle" id="wedding-label" data-i18n="wedding.subtitle">Wedding Season</p>
+              
+              <h2 class="headline-2 section-title" data-i18n="wedding.title">
+                We've Started Collaborating with Banquet Halls in London!
+              </h2>
+              
+              <p class="section-text" data-i18n="wedding.text">
+                Now you can choose not only celebrations at our restaurant, but also separate banquet halls for your wedding, engagement, or special event 💍
+              </p>
+              
+              <p class="section-text" data-i18n="wedding.text2">
+                The holiday season is beginning, and we would be happy to be part of your important day, taking care of the atmosphere, service, and delicious menu from Moisei.
+              </p>
+              
+              <p class="section-text wedding-contact">
+                <span data-i18n="wedding.contact" data-i18n-html>📩 Write to us in direct on Instagram or call us</span>
+                <span data-i18n="wedding.contact2"> We'll send all current offers and find the perfect option just for you.</span>
+              </p>
+            </div>
+            
+            <figure class="wedding-banner">
+              <picture>
+                <source 
+                  type="image/png" 
+                  srcset="./assets/images/wedding/wedding-full.png 1448w, ./assets/images/wedding/wedding-940.png 940w, ./assets/images/wedding/wedding-640.png 640w, ./assets/images/wedding/wedding-500.png 500w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 992px) 50vw, 600px">
+                <img 
+                  src="./assets/images/wedding.png" 
+                  width="1448" 
+                  height="1342" 
+                  loading="lazy" 
+                  alt="Wedding Season - Banquet halls collaboration at Moisei restaurant London"
+                  class="img-cover"
+                  decoding="async">
+              </picture>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section class="section about text-center" aria-labelledby="about-label" id="about">
         <div class="container">
 
@@ -1364,11 +1416,184 @@
           }
         }
 
+        /* Navigation buttons for special-dish-swiper - exactly same style as event-swiper */
+        .special-dish-swiper .swiper-button-next,
+        .special-dish-swiper .swiper-button-prev {
+          display: none;
+        }
+
+        @media (min-width: 768px) {
+          .special-dish-swiper .swiper-button-next,
+          .special-dish-swiper .swiper-button-prev {
+            display: grid;
+            position: absolute;
+            z-index: 10;
+            color: #8fad81;
+            font-size: 2.4rem;
+            border: 1px solid #8fad81;
+            width: 45px;
+            height: 45px;
+            place-items: center;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            transition: var(--transition-1);
+            background: transparent;
+            margin: 0;
+          }
+
+          .special-dish-swiper .swiper-button-next::after,
+          .special-dish-swiper .swiper-button-prev::after {
+            font-size: 20px;
+            transform: rotate(-45deg);
+          }
+
+          .special-dish-swiper .swiper-button-next {
+            right: 30px;
+          }
+
+          .special-dish-swiper .swiper-button-prev {
+            left: 30px;
+          }
+
+          .special-dish-swiper .swiper-button-next:is(:hover, :focus-visible),
+          .special-dish-swiper .swiper-button-prev:is(:hover, :focus-visible) {
+            background-color: #8fad81;
+            color: var(--black);
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          .special-dish-swiper .swiper-button-next,
+          .special-dish-swiper .swiper-button-prev {
+            width: 38px;
+            height: 38px;
+            font-size: 2rem;
+          }
+
+          .special-dish-swiper .swiper-button-next::after,
+          .special-dish-swiper .swiper-button-prev::after {
+            font-size: 18px;
+          }
+
+          .special-dish-swiper .swiper-button-next {
+            right: 20px;
+          }
+
+          .special-dish-swiper .swiper-button-prev {
+            left: 20px;
+          }
+        }
+
         /* Hide navigation buttons for special-dish-swiper on mobile */
         @media (max-width: 767px) {
           .special-dish-swiper .swiper-button-next,
           .special-dish-swiper .swiper-button-prev {
             display: none !important;
+          }
+        }
+
+        /* Wedding Section Styles */
+        .wedding-section {
+          padding-block: 80px;
+        }
+
+        .wedding-content {
+          display: grid;
+          gap: 40px;
+          align-items: center;
+        }
+
+        .wedding-text {
+          text-align: center;
+        }
+
+        .wedding-text .section-subtitle {
+          margin-block-end: 12px;
+        }
+
+        .wedding-text .section-title {
+          margin-block: 20px 16px;
+          font-size: calc(1.5rem + 1.5vw) !important;
+        }
+
+        .wedding-text .section-text {
+          margin-block-end: 16px;
+          max-width: 800px;
+          margin-inline: auto;
+        }
+
+        .wedding-contact {
+          margin-block-start: 24px;
+          white-space: nowrap;
+        }
+
+        .wedding-contact span {
+          display: inline;
+        }
+
+        .wedding-contact .link {
+          color: var(--gold-crayola);
+          text-decoration: none;
+          display: inline;
+        }
+
+        @media (max-width: 768px) {
+          .wedding-contact {
+            white-space: normal;
+          }
+        }
+
+        .wedding-banner {
+          position: relative;
+          overflow: hidden;
+          border-radius: var(--radius-24);
+          max-width: 100%;
+        }
+
+        .wedding-banner .img-cover {
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: cover;
+        }
+
+        @media (min-width: 992px) {
+          .wedding-content {
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            text-align: left;
+          }
+
+          .wedding-text {
+            text-align: left;
+            order: 2;
+          }
+
+          .wedding-text .section-subtitle {
+            text-align: left;
+            margin-block-end: 12px;
+          }
+
+          .wedding-text .section-subtitle::after {
+            margin-inline: 0;
+          }
+
+          .wedding-text .section-text {
+            margin-inline: 0;
+          }
+
+          .wedding-banner {
+            order: 1;
+          }
+        }
+
+        @media (max-width: 991px) {
+          .wedding-section {
+            padding-block: 60px;
+          }
+
+          .wedding-banner {
+            margin-block-start: 30px;
           }
         }
       </style>
@@ -1691,6 +1916,10 @@
 
           <li>
             <a href="index.html#about" class="label-2 footer-link hover-underline" data-i18n="nav.about">About Us</a>
+          </li>
+
+          <li>
+            <a href="index.html#wedding" class="label-2 footer-link hover-underline" data-i18n="nav.wedding">Wedding</a>
           </li>
 
           <li>

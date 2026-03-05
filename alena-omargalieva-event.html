@@ -73,9 +73,9 @@
     <!-- To use direct GA4: Replace 'YOUR_MEASUREMENT_ID' with your GA4 Measurement ID (format: G-XXXXXXXXXX) -->
     <!-- Get your Measurement ID from: Google Analytics → Admin → Data Streams -->
     <script>
-      // Initialize gtag function for GA4
+      // Initialize gtag function for GA4 (must be global)
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
       
       // Get consent state for GA4
       var getConsentState = function() {
@@ -103,7 +103,7 @@
       
       // Set default consent state for GA4 (before any GA4 code loads)
       var consentState = getConsentState();
-      gtag('consent', 'default', {
+      window.gtag('consent', 'default', {
         'analytics_storage': consentState,
         'ad_storage': consentState
       });
@@ -111,8 +111,8 @@
       // Update consent when it changes (will be called from cookie-banner.js)
       window.updateGAConsent = function(value) {
         var state = (value === 'accepted') ? 'granted' : 'denied';
-        if (typeof gtag !== 'undefined') {
-          gtag('consent', 'update', {
+        if (typeof window.gtag !== 'undefined') {
+          window.gtag('consent', 'update', {
             'analytics_storage': state,
             'ad_storage': state
           });
@@ -131,8 +131,8 @@
       // Uncomment and replace YOUR_MEASUREMENT_ID to enable direct GA4 tracking
       // This will work in addition to GTM
       /*
-      gtag('js', new Date());
-      gtag('config', 'YOUR_MEASUREMENT_ID', {
+      window.gtag('js', new Date());
+      window.gtag('config', 'YOUR_MEASUREMENT_ID', {
         'anonymize_ip': true,
         'cookie_flags': 'SameSite=None;Secure'
       });
@@ -600,7 +600,7 @@
         .event-gallery-swiper .swiper-button-prev {
           display: none;
         }
-
+        
         @media (min-width: 768px) {
           .event-gallery-swiper .swiper-button-next,
           .event-gallery-swiper .swiper-button-prev {
@@ -619,28 +619,28 @@
             background: transparent;
             margin: 0;
           }
-
+          
           .event-gallery-swiper .swiper-button-next::after,
           .event-gallery-swiper .swiper-button-prev::after {
             font-size: 20px;
             transform: rotate(-45deg);
           }
-
+          
           .event-gallery-swiper .swiper-button-next {
             right: 30px;
           }
-
+          
           .event-gallery-swiper .swiper-button-prev {
             left: 30px;
           }
-
+          
           .event-gallery-swiper .swiper-button-next:is(:hover, :focus-visible),
           .event-gallery-swiper .swiper-button-prev:is(:hover, :focus-visible) {
             background-color: #8fad81;
             color: var(--black);
           }
         }
-
+        
         @media (min-width: 768px) and (max-width: 991px) {
           .event-gallery-swiper .swiper-button-next,
           .event-gallery-swiper .swiper-button-prev {
@@ -648,16 +648,16 @@
             height: 38px;
             font-size: 2rem;
           }
-
+          
           .event-gallery-swiper .swiper-button-next::after,
           .event-gallery-swiper .swiper-button-prev::after {
             font-size: 18px;
           }
-
+          
           .event-gallery-swiper .swiper-button-next {
             right: 20px;
           }
-
+          
           .event-gallery-swiper .swiper-button-prev {
             left: 20px;
           }

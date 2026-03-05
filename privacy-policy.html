@@ -68,6 +68,78 @@
       })();
     </script>
 
+    <!-- Google Analytics 4 (gtag.js) - Universal Implementation -->
+    <!-- This code works with GTM and also supports direct GA4 implementation -->
+    <!-- To use direct GA4: Replace 'YOUR_MEASUREMENT_ID' with your GA4 Measurement ID (format: G-XXXXXXXXXX) -->
+    <!-- Get your Measurement ID from: Google Analytics → Admin → Data Streams -->
+    <script>
+      // Initialize gtag function for GA4
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Get consent state for GA4
+      var getConsentState = function() {
+        try {
+          var consent = localStorage.getItem('cookie_consent');
+          if (consent) {
+            var consentData = JSON.parse(consent);
+            if (consentData.value === 'accepted') {
+              // Check if consent hasn't expired
+              if (consentData.expiry) {
+                var expiryDate = new Date(consentData.expiry);
+                if (new Date() <= expiryDate) {
+                  return 'granted';
+                }
+              } else {
+                return 'granted';
+              }
+            }
+          }
+        } catch(e) {
+          // Default to denied
+        }
+        return 'denied';
+      };
+      
+      // Set default consent state for GA4 (before any GA4 code loads)
+      var consentState = getConsentState();
+      gtag('consent', 'default', {
+        'analytics_storage': consentState,
+        'ad_storage': consentState
+      });
+      
+      // Update consent when it changes (will be called from cookie-banner.js)
+      window.updateGAConsent = function(value) {
+        var state = (value === 'accepted') ? 'granted' : 'denied';
+        if (typeof gtag !== 'undefined') {
+          gtag('consent', 'update', {
+            'analytics_storage': state,
+            'ad_storage': state
+          });
+        }
+        // Also update dataLayer for GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'consent',
+          'consent': {
+            'analytics_storage': state,
+            'ad_storage': state
+          }
+        });
+      };
+      
+      // Uncomment and replace YOUR_MEASUREMENT_ID to enable direct GA4 tracking
+      // This will work in addition to GTM
+      /*
+      gtag('js', new Date());
+      gtag('config', 'YOUR_MEASUREMENT_ID', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+      */
+    </script>
+    <!-- End Google Analytics 4 -->
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

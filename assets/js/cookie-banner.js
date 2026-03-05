@@ -143,6 +143,11 @@
       }
     });
     
+    // Update GA4 consent directly (if gtag is available)
+    if (typeof window.updateGAConsent === 'function') {
+      window.updateGAConsent('accepted');
+    }
+    
     hideCookieBanner();
   }
 
@@ -159,6 +164,11 @@
         'ad_storage': 'denied'
       }
     });
+    
+    // Update GA4 consent directly (if gtag is available)
+    if (typeof window.updateGAConsent === 'function') {
+      window.updateGAConsent('declined');
+    }
     
     hideCookieBanner();
   }

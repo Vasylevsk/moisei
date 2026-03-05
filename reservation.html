@@ -5,6 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Initialize Google Consent Mode BEFORE GTM -->
+    <script>
+      // Initialize dataLayer
+      window.dataLayer = window.dataLayer || [];
+      
+      // Check for existing consent from localStorage (synchronously, before GTM loads)
+      (function() {
+        try {
+          var consent = localStorage.getItem('cookie_consent');
+          if (consent) {
+            var consentData = JSON.parse(consent);
+            var consentValue = consentData.value;
+            
+            // Check if consent hasn't expired
+            if (consentData.expiry) {
+              var expiryDate = new Date(consentData.expiry);
+              if (new Date() > expiryDate) {
+                consentValue = null; // Consent expired
+              }
+            }
+            
+            // Set default consent state BEFORE GTM loads
+            if (consentValue === 'accepted') {
+              window.dataLayer.push({
+                'event': 'consent',
+                'consent': {
+                  'analytics_storage': 'granted',
+                  'ad_storage': 'granted'
+                }
+              });
+            } else {
+              // Default to denied if no consent or declined
+              window.dataLayer.push({
+                'event': 'consent',
+                'consent': {
+                  'analytics_storage': 'denied',
+                  'ad_storage': 'denied'
+                }
+              });
+            }
+          } else {
+            // No consent yet - default to denied
+            window.dataLayer.push({
+              'event': 'consent',
+              'consent': {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied'
+              }
+            });
+          }
+        } catch(e) {
+          // If error reading consent, default to denied
+          window.dataLayer.push({
+            'event': 'consent',
+            'consent': {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied'
+            }
+          });
+        }
+      })();
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

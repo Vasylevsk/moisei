@@ -132,8 +132,7 @@
   function handleAccept() {
     setCookieConsent('accepted');
     
-    // Update Google Consent Mode to 'granted' via dataLayer (works with GTM)
-    // This format is compatible with GTM Consent Mode v2
+    // Update Google Consent Mode to 'granted' via dataLayer and gtag
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'consent',
@@ -143,6 +142,11 @@
       }
     });
     
+    // Update GA4 consent directly
+    if (typeof window.updateGAConsent === 'function') {
+      window.updateGAConsent('accepted');
+    }
+    
     
     hideCookieBanner();
   }
@@ -150,8 +154,7 @@
   function handleDecline() {
     setCookieConsent('declined');
     
-    // Keep Google Consent Mode as 'denied' via dataLayer (works with GTM)
-    // This format is compatible with GTM Consent Mode v2
+    // Keep Google Consent Mode as 'denied' via dataLayer and gtag
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'consent',
@@ -160,6 +163,11 @@
         'ad_storage': 'denied'
       }
     });
+    
+    // Update GA4 consent directly
+    if (typeof window.updateGAConsent === 'function') {
+      window.updateGAConsent('declined');
+    }
     
     
     hideCookieBanner();

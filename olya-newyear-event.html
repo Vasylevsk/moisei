@@ -69,13 +69,59 @@
     </script>
 
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MH8D9KRX');</script>
-    <!-- End Google Tag Manager -->
+        <!-- Google Analytics 4 (gtag.js) -->
+    <!-- IMPORTANT: Replace YOUR_MEASUREMENT_ID with your GA4 Measurement ID (format: G-XXXXXXXXXX) -->
+    <!-- Get your Measurement ID from: Google Analytics → Admin → Data Streams -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      // Get consent state
+      var getConsentState = function() {
+        try {
+          var consent = localStorage.getItem('cookie_consent');
+          if (consent) {
+            var consentData = JSON.parse(consent);
+            if (consentData.value === 'accepted') {
+              if (consentData.expiry) {
+                var expiryDate = new Date(consentData.expiry);
+                if (new Date() <= expiryDate) {
+                  return 'granted';
+                }
+              } else {
+                return 'granted';
+              }
+            }
+          }
+        } catch(e) {}
+        return 'denied';
+      };
+      
+      // Set default consent state BEFORE GA4 loads
+      var consentState = getConsentState();
+      gtag('consent', 'default', {
+        'analytics_storage': consentState,
+        'ad_storage': consentState
+      });
+      
+      // Initialize GA4
+      gtag('config', 'YOUR_MEASUREMENT_ID', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+      
+      // Update consent when it changes
+      window.updateGAConsent = function(value) {
+        var state = (value === 'accepted') ? 'granted' : 'denied';
+        gtag('consent', 'update', {
+          'analytics_storage': state,
+          'ad_storage': state
+        });
+      };
+    </script>
+    <!-- End Google Analytics 4 -->
 
     <title>New Year's Eve Event with Olya Tsybulska | Moisei Ukrainian Restaurant London</title>
     <meta name="title" content="New Year's Eve Event with Olya Tsybulska | Moisei Ukrainian Restaurant London" />
@@ -110,10 +156,7 @@
 </head>
 
 <body id="top">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH8D9KRX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  
 
   <div class="preload" data-preaload>
     <div class="circle"></div>

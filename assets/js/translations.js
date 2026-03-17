@@ -212,6 +212,10 @@ const translations = {
     "food.soups.borscht.price": "£10.00",
     "food.soups.borscht.desc":
       "The signature Ukrainian beetroot soup with meat and vegetables, served with a dollop of sour cream.",
+    "food.soups.borscht-bread": "Borscht in a bread bowl",
+    "food.soups.borscht-bread.price": "£10.00",
+    "food.soups.borscht-bread.desc":
+      "Our classic borscht served in a hollowed rustic bread loaf — the bowl you can eat. With sour cream and garlic spread on the side. Hearty and unforgettable.",
     "food.soups.solyanka": "Solyanka",
     "food.soups.solyanka.price": "£10.00",
     "food.soups.solyanka.desc":
@@ -1074,6 +1078,10 @@ const translations = {
     "food.soups.borscht": "Український борщ",
     "food.soups.borscht.price": "£10.00",
     "food.soups.borscht.desc": "Подається зі сметаною та чорним хлібом.",
+    "food.soups.borscht-bread": "Борщ у хлібі",
+    "food.soups.borscht-bread.price": "£10.00",
+    "food.soups.borscht-bread.desc":
+      "Класичний борщ у порції з нутра хліба — тарілка, яку можна з'їсти. Зі сметаною та часниковим паштетом. Ситно та незабутньо.",
     "food.soups.solyanka": "Солянка",
     "food.soups.solyanka.price": "£10.00",
     "food.soups.solyanka.desc": "Густий, насичений та пікантний суп.",

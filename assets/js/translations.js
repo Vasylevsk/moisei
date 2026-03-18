@@ -858,7 +858,7 @@ const translations = {
     "footer.link.tiktok": "Tik Tok",
     "footer.link.googlemap": "Google Map",
 
-    "footer.copyright": "© 2022 Moisei. All Rights Reserved",
+    "footer.copyright": "© 2026 Moisei. All Rights Reserved",
     "footer.legal": "Legal information",
     "footer.hours.title": "Opening hours:",
     "footer.hours.lines":
@@ -1707,7 +1707,7 @@ const translations = {
     "footer.link.tiktok": "Tik Tok",
     "footer.link.googlemap": "Google Карта",
 
-    "footer.copyright": "© 2022 Moisei. Всі права захищені",
+    "footer.copyright": "© 2026 Moisei. Всі права захищені",
     "footer.legal": "Юридична інформація",
     "footer.hours.title": "Години роботи:",
     "footer.hours.lines":

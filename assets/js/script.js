@@ -26,11 +26,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const preloader = document.querySelector("[data-preaload]");
 
+/**
+ * Preloader used to wait for window "load" (all images, GA, fonts) — that made
+ * the site feel stuck on slow connections. Hide after DOM + paint, cap wait.
+ */
 if (preloader) {
-window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
-});
+  let preloaderDone = false;
+  const hidePreloader = function () {
+    if (preloaderDone) return;
+    preloaderDone = true;
+    preloader.classList.add("loaded");
+    document.body.classList.add("loaded");
+  };
+
+  const runAfterPaint = function () {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(hidePreloader);
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runAfterPaint);
+  } else {
+    runAfterPaint();
+  }
+
+  window.addEventListener("load", hidePreloader);
+  setTimeout(hidePreloader, 2800);
 }
 
 const addEventOnElements = function (elements, eventType, callback) {

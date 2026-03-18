@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Initialize Google Consent Mode BEFORE GTM -->
+    <script>
+      // Initialize dataLayer
+      window.dataLayer = window.dataLayer || [];
+      
+      // Check for existing consent from localStorage (synchronously, before GTM loads)
+      (function() {
+        try {
+          var consent = localStorage.getItem('cookie_consent');
+          if (consent) {
+            var consentData = JSON.parse(consent);
+            var consentValue = consentData.value;
+            
+            // Check if consent hasn't expired
+            if (consentData.expiry) {
+              var expiryDate = new Date(consentData.expiry);
+              if (new Date() > expiryDate) {
+                consentValue = null; // Consent expired
+              }
+            }
+            
+            // Set default consent state BEFORE GTM loads
+            if (consentValue === 'accepted') {
+              window.dataLayer.push({
+                'event': 'consent',
+                'consent': {
+                  'analytics_storage': 'granted',
+                  'ad_storage': 'granted'
+                }
+              });
+            } else {
+              // Default to denied if no consent or declined
+              window.dataLayer.push({
+                'event': 'consent',
+                'consent': {
+                  'analytics_storage': 'denied',
+                  'ad_storage': 'denied'
+                }
+              });
+            }
+          } else {
+            // No consent yet - default to denied
+            window.dataLayer.push({
+              'event': 'consent',
+              'consent': {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied'
+              }
+            });
+          }
+        } catch(e) {
+          // If error reading consent, default to denied
+          window.dataLayer.push({
+            'event': 'consent',
+            'consent': {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied'
+            }
+          });
+        }
+      })();
+    </script>
+
+
+        <!-- Google Analytics 4 (gtag.js) -->
+    <!-- Measurement ID: G-FRETKF7XSC -->
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRETKF7XSC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      // Get consent state
+      var getConsentState = function() {
+        try {
+          var consent = localStorage.getItem('cookie_consent');
+          if (consent) {
+            var consentData = JSON.parse(consent);
+            if (consentData.value === 'accepted') {
+              if (consentData.expiry) {
+                var expiryDate = new Date(consentData.expiry);
+                if (new Date() <= expiryDate) {
+                  return 'granted';
+                }
+              } else {
+                return 'granted';
+              }
+            }
+          }
+        } catch(e) {}
+        return 'denied';
+      };
+      
+      // Set default consent state BEFORE GA4 loads
+      var consentState = getConsentState();
+      gtag('consent', 'default', {
+        'analytics_storage': consentState,
+        'ad_storage': consentState
+      });
+      
+      // Initialize GA4
+      gtag('config', 'G-FRETKF7XSC', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+      
+      // Update consent when it changes
+      window.updateGAConsent = function(value) {
+        var state = (value === 'accepted') ? 'granted' : 'denied';
+        gtag('consent', 'update', {
+          'analytics_storage': state,
+          'ad_storage': state
+        });
+      };
+    </script>
+    <!-- End Google Analytics 4 -->
+
+    <title>
+      Legal Information – Moisei Restaurant London | UK Compliance
+    </title>
+    <meta
+      name="title"
+      content="Legal Information – Moisei Restaurant London"
+    />
+    <meta
+      name="description"
+      content="Legal information for Moisei: company details, ICO data protection, consumer rights, accessibility, and food allergen information (UK)."
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
+      name="bingbot"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="yandex" content="index, follow" />
+
+    <link rel="canonical" href="https://moisei.uk/legal-information.html" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://moisei.uk/legal-information.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="uk"
+      href="https://moisei.uk/legal-information.html"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Legal Information – Moisei Restaurant" />
+    <meta
+      property="og:description"
+      content="Company details (MOISEI LIMITED), ICO & data protection, consumer rights, allergens, accessibility & complaints – Moisei UK."
+    />
+    <meta property="og:url" content="https://moisei.uk/legal-information.html" />
+    <meta property="og:image" content="https://moisei.uk/assets/images/og-moisei-brand.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Moisei – legal information for guests and visitors" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="uk_UA" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Legal information – Moisei Restaurant" />
+    <meta
+      name="twitter:description"
+      content="Company details, ICO, consumer rights, allergens – Moisei UK."
+    />
+    <meta name="twitter:image" content="https://moisei.uk/assets/images/og-moisei-brand.jpg" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Legal information – Moisei",
+      "description": "Legal and regulatory information for Moisei restaurant and website: company registration, data protection, consumer rights, allergens.",
+      "url": "https://moisei.uk/legal-information.html",
+      "inLanguage": ["en-GB", "uk"],
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Moisei",
+        "url": "https://moisei.uk"
+      },
+      "about": {
+        "@type": "Organization",
+        "legalName": "MOISEI LIMITED",
+        "name": "Moisei",
+        "url": "https://moisei.uk",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "Companies House (England and Wales)",
+          "value": "14568872"
+        }
+      },
+      "dateModified": "2026-03-17"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=20250319" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20250319" />
+    <link rel="icon" type="image/png" sizes="512x512" href="https://moisei.uk/favicon-512x512.png?v=20250319" />
+    <link rel="icon" type="image/png" sizes="192x192" href="https://moisei.uk/favicon-192x192.png?v=20250319" />
+    <link rel="icon" type="image/png" sizes="144x144" href="https://moisei.uk/favicon-144x144.png?v=20250319" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://moisei.uk/favicon-96x96.png?v=20250319" />
+    <link rel="icon" type="image/png" sizes="48x48" href="https://moisei.uk/favicon-48x48.png?v=20250319" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://moisei.uk/favicon-32x32.png?v=20250319" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://moisei.uk/favicon-16x16.png?v=20250319" />
+    <link rel="icon" type="image/svg+xml" href="https://moisei.uk/favicon.svg?v=20250319" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://moisei.uk/apple-touch-icon.png?v=20250319" />
+    <link rel="apple-touch-icon" sizes="192x192" href="https://moisei.uk/favicon-192x192.png?v=20250319" />
+    <!-- Manifest для PWA и поисковых систем -->
+    <link rel="manifest" href="./site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#1a1a1a" />
+    <meta name="msapplication-TileImage" content="https://moisei.uk/favicon-192x192.png?v=20250319" />
+    <meta name="msapplication-config" content="https://moisei.uk/browserconfig.xml" />
+    <meta name="theme-color" content="#1a1a1a" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/combined.min.css?v=e5be214b" />
+
+    <style>
+      .legal-page {
+        margin-top: 120px;
+        padding: 120px 0 80px;
+        background-color: var(--eerie-black-1);
+        color: var(--white);
+        min-height: 100vh;
+      }
+      .legal-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .legal-header {
+        text-align: center;
+        margin-bottom: 60px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid var(--gold-crayola);
+      }
+      .legal-header h1 {
+        font-family: var(--fontFamily-forum);
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+        color: var(--white);
+      }
+      .legal-header p {
+        font-size: 1.4rem;
+        color: var(--quick-silver);
+        margin: 10px 0;
+      }
+      .legal-content {
+        line-height: 1.8;
+      }
+      .legal-content h2 {
+        font-family: var(--fontFamily-forum);
+        font-size: 2.4rem;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        color: var(--gold-crayola);
+        padding-top: 30px;
+        border-top: 1px solid var(--white-alpha-10);
+      }
+      .legal-content h3 {
+        font-family: var(--fontFamily-forum);
+        font-size: 1.8rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: var(--white);
+      }
+      .legal-content p {
+        margin-bottom: 20px;
+        font-size: 1.6rem;
+        color: var(--quick-silver);
+      }
+      .legal-content ul {
+        margin: 20px 0;
+        padding-left: 30px;
+      }
+      .legal-content li {
+        margin-bottom: 12px;
+        font-size: 1.6rem;
+        color: var(--quick-silver);
+        list-style: disc;
+      }
+      .legal-content .separator {
+        text-align: center;
+        margin: 40px 0;
+        color: var(--gold-crayola);
+        font-size: 2rem;
+      }
+      .back-link {
+        display: inline-block;
+        margin-top: 50px;
+        padding: 12px 30px;
+        background-color: var(--gold-crayola);
+        color: var(--black);
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 700;
+        transition: var(--transition-1);
+      }
+      .back-link:hover {
+        background-color: var(--white);
+        transform: translateY(-2px);
+      }
+      @media (max-width: 768px) {
+        .legal-header h1 {
+          font-size: 2.5rem;
+        }
+        .legal-content h2 {
+          font-size: 2rem;
+        }
+        .legal-content h3 {
+          font-size: 1.6rem;
+        }
+        .legal-content p,
+        .legal-content li {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+</head>
+
+<body id="top">
+  
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">Moisei</p>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html" class="logo">
+          <img
+            src="./assets/images/logo.svg"
+            width="100"
+            height="31"
+            alt="Moisei - Home"
+          />
+      </a>
+      <nav class="navbar" data-navbar>
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+        <a href="index.html" class="logo">
+            <img
+              src="./assets/images/logo.svg"
+              width="100"
+              height="31"
+              alt="Moisei - Home"
+            />
+        </a>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="index.html#home" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Home</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="food-menu.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Menu</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="index.html#events" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Events</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="index.html#about" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">About Us</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="index.html#footer" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal-page">
+      <div class="legal-container">
+        <div class="legal-header">
+          <h1>Legal information</h1>
+          <p><strong>Moisei – United Kingdom</strong></p>
+          <p>Last updated: March 2026</p>
+          <p style="font-size:1.35rem;max-width:720px;margin:16px auto 0;line-height:1.65;color:var(--quick-silver);">
+            Key information for guests and website visitors. This page is not legal advice.
+            See also our
+            <a href="privacy-policy.html" style="color:var(--gold-crayola)">Privacy Policy</a>,
+            <a href="cookie-policy.html" style="color:var(--gold-crayola)">Cookie Policy</a>, and
+            <a href="terms-conditions.html" style="color:var(--gold-crayola)">Terms &amp; Conditions</a>.
+          </p>
+        </div>
+
+        <div class="legal-content">
+          <h2>1. Business identification</h2>
+          <p>This website and our restaurant trade as <strong>Moisei</strong>. The legal entity that operates the business is:</p>
+          <div style="margin:20px 0;padding:22px 26px;border:1px solid var(--gold-crayola);border-radius:8px;background:var(--eerie-black-2);">
+            <p style="margin:0 0 14px;font-size:1.65rem;color:var(--white);"><strong>MOISEI LIMITED</strong></p>
+            <p style="margin:0;color:var(--quick-silver);font-size:1.45rem;line-height:1.65;">
+              <strong>Company number:</strong> 14568872 (England and Wales)<br>
+              <strong>Registered office:</strong> 55 High Street, Brentford, England, TW8 0AH<br>
+              <strong>Company status:</strong> Active (Private limited company)<br>
+              <a href="https://find-and-update.company-information.service.gov.uk/company/14568872" target="_blank" rel="noopener noreferrer" style="color:var(--gold-crayola)">View on Companies House (GOV.UK) →</a>
+            </p>
+          </div>
+          <p><strong>Restaurant / trading address:</strong> 55 High St, Brentford, London, TW8 0AH, United Kingdom</p>
+          <p><strong>Website:</strong> <a href="https://moisei.uk" style="color:var(--gold-crayola)">https://moisei.uk</a></p>
+          <p><strong>Telephone:</strong> <a href="tel:+447932393730" style="color:var(--gold-crayola)">+44 7932 393730</a></p>
+          <p style="font-size:1.4rem;color:var(--quick-silver);">If we are registered for VAT, the VAT number appears on your receipt or invoice where applicable; you may also ask our team.</p>
+
+          <div class="separator">⸻</div>
+
+          <h2>2. ICO &amp; data protection fee (UK)</h2>
+          <p><strong>You do not send your website to the ICO.</strong> The Information Commissioner's Office (ICO) is the UK regulator for data protection. Most organisations that process personal data (for example: table bookings, customer contact details, staff records, CCTV, or marketing lists) must <strong>register and pay an annual data protection fee</strong>, unless a narrow exemption applies.</p>
+          <p>Use the ICO's official self-assessment to check whether you must pay:</p>
+          <ul>
+            <li><a href="https://ico.org.uk/for-organisations/data-protection-fee/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-crayola)">ICO – Data protection fee</a></li>
+            <li><a href="https://ico.org.uk/for-organisations/register/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-crayola)">ICO – Registration</a></li>
+          </ul>
+          <p>Once registered, your entry may appear on the <a href="https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-crayola)">ICO register of fee payers</a>. Personal data processing must still comply with UK GDPR and the Data Protection Act 2018—registration is separate from having a good Privacy Policy.</p>
+
+          <div class="separator">⸻</div>
+
+          <h2>3. Consumer rights</h2>
+          <p>When you buy services from us as a consumer, you have rights under UK law, including the <strong>Consumer Rights Act 2015</strong>. Nothing on our website or in our Terms &amp; Conditions removes rights that cannot legally be excluded. For general consumer advice in the UK, see <a href="https://www.citizensadvice.org.uk/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-crayola)">Citizens Advice</a>.</p>
+
+          <div class="separator">⸻</div>
+
+          <h2>4. Food allergens &amp; menu information</h2>
+          <p>We take food safety seriously. <strong>Our kitchen handles multiple allergens.</strong> While we try to accommodate dietary requirements, we cannot guarantee that any dish is completely free from allergens due to shared equipment and preparation areas.</p>
+          <p><strong>Always tell our staff about any allergy or intolerance before you order.</strong> Full allergen information for our dishes is available from our team on request in the restaurant. Online menus are for guidance; ingredients and recipes may change.</p>
+          <p>For official guidance for consumers, see the <a href="https://www.food.gov.uk/safety-hygiene/food-allergy-and-intolerance" target="_blank" rel="noopener noreferrer" style="color:var(--gold-crayola)">Food Standards Agency – food allergy and intolerance</a>.</p>
+
+          <div class="separator">⸻</div>
+
+          <h2>5. Accessibility</h2>
+          <p>We want our website and venue to be welcoming. If you need information in another format or have difficulty using this site, please contact us by phone or in person and we will try to help.</p>
+          <p>UK public-sector bodies have specific accessibility regulations; private businesses should still consider reasonable adjustments under the Equality Act 2010 where they apply to services.</p>
+
+          <div class="separator">⸻</div>
+
+          <h2>6. Complaints &amp; supervisory authorities</h2>
+          <p>For privacy complaints, contact us first using the details above. You may also complain to the ICO: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" style="color:var(--gold-crayola)">ico.org.uk</a> or 0303 123 1113.</p>
+          <p>For food hygiene concerns in England, contact your local authority environmental health team (search your council's website).</p>
+
+          <div class="separator">⸻</div>
+
+          <h2>7. Website content &amp; intellectual property</h2>
+          <p>Text, images, logos, menu descriptions, and design on this website are owned by Moisei or used under licence. You may not copy, scrape, or reuse them for commercial purposes without our written permission. Linking to our public pages is welcome.</p>
+
+          <div class="separator">⸻</div>
+
+          <p style="margin-top:40px;padding-top:24px;border-top:1px solid var(--white-alpha-10);font-size:1.35rem;color:var(--quick-silver);">
+            <em>Disclaimer: This page is for general information. It is not a substitute for legal, tax, or professional advice tailored to your business.</em>
+          </p>
+
+            <div style="text-align: center">
+            <a href="index.html" class="back-link">← Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer
+      id="footer"
+      class="footer section has-bg-image text-center"
+      style="background-image: url('./assets/images/footer-bg.jpg')"
+    >
+    <div class="container">
+      <div class="footer-bottom">
+          <p class="copyright">&copy; 2026 Moisei. All Rights Reserved</p>
+          <div style="margin-top: 20px">
+            <a
+              href="privacy-policy.html"
+              class="label-2 footer-link hover-underline"
+              style="margin: 0 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="terms-conditions.html"
+              class="label-2 footer-link hover-underline"
+              style="margin: 0 15px"
+              >Terms & Conditions</a
+            >
+            <a
+              href="cookie-policy.html"
+              class="label-2 footer-link hover-underline"
+              style="margin: 0 15px"
+              >Cookie Policy</a
+            >
+            <a
+              href="legal-information.html"
+              class="label-2 footer-link hover-underline"
+              style="margin: 0 15px"
+              aria-current="page"
+              data-i18n="footer.legal"
+              >Legal information</a
+            >
+            <a
+              href="#"
+              class="label-2 footer-link hover-underline cookie-settings-btn"
+              style="margin: 0 15px; cursor: pointer"
+              data-i18n="cookie.settings"
+              >Cookie Settings</a
+            >
+        </div>
+          <p class="footer-credit" style="margin-top: 20px">
+            Made with
+            <span class="footer-heart"
+              ><svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  fill="white"
+                /></svg
+            ></span>
+            by
+            <a
+              href="https://ttmms.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-credit-link"
+              >TTMMs.</a
+            >
+        </p>
+      </div>
+    </div>
+  </footer>
+
+    <a
+      href="#top"
+      class="back-top-btn active"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+      <div class="cookie-banner-container">
+        <div class="cookie-banner-content">
+          <h3 class="cookie-banner-title" data-i18n="cookie.title">We use cookies</h3>
+          <p class="cookie-banner-message" data-i18n="cookie.message">
+            We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking 'Accept All', you consent to our use of cookies. You can manage your preferences or learn more in our <a href="cookie-policy.html">Cookie Policy</a>.
+          </p>
+        </div>
+        <div class="cookie-banner-actions">
+          <button class="cookie-banner-btn cookie-banner-btn-accept" data-i18n="cookie.accept">
+            Accept All
+          </button>
+          <button class="cookie-banner-btn cookie-banner-btn-decline" data-i18n="cookie.decline">
+            Decline
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./assets/js/translations.js?v=8cc83da0"></script>
+    <script src="./assets/js/cookie-banner.js?v=dda84ce7"></script>
+    <script src="./assets/js/script.js?v=5f7cd395"></script>
+</body>
+</html>

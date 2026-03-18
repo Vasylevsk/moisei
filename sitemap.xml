@@ -65,5 +65,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/cookie-policy.html" />
     <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/cookie-policy.html" />
   </url>
+  <url>
+    <loc>https://moisei.uk/legal-information.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/legal-information.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/legal-information.html" />
+  </url>
 </urlset>
 

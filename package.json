@@ -6,6 +6,7 @@
     "update-version": "node update-css-version.js",
     "version-assets": "node version-assets.js",
     "optimize-images": "node optimize-images.js",
+    "favicons": "node scripts/generate-favicons.js",
     "combine-css": "node combine-css.js",
     "minify-css": "node advanced-minify-css.js",
     "remove-unused": "node remove-unused-css.js",

@@ -859,6 +859,7 @@ const translations = {
     "footer.link.googlemap": "Google Map",
 
     "footer.copyright": "© 2022 Moisei. All Rights Reserved",
+    "footer.legal": "Legal information",
     "footer.hours.title": "Opening hours:",
     "footer.hours.lines":
       "Mon: Closed<br>Tue: Closed<br>Wed: 15:00-21:00<br>Thu: 15:00-21:00<br>Fri: 15:00-23:00<br>Sat: 12:00-00:00<br>Sun: 12:00-23:00",
@@ -1707,6 +1708,7 @@ const translations = {
     "footer.link.googlemap": "Google Карта",
 
     "footer.copyright": "© 2022 Moisei. Всі права захищені",
+    "footer.legal": "Юридична інформація",
     "footer.hours.title": "Години роботи:",
     "footer.hours.lines":
       "Пн: Закрито<br>Вт: Закрито<br>Ср: 15:00-21:00<br>Чт: 15:00-21:00<br>Пт: 15:00-23:00<br>Сб: 12:00-00:00<br>Нд: 12:00-23:00",

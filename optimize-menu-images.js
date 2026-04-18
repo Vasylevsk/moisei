@@ -23,12 +23,14 @@ const menuDirs = [
 ];
 
 async function optimizeMenuImage(filePath) {
-  const ext = path.extname(filePath).toLowerCase();
-  if (!['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'].includes(ext)) {
+  const ext = path.extname(filePath);
+  const extLower = ext.toLowerCase();
+  if (!['.jpg', '.jpeg', '.png'].includes(extLower)) {
     return;
   }
 
   const dir = path.dirname(filePath);
+  // Use the real extension (e.g. ".JPG") so basename strips correctly; ".jpg" would not match ".JPG"
   const baseName = path.basename(filePath, ext);
   const outputBase = path.join(dir, `${baseName}.webp`);
   const output200 = path.join(dir, `${baseName}-200.webp`);

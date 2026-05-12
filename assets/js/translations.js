@@ -671,29 +671,33 @@ const translations = {
     "reservation2.contact.social": "Our social media:",
     "reservation2.rules.title": "Reservation Rules",
     "reservation2.rules.link": "View Full Terms & Conditions",
-    "reservation2.rules.table.title": "Table Reservation Rules:",
+    "reservation2.rules.table.title": "Table reservation rules in the restaurant:",
     "reservation2.rules.table.1":
-      "For reservations of 8 guests or more, you will be offered a banquet menu priced at £100 per person. It includes 7 cold dishes, 4 hot dishes, and the option to bring your own alcoholic and non-alcoholic beverages in any quantity.",
+      "For bookings of 8 or more guests, you will be offered a banquet menu at £110 per person. It includes 7 cold dishes and 4 hot dishes, and you may bring your own alcoholic and soft drinks in any quantity under that banquet arrangement.",
     "reservation2.rules.table.2":
-      "All changes to the number of guests or the menu must be confirmed no later than 48 hours before the reservation.",
+      "All changes to guest numbers or the menu must be agreed no later than one hour before the reservation time.",
     "reservation2.rules.table.3":
-      "The restaurant reserves the right to modify the reservation conditions in case of unforeseen circumstances, informing the client in advance.",
+      "The restaurant may change booking terms in unforeseen circumstances, provided the guest is informed in advance.",
     "reservation2.rules.table.4":
-      "The restaurant reserves the right to deny entry or ask you to leave the premises if the smart casual dress code is not followed or in cases of alcohol or drug intoxication.",
+      "The restaurant may refuse entry or ask you to leave if the smart casual dress code is not observed, or if you appear intoxicated by alcohol or drugs.",
     "reservation2.rules.table.5":
-      "Bringing and consuming your own alcoholic or non-alcoholic beverages is strictly prohibited.",
+      "Except when covered by the banquet menu for groups of 8+ (see above), bringing and consuming your own alcoholic or soft drinks on the premises is strictly prohibited.",
     "reservation2.rules.table.6":
-      "The restaurant is not responsible for any personal belongings you may lose.",
+      "The restaurant is not responsible for lost personal belongings.",
     "reservation2.rules.table.7":
-      "Please supervise your children during your visit.",
-    "reservation2.rules.lounge.title": "Lounge Area Reservation Rules:",
-    "reservation2.rules.lounge.1": "The lounge area operates until 22:30.",
+      "Please supervise your children while you are on the premises.",
+    "reservation2.rules.table.8":
+      "If guests do not arrive within 30 minutes of the booking time and have not told us they are running late, management may cancel the table reservation.",
+    "reservation2.rules.lounge.title": "Lounge area reservation rules:",
+    "reservation2.rules.lounge.1": "The lounge area is open until 22:30.",
     "reservation2.rules.lounge.2":
-      "When reserving a table in the lounge area, ordering a lounge session is mandatory. If declined, it will be automatically added to your bill.",
+      "When you book a table in the lounge, ordering a hookah is mandatory. If you decline, a hookah will be added to your bill automatically.",
     "reservation2.rules.lounge.3":
-      "Unfortunately, children are not allowed in the lounge area.",
+      "Children are not permitted in the lounge area.",
     "reservation2.rules.lounge.4":
-      "The restaurant reserves the right to deny entry or ask you to leave the premises if the smart casual dress code is not followed, as well as in cases of alcohol or drug intoxication.",
+      "The restaurant may refuse entry or ask you to leave if the smart casual dress code is not observed, or if you appear intoxicated by alcohol or drugs.",
+    "reservation2.rules.lounge.5":
+      "If guests do not arrive within 30 minutes of the booking time and have not told us they are running late, management may cancel the table reservation.",
     "reservation2.large-group.notice":
       "Important: For groups of 8+ guests, please read our reservation rules before proceeding.",
     "reservation2.large-group.read-rules": "Read Rules",
@@ -1522,27 +1526,31 @@ const translations = {
     "reservation2.rules.link": "Переглянути повні умови та правила",
     "reservation2.rules.table.title": "Правила бронювання столика у закладі:",
     "reservation2.rules.table.1":
-      "При бронюванні від 8 осіб вам буде запропоновано банкетне меню вартістю 100 фунтів з людини, яке включає 7 холодних страв, 4 гарячі страви, а також можливість принести з собою алкоголь та безалкогольні напої в будь-якій кількості.",
+      "При бронюванні від 8 осіб вам буде запропоновано банкетне меню вартістю 110 фунтів з людини, яке включає 7 холодних страв, 4 гарячі страви, а також можливість принести з собою алкоголь та безалкогольні напої в будь-якій кількості.",
     "reservation2.rules.table.2":
-      "Всі зміни в кількості осіб або меню мають бути погоджені не пізніше ніж за 48 годин до бронювання.",
+      "Усі зміни в кількості осіб або меню мають бути погоджені не пізніше ніж за одну годину до бронювання.",
     "reservation2.rules.table.3":
       "Ресторан залишає за собою право змінювати умови бронювання в разі непередбачених обставин, попередивши про це клієнта заздалегідь.",
     "reservation2.rules.table.4":
-      "Ресторан залишає за собою право відмовити вам у вході або попросити покинути заклад у разі не дотримання дрес-коду smart casual або ж в разі алкогольного чи наркотичного сп'яніння.",
+      "Ресторан залишає за собою право відмовити вам у вході або попросити покинути заклад у разі недотримання дрес-коду smart casual або в разі алкогольного чи наркотичного сп'яніння.",
     "reservation2.rules.table.5":
-      "Приносити з собою та розпивати алкогольні та безалкогольні напої строго заборонено.",
+      "Окрім умов банкетного меню для груп від 8 осіб (див. пункт 1), приносити з собою та розпивати алкогольні та безалкогольні напої в закладі суворо заборонено.",
     "reservation2.rules.table.6":
       "Ресторан не несе відповідальності за загублені вами речі.",
     "reservation2.rules.table.7":
       "Будь ласка, слідкуйте за своїми дітьми під час перебування у закладі.",
+    "reservation2.rules.table.8":
+      "Якщо гості не з'являються протягом 30 хвилин від часу бронювання та не повідомляють нас про запізнення, адміністрація залишає за собою право скасувати бронювання столу.",
     "reservation2.rules.lounge.title": "Правила бронювання в лаундж зоні:",
     "reservation2.rules.lounge.1": "Лаундж зона працює до 22:30.",
     "reservation2.rules.lounge.2":
-      "При бронюванні столика в лаундж зоні замовлення лаунж сесії є обов'язковим. У разі відмови лаунж сесія буде додана у чек автоматично.",
+      "При бронюванні столика в лаундж зоні замовлення кальяну є обов'язковим. У разі відмови кальян буде додано до чеку автоматично.",
     "reservation2.rules.lounge.3":
-      "На жаль, дітям перебувати у лаундж зоні заборонено.",
+      "На жаль, дітям перебувати в лаундж зоні заборонено.",
     "reservation2.rules.lounge.4":
       "Ресторан залишає за собою право відмовити у вході або попросити покинути заклад у разі порушення дрес-коду smart casual, а також у разі алкогольного чи наркотичного сп'яніння.",
+    "reservation2.rules.lounge.5":
+      "Якщо гості не з'являються протягом 30 хвилин від часу бронювання та не повідомляють нас про запізнення, адміністрація залишає за собою право скасувати бронювання столу.",
     "reservation2.large-group.notice":
       "Важливо: Для груп від 8 осіб, будь ласка, прочитайте наші правила бронювання перед продовженням.",
     "reservation2.large-group.read-rules": "Прочитати правила",

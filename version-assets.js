@@ -73,7 +73,13 @@ const htmlFiles = [
   'hookah-menu.html',
   'privacy-policy.html',
   'terms-conditions.html',
-  'cookie-policy.html'
+  'cookie-policy.html',
+  'legal-information.html',
+  'finka-event.html',
+  'alena-omargalieva-event.html',
+  'oksana-bilozir-event.html',
+  'olya-newyear-event.html',
+  'kateryna-buzhynska-event.html',
 ];
 
 /**

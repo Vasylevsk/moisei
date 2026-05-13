@@ -159,7 +159,8 @@ const translations = {
     "food.starters.nadvirna.price": "£14.00",
     "food.starters.nadvirna.desc":
       "A selection of Ukrainian-style canapés with salami, cheese, egg and smoked sprats on rye bread.",
-    "food.starters.spreads": "Spreads",
+    "food.starters.spreads":
+      "Spreads: 'Three in one, just like banquet halls in London'",
     "food.starters.spreads.price": "£12.00",
     "food.starters.spreads.desc":
       "Forshmak herring spread, smalec and Chernivtsi-style cheese spread with garlic and egg, served with fresh bread.",
@@ -229,8 +230,7 @@ const translations = {
     "food.mains.grilled-chicken.desc":
       "Succulent chicken fillet, perfectly grilled and served with a side dish of your choice.",
 
-    "food.soups.zurek":
-      "Niech żyje Polska Soup",
+    "food.soups.zurek": "Żurek soup – Niech żyje Polska",
     "food.soups.zurek.price": "£10.00",
     "food.soups.zurek.desc":
       "Traditional Polish sour rye soup with a rich homemade flavour.",
@@ -1036,7 +1036,8 @@ const translations = {
     "food.starters.nadvirna.price": "£14.00",
     "food.starters.nadvirna.desc":
       "Два види авторських канапок на чорному хлібі зі шпротами, салямі, сиром та яйцем.",
-    "food.starters.spreads": "Намазки",
+    "food.starters.spreads":
+      "Намазки «Три в одному, як банкетні зали в Лондоні»",
     "food.starters.spreads.price": "£12.00",
     "food.starters.spreads.desc":
       "Форшмак, смалець, намазка по-чернівецьки (сир, часник, яйце), подається з хлібом.",
@@ -1102,8 +1103,7 @@ const translations = {
     "food.mains.grilled-chicken.price": "£16.00",
     "food.mains.grilled-chicken.desc": "Подається з гарніром.",
 
-    "food.soups.zurek":
-      "Журек суп",
+    "food.soups.zurek": "Журек – Niech żyje Polska",
     "food.soups.zurek.price": "£10.00",
     "food.soups.zurek.desc":
       "Польський кислий суп із насиченим домашнім смаком.",

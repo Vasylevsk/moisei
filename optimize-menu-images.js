@@ -1,61 +1,122 @@
 #!/usr/bin/env node
 
 /**
- * Optimize all menu images to WebP format
- * Creates optimized 200px and 100px versions for menu items
+ * Optimize menu images to WebP (100px + 200px thumbnails + full WebP).
+ * High-res JPEG originals whose HTML uses short slugs (e.g. chicken-kyiv-100.webp)
+ * are mapped here so outputs match food-menu.html.
+ *
+ * Usage:
+ *   node optimize-menu-images.js
+ *   node optimize-menu-images.js --force   # regenerate even if -100.webp exists
+ *
+ * Requires: npm install sharp --save-dev
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
+
+const force = process.argv.includes("--force");
 
 let sharp;
 try {
-  sharp = require('sharp');
+  sharp = require("sharp");
 } catch (e) {
-  console.error('❌ Sharp is not installed. Please run: npm install sharp --save-dev');
+  console.error("❌ Sharp is not installed. Please run: npm install sharp --save-dev");
   process.exit(1);
 }
 
 const menuDirs = [
-  'assets/images/food-menu',
-  'assets/images/drink-menu',
-  'assets/images/hookah-menu'
+  "assets/images/food-menu",
+  "assets/images/drink-menu",
+  "assets/images/hookah-menu",
 ];
+
+/**
+ * Map known menu photo originals → basename used in HTML (…-100.webp, …-200.webp).
+ * Uses loose matching so odd Unicode quotes in filenames still match.
+ */
+/**
+ * Default WebP basename (without "-100.webp") to match food-menu.html / drink paths.
+ * - Most *.JPG → keep full name: borcht.JPG-100.webp
+ * - *.jpg / *.jpeg / *.png (except .JPG) → strip one extension: Pelmeni.jpeg → Pelmeni
+ * - *.JPG.jpeg exports → strip both: breadborsh.JPG.jpeg → breadborsh
+ */
+function defaultWebpStem(fileName) {
+  const jpgThenJpeg = fileName.match(/^(.+)\.JPG\.jpe?g$/i);
+  if (jpgThenJpeg) {
+    return jpgThenJpeg[1];
+  }
+  const ext = path.extname(fileName);
+  if (ext === ".JPG") {
+    return fileName;
+  }
+  return path.basename(fileName, ext);
+}
+
+function menuSlugFromSource(fileName) {
+  const n = fileName.trim();
+  if (/^Homemade Pickled Herring\.JPG\.jpeg$/i.test(n)) return "pickled-herring";
+  if (/Nadvirna/i.test(n) && /Canapes/i.test(n) && /\.jpe?g$/i.test(n)) return "nadvirna-canapes";
+  if (/Chef/i.test(n) && /Sold Out/i.test(n) && /\.jpe?g$/i.test(n)) return "chef-salad-sold-out";
+  if (/^Chicken Kyiv\.JPG\.jpeg$/i.test(n)) return "chicken-kyiv";
+  if (/^Salmon with Asparagus\.JPG\.jpeg$/i.test(n)) return "salmon-asparagus";
+  if (/Potato Pancakes with Goulash\.JPG\.jpeg$/i.test(n)) return "potato-pancakes-goulash";
+  if (/Banosh with Bryndza/i.test(n) && /\.jpe?g$/i.test(n)) return "banosh-bryndza";
+  if (/^Mixed Grill\.JPG\.jpeg$/i.test(n)) return "mixed-grill";
+  if (/^Roast Beef Salad\.JPG\.jpeg$/i.test(n)) return "roast-beef-salad";
+  if (/Beetroot/i.test(n) && /Feta/i.test(n) && /Salad/i.test(n) && /\.jpe?g$/i.test(n)) {
+    return "beetroot-feta-salad";
+  }
+  return null;
+}
+
+function removeIfExists(p) {
+  try {
+    if (fs.existsSync(p)) fs.unlinkSync(p);
+  } catch (_) {
+    /* ignore */
+  }
+}
 
 async function optimizeMenuImage(filePath) {
   const ext = path.extname(filePath);
   const extLower = ext.toLowerCase();
-  if (!['.jpg', '.jpeg', '.png'].includes(extLower)) {
+  if (![".jpg", ".jpeg", ".png"].includes(extLower)) {
     return;
   }
 
   const dir = path.dirname(filePath);
-  // Use the real extension (e.g. ".JPG") so basename strips correctly; ".jpg" would not match ".JPG"
+  const sourceFileName = path.basename(filePath);
   const baseName = path.basename(filePath, ext);
-  const outputBase = path.join(dir, `${baseName}.webp`);
-  const output200 = path.join(dir, `${baseName}-200.webp`);
-  const output100 = path.join(dir, `${baseName}-100.webp`);
+  const slug = menuSlugFromSource(sourceFileName);
+  const stem = slug || defaultWebpStem(sourceFileName);
 
-  // Skip if already optimized
-  if (fs.existsSync(output100)) {
+  const outputBase = path.join(dir, `${stem}.webp`);
+  const output200 = path.join(dir, `${stem}-200.webp`);
+  const output100 = path.join(dir, `${stem}-100.webp`);
+
+  const stripStem = baseName;
+
+  if (!force && fs.existsSync(output100)) {
     return;
   }
 
   try {
     const stats = fs.statSync(filePath);
     const sizeMB = (stats.size / 1024 / 1024).toFixed(2);
-    
-    console.log(`\n🖼️  Processing: ${path.basename(filePath)} (${sizeMB} MB)`);
+
+    console.log(`\n🖼️  Processing: ${sourceFileName} (${sizeMB} MB)`);
+    if (slug) {
+      console.log(`   → WebP slug: ${slug} (--force: ${force})`);
+    }
 
     const image = sharp(filePath);
-    const metadata = await image.metadata();
 
-    // Create 200px version (for larger displays)
     await image
       .clone()
       .resize(200, 200, {
-        fit: 'cover',
-        position: 'center'
+        fit: "cover",
+        position: "center",
       })
       .webp({ quality: 85 })
       .toFile(output200);
@@ -63,29 +124,39 @@ async function optimizeMenuImage(filePath) {
     const stats200 = fs.statSync(output200);
     console.log(`   ✅ Created 200px: ${path.basename(output200)} (${(stats200.size / 1024).toFixed(1)} KB)`);
 
-    // Create 100px version (for menu items)
     await image
       .clone()
       .resize(100, 100, {
-        fit: 'cover',
-        position: 'center'
+        fit: "cover",
+        position: "center",
       })
       .webp({ quality: 85 })
       .toFile(output100);
 
     const stats100 = fs.statSync(output100);
     const savings = ((1 - stats100.size / stats.size) * 100).toFixed(1);
-    console.log(`   ✅ Created 100px: ${path.basename(output100)} (${(stats100.size / 1024).toFixed(1)} KB, ${savings}% smaller)`);
+    console.log(
+      `   ✅ Created 100px: ${path.basename(output100)} (${(stats100.size / 1024).toFixed(1)} KB, ${savings}% smaller)`
+    );
 
-    // Also create full-size WebP for potential future use
-    await image
-      .clone()
-      .webp({ quality: 85 })
-      .toFile(outputBase);
+    await image.clone().webp({ quality: 85 }).toFile(outputBase);
 
     const statsFull = fs.statSync(outputBase);
     console.log(`   ✅ Created full: ${path.basename(outputBase)} (${(statsFull.size / 1024 / 1024).toFixed(2)} MB)`);
 
+    if (slug && slug !== baseName) {
+      removeIfExists(path.join(dir, `${baseName}-100.webp`));
+      removeIfExists(path.join(dir, `${baseName}-200.webp`));
+      removeIfExists(path.join(dir, `${baseName}.webp`));
+      console.log(`   🧹 Removed legacy names for: ${baseName}-*.webp`);
+    }
+
+    if (stem !== stripStem) {
+      removeIfExists(path.join(dir, `${stripStem}-100.webp`));
+      removeIfExists(path.join(dir, `${stripStem}-200.webp`));
+      removeIfExists(path.join(dir, `${stripStem}.webp`));
+      console.log(`   🧹 Removed wrong short stem: ${stripStem}-*.webp`);
+    }
   } catch (error) {
     console.error(`   ❌ Error processing ${path.basename(filePath)}:`, error.message);
   }
@@ -98,9 +169,9 @@ async function processDirectory(dirPath) {
   }
 
   const files = fs.readdirSync(dirPath);
-  const imageFiles = files.filter(file => {
-    const ext = path.extname(file).toLowerCase();
-    return ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'].includes(ext);
+  const imageFiles = files.filter((file) => {
+    const e = path.extname(file).toLowerCase();
+    return [".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG"].includes(e);
   });
 
   console.log(`\n📁 Processing directory: ${dirPath} (${imageFiles.length} images)`);
@@ -112,17 +183,18 @@ async function processDirectory(dirPath) {
 }
 
 async function main() {
-  console.log('🚀 Starting menu images optimization...\n');
+  console.log("🚀 Starting menu images optimization...\n");
+  if (force) {
+    console.log("⚡ --force: regenerating WebP even when -100.webp already exists.\n");
+  }
 
   for (const dir of menuDirs) {
     await processDirectory(dir);
   }
 
-  console.log('\n✨ Menu images optimization complete!');
-  console.log('\n📝 Next steps:');
-  console.log('   1. Update HTML files to use WebP versions (100px for menu items)');
-  console.log('   2. Test the website to ensure images load correctly');
+  console.log("\n✨ Menu images optimization complete!");
+  console.log("\n📝 Slug map lives in optimize-menu-images.js (menuSlugFromSource).");
+  console.log("   Run with --force after replacing a JPEG original.");
 }
 
 main().catch(console.error);
-

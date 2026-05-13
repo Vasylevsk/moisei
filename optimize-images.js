@@ -159,15 +159,6 @@ const imagesToOptimize = [
     quality: 85
   },
   {
-    input: 'assets/images/food-menu/winter coctails.jpg',
-    output: 'assets/images/food-menu/winter-cocktails.webp',
-    sizes: [
-      { width: 200, suffix: '-200' },
-      { width: 100, suffix: '-100' }
-    ],
-    quality: 85
-  },
-  {
     input: 'assets/images/food-menu/meal deal.webp',
     output: 'assets/images/meal-deal-banner.webp',
     sizes: [

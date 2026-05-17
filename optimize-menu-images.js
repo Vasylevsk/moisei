@@ -67,6 +67,13 @@ function menuSlugFromSource(fileName) {
   if (/Beetroot/i.test(n) && /Feta/i.test(n) && /Salad/i.test(n) && /\.jpe?g$/i.test(n)) {
     return "beetroot-feta-salad";
   }
+  if (/^Colifornia set/i.test(n) && /\.jpe?g$/i.test(n)) return "california-set";
+  if (/^California salmon/i.test(n) && /\.jpe?g$/i.test(n)) return "california-smoked-salmon";
+  if (/^California eel/i.test(n) && /\.jpe?g$/i.test(n)) return "california-eel";
+  if (/^Crab burger/i.test(n) && /\.jpe?g$/i.test(n)) return "crab-burger";
+  if (/^Eel burger/i.test(n) && /\.jpe?g$/i.test(n)) return "eel-burger";
+  if (/^Beef steak/i.test(n) && /\.jpe?g$/i.test(n)) return "beef-steak";
+  if (/^Maki set/i.test(n) && /\.jpe?g$/i.test(n)) return "maki-set";
   return null;
 }
 

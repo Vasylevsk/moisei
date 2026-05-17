@@ -51,6 +51,7 @@ const translations = {
     "menu.subtitle": "Food Menu",
     "menu.title": "Favourite Dishes",
     "menu.badge.favorite": "Favorite",
+    "menu.badge.new": "New",
 
     "menu.item1.name": "Ukrainian Borscht",
     "menu.item1.desc":
@@ -87,6 +88,7 @@ const translations = {
     "food.category.desserts": "Desserts",
     "food.category.extras": "Extras",
     "food.category.sushi": "Sushi",
+    "food.category.sushi-sets": "Sushi sets",
     "food.category.pasta": "Pasta",
     "food.most-liked.subtitle": "According to real guest likes",
     "food.most-liked.chicken-kyiv.name": "Chicken Kyiv",
@@ -309,14 +311,63 @@ const translations = {
     "food.sushi.philadelphia-prawns.price": "£12.00",
     "food.sushi.philadelphia-prawns.desc":
       "A fresh variation of the Philadelphia roll with delicate prawns.",
-    "food.sushi.california-salmon": "California with salmon",
+    "food.sushi.california-salmon": "California roll with smoked salmon",
     "food.sushi.california-salmon.price": "£12.00",
     "food.sushi.california-salmon.desc":
-      "Inside-out roll with salmon, cream cheese, avocado, and a coating of sesame seeds and caviar.",
-    "food.sushi.california-crab": "California with crab",
+      "Nori, rice, smoked salmon, cucumber, avocado, mayonnaise.",
+    "food.sushi.california-crab": "California roll with crab",
     "food.sushi.california-crab.price": "£12.00",
     "food.sushi.california-crab.desc":
-      "Inside-out roll with crab meat, cream cheese, avocado, and a coating of sesame seeds and massage (tobiko) caviar.",
+      "Nori, rice, mayonnaise, crab, cucumber.",
+    "food.sushi.philadelphia-deluxe": "Philadelphia Deluxe",
+    "food.sushi.philadelphia-deluxe.price": "£15.00",
+    "food.sushi.philadelphia-deluxe.desc":
+      "Nori, rice, cream cheese, avocado, cucumber, salmon.",
+    "food.sushi.crab-burger": "Crab burger",
+    "food.sushi.crab-burger.price": "£15.00",
+    "food.sushi.crab-burger.desc":
+      "Rice, nori, crab sticks, avocado, cucumber, cream cheese.",
+    "food.sushi.eel-burger": "Eel burger",
+    "food.sushi.eel-burger.price": "£15.00",
+    "food.sushi.eel-burger.desc":
+      "Rice, nori, eel, avocado, cucumber, cream cheese.",
+    "food.sushi.baked-shrimp": "Baked shrimp roll",
+    "food.sushi.baked-shrimp.price": "£15.00",
+    "food.sushi.baked-shrimp.desc":
+      "Warm roll with shrimp, cream cheese, and avocado, baked with a cap of melted cheese. Rice, nori, cream cheese, shrimp, cucumber, baked cheese.",
+    "food.sushi.london": "London roll",
+    "food.sushi.london.price": "£12.00",
+    "food.sushi.london.desc": "Nori, rice, salmon, cucumber, cheese.",
+    "food.sushi.philadelphia-tempura-salmon": "Philadelphia Tempura with salmon",
+    "food.sushi.philadelphia-tempura-salmon.price": "£15.00",
+    "food.sushi.philadelphia-tempura-salmon.desc":
+      "Nori, rice, cream cheese, salmon, sweet and sour sauce, unagi.",
+    "food.sushi.philadelphia-tempura-torpedo": "Philadelphia Tempura with torpedo",
+    "food.sushi.philadelphia-tempura-torpedo.price": "£15.00",
+    "food.sushi.philadelphia-tempura-torpedo.desc":
+      "Nori, rice, cream cheese, avocado, torpedo, crab, mayonnaise.",
+    "food.sushi.maki-crab": "Maki with crab",
+    "food.sushi.maki-crab.price": "£7.00",
+    "food.sushi.maki-crab.desc": "Rice, nori, cream cheese, crab.",
+    "food.sushi.maki-avocado": "Maki with avocado",
+    "food.sushi.maki-avocado.price": "£7.00",
+    "food.sushi.maki-avocado.desc": "Rice, nori, cream cheese, avocado.",
+    "food.sushi.set-party": "Party set",
+    "food.sushi.set-party.price": "£52.00",
+    "food.sushi.set-party.desc":
+      "Philadelphia classic, California with crab, tempura with prawns, maki with cucumber, baked roll with salmon.",
+    "food.sushi.set-california": "California set",
+    "food.sushi.set-california.price": "£44.00",
+    "food.sushi.set-california.desc":
+      "California crab, California with prawns, California with smoked salmon, California with tuna.",
+    "food.sushi.set-hot": "Hot set",
+    "food.sushi.set-hot.price": "£35.00",
+    "food.sushi.set-hot.desc":
+      "Prawn tempura, baked crab roll, salmon tempura.",
+    "food.sushi.set-maki": "Maki set",
+    "food.sushi.set-maki.price": "£28.00",
+    "food.sushi.set-maki.desc":
+      "Eel maki, crab maki, avocado maki, cucumber maki, salmon maki.",
     "food.sushi.california-tuna": "California with tuna",
     "food.sushi.california-tuna.price": "£12.00",
     "food.sushi.california-tuna.desc":
@@ -965,6 +1016,7 @@ const translations = {
     "food.category.desserts": "Десерти",
     "food.category.extras": "Додатки",
     "food.category.sushi": "Суші",
+    "food.category.sushi-sets": "Суші-сети",
     "food.category.pasta": "Паста",
     "food.most-liked.subtitle": "Згідно з уподобаннями гостей",
     "food.most-liked.chicken-kyiv.name": "Котлета по-київськи",
@@ -1175,14 +1227,63 @@ const translations = {
     "food.sushi.philadelphia-prawns.price": "£12.00",
     "food.sushi.philadelphia-prawns.desc":
       "Рис, норі, крем-сир, авокадо, креветка, огірок.",
-    "food.sushi.california-salmon": "Каліфорнія з лососем",
+    "food.sushi.california-salmon": "Каліфорнія з копченим лососем",
     "food.sushi.california-salmon.price": "£12.00",
     "food.sushi.california-salmon.desc":
-      "Рис, норі, крем-сир, авокадо, лосось, кунжут, ікра.",
+      "Норі, рис, копчений лосось, огірок, авокадо, майонез.",
     "food.sushi.california-crab": "Каліфорнія з крабом",
     "food.sushi.california-crab.price": "£12.00",
     "food.sushi.california-crab.desc":
-      "Рис, норі, крем-сир, крабове м'ясо, кунжут, масаго.",
+      "Норі, рис, майонез, краб, огірок.",
+    "food.sushi.philadelphia-deluxe": "Філадельфія люкс",
+    "food.sushi.philadelphia-deluxe.price": "£15.00",
+    "food.sushi.philadelphia-deluxe.desc":
+      "Норі, рис, крем-сир, авокадо, огірок, лосось.",
+    "food.sushi.crab-burger": "Бургер з крабом",
+    "food.sushi.crab-burger.price": "£15.00",
+    "food.sushi.crab-burger.desc":
+      "Рис, норі, крабові палички, авокадо, огірок, крем-сир.",
+    "food.sushi.eel-burger": "Бургер з вугрем",
+    "food.sushi.eel-burger.price": "£15.00",
+    "food.sushi.eel-burger.desc":
+      "Рис, норі, вугор, авокадо, огірок, крем-сир.",
+    "food.sushi.baked-shrimp": "Запечений рол з креветкою",
+    "food.sushi.baked-shrimp.price": "£15.00",
+    "food.sushi.baked-shrimp.desc":
+      "Рис, норі, крем-сир, креветка, огірок, запечений сир.",
+    "food.sushi.london": "Лондон рол",
+    "food.sushi.london.price": "£12.00",
+    "food.sushi.london.desc": "Норі, рис, лосось, огірок, сир.",
+    "food.sushi.philadelphia-tempura-salmon": "Філадельфія темпура з лососем",
+    "food.sushi.philadelphia-tempura-salmon.price": "£15.00",
+    "food.sushi.philadelphia-tempura-salmon.desc":
+      "Норі, рис, крем-сир, лосось, кисло-солодкий соус, унагі.",
+    "food.sushi.philadelphia-tempura-torpedo": "Філадельфія темпура з торпедо",
+    "food.sushi.philadelphia-tempura-torpedo.price": "£15.00",
+    "food.sushi.philadelphia-tempura-torpedo.desc":
+      "Норі, рис, крем-сир, авокадо, торпедо, краб, майонез.",
+    "food.sushi.maki-crab": "Макі з крабом",
+    "food.sushi.maki-crab.price": "£7.00",
+    "food.sushi.maki-crab.desc": "Рис, норі, вершковий сир, краб.",
+    "food.sushi.maki-avocado": "Макі з авокадо",
+    "food.sushi.maki-avocado.price": "£7.00",
+    "food.sushi.maki-avocado.desc": "Рис, норі, вершковий сир, авокадо.",
+    "food.sushi.set-party": "Сет для вечірки",
+    "food.sushi.set-party.price": "£52.00",
+    "food.sushi.set-party.desc":
+      "Філадельфія класична, Каліфорнія з крабом, темпура з креветками, макі з огірком, запечений рол з лососем.",
+    "food.sushi.set-california": "Каліфорнія сет",
+    "food.sushi.set-california.price": "£44.00",
+    "food.sushi.set-california.desc":
+      "Каліфорнія з крабом, Каліфорнія з креветкою, Каліфорнія з копченим лососем, Каліфорнія з тунцем.",
+    "food.sushi.set-hot": "Хот сет",
+    "food.sushi.set-hot.price": "£35.00",
+    "food.sushi.set-hot.desc":
+      "Темпура з креветкою, запечений рол з крабом, темпура з лососем.",
+    "food.sushi.set-maki": "Сет макі",
+    "food.sushi.set-maki.price": "£28.00",
+    "food.sushi.set-maki.desc":
+      "Макі з вугрем, макі з крабом, макі з авокадо, макі з огірком, макі з лососем.",
     "food.sushi.california-tuna": "Каліфорнія з тунцем",
     "food.sushi.california-tuna.price": "£12.00",
     "food.sushi.california-tuna.desc":

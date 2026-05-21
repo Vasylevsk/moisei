@@ -1596,7 +1596,7 @@
 
         .wedding-contact {
           margin-block-start: 24px;
-          white-space: nowrap;
+          overflow-wrap: break-word;
         }
 
         .wedding-contact span {
@@ -1607,12 +1607,6 @@
           color: var(--gold-crayola);
           text-decoration: none;
           display: inline;
-        }
-
-        @media (max-width: 768px) {
-          .wedding-contact {
-            white-space: normal;
-          }
         }
 
         .wedding-banner {
@@ -1639,6 +1633,7 @@
           .wedding-text {
             text-align: left;
             order: 2;
+            min-width: 0;
           }
 
           .wedding-text .section-subtitle {

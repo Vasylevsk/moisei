@@ -1,0 +1,412 @@
+/**
+ * Event detail pages (alena, finka, olya, kateryna, oksana)
+ */
+
+@keyframes event-passed-pulse {
+  0%,
+  100% {
+    box-shadow: 0 6px 20px rgba(106, 156, 95, 0.45);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 10px 28px rgba(106, 156, 95, 0.65);
+    transform: scale(1.02);
+  }
+}
+
+/* Clearance below fixed topbar + header */
+.event-detail-page {
+  margin-top: 72px;
+  padding-top: 20px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 575px) {
+  .event-detail-page {
+    margin-top: 132px;
+    padding-top: 28px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .event-detail-page {
+    margin-top: 148px;
+    padding-top: 36px;
+  }
+}
+
+#event-detail.special-dish-swiper-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+#event-detail .special-dish.event-detail {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ----- Passed badge ----- */
+.event-passed-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  left: auto;
+  z-index: 5;
+  background: linear-gradient(135deg, #6a9c5f 0%, var(--gold-crayola) 100%);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: clamp(0.75rem, 2.5vw, 1.1rem);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  box-shadow: 0 6px 20px rgba(106, 156, 95, 0.45);
+  backdrop-filter: blur(10px);
+  animation: event-passed-pulse 2.5s ease-in-out infinite;
+  max-width: calc(100% - 32px);
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .event-passed-badge {
+    top: 20px;
+    right: 24px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* ----- Gallery ----- */
+.event-detail-gallery {
+  position: relative;
+  overflow: hidden;
+}
+
+.event-gallery-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.event-gallery-swiper .swiper-wrapper {
+  height: 100%;
+}
+
+.event-gallery-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-gallery-swiper .swiper-slide picture,
+.event-gallery-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .event-detail-gallery {
+    display: block;
+    width: 100%;
+    min-height: 320px;
+  }
+
+  .event-gallery-swiper {
+    width: 100%;
+    min-height: 320px;
+    height: min(56vh, 520px);
+    max-height: 520px;
+  }
+
+  .event-gallery-swiper .swiper-slide {
+    height: 100%;
+  }
+}
+
+/* ----- Intro & meta blocks ----- */
+.event-detail-intro,
+.event-detail-meta {
+  background-color: var(--black);
+}
+
+.event-detail-intro .section-text:last-child {
+  margin-block-end: 0;
+}
+
+.event-detail-meta--empty {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #event-detail .special-dish.event-detail:not(:has(.event-detail-meta)) {
+    grid-template-areas:
+      "intro gallery"
+      "footer footer";
+  }
+}
+
+/* ----- Event info card ----- */
+.event-info {
+  margin: 0;
+  padding: 28px 24px;
+  background: linear-gradient(
+    135deg,
+    var(--eerie-black-2) 0%,
+    var(--smoky-black-1) 100%
+  );
+  border-radius: var(--radius-24);
+  border: 1px solid var(--white-alpha-10);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.event-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.event-info-item {
+  text-align: left;
+}
+
+.event-info-label {
+  color: var(--gold-crayola);
+  font-weight: var(--weight-bold);
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+}
+
+.event-info-link {
+  color: var(--white);
+  text-decoration: none;
+  transition: color var(--transition-1);
+}
+
+.event-info-link:hover {
+  color: var(--gold-crayola);
+}
+
+.event-info-actions {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--white-alpha-10);
+}
+
+.event-detail-meta .section-text {
+  margin-block-start: 20px;
+  text-align: center;
+}
+
+/* ----- Back button footer ----- */
+.event-detail-footer {
+  padding-block: 40px 16px;
+  background-color: var(--black);
+  border-top: 1px solid var(--white-alpha-10);
+}
+
+.event-detail-footer .container {
+  display: flex;
+  justify-content: center;
+}
+
+.event-detail-footer .btn {
+  min-width: min(100%, 280px);
+}
+
+/* ----- Swiper nav (desktop) ----- */
+.event-gallery-swiper .swiper-button-next,
+.event-gallery-swiper .swiper-button-prev {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .event-gallery-swiper .swiper-button-next,
+  .event-gallery-swiper .swiper-button-prev {
+    display: grid;
+    position: absolute;
+    z-index: 10;
+    color: #8fad81;
+    font-size: 2.4rem;
+    border: 1px solid #8fad81;
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: var(--transition-1);
+    background: rgba(0, 0, 0, 0.35);
+    margin: 0;
+  }
+
+  .event-gallery-swiper .swiper-button-next::after,
+  .event-gallery-swiper .swiper-button-prev::after {
+    font-size: 20px;
+    transform: rotate(-45deg);
+  }
+
+  .event-gallery-swiper .swiper-button-next {
+    right: 24px;
+  }
+
+  .event-gallery-swiper .swiper-button-prev {
+    left: 24px;
+  }
+
+  .event-gallery-swiper .swiper-button-next:is(:hover, :focus-visible),
+  .event-gallery-swiper .swiper-button-prev:is(:hover, :focus-visible) {
+    background-color: #8fad81;
+    color: var(--black);
+  }
+}
+
+/* ----- Desktop: two-column hero + full-width meta/footer ----- */
+@media (min-width: 992px) {
+  #event-detail .special-dish.event-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "intro gallery"
+      "meta meta"
+      "footer footer";
+    align-items: stretch;
+    text-align: left;
+    min-height: 0;
+  }
+
+  .event-detail-intro {
+    grid-area: intro;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 48px;
+    padding-inline: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 40px);
+    min-height: 520px;
+    height: 100%;
+  }
+
+  .event-detail-intro .container {
+    width: 100%;
+    max-width: 560px;
+    margin-inline: 0;
+    padding-block: 0;
+  }
+
+  .event-detail-intro .section-subtitle::after {
+    margin-inline: 0;
+  }
+
+  .event-detail-gallery {
+    grid-area: gallery;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 520px;
+    height: 100%;
+    padding-block: 48px;
+    padding-inline: clamp(24px, 3vw, 40px) clamp(32px, 4vw, 56px);
+  }
+
+  .event-gallery-swiper {
+    flex: 1;
+    width: 100%;
+    min-height: 420px;
+    max-height: none;
+    height: 100%;
+    border-radius: var(--radius-24);
+    overflow: hidden;
+  }
+
+  .event-detail-meta {
+    grid-area: meta;
+    width: 100%;
+    padding-block: 0 8px;
+    padding-inline: 0;
+  }
+
+  .event-detail-meta .container {
+    max-width: 100%;
+    width: 100%;
+    padding-inline: clamp(32px, 5vw, 64px);
+  }
+
+  .event-info {
+    margin-block: 40px 0;
+    padding: 36px 40px;
+  }
+
+  .event-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 40px;
+    margin-bottom: 28px;
+  }
+
+  .event-detail-footer {
+    grid-area: footer;
+    padding-block: 32px 48px;
+  }
+}
+
+/* ----- Mobile spacing tweaks ----- */
+@media (max-width: 991px) {
+  .event-detail-intro,
+  .event-detail-meta {
+    padding-block: 24px;
+  }
+
+  .event-detail-intro .container,
+  .event-detail-meta .container {
+    padding-block: 8px;
+  }
+
+  .event-detail-intro .section-subtitle {
+    margin-block-end: 8px;
+  }
+
+  .event-detail-intro .section-title {
+    margin-block-end: 12px;
+  }
+
+  .event-detail-intro .section-text {
+    margin-block-end: 14px;
+  }
+
+  .event-info {
+    margin-block: 20px 0;
+    padding: 20px 18px;
+  }
+
+  .event-info-grid {
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .event-detail-footer {
+    padding-block: 28px 20px;
+  }
+}
+
+/* Override global special-dish mobile full-width rules on event pages */
+@media (max-width: 768px) {
+  #event-detail .special-dish-content.bg-black-10 {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    padding-inline: 16px;
+  }
+
+  #event-detail .special-dish-content.bg-black-10 .container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 8px;
+  }
+}

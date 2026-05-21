@@ -143,6 +143,7 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico?v=20250318" />
     <link rel="stylesheet" href="./assets/css/combined.min.css?v=523a5dcc" />
+    <link rel="stylesheet" href="./assets/css/event-detail.css?v=1" />
     
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -329,19 +330,12 @@
     </div>
   </header>
 
-  <main style="margin-top: 100px;">
-      <style>
-        @media (max-width: 768px) {
-          main {
-            margin-top: 60px !important;
-          }
-        }
-      </style>
+  <main class="event-detail-page">
     <article>
 
       <section class="special-dish-swiper-wrapper" aria-label="event" id="event-detail">
-        <div class="special-dish text-center">
-          <div class="special-dish-content bg-black-10">
+        <div class="special-dish text-center event-detail">
+          <div class="special-dish-content bg-black-10 event-detail-intro">
         <div class="container">
 
               <p class="section-subtitle label-2" data-i18n="event.kateryna.subtitle">Event</p>
@@ -363,7 +357,7 @@
             </div>
           </div>
 
-          <div class="special-dish-banner" style="position: relative;">
+          <div class="special-dish-banner event-detail-gallery" style="position: relative;">
             <span class="event-passed-badge label-2" data-i18n="event.passed">Event Ended</span>
 
             <!-- Event Gallery Slider using Swiper -->
@@ -509,266 +503,30 @@
 
               </div>
               
-              <!-- Navigation buttons -->
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
             </div>
           </div>
 
-          <div class="special-dish-content bg-black-10">
+          <div class="special-dish-content bg-black-10 event-detail-meta">
             <div class="container">
 
-              <div style="margin-top: 40px;">
-                <a href="index.html#events" class="btn btn-primary">
+            </div>
+          </div>
+        
+
+          <div class="event-detail-footer">
+            <div class="container">
+              <a href="index.html#events" class="btn btn-primary">
                   <span class="text text-1" data-i18n="btn.back-to-events">Back to Events</span>
                   <span class="text text-2" data-i18n="btn.back-to-events" aria-hidden="true">Back to Events</span>
                 </a>
-              </div>
-
             </div>
           </div>
         </div>
       </section>
 
-          <style>
-        @keyframes pulse-glow-green {
-          0%, 100% {
-            box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5);
-            transform: scale(1);
-          }
-          50% {
-            box-shadow: 0 8px 30px rgba(106, 156, 95, 0.7);
-            transform: scale(1.02);
-          }
-        }
-        
-        .event-passed-badge {
-          position: absolute;
-          top: 20px;
-          left: 20px;
-          z-index: 3;
-          background: linear-gradient(135deg, #6a9c5f 0%, var(--gold-crayola) 100%);
-          color: var(--white);
-          padding: 10px 20px;
-          border-radius: 12px;
-          font-size: 1.3rem;
-          font-weight: var(--weight-bold);
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5);
-          backdrop-filter: blur(10px);
-          transition: all 0.3s ease;
-          animation: pulse-glow-green 2s ease-in-out infinite;
-        }
-        
-        .event-gallery-swiper {
-              width: 100%;
-              height: 100%;
-        }
-        
-        .event-gallery-swiper .swiper-slide {
-          width: 100%;
-          height: 100%;
-        }
-        
-        .event-gallery-swiper .swiper-slide {
-              padding: 0;
-              margin: 0;
-            }
-
-        .event-gallery-swiper .swiper-slide img {
-              width: 100%;
-              height: 100%;
-          object-fit: cover;
-          padding: 0;
-              margin: 0;
-          display: block;
-        }
-        
-        @media (max-width: 768px) {
-          .special-dish-banner {
-            display: block !important;
-            width: 100%;
-            min-height: 400px;
-            height: auto;
-          }
-          
-          .event-gallery-swiper {
-              width: 100%;
-            min-height: 400px;
-            height: 60vh;
-            max-height: 600px;
-          }
-          
-          .event-gallery-swiper .swiper-slide {
-            height: 100%;
-          }
-          
-          .event-gallery-swiper .swiper-slide img {
-              width: 100%;
-              height: 100%;
-            object-fit: cover;
-          }
-        }
-        
-        .event-gallery-swiper .swiper-button-next,
-        .event-gallery-swiper .swiper-button-prev {
-          display: none;
-        }
-        
-        @media (min-width: 768px) {
-          .event-gallery-swiper .swiper-button-next,
-          .event-gallery-swiper .swiper-button-prev {
-            display: grid;
-            position: absolute;
-            z-index: 10;
-            color: #8fad81;
-            font-size: 2.4rem;
-            border: 1px solid #8fad81;
-            width: 45px;
-            height: 45px;
-            place-items: center;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-            transition: var(--transition-1);
-            background: transparent;
-              margin: 0;
-            }
-
-          .event-gallery-swiper .swiper-button-next::after,
-          .event-gallery-swiper .swiper-button-prev::after {
-            font-size: 20px;
-            transform: rotate(-45deg);
-          }
-          
-          .event-gallery-swiper .swiper-button-next {
-            right: 30px;
-          }
-          
-          .event-gallery-swiper .swiper-button-prev {
-            left: 30px;
-          }
-          
-          .event-gallery-swiper .swiper-button-next:is(:hover,:focus-visible),
-          .event-gallery-swiper .swiper-button-prev:is(:hover,:focus-visible) {
-            background-color: #8fad81;
-            color: var(--black);
-          }
-        }
-        
-        @media (min-width: 768px) and (max-width: 991px) {
-          .event-gallery-swiper .swiper-button-next,
-          .event-gallery-swiper .swiper-button-prev {
-            width: 38px;
-            height: 38px;
-            font-size: 2rem;
-          }
-          
-          .event-gallery-swiper .swiper-button-next::after,
-          .event-gallery-swiper .swiper-button-prev::after {
-            font-size: 18px;
-          }
-          
-          .event-gallery-swiper .swiper-button-next {
-            right: 20px;
-          }
-          
-          .event-gallery-swiper .swiper-button-prev {
-            left: 20px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .event-passed-badge {
-            top: 15px !important;
-            left: 15px !important;
-            padding: 8px 16px !important;
-            font-size: 1.1rem !important;
-            letter-spacing: 1px !important;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .event-passed-badge {
-            top: 10px !important;
-            left: 10px !important;
-            padding: 6px 12px !important;
-            font-size: 1rem !important;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          main {
-            margin-top: 60px !important;
-          }
-          
-          .special-dish {
-            padding-block: 20px !important;
-          }
-          
-          .special-dish-content {
-            padding-block: 20px !important;
-          }
-          
-          .special-dish-content .container {
-            padding-block: 10px !important;
-          }
-          
-          .section-subtitle {
-            margin-bottom: 8px !important;
-            margin-block-end: 8px !important;
-          }
-          
-          .section-title {
-            margin-bottom: 12px !important;
-            margin-block-end: 12px !important;
-          }
-          
-          .section-text {
-            margin-bottom: 15px !important;
-            margin-block-end: 15px !important;
-          }
-          
-          .special-dish-content .btn {
-            margin-top: 20px !important;
-            margin-block-start: 20px !important;
-          }
-        }
-        
-        @media (min-width: 992px) {
-          .special-dish {
-            align-items: stretch !important;
-          }
-          
-          .special-dish-content {
-            padding-block: 40px !important;
-            padding-inline: 50px 25px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            height: 100% !important;
-          }
-          
-          .special-dish-banner {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            height: 100% !important;
-            padding-block: 40px !important;
-          }
-          
-          .event-gallery-swiper {
-            height: 100% !important;
-            max-height: 100% !important;
-          }
-          
-          .special-dish-content .container {
-            padding-block: 20px !important;
-          }
-        }
-      </style>
-
-    </article>
+</article>
   </main>
 
   <footer id="footer" class="footer section has-bg-image text-center"

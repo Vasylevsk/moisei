@@ -1349,41 +1349,34 @@
           }
         }
         
-        .event-passed-badge {
+        #events .event-passed-badge {
           position: absolute;
-          top: 20px;
-          left: 20px;
-          z-index: 3;
+          top: 16px;
+          right: 16px;
+          left: auto;
+          z-index: 5;
           background: linear-gradient(135deg, #6a9c5f 0%, var(--gold-crayola) 100%);
           color: var(--white);
-          padding: 10px 20px;
-          border-radius: 12px;
-          font-size: 1.3rem;
+          padding: 8px 16px;
+          border-radius: 999px;
+          font-size: clamp(0.75rem, 2.5vw, 1.1rem);
           font-weight: var(--weight-bold);
           text-transform: uppercase;
-          letter-spacing: 1.5px;
-          box-shadow: 0 6px 20px rgba(106, 156, 95, 0.5);
+          letter-spacing: 0.08em;
+          line-height: 1.2;
+          box-shadow: 0 6px 20px rgba(106, 156, 95, 0.45);
           backdrop-filter: blur(10px);
-          transition: all 0.3s ease;
-          animation: pulse-glow-green 2s ease-in-out infinite;
+          animation: pulse-glow-green 2.5s ease-in-out infinite;
+          max-width: calc(100% - 32px);
+          text-align: center;
         }
-        
-        @media (max-width: 768px) {
-          .event-passed-badge {
-            top: 15px !important;
-            left: 15px !important;
-            padding: 8px 16px !important;
-            font-size: 1.1rem !important;
-            letter-spacing: 1px !important;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .event-passed-badge {
-            top: 10px !important;
-            left: 10px !important;
-            padding: 6px 12px !important;
-            font-size: 1rem !important;
+
+        @media (min-width: 992px) {
+          #events .event-passed-badge {
+            top: 20px;
+            right: 24px;
+            padding: 10px 20px;
+            font-size: 1rem;
           }
         }
 
@@ -1399,12 +1392,6 @@
           
           .event-swiper .special-dish-content {
             order: 1;
-          }
-          
-          /* Adjust badge position for right-side banner */
-          .event-swiper .event-passed-badge {
-            left: auto;
-            right: 20px;
           }
         }
 

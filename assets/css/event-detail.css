@@ -223,35 +223,78 @@
   min-width: min(100%, 280px);
 }
 
-/* ----- Swiper nav (desktop) ----- */
+/* ----- Swiper nav ----- */
 .event-gallery-swiper .swiper-button-next,
 .event-gallery-swiper .swiper-button-prev {
-  display: none;
+  display: grid;
+  position: absolute;
+  z-index: 10;
+  color: #8fad81;
+  border: 1px solid #8fad81;
+  place-items: center;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: var(--transition-1);
+  background: rgba(0, 0, 0, 0.45);
+  margin: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.event-gallery-swiper .swiper-button-next::after,
+.event-gallery-swiper .swiper-button-prev::after {
+  transform: rotate(-45deg);
+  font-weight: var(--weight-bold);
+}
+
+.event-gallery-swiper .swiper-button-next.swiper-button-disabled,
+.event-gallery-swiper .swiper-button-prev.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Mobile: compact prev/next */
+@media (max-width: 767px) {
+  .event-gallery-swiper .swiper-button-next,
+  .event-gallery-swiper .swiper-button-prev {
+    width: 34px;
+    height: 34px;
+    font-size: 1.6rem;
+  }
+
+  .event-gallery-swiper .swiper-button-next::after,
+  .event-gallery-swiper .swiper-button-prev::after {
+    font-size: 13px;
+  }
+
+  .event-gallery-swiper .swiper-button-next {
+    right: 10px;
+  }
+
+  .event-gallery-swiper .swiper-button-prev {
+    left: 10px;
+  }
+
+  .event-gallery-swiper .swiper-button-next:active:not(.swiper-button-disabled),
+  .event-gallery-swiper .swiper-button-prev:active:not(.swiper-button-disabled) {
+    background-color: #8fad81;
+    color: var(--black);
+  }
 }
 
 @media (min-width: 768px) {
   .event-gallery-swiper .swiper-button-next,
   .event-gallery-swiper .swiper-button-prev {
-    display: grid;
-    position: absolute;
-    z-index: 10;
-    color: #8fad81;
     font-size: 2.4rem;
-    border: 1px solid #8fad81;
     width: 45px;
     height: 45px;
-    place-items: center;
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    transition: var(--transition-1);
     background: rgba(0, 0, 0, 0.35);
-    margin: 0;
   }
 
   .event-gallery-swiper .swiper-button-next::after,
   .event-gallery-swiper .swiper-button-prev::after {
     font-size: 20px;
-    transform: rotate(-45deg);
   }
 
   .event-gallery-swiper .swiper-button-next {

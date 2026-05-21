@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 
+# Main site (no trailing slash — matches canonical)
+Host: moisei.uk
+
 Sitemap: https://moisei.uk/sitemap.xml
 
 # Google

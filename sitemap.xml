@@ -3,15 +3,16 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://moisei.uk/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/" />
     <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moisei.uk/" />
   </url>
   <url>
     <loc>https://moisei.uk/food-menu.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/food-menu.html" />
@@ -19,59 +20,90 @@
   </url>
   <url>
     <loc>https://moisei.uk/drink-menu.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/drink-menu.html" />
     <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/drink-menu.html" />
   </url>
   <url>
     <loc>https://moisei.uk/hookah-menu.html</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/hookah-menu.html" />
     <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/hookah-menu.html" />
   </url>
   <url>
     <loc>https://moisei.uk/reservation.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/reservation.html" />
     <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/reservation.html" />
   </url>
   <url>
+    <loc>https://moisei.uk/alena-omargalieva-event.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/alena-omargalieva-event.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/alena-omargalieva-event.html" />
+  </url>
+  <url>
+    <loc>https://moisei.uk/finka-event.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/finka-event.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/finka-event.html" />
+  </url>
+  <url>
+    <loc>https://moisei.uk/olya-newyear-event.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/olya-newyear-event.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/olya-newyear-event.html" />
+  </url>
+  <url>
+    <loc>https://moisei.uk/kateryna-buzhynska-event.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/kateryna-buzhynska-event.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/kateryna-buzhynska-event.html" />
+  </url>
+  <url>
+    <loc>https://moisei.uk/oksana-bilozir-event.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/oksana-bilozir-event.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/oksana-bilozir-event.html" />
+  </url>
+  <url>
     <loc>https://moisei.uk/privacy-policy.html</loc>
     <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/privacy-policy.html" />
-    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/privacy-policy.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://moisei.uk/terms-conditions.html</loc>
     <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/terms-conditions.html" />
-    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/terms-conditions.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://moisei.uk/cookie-policy.html</loc>
     <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/cookie-policy.html" />
-    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/cookie-policy.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://moisei.uk/legal-information.html</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/legal-information.html" />
-    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/legal-information.html" />
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
-

@@ -1408,70 +1408,162 @@
           }
         }
 
-        /* Navigation buttons - exactly same style as special-dish-swiper */
-        .event-swiper .swiper-button-next,
-        .event-swiper .swiper-button-prev {
-          display: none;
+        /* Events slider: larger photos, less cropping */
+        #events .event-swiper {
+          position: relative;
+        }
+
+        #events .event-swiper .special-dish-banner,
+        #events .event-swiper .special-dish-banner-mobile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--eerie-black-2);
+          overflow: hidden;
+        }
+
+        #events .event-swiper .special-dish-banner picture,
+        #events .event-swiper .special-dish-banner-mobile picture {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+        }
+
+        #events .event-swiper .special-dish-banner .img-cover,
+        #events .event-swiper .special-dish-banner-mobile .img-cover {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          max-height: min(62vh, 560px);
+          aspect-ratio: auto;
+          object-fit: contain;
+          object-position: center;
+        }
+
+        @media (max-width: 991px) {
+          #events .event-swiper .special-dish-banner-mobile {
+            min-height: min(58vh, 520px);
+            margin-block-end: 24px;
+          }
+
+          #events .event-swiper .special-dish-banner-mobile .img-cover {
+            max-height: min(58vh, 520px);
+          }
+        }
+
+        @media (min-width: 992px) {
+          #events .event-swiper .special-dish-banner {
+            min-height: 560px;
+            height: 100%;
+          }
+
+          #events .event-swiper .special-dish-banner .img-cover {
+            max-height: min(72vh, 640px);
+            height: auto;
+          }
+        }
+
+        /* Events slider navigation */
+        #events .event-swiper .swiper-button-next,
+        #events .event-swiper .swiper-button-prev {
+          display: grid;
+          position: absolute;
+          z-index: 10;
+          color: #8fad81;
+          border: 1px solid #8fad81;
+          place-items: center;
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+          transition: var(--transition-1);
+          background: rgba(0, 0, 0, 0.45);
+          margin: 0;
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+          touch-action: manipulation;
+        }
+
+        #events .event-swiper .swiper-button-next::after,
+        #events .event-swiper .swiper-button-prev::after {
+          transform: rotate(-45deg);
+          font-weight: var(--weight-bold);
+        }
+
+        @media (max-width: 767px) {
+          #events .event-swiper .swiper-button-next,
+          #events .event-swiper .swiper-button-prev {
+            width: 34px;
+            height: 34px;
+            font-size: 1.6rem;
+          }
+
+          #events .event-swiper .swiper-button-next::after,
+          #events .event-swiper .swiper-button-prev::after {
+            font-size: 13px;
+          }
+
+          #events .event-swiper .swiper-button-next {
+            right: 10px;
+          }
+
+          #events .event-swiper .swiper-button-prev {
+            left: 10px;
+          }
+
+          #events .event-swiper .swiper-button-next:active:not(.swiper-button-disabled),
+          #events .event-swiper .swiper-button-prev:active:not(.swiper-button-disabled) {
+            background-color: #8fad81;
+            color: var(--black);
+          }
         }
 
         @media (min-width: 768px) {
-          .event-swiper .swiper-button-next,
-          .event-swiper .swiper-button-prev {
-            display: grid;
-            position: absolute;
-            z-index: 10;
-            color: #8fad81;
+          #events .event-swiper .swiper-button-next,
+          #events .event-swiper .swiper-button-prev {
             font-size: 2.4rem;
-            border: 1px solid #8fad81;
             width: 45px;
             height: 45px;
-            place-items: center;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-            transition: var(--transition-1);
-            background: transparent;
-            margin: 0;
+            background: rgba(0, 0, 0, 0.35);
           }
 
-          .event-swiper .swiper-button-next::after,
-          .event-swiper .swiper-button-prev::after {
+          #events .event-swiper .swiper-button-next::after,
+          #events .event-swiper .swiper-button-prev::after {
             font-size: 20px;
-            transform: rotate(-45deg);
           }
 
-          .event-swiper .swiper-button-next {
+          #events .event-swiper .swiper-button-next {
             right: 30px;
           }
 
-          .event-swiper .swiper-button-prev {
+          #events .event-swiper .swiper-button-prev {
             left: 30px;
           }
 
-          .event-swiper .swiper-button-next:is(:hover, :focus-visible),
-          .event-swiper .swiper-button-prev:is(:hover, :focus-visible) {
+          #events .event-swiper .swiper-button-next:is(:hover, :focus-visible),
+          #events .event-swiper .swiper-button-prev:is(:hover, :focus-visible) {
             background-color: #8fad81;
             color: var(--black);
           }
         }
 
         @media (min-width: 768px) and (max-width: 991px) {
-          .event-swiper .swiper-button-next,
-          .event-swiper .swiper-button-prev {
+          #events .event-swiper .swiper-button-next,
+          #events .event-swiper .swiper-button-prev {
             width: 38px;
             height: 38px;
             font-size: 2rem;
           }
 
-          .event-swiper .swiper-button-next::after,
-          .event-swiper .swiper-button-prev::after {
+          #events .event-swiper .swiper-button-next::after,
+          #events .event-swiper .swiper-button-prev::after {
             font-size: 18px;
           }
 
-          .event-swiper .swiper-button-next {
+          #events .event-swiper .swiper-button-next {
             right: 20px;
           }
 
-          .event-swiper .swiper-button-prev {
+          #events .event-swiper .swiper-button-prev {
             left: 20px;
           }
         }

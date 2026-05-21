@@ -146,15 +146,21 @@
   padding-block: 40px 16px;
   background-color: var(--black);
   border-top: 1px solid var(--white-alpha-10);
+  width: 100%;
+  text-align: center;
 }
 
-.event-detail-footer .container {
+#event-detail .event-detail-footer .container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-inline: auto;
 }
 
-.event-detail-footer .btn {
+#event-detail .event-detail-footer .btn {
   min-width: min(100%, 280px);
+  margin-inline: auto;
 }
 
 /* ----- Swiper nav ----- */
@@ -302,9 +308,15 @@
     overflow: hidden;
   }
 
-  .event-detail-footer {
+  #event-detail .special-dish.event-detail .event-detail-footer {
     grid-area: footer;
+    justify-self: stretch;
     padding-block: 32px 48px;
+    text-align: center;
+  }
+
+  #event-detail .special-dish.event-detail .event-detail-footer .btn {
+    margin-inline: auto;
   }
 }
 

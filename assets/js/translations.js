@@ -252,10 +252,6 @@ const translations = {
     "food.soups.chicken-soup.price": "£10.00",
     "food.soups.chicken-soup.desc":
       "A light and comforting broth made with chicken, often served with noodles or vegetables.",
-    "food.soups.bohrach": "Bohrach",
-    "food.soups.bohrach.price": "£12.00",
-    "food.soups.bohrach.desc":
-      "A hearty and spicy Ukrainian meat goulash, cooked in a cauldron with potatoes and vegetables.",
 
     "food.desserts.cake-day": "Cake of the day",
     "food.desserts.cake-day.price": "£12.00",
@@ -1172,9 +1168,6 @@ const translations = {
     "food.soups.chicken-soup": "Бульйон",
     "food.soups.chicken-soup.price": "£10.00",
     "food.soups.chicken-soup.desc": "Курячий бульйон, локшина, овочі.",
-    "food.soups.bohrach": "Бограч",
-    "food.soups.bohrach.price": "£12.00",
-    "food.soups.bohrach.desc": "Ситний та пікантний.",
 
     "food.desserts.cake-day": "Торт дня",
     "food.desserts.cake-day.price": "£12.00",

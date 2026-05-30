@@ -74,6 +74,11 @@ function menuSlugFromSource(fileName) {
   if (/^Eel burger/i.test(n) && /\.jpe?g$/i.test(n)) return "eel-burger";
   if (/^Beef steak/i.test(n) && /\.jpe?g$/i.test(n)) return "beef-steak";
   if (/^Maki set/i.test(n) && /\.jpe?g$/i.test(n)) return "maki-set";
+  if (/^Maki with cucumber new/i.test(n) && /\.jpe?g$/i.test(n)) return "maki-cucumber";
+  if (/^Maki with salmon new/i.test(n) && /\.jpe?g$/i.test(n)) return "maki-salmon";
+  if (/^Maki with eel new/i.test(n) && /\.jpe?g$/i.test(n)) return "maki-eel";
+  if (/^Maki with crab new/i.test(n) && /\.jpe?g$/i.test(n)) return "maki-crab";
+  if (/^Maki with avocado new/i.test(n) && /\.jpe?g$/i.test(n)) return "maki-avocado";
   return null;
 }
 

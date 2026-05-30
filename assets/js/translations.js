@@ -195,14 +195,14 @@ const translations = {
     "food.salads.beetroot-feta.desc":
       "Roasted beetroot with feta, cream cheese, orange and honey mustard dressing.",
 
+    "food.mains.varenyky-cheese": "Varenyky with cottage cheese and potato",
+    "food.mains.varenyky-cheese.price": "£11.00",
+    "food.mains.varenyky-cheese.desc":
+      "Homemade dumplings filled with a classic mix of creamy cottage cheese and mashed potatoes.",
     "food.mains.varenyky-cabbage": "Varenyky with cabbage and mushrooms",
     "food.mains.varenyky-cabbage.price": "£11.00",
     "food.mains.varenyky-cabbage.desc":
       "Homemade dumplings filled with sauteed cabbage and fragrant forest mushrooms.",
-    "food.mains.varenyky-salmon": "Varenyky with salmon",
-    "food.mains.varenyky-salmon.price": "£15.00",
-    "food.mains.varenyky-salmon.desc":
-      "Homemade dumplings filled with a tender mixture of salmon.",
     "food.mains.pelmeni": "Pelmeni",
     "food.mains.pelmeni.price": "£12.00",
     "food.mains.pelmeni.desc":
@@ -1114,14 +1114,14 @@ const translations = {
     "food.salads.beetroot-feta.desc":
       "Печений буряк, крем-сир, фета, апельсин та медово-гірчичний соус.",
 
+    "food.mains.varenyky-cheese": "Вареники з сиром та картоплею",
+    "food.mains.varenyky-cheese.price": "£11.00",
+    "food.mains.varenyky-cheese.desc":
+      "Домашні вареники з класичною начинкою з ніжного кисломолочного сиру та картопляного пюре.",
     "food.mains.varenyky-cabbage": "Вареники з капустою та грибами",
     "food.mains.varenyky-cabbage.price": "£11.00",
     "food.mains.varenyky-cabbage.desc":
       "Домашні вареники з начинкою з обсмаженої капусти та ароматних грибів.",
-    "food.mains.varenyky-salmon": "Вареники з лососем",
-    "food.mains.varenyky-salmon.price": "£15.00",
-    "food.mains.varenyky-salmon.desc":
-      "Домашні вареники з ніжною начинкою з лосося.",
     "food.mains.pelmeni": "Пельмені",
     "food.mains.pelmeni.price": "£12.00",
     "food.mains.pelmeni.desc": "Свинина",

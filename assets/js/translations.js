@@ -172,7 +172,7 @@ const translations = {
     "food.starters.cheese": "Cheese platter",
     "food.starters.cheese.price": "£17.00",
     "food.starters.cheese.desc": "Selection of premium cheeses.",
-    "food.starters.beer-platter": "Beer platter / Пивна тарілка",
+    "food.starters.beer-platter": "Beer platter",
     "food.starters.beer-platter.price": "£23.00",
     "food.starters.beer-platter.desc":
       "Prosciutto, sausages, basturma, dark bread croutons.",
@@ -1091,7 +1091,7 @@ const translations = {
     "food.starters.cheese": "Сирна нарізка",
     "food.starters.cheese.price": "£17.00",
     "food.starters.cheese.desc": "Добірка преміальних сирів.",
-    "food.starters.beer-platter": "Пивна тарілка / Beer platter",
+    "food.starters.beer-platter": "Пивна тарілка",
     "food.starters.beer-platter.price": "£23.00",
     "food.starters.beer-platter.desc":
       "Прошутто, ковбаски, бастурма, сухарики з темного хліба.",

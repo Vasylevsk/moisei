@@ -389,14 +389,6 @@ const translations = {
     "food.sushi.canadian.price": "£15.00",
     "food.sushi.canadian.desc":
       "Roll with cucumber, eel, and cream cheese, topped with slices of eel and sauce.",
-    "food.sushi.deluxe": "Deluxe roll",
-    "food.sushi.deluxe.price": "£16.00",
-    "food.sushi.deluxe.desc":
-      "A hearty roll combining crab meat and salmon with cream cheese and cucumber.",
-    "food.sushi.golden-dragon": "Golden Dragon",
-    "food.sushi.golden-dragon.price": "£15.00",
-    "food.sushi.golden-dragon.desc":
-      "Luxurious roll featuring salmon, cream cheese, avocado, and topped with mango slices.",
     "food.sushi.baked-crab": "Baked roll with crab",
     "food.sushi.baked-crab.price": "£15.00",
     "food.sushi.baked-crab.desc":
@@ -405,11 +397,6 @@ const translations = {
     "food.sushi.baked-salmon.price": "£15.00",
     "food.sushi.baked-salmon.desc":
       "Warm roll with salmon, cream cheese, and avocado, baked with a cap of melted cheese.",
-    "food.sushi.black-dragon": "Black Dragon",
-    "food.sushi.black-dragon.price": "£15.00",
-    "food.sushi.black-dragon.desc":
-      "Exotic roll with mango, cream cheese, and cucumber, topped with slices of smoked eel.",
-
     "food.pasta.carbonara": "Pasta carbonara",
     "food.pasta.carbonara.price": "£15.00",
     "food.pasta.carbonara.desc":
@@ -1297,13 +1284,6 @@ const translations = {
     "food.sushi.canadian": "Канадський рол",
     "food.sushi.canadian.price": "£15.00",
     "food.sushi.canadian.desc": "Рис, норі, крем-сир, огірок, вугор, соус.",
-    "food.sushi.deluxe": "Рол «Делюкс»",
-    "food.sushi.deluxe.price": "£16.00",
-    "food.sushi.deluxe.desc": "Рис, норі, крем-сир, краб, огірок, лосось.",
-    "food.sushi.golden-dragon": "Золотий дракон",
-    "food.sushi.golden-dragon.price": "£15.00",
-    "food.sushi.golden-dragon.desc":
-      "Рис, норі, крем-сир, авокадо, лосось, манго.",
     "food.sushi.baked-crab": "Запечений рол з крабом",
     "food.sushi.baked-crab.price": "£15.00",
     "food.sushi.baked-crab.desc":
@@ -1312,11 +1292,6 @@ const translations = {
     "food.sushi.baked-salmon.price": "£15.00",
     "food.sushi.baked-salmon.desc":
       "Рис, норі, крем-сир, лосось, авокадо, запечений сир.",
-    "food.sushi.black-dragon": "Чорний дракон",
-    "food.sushi.black-dragon.price": "£15.00",
-    "food.sushi.black-dragon.desc":
-      "Рис, норі, крем-сир, манго, огірок, вугор.",
-
     "food.pasta.carbonara": "Паста карбонара",
     "food.pasta.carbonara.price": "£15.00",
     "food.pasta.carbonara.desc": "Паста, бекон, яєчний соус, пармезан",

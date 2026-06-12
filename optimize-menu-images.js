@@ -84,6 +84,8 @@ function menuSlugFromSource(fileName) {
   if (/Lyudka Apple Cake/i.test(n) && /\.jpe?g$/i.test(n)) return "lyudka-apple-cake";
   if (/Zurek soup|Z_urek soup/i.test(n) && /\.jpe?g$/i.test(n)) return "zurek-soup";
   if (/^Fruit platter/i.test(n) && /\.jpe?g$/i.test(n)) return "fruit-platter";
+  if (/^Kiwi Spritz/i.test(n) && /\.jpe?g$/i.test(n)) return "kiwi-spritz";
+  if (/^Strawberry Limoncello Spritz/i.test(n) && /\.jpe?g$/i.test(n)) return "strawberry-limoncello-spritz";
   return null;
 }
 

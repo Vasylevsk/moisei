@@ -534,6 +534,14 @@ const translations = {
     "drinks.shots.b52": "B-52",
     "drinks.shots.b52.desc": "Baileys, coffee and Jamaican liqueurs.",
 
+    "drinks.cocktails.kiwi-spritz": "Kiwi Spritz",
+    "drinks.cocktails.kiwi-spritz.price": "£11.00",
+    "drinks.cocktails.kiwi-spritz.desc":
+      "Kiwi, gin, lemon juice and syrup.",
+    "drinks.cocktails.strawberry-limoncello-spritz": "Strawberry Limoncello Spritz",
+    "drinks.cocktails.strawberry-limoncello-spritz.price": "£11.00",
+    "drinks.cocktails.strawberry-limoncello-spritz.desc":
+      "Gin, Prosecco, Limoncello, Soda, Strawberry Syrup.",
     "drinks.cocktails.classic-mojito": "Classic Mojito",
     "drinks.cocktails.classic-mojito.desc":
       "Bacardi, sugar syrup, mint, sprite",
@@ -1425,6 +1433,14 @@ const translations = {
     "drinks.shots.b52": "Б-52",
     "drinks.shots.b52.desc": "Бейліс, кавовий та ямайський лікери.",
 
+    "drinks.cocktails.kiwi-spritz": "Ківі спритц",
+    "drinks.cocktails.kiwi-spritz.price": "£11.00",
+    "drinks.cocktails.kiwi-spritz.desc":
+      "Ківі, джин, лимонний сік і сироп.",
+    "drinks.cocktails.strawberry-limoncello-spritz": "Клубничний лімончелло-спритц",
+    "drinks.cocktails.strawberry-limoncello-spritz.price": "£11.00",
+    "drinks.cocktails.strawberry-limoncello-spritz.desc":
+      "Джин, Просекко, Лімончелло, газована вода, полуничний сироп.",
     "drinks.cocktails.classic-mojito": "Classic Mojito",
     "drinks.cocktails.classic-mojito.desc":
       "Bacardi, сироп цукру, м'ята, sprite",

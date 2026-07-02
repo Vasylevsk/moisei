@@ -86,6 +86,12 @@ function menuSlugFromSource(fileName) {
   if (/^Fruit platter/i.test(n) && /\.jpe?g$/i.test(n)) return "fruit-platter";
   if (/^Kiwi Spritz/i.test(n) && /\.jpe?g$/i.test(n)) return "kiwi-spritz";
   if (/^Strawberry Limoncello Spritz/i.test(n) && /\.jpe?g$/i.test(n)) return "strawberry-limoncello-spritz";
+  if (/^Classic Mojito/i.test(n) && /\.jpe?g$/i.test(n)) return "classic-mojito";
+  if (/^Margarita/i.test(n) && /\.jpe?g$/i.test(n)) return "margarita";
+  if (/^LONG ISLAND ENERGY/i.test(n) && /\.jpe?g$/i.test(n)) return "long-island-energy";
+  if (/^Cosmopolitan/i.test(n) && /\.jpe?g$/i.test(n)) return "cosmopolitan";
+  if (/^Screwdriver/i.test(n) && /\.jpe?g$/i.test(n)) return "screwdriver";
+  if (/^Orgasm/i.test(n) && /\.jpe?g$/i.test(n)) return "orgasm";
   return null;
 }
 

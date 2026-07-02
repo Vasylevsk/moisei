@@ -1926,7 +1926,9 @@ class LanguageSwitcher {
       const key = element.getAttribute("data-i18n");
       if (!key || !translations[this.currentLang]) return;
       
-      const translation = translations[this.currentLang][key];
+      const translation =
+        translations[this.currentLang][key] ||
+        (this.currentLang !== "en" ? translations.en[key] : undefined);
 
       if (translation) {
         if (element.hasAttribute("data-i18n-html")) {

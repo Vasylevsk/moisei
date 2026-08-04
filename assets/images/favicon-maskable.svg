@@ -11,9 +11,9 @@
       <stop offset="100%" stop-color="#7fa06f"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  <rect x="18" y="18" width="476" height="476" rx="82" fill="none" stroke="#c4a86a" stroke-width="4" opacity="0.85"/>
-  <g fill="url(#m)" transform="translate(-210.513 -503.608) scale(0.529101)">
+  <rect width="512" height="512" rx="0" fill="url(#bg)"/>
+  
+  <g fill="url(#m)" transform="translate(-107.880 -337.175) scale(0.412698)">
     
   <path d="M694.76,1804.47v20.88H559.42v-20.88h39.63q.09-309.26.18-618.59c2.06.55,4.15,1.06,6.21,1.58a424.58,424.58,0,0,0,50.29,181.48v435.53Z"/>
   <path d="M1204,1804.47v20.88H1068.7v-20.88H1108V1368.94a424.39,424.39,0,0,0,50.3-181.48c2.06-.52,4.12-1,6.21-1.58q.09,309.31.18,618.59Z"/>

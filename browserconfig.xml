@@ -2,11 +2,8 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="https://moisei.uk/favicon-192x192.png?v=20250318"/>
-            <TileColor>#1a1a1a</TileColor>
+            <square150x150logo src="https://moisei.uk/favicon-192x192.png?v=20260804-m"/>
+            <TileColor>#0a0a09</TileColor>
         </tile>
     </msapplication>
 </browserconfig>
-
-
-

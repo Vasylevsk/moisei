@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Brand assets: favicon pack + Google/social logo (square PNG) + OG share image.
+ * Brand assets: favicon pack — stylized wheat “M” only (no full wordmark).
  * Run from project root: npm run favicons
  */
 const fs = require("fs");
@@ -9,45 +9,92 @@ const sharp = require("sharp");
 const toIco = require("to-ico");
 
 const root = path.join(__dirname, "..");
-const logoPath = path.join(root, "assets/images/logo.svg");
-const logo = fs.readFileSync(logoPath, "utf8");
-let inner = logo.replace(/<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
-inner = inner.replace(/<defs>[\s\S]*?<\/defs>/, "");
 
-const cx = 632.64 + 1656.42 / 2;
-const cy = 989.53 + 855.25 / 2;
-/* Larger mark (~78% of canvas width) for clearer tabs & bookmarks */
-const scale = (512 * 0.78) / 1656.42;
+/* Wheat-M mark paths from assets/images/logo.svg (left emblem only) */
+const markPaths = `
+  <path d="M694.76,1804.47v20.88H559.42v-20.88h39.63q.09-309.26.18-618.59c2.06.55,4.15,1.06,6.21,1.58a424.58,424.58,0,0,0,50.29,181.48v435.53Z"/>
+  <path d="M1204,1804.47v20.88H1068.7v-20.88H1108V1368.94a424.39,424.39,0,0,0,50.3-181.48c2.06-.52,4.12-1,6.21-1.58q.09,309.31.18,618.59Z"/>
+  <path d="M1114.67,1152.69a516.81,516.81,0,0,1-2.88,74.47c-4.11,36.86-7.18,64.37-21.62,93.33s-28.19,35.2-66.62,75.46c-28.84,30.22-64.27,67.34-86.42,108.45a249.57,249.57,0,0,0-29.58,113.8,553.08,553.08,0,0,0-25.25-85c-.06-.16-.12-.32-.19-.47l.08-.08,1.25-1.33c5.71-6.07,33.75-38.4,25.06-77.86a74.64,74.64,0,0,0-13.42-28.79l-3-19.42-4.71.29-.55,18.31a102.47,102.47,0,0,0-18.41,47.69,101.27,101.27,0,0,0,1.84,33.67Q865,1494,859,1483.19l0,0a2,2,0,0,0-.11-.2l-.49-.69.06-.09,1.27-2.06c4.36-7.09,25.33-44.4,8.87-81.31a74.43,74.43,0,0,0-18.93-25.5l-6.83-18.43-4.56,1.23,3.15,18.06a102.42,102.42,0,0,0-8.43,50.42,100.37,100.37,0,0,0,5.86,26c-5.57-8.06-11.08-15.33-16.59-22.24-.12-.16-.26-.32-.37-.47l.37-.71c5.44-10.27,21.58-45.89,4.82-79.89a74.48,74.48,0,0,0-19.88-24.76l-7.55-18.15-4.5,1.4,3.84,17.93a102.37,102.37,0,0,0-6.49,50.69,100,100,0,0,0,6.42,24.66c.32.79.65,1.57,1,2.34l-1-1.17c-4.55-5.45-9.19-11.11-13.93-17.15-1.62-2.07-3.21-4.13-4.75-6.16l.41-.73c4.1-7.27,23.62-45.35,5.76-81.6a74.36,74.36,0,0,0-19.9-24.75l-7.53-18.16-4.51,1.4,3.83,17.93a102.65,102.65,0,0,0-6.48,50.7,100.41,100.41,0,0,0,5.64,22.67c-7.65-11.92-14.34-23.43-20.64-34.88l.13-.2c4.15-6.46,24.13-40.41,9.64-74.69a68.63,68.63,0,0,0-16.95-23.82l-6-17.1-4.22,1.05,2.57,16.69a94.38,94.38,0,0,0-8.68,46.26c.23,3.21.61,6.32,1.12,9.3q-6.54-13.12-12.56-26.59l.89-1.3c3.94-5.69,23-35.68,11-67a61.92,61.92,0,0,0-14.56-22l-4.85-15.58-3.83.82,1.81,15.1a85.13,85.13,0,0,0-9.22,41.42c0,.89.07,1.77.13,2.63q-4.7-12.74-8.94-25.74h0l.74-1c3.68-4.81,21.54-30.2,12.36-58a54.2,54.2,0,0,0-11.81-19.8l-3.59-13.81-3.38.56,1,13.27a74.63,74.63,0,0,0-9.45,29.95c-.78-3.09-1.55-6.2-2.3-9.31,3.6-9.1,14-40.58-3.29-67.68a62.94,62.94,0,0,0-19-19l-8-14.57-3.67,1.59,4.88,14.73a86.07,86.07,0,0,0,23.17,85.08h0q2,8.32,4.17,16.55a74.51,74.51,0,0,0-29.16-22.76l-7.17-11.21-3,1.57,5.37,13.22a54.08,54.08,0,0,0,2.37,22.92c9.1,27.23,37.57,37.09,44.22,39q4,12.36,8.46,24.5a85.33,85.33,0,0,0-35-22.88l-9.2-12.12-3.32,2.07,7.34,14.57a61.67,61.67,0,0,0,4.8,25.93c13.12,30.87,47.64,39.22,54.43,40.58l.46.09q4.74,10.63,9.83,21c-.22-.19-.42-.38-.63-.58a94.36,94.36,0,0,0-41.66-21.89L652.64,1229l-3.43,2.67,9.71,15.26a68.42,68.42,0,0,0,8.16,28.09c17.91,32.62,56.93,38,64.57,38.77l.93.08c3.55,6.44,7.25,12.9,11.18,19.46-1.59-1.25-3.26-2.49-5-3.69a102.55,102.55,0,0,0-48-17.5l-14.17-11.63-3.31,3.35,12.67,15a74.56,74.56,0,0,0,12.87,29c24,32.51,66.79,32.64,75.13,32.33l1.5,0q2.4,3.15,4.93,6.38c4.21,5.38,8.36,10.47,12.42,15.36a99,99,0,0,0-18.86-11.82,102.67,102.67,0,0,0-50.16-9.85L708,1371l-2.75,3.83,14.86,12.88a74.5,74.5,0,0,0,17.2,26.69c28.77,28.39,71.06,21.88,79.25,20.28l2.88-.56c6.25,7.93,12.5,16.35,18.83,26h0c.09.14.18.26.26.4-.15-.14-.32-.27-.47-.4h0a100.69,100.69,0,0,0-28.67-16.59,102.55,102.55,0,0,0-50.83-5.33L742,1430.3l-2.4,4.07,15.94,11.5A74.47,74.47,0,0,0,775,1470.92c28.55,23.54,65.77,16.93,78,13.87l.18,0,0,0c5.76,10.33,11.08,21,15.92,31.75a101.42,101.42,0,0,0-88.81-28.39l-16.71-7.55-2.32,4.1,16.15,11.22a74.44,74.44,0,0,0,20,24.7c28.73,22.83,65.48,15.85,78,12.53,29.94,74.94,44.94,171.23,44.58,286.4h6.38c.19-60.92-3.9-116.65-12.21-166.78,3.55-11.12,6.92-68.43,44.59-135.76,30.73-54.9,62.42-77.4,89.14-108.5C1087.08,1362.85,1126.25,1286.22,1114.67,1152.69Zm-460.14-45a83.65,83.65,0,0,1-22.75-39.83,82.61,82.61,0,0,1,.73-41.16l.35.22a59,59,0,0,1,18.23,18C666.59,1069.36,658.31,1097.72,654.53,1107.74Zm-26.9,22.18a50.86,50.86,0,0,1-2.17-21.89l0-.37a71.17,71.17,0,0,1,27.82,21.77,68,68,0,0,1,5.56,8.52s0,0,0,0q3.95,14.14,8.39,28C658.38,1163,635.4,1153.17,627.63,1129.92Zm43.55,29.2h0q-4.09-13.11-7.73-26.45a68.2,68.2,0,0,1-.26-6.94,70.94,70.94,0,0,1,9.28-34.08l.25.27a50.78,50.78,0,0,1,11.35,18.84c7.75,23.52-5.1,45.34-10.36,52.89C672.91,1162.31,672.05,1160.81,671.18,1159.12Zm-25.86,41.45a57.89,57.89,0,0,1-4.46-24.76v-.42a80,80,0,0,1,40.76,31.37h0q5.79,15.07,12.21,29.78c.11.56.21,1.12.31,1.66C683.94,1235.69,656.41,1226.64,645.32,1200.57Zm41.66-8.89a81,81,0,0,1,8.77-39.45l.29.28a58,58,0,0,1,14,20.93c10.14,26.44-3.37,52.08-9,61A82,82,0,0,1,687,1191.68ZM670.9,1272.9a64.5,64.5,0,0,1-7.67-26.83l0-.46a90,90,0,0,1,39.66,20.87,88.27,88.27,0,0,1,10.81,11.8h0l1.63,3.16c4.11,7.87,8.17,15.63,12.36,23.4.49,1.48.91,2.89,1.28,4.19C717.41,1307.39,686,1300.45,670.9,1272.9Zm58.05,22a4.1,4.1,0,0,1-.22-.41c-.61-1.09-1.21-2.21-1.8-3.39-.08-.17-.16-.34-.25-.51a88.87,88.87,0,0,1-.8-77.37l.34.31a64.6,64.6,0,0,1,16.29,22.67c12.22,28.93-1.8,57.87-7.66,67.94A90.13,90.13,0,0,1,729,1294.94Zm-26.33,50.16a70.21,70.21,0,0,1-12.17-27.77l-.09-.49a97.76,97.76,0,0,1,45.72,16.69,95,95,0,0,1,17.53,15.61s0,0,0,0c4.24,6.52,8.75,13.16,13.66,20l0,0c1.19,2.29,2.18,4.42,3,6.36C757.68,1375.45,722.88,1372.54,702.62,1345.1ZM756.45,1321a97.74,97.74,0,0,1,6.16-48.28l.39.31a70,70,0,0,1,19.09,23.55c15.08,30.6,1.69,62.85-4,74.14A98.94,98.94,0,0,1,756.45,1321Zm-15.84,90a69.77,69.77,0,0,1-16.32-25.55l-.17-.46a97.77,97.77,0,0,1,47.75,9.38,99,99,0,0,1,40.37,36.2C799.72,1432.46,764.89,1435,740.61,1411Zm78.33,12.08c-.07.13-.13.25-.19.38-1.61-2-3.37-4.27-5.17-6.91l-.05-.06a96.74,96.74,0,0,1-10.23-91l.38.31a70,70,0,0,1,19.09,23.54C837.68,1379.58,824.76,1411.47,818.94,1423.09Zm31.85,57.37-.18,0c-12.72,3-46.61,8.17-72.58-13.24a70.07,70.07,0,0,1-18.52-24l-.23-.46a96.92,96.92,0,0,1,89.66,34.81v0q.39.46.75.93c.5.62,1,1.23,1.42,1.8Zm-13.15-56.32a97.6,97.6,0,0,1,8-48l.38.32a70.15,70.15,0,0,1,18.17,24.26c13.89,31.17-.72,62.88-6.87,73.94A98.88,98.88,0,0,1,837.64,1424.14Zm35.94,104.59c-12.33,3.21-46.57,9.34-73.21-11.83a70.1,70.1,0,0,1-19-23.65l-.22-.44a97.78,97.78,0,0,1,48.5,4.22,98.82,98.82,0,0,1,43.76,31.37l.24.3Zm-.43-56.66a97.64,97.64,0,0,1,17.5-45.41l.3.39a69.93,69.93,0,0,1,12.92,27.43c7.34,33.31-13.35,61.44-21.61,71A98.93,98.93,0,0,1,873.15,1472.07Z"/>
+`;
 
-const fav = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+/* Original mark bbox from logo coordinates */
+const BX = 559.42;
+const BY = 1069;
+const BW = 644.58; /* ~1204 - 559 */
+const BH = 756; /* ~1825 - 1069 */
+
+const canvas = 512;
+const pad = 56; /* breathing room so M reads cleanly in tabs */
+const scale = Math.min((canvas - pad * 2) / BW, (canvas - pad * 2) / BH);
+const tx = (canvas - BW * scale) / 2 - BX * scale;
+const ty = (canvas - BH * scale) / 2 - BY * scale + 6;
+
+function buildFaviconSvg({ rounded = true, maskable = false } = {}) {
+  const radius = rounded ? (maskable ? 0 : 96) : 0;
+  const markScale = maskable ? scale * 0.78 : scale;
+  const markTx = maskable
+    ? (canvas - BW * markScale) / 2 - BX * markScale
+    : tx;
+  const markTy = maskable
+    ? (canvas - BH * markScale) / 2 - BY * markScale + 4
+    : ty;
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${canvas} ${canvas}" role="img" aria-label="Moisei">
   <defs>
-    <radialGradient id="moisei-bg" cx="42%" cy="38%" r="72%">
-      <stop offset="0%" style="stop-color:#252520"/>
-      <stop offset="100%" style="stop-color:#0c0c0c"/>
-    </radialGradient>
-    <filter id="moisei-soft" x="-8%" y="-8%" width="116%" height="116%">
-      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#000" flood-opacity="0.35"/>
-    </filter>
+    <linearGradient id="bg" x1="18%" y1="12%" x2="82%" y2="90%">
+      <stop offset="0%" stop-color="#1c1c18"/>
+      <stop offset="100%" stop-color="#0a0a09"/>
+    </linearGradient>
+    <linearGradient id="m" x1="20%" y1="10%" x2="80%" y2="95%">
+      <stop offset="0%" stop-color="#c8dcb8"/>
+      <stop offset="55%" stop-color="#9fbf8f"/>
+      <stop offset="100%" stop-color="#7fa06f"/>
+    </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="114" fill="url(#moisei-bg)"/>
-  <rect x="14" y="14" width="484" height="484" rx="98" fill="none" stroke="#c4a86a" stroke-width="5" opacity="0.92"/>
-  <g fill="#b8d4a8" filter="url(#moisei-soft)" transform="translate(256 256) scale(${scale}) translate(${-cx} ${-cy})">${inner}</g>
+  <rect width="${canvas}" height="${canvas}" rx="${radius}" fill="url(#bg)"/>
+  ${
+    rounded && !maskable
+      ? `<rect x="18" y="18" width="476" height="476" rx="82" fill="none" stroke="#c4a86a" stroke-width="4" opacity="0.85"/>`
+      : ""
+  }
+  <g fill="url(#m)" transform="translate(${markTx.toFixed(3)} ${markTy.toFixed(3)}) scale(${markScale.toFixed(6)})">
+    ${markPaths}
+  </g>
 </svg>`;
+}
+
+const fav = buildFaviconSvg({ rounded: true });
+const maskable = buildFaviconSvg({ rounded: false, maskable: true });
 
 fs.writeFileSync(path.join(root, "favicon.svg"), fav);
 fs.writeFileSync(path.join(root, "assets/images/favicon-app.svg"), fav);
+fs.writeFileSync(path.join(root, "assets/images/favicon-maskable.svg"), maskable);
 
 const LOGO_PNG = "assets/images/moisei-brand-mark-512.png";
 const OG_JPG = "assets/images/og-moisei-brand.jpg";
 
 async function main() {
   const svgBuf = Buffer.from(fav);
+  const maskBuf = Buffer.from(maskable);
   const sizes = [16, 32, 48, 96, 144, 192, 512];
+
   for (const s of sizes) {
-    await sharp(svgBuf).resize(s, s).png().toFile(path.join(root, `favicon-${s}x${s}.png`));
+    await sharp(svgBuf)
+      .resize(s, s)
+      .png({ compressionLevel: 9 })
+      .toFile(path.join(root, `favicon-${s}x${s}.png`));
   }
-  await sharp(svgBuf).resize(180, 180).png().toFile(path.join(root, "apple-touch-icon.png"));
+
+  await sharp(svgBuf)
+    .resize(180, 180)
+    .png({ compressionLevel: 9 })
+    .toFile(path.join(root, "apple-touch-icon.png"));
+
+  await sharp(maskBuf)
+    .resize(512, 512)
+    .png({ compressionLevel: 9 })
+    .toFile(path.join(root, "favicon-maskable-512.png"));
 
   const mark512 = await sharp(svgBuf).resize(512, 512).png().toBuffer();
   fs.writeFileSync(path.join(root, LOGO_PNG), mark512);
@@ -55,17 +102,17 @@ async function main() {
   const ico = await toIco([
     fs.readFileSync(path.join(root, "favicon-16x16.png")),
     fs.readFileSync(path.join(root, "favicon-32x32.png")),
+    fs.readFileSync(path.join(root, "favicon-48x48.png")),
   ]);
   fs.writeFileSync(path.join(root, "favicon.ico"), ico);
 
-  /* Open Graph / link preview: dark card + mark + title (readable in Google Discover, FB, etc.) */
   const ogTextSvg = Buffer.from(
     `<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
       <text x="600" y="548" text-anchor="middle" fill="#c4a86a" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="600">Moisei</text>
       <text x="600" y="598" text-anchor="middle" fill="#9a9a95" font-family="system-ui, -apple-system, sans-serif" font-size="26" letter-spacing="0.04em">Ukrainian Restaurant · Brentford, London</text>
     </svg>`
   );
-  const markOg = await sharp(svgBuf).resize(380, 380).png().toBuffer();
+  const markOg = await sharp(svgBuf).resize(360, 360).png().toBuffer();
   await sharp({
     create: {
       width: 1200,
@@ -75,13 +122,13 @@ async function main() {
     },
   })
     .composite([
-      { input: markOg, top: 72, left: Math.round((1200 - 380) / 2) },
+      { input: markOg, top: 80, left: Math.round((1200 - 360) / 2) },
       { input: await sharp(ogTextSvg).png().toBuffer(), top: 0, left: 0 },
     ])
     .jpeg({ quality: 90, mozjpeg: true })
     .toFile(path.join(root, OG_JPG));
 
-  console.log("OK: favicon.*, apple-touch-icon, moisei-brand-mark-512.png, og-moisei-brand.jpg");
+  console.log("OK: wheat-M favicon pack generated");
 }
 
 main().catch((e) => {

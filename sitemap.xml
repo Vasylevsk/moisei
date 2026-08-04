@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://moisei.uk/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/" />
@@ -41,6 +41,30 @@
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/reservation.html" />
     <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/reservation.html" />
+  </url>
+  <url>
+    <loc>https://moisei.uk/nikita-kiselyov-event.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/nikita-kiselyov-event.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/nikita-kiselyov-event.html" />
+  </url>
+  <url>
+    <loc>https://moisei.uk/anna-trincher-event.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/anna-trincher-event.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/anna-trincher-event.html" />
+  </url>
+  <url>
+    <loc>https://moisei.uk/100lytsya-event.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moisei.uk/100lytsya-event.html" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://moisei.uk/100lytsya-event.html" />
   </url>
   <url>
     <loc>https://moisei.uk/alena-omargalieva-event.html</loc>

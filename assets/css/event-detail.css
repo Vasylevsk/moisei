@@ -112,6 +112,11 @@
   object-fit: cover;
 }
 
+.event-detail-gallery .event-gallery-swiper .swiper-slide img[src*="/poster"] {
+  object-fit: contain;
+  background: #0d0d0d;
+}
+
 @media (max-width: 991px) {
   .event-detail-gallery {
     display: block;
@@ -252,6 +257,64 @@
   }
 }
 
+/* ----- Upcoming event info card ----- */
+.event-detail-meta {
+  width: 100%;
+}
+
+.event-info {
+  margin: 24px auto 0;
+  max-width: 820px;
+  padding: 24px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-24);
+  background: rgba(255, 255, 255, 0.03);
+  text-align: left;
+}
+
+.event-info-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.event-info-label {
+  color: var(--gold-crayola);
+  margin-bottom: 6px;
+  font-weight: var(--weight-bold);
+}
+
+.event-info-link {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.event-info-link:hover {
+  color: var(--gold-crayola);
+}
+
+.event-info-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.event-age-note {
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .event-info {
+    padding: 28px 32px;
+  }
+
+  .event-info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 28px;
+  }
+}
+
 /* ----- Desktop: two-column hero + full-width meta/footer ----- */
 @media (min-width: 992px) {
   #event-detail .special-dish.event-detail {
@@ -259,10 +322,16 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas:
       "intro gallery"
+      "meta meta"
       "footer footer";
     align-items: stretch;
     text-align: left;
     min-height: 0;
+  }
+
+  .event-detail-meta {
+    grid-area: meta;
+    padding-block: 8px 8px;
   }
 
   .event-detail-intro {
